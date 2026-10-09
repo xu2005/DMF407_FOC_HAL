@@ -1,0 +1,11 @@
+# Legacy 是冻结的只读基线（任务书 §1.1），禁止任何行尾或编码转换。
+# 本机 core.autocrlf=true，若不锁定会破坏其 SHA256清单.txt 的有效性。
+Legacy/** -text
+
+# 二进制资源不做行尾转换与差异比较
+*.pdf  binary
+*.jpg  binary
+*.png  binary
+*.docx binary
+*.xlsx binary
+*.zip  binary

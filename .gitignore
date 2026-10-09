@@ -1,0 +1,39 @@
+# ---- 构建产物 ----
+build/
+
+# ---- 第三方依赖 ----
+# ST HAL / CMSIS：由 DMF407_FOC_HAL.ioc + STM32Cube FW_F4 V1.28.3 可完全再生，
+# 且任务书 §4.2 明确禁止业务修改，无变更跟踪价值，不纳入版本控制。
+# 克隆后需在 CubeMX 中 Generate Code 或在 Repository 中安装固件包后补齐。
+Drivers/
+
+# ---- IDE / 调试器本地文件 ----
+.vscode/
+.idea/
+*.uvguix.*
+JLinkLog.txt
+JLinkSettings.ini
+EventRecorderStub.scvd
+
+# ---- 编译中间产物与镜像 ----
+*.o
+*.crf
+*.d
+*.dep
+*.axf
+*.htm
+*.elf
+*.map
+*.bin
+*.hex
+*.lnp
+*.sct
+*.browse
+*.lst
+
+# ---- 打包快照 ----
+*.zip
+
+# ---- 操作系统 ----
+Thumbs.db
+desktop.ini
