@@ -53,6 +53,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/BSP/bsp_encoder.c
     ${CMAKE_CURRENT_SOURCE_DIR}/BSP/bsp_timer.c
     ${CMAKE_CURRENT_SOURCE_DIR}/BSP/bsp_motor_enable.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/BSP/bsp_uart.c
 )
 
 # Add include paths
