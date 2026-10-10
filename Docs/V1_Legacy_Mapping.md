@@ -39,9 +39,9 @@
 
 | Legacy SPL | HAL |
 |---|---|
-| `TIM_Cmd(TIMx, ENABLE)` + `TIM_ITConfig(TIMx, TIM_IT_Update, ENABLE)` | `HAL_TIM_Base_Start_IT(&htimx)` |
+| `TIM_Cmd(TIMx, ENABLE)` + `TIM_ITConfig(TIMx, TIM_IT_Update, ENABLE)` | `HAL_TIM_Base_Start_IT(&htimx)`（内部顺序：先 UIE 后 CEN，见 D-14） |
 | `TIM_Cmd(TIMx, ENABLE)`（无中断） | `HAL_TIM_Base_Start(&htimx)` |
-| 编码器（含更新中断） | `HAL_TIM_Encoder_Start_IT(&htim3, TIM_CHANNEL_ALL)` |
+| 编码器（仅更新中断） | `HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL)` + `__HAL_TIM_ENABLE_IT(&htim3, TIM_IT_UPDATE)` —— **非** `_IT` 版本（见 D-12） |
 | `TIM_CtrlPWMOutputs(TIM1, ENABLE)` | `HAL_TIMEx_PWMN_Start()` + `__HAL_TIM_MOE_ENABLE(&htim1)` |
 | `TIM_ClearITPendingBit` / `TIM_GetITStatus` | `HAL_TIM_IRQHandler()` → `HAL_TIM_PeriodElapsedCallback()` |
 
@@ -200,6 +200,11 @@ TIMx_IRQHandler() → HAL_TIM_IRQHandler() → HAL_TIM_PeriodElapsedCallback()
 | **D-11** | `ADC_ProcessData()` 的调用点在 `main.c:67` 的**主循环**里（不在任何中断中） | V1 暂无消费者 | `BSP_ADC_ReadAll()` 已实现但**尚未接线** | **待接线** ★ | 接线时必须与 Legacy 一致放在**主循环**；**严禁放入 FOC ISR** —— 它是 6 次阻塞读，放中断内会破坏时序 |
 | **D-12** | Legacy 只开 TIM3 Update 中断（`encoderini.c:67`），且 CC1/CC2 中断在 `:68-69` 被作者**显式注释掉** | `HAL_TIM_Encoder_Start_IT()` 会**额外开启 CC1IE/CC2IE**，且**并不开启** Update 中断 | `HAL_TIM_Encoder_Start()` + `__HAL_TIM_ENABLE_IT(TIM_IT_UPDATE)` | **是（有意偏离 HAL 惯用法）** | 已核实 HAL 源码 `stm32f4xx_hal_tim.c:3214` / `:3368`：`_IT` 版本在 default 分支执行 `TIM_CCxChannelCmd(CH1/CH2)` + `__HAL_TIM_ENABLE_IT(TIM_IT_CC1)` + `TIM_IT_CC2` + `__HAL_TIM_ENABLE()`。直接套用会改变原工程中断行为，不符合 Legacy 基线 |
 | **D-13** | Legacy `time2.c` 给 TIM2 与 TIM4 均设 `NVIC_IRQChannelSubPriority = 1` | CubeMX 生成 `HAL_NVIC_SetPriority(TIM2_IRQn, 1, 0)` 与 `(TIM4_IRQn, 1, 0)`，子优先级归一化为 **0** | 保持生成值，不改回 | **否（等价）** | GROUP4 下子优先级位数为 0，`1/1` 与 `1/0` 硬件等价，CubeMX 作归一化属正常行为。**与 R-01 无关**：R-01 是「硬件 CNT 回绕 ≠ 软件溢出计数」的时序差，不因两者抢占级相同而消失（详见验收框架 §6 R-01 勘误） |
+| **D-14** | TIM2（`time2.c:21-32`）：`TIM_SetCounter(TIM2,0)` → `TIM_ITConfig(Update)` → NVIC 1/1 → `TIM_Cmd(TIM2)` | HAL 无单一等价函数：`HAL_TIM_Base_Start_IT` 同时含 UIE+CEN 但不含 SetCounter | `__HAL_TIM_SET_COUNTER(&htim2,0)` + `HAL_TIM_Base_Start_IT(&htim2)`，实现于 `BSP/bsp_timer.c` | **是（等价）** | 已核实 HAL 源码 `stm32f4xx_hal_tim.c:459-494`：`Base_Start_IT` 内部先 `__HAL_TIM_ENABLE_IT(UPDATE)`（:476）后 `__HAL_TIM_ENABLE()`（:489），与 Legacy「先开中断、后启动计数」一致。CNT=0 由 `HAL_TIM_Base_Init` 与显式 `__HAL_TIM_SET_COUNTER` 双重保证。**TIM2 中断业务体（`calculate_motor_parameters` → `theta`/`Speed_actual`）本阶段未迁入**，归 Motor/Control 层 |
+| **D-15** | TIM4（`time2.c:75-83`）：同上（PSC=10 / ARR=10000） | 同 D-14 | `__HAL_TIM_SET_COUNTER(&htim4,0)` + `HAL_TIM_Base_Start_IT(&htim4)`，实现于 `BSP/bsp_timer.c` | **是（等价）** | 依据同 D-14。**TIM4 中断业务体（`motorX/Y_pluse` → `motorX/Y_position`）本阶段未迁入**；且 V1 中两个 pluse 标志恒为 0，即使迁入该分支也是 no-op |
+| **D-16** | 启动序列 UIF 清除**不对称**：TIM1（`time1.c:129`）与 TIM3（`encoderini.c:66`）都调 `TIM_ClearFlag(x, Update)`；**TIM2（`time2.c`）与 TIM4（`time2.c`）都没有** | 初始化时 `TIM_TimeBaseInit`（SPL `stm32f4xx_tim.c:331`）与 HAL `TIM_Base_SetConfig`（`stm32f4xx_hal_tim.c:6818`）**末尾都执行 `EGR=UG`**；URS=0（复位值）下 UG 会置 UIF。不清 UIF → 使能 UIE 的瞬间立即产生一次"伪"Update 中断 | V1 原样保留不对称：`bsp_encoder` 清 TIM3 UIF；**`bsp_timer` 不清 TIM2/TIM4** | **否（保持等价）** | 已核实 Legacy 三处源码行 + 两侧库源码行。**禁止给 TIM2/TIM4 补 CLEAR_FLAG** —— 会改变 Legacy 实际行为。V1 中该伪中断落入 TIM2/TIM4 分支（诊断计数自增 + 空业务体），属预期。伪中断是否实际发生及其影响 = `NEEDS SCOPE CONFIRM` |
+| **D-17** | Legacy 的 TIM2/TIM4 ISR **不含任何计数器** | V1 新增两个只增 `uint32_t` 诊断计数 | `s_tim2_tick_count` / `s_tim4_tick_count`（`bsp_timer.c` static volatile） | **新增（诊断设施，非 Legacy 行为）** | 仅供 L4 无功率实测确认中断在运行；**不参与任何控制计算**，不得据此宣称角度/速度或 XY 插补链路已复现。读取函数当前无调用者被 `--gc-sections` 回收（与 `BSP_PWM_SetABC` 同理），变量本体保留在 ELF 符号表（`0x2000002c` / `0x20000030`），可由调试器直接读取 |
+| **D-18** | `encoderini.c` 启动**语句顺序**：`:64 SetCounter` → `:66 ClearFlag` → `:67 ITConfig` → `:74 TIM_Cmd` | `bsp_encoder.c` 实际顺序：`SetCounter` → `Encoder_Start`(CEN=1) → `ClearFlag` → `EnableIT`，即 CEN 被提前 | 保持现状，不再调整 | **否（净行为等价）** | `Encoder_Start` 与 `ClearFlag` 之间 CNT 恒为 0（刚清），不可能发生 16 位回绕 → 无溢出事件窗口；`ClearFlag` 仍紧邻 `EnableIT`，保留了 Legacy `:66`→`:67` 的防伪中断相对关系。登记为顺序说明项，零净差异 |
 
 ---
 

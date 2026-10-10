@@ -28,6 +28,7 @@
 #include "bsp_pwm.h"
 #include "bsp_adc.h"
 #include "bsp_encoder.h"
+#include "bsp_timer.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -100,22 +101,31 @@ int main(void)
   MX_TIM4_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-  /* V1 Phase 2：使能三个 ADC
-   * —— 对应 Legacy SYSTEM/adc.c:62-64 的 ADC_Cmd(ADC1/2/3, ENABLE)
-   * 顺序与 Legacy main() 一致：ADC 先使能，TIM1 随后启动。
+  /* V1 Phase 2 启动顺序：严格对齐 Legacy main() 的调用序列
+   *   Legacy USER/main.c:55  ADC_Int_Init()
+   *   Legacy USER/main.c:56  Time2_Init(999, 83)
+   *   Legacy USER/main.c:57  Time4_Init(speed_period_max, 10)
+   *   Legacy USER/main.c:58  Encoder_Int_Init(0xFFFF, 0)
+   *   Legacy USER/main.c:59  TIM1_Int_Init(100-1, 84-1)
+   */
+
+  /* ↔ Legacy main.c:55  ADC_Cmd(ADC1/2/3, ENABLE)（adc.c:62-64）
    * ADC 外部触发为 TIM1_CC1，若 TIM1 未运行则不会产生转换。 */
   BSP_ADC_Start();
 
-  /* V1 Phase 2：启动 TIM3 编码器接口与 Update 中断
-   * —— 对应 Legacy encoderini.c 的 Encoder_Int_Init()
-   * 顺序与 Legacy main() 一致：ADC → 编码器 → TIM1。
-   * 仅开启 Update 中断，不开 CC1/CC2（见 bsp_encoder.c 说明）。 */
+  /* ↔ Legacy main.c:56-57  Time2_Init() + Time4_Init()
+   * TIM2 = 标称 1 ms 时基；TIM4 = 标称 ≈1.31 ms 插补时基。
+   * 两者均只开 Update 中断；★ 与 Legacy 一致不清 UIF（D-16）。 */
+  BSP_Timer_Start();
+
+  /* ↔ Legacy main.c:58  Encoder_Int_Init()（encoderini.c）
+   * 仅开启 Update 中断，不开 CC1/CC2（见 bsp_encoder.c 说明 / D-12）。 */
   BSP_Encoder_Start();
 
-  /* V1 Phase 2：启动 TIM1 三相互补 PWM 输出
-   * —— Legacy TIM1 PWM 启动行为的 HAL 封装，非 TIM_CtrlPWMOutputs 的一一等价
-   *    （该 HAL 调用同时使能 CCx/CCxN、MOE 与计数器 CEN；而 Legacy 的
-   *      TIM_CtrlPWMOutputs 只对应 MOE，计数器由 TIM_Cmd 单独启动）
+  /* ↔ Legacy main.c:59  TIM1_Int_Init()（time1.c）
+   * Legacy TIM1 PWM 启动行为的 HAL 封装，非 TIM_CtrlPWMOutputs 的一一等价
+   *（该 HAL 调用同时使能 CCx/CCxN、MOE 与计数器 CEN；而 Legacy 的
+   *  TIM_CtrlPWMOutputs 只对应 MOE，计数器由 TIM_Cmd 单独启动）
    * 注意：CCR 仍为 .ioc 配置的初值 0（未改初始占空比，符合任务书 §9）。
    * CCR=0 时六路实际输出电平 = NEEDS SCOPE CONFIRM（待无功率示波器实测，见 bsp_pwm.h）。
    * 功率级直流侧未通电，本调用仅用于逻辑波形观测。 */
@@ -179,20 +189,9 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-/**
-  * @brief  TIM 更新中断统一分发
-  * @note   V1 临时位置：后续 bsp_timer 迁移时接管本函数。
-  *         TIM1（FOC Tick）/ TIM2（1ms）/ TIM4（Motion）分支待各自
-  *         BSP 模块迁入后补上（任务书 §8 的推荐形态）。
-  *         业务逻辑不写入 stm32f4xx_it.c。
-  */
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
-{
-  if (htim->Instance == TIM3)
-  {
-    BSP_Encoder_OverflowTick();
-  }
-}
+/* TIM 更新中断统一分发已迁至 BSP/bsp_timer.c
+ * （HAL_TIM_PeriodElapsedCallback 覆盖 HAL 弱定义，TIM2/TIM3/TIM4 分支在该文件内）。
+ * 本处保持为空，不得再定义同名回调，否则链接期重复定义。 */
 /* USER CODE END 4 */
 
 /**
