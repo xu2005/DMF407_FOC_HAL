@@ -1,0 +1,8 @@
+08000588 T BSP_ADC_Start
+080005e8 T BSP_Encoder_OverflowTick
+080005b0 T BSP_Encoder_Start
+0800054c T BSP_PWM_Start
+0800062c T BSP_Timer_Start
+08000658 T HAL_TIM_PeriodElapsedCallback
+080006f8 T SystemClock_Config
+080012bc T TIM1_UP_TIM10_IRQHandler

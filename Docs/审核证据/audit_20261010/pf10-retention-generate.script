@@ -1,0 +1,9 @@
+config load DMF407_FOC_HAL.ioc
+waitclock 2
+get gpio parameters PF10 PinState
+get gpio parameters PF10 GPIO_Speed
+get gpio parameters PF10 GPIO_PuPd
+get ip parameters RCC PLLQ
+get ip parameters RCC PLLQCLKFreq_Value
+project generate
+exit

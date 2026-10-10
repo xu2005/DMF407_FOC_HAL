@@ -1,0 +1,190 @@
+diff --git a/BSP/bsp_timer.c b/BSP/bsp_timer.c
+new file mode 100644
+index 0000000..df5896b
+--- /dev/null
++++ b/BSP/bsp_timer.c
+@@ -0,0 +1,74 @@
++#include "bsp_timer.h"
++
++static volatile uint32_t s_tim2_events;
++static volatile uint32_t s_tim4_events;
++
++HAL_StatusTypeDef BSP_Timer2_Start(void)
++{
++    /* Legacy time2.c:21,23,32: CNT=0, UIE enabled, counter started.
++     * MX_TIM2_Init() must already have configured PSC=83 / ARR=999.
++     */
++    s_tim2_events = 0U;
++    __HAL_TIM_SET_COUNTER(&htim2, 0U);
++    /* An intentional defensive difference: ignore stale UIF on start. */
++    __HAL_TIM_CLEAR_FLAG(&htim2, TIM_FLAG_UPDATE);
++    return HAL_TIM_Base_Start_IT(&htim2);
++}
++
++HAL_StatusTypeDef BSP_Timer4_Start(void)
++{
++    /* Legacy time2.c:75,77,83: CNT=0, UIE enabled, counter started.
++     * MX_TIM4_Init() must already have PSC=10 / ARR=10000.
++     */
++    s_tim4_events = 0U;
++    __HAL_TIM_SET_COUNTER(&htim4, 0U);
++    __HAL_TIM_CLEAR_FLAG(&htim4, TIM_FLAG_UPDATE);
++    return HAL_TIM_Base_Start_IT(&htim4);
++}
++
++void BSP_Timer_1msTick(void)
++{
++    /* Diagnostic only. Legacy's calculate_motor_parameters() and its
++     * theta/Speed_actual writes belong to the subsequent Control/Motor
++     * integration. This is NOT yet a behavior-equivalent TIM2 ISR.
++     */
++    ++s_tim2_events;
++}
++
++void BSP_Timer4_Tick(void)
++{
++    /* Diagnostic only. Legacy clears motorX_pluse/motorY_pluse and bumps
++     * motorX_position/motorY_position here. Motion is NOT yet migrated.
++     */
++    ++s_tim4_events;
++}
++
++uint32_t BSP_Timer_GetTim2Events(void)
++{
++    return s_tim2_events;
++}
++
++uint32_t BSP_Timer_GetTim4Events(void)
++{
++    return s_tim4_events;
++}
++
++void BSP_Timer4_SetAutoReload(uint16_t arr)
++{
++    __HAL_TIM_SET_AUTORELOAD(&htim4, (uint32_t)arr);
++}
++
++uint16_t BSP_Timer4_GetAutoReload(void)
++{
++    return (uint16_t)__HAL_TIM_GET_AUTORELOAD(&htim4);
++}
++
++void BSP_Timer4_ResetCounter(void)
++{
++    __HAL_TIM_SET_COUNTER(&htim4, 0U);
++}
++
++uint16_t BSP_Timer4_GetCounter(void)
++{
++    return (uint16_t)__HAL_TIM_GET_COUNTER(&htim4);
++}
+diff --git a/BSP/bsp_timer.h b/BSP/bsp_timer.h
+new file mode 100644
+index 0000000..3de8e98
+--- /dev/null
++++ b/BSP/bsp_timer.h
+@@ -0,0 +1,39 @@
++#ifndef BSP_TIMER_H
++#define BSP_TIMER_H
++
++#include <stdint.h>
++#include "tim.h"
++
++#ifdef __cplusplus
++extern "C" {
++#endif
++
++/* Phase 2: TIM2 and TIM4 timing only; no motor algorithm or pulse output.
++ * TIM2: STM32F407 APB1 timer clock 84MHz, PSC=83, ARR=999 -> nominal 1ms.
++ * TIM4: PSC=10, ARR=10000 -> ~1.31ms at 84MHz, NOT a 10ms timer.
++ * TIM2 is a temporary PM1 timebase: PM2 encoder needs TIM2 CH1/CH2.
++ */
++HAL_StatusTypeDef BSP_Timer2_Start(void);
++HAL_StatusTypeDef BSP_Timer4_Start(void);
++
++/* Call once per corresponding HAL_TIM_PeriodElapsedCallback dispatch. */
++void BSP_Timer_1msTick(void);
++void BSP_Timer4_Tick(void);
++
++/* Diagnostic event counters, NOT a validated absolute clock. */
++uint32_t BSP_Timer_GetTim2Events(void);
++uint32_t BSP_Timer_GetTim4Events(void);
++
++/* Legacy main.c directly writes TIM4->ARR/CNT for the XY scheduler.
++ * The motion layer must later consume these HAL wrappers rather than
++ * directly editing timer registers. No step pulse is generated here.
++ */
++void BSP_Timer4_SetAutoReload(uint16_t arr);
++uint16_t BSP_Timer4_GetAutoReload(void);
++void BSP_Timer4_ResetCounter(void);
++uint16_t BSP_Timer4_GetCounter(void);
++
++#ifdef __cplusplus
++}
++#endif
++#endif
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 025c4f3..9bc17ad 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -51,6 +51,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
+     ${CMAKE_CURRENT_SOURCE_DIR}/BSP/bsp_pwm.c
+     ${CMAKE_CURRENT_SOURCE_DIR}/BSP/bsp_adc.c
+     ${CMAKE_CURRENT_SOURCE_DIR}/BSP/bsp_encoder.c
++    ${CMAKE_CURRENT_SOURCE_DIR}/BSP/bsp_timer.c
+ )
+ 
+ # Add include paths
+diff --git a/Core/Src/main.c b/Core/Src/main.c
+index 167bf84..2f2f9e1 100644
+--- a/Core/Src/main.c
++++ b/Core/Src/main.c
+@@ -28,6 +28,7 @@
+ #include "bsp_pwm.h"
+ #include "bsp_adc.h"
+ #include "bsp_encoder.h"
++#include "bsp_timer.h"
+ /* USER CODE END Includes */
+ 
+ /* Private typedef -----------------------------------------------------------*/
+@@ -108,8 +109,13 @@ int main(void)
+ 
+   /* V1 Phase 2：启动 TIM3 编码器接口与 Update 中断
+    * —— 对应 Legacy encoderini.c 的 Encoder_Int_Init()
+-   * 顺序与 Legacy main() 一致：ADC → 编码器 → TIM1。
++   * 顺序与 Legacy main() 一致：ADC → TIM2 → TIM4 → 编码器 → TIM1。
+    * 仅开启 Update 中断，不开 CC1/CC2（见 bsp_encoder.c 说明）。 */
++  /* V1 Phase 2: restore TIM2/TIM4 timing (diagnostic-only callbacks).
++   * Legacy starts TIM2, TIM4 before the encoder/TIM1.
++   * No speed-feedback or interpolation consumer is installed yet. */
++  if (BSP_Timer2_Start() != HAL_OK) { Error_Handler(); }
++  if (BSP_Timer4_Start() != HAL_OK) { Error_Handler(); }
+   BSP_Encoder_Start();
+ 
+   /* V1 Phase 2：启动 TIM1 三相互补 PWM 输出
+@@ -182,8 +188,8 @@ void SystemClock_Config(void)
+ /**
+   * @brief  TIM 更新中断统一分发
+   * @note   V1 临时位置：后续 bsp_timer 迁移时接管本函数。
+-  *         TIM1（FOC Tick）/ TIM2（1ms）/ TIM4（Motion）分支待各自
+-  *         BSP 模块迁入后补上（任务书 §8 的推荐形态）。
++  *         TIM2/TIM4 仅用于诊断事件计数；原 Motor/Motion 消费者尚未迁入。
++  *         TIM1 FOC Tick 尚未迁入。
+   *         业务逻辑不写入 stm32f4xx_it.c。
+   */
+ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+@@ -192,6 +198,14 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+   {
+     BSP_Encoder_OverflowTick();
+   }
++  else if (htim->Instance == TIM2)
++  {
++    BSP_Timer_1msTick();
++  }
++  else if (htim->Instance == TIM4)
++  {
++    BSP_Timer4_Tick();
++  }
+ }
+ /* USER CODE END 4 */
+ 

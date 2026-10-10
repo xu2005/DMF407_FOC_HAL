@@ -1,0 +1,4 @@
+## main...origin/main
+?? .clangd
+?? .settings/
+?? patches/

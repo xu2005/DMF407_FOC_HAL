@@ -1,0 +1,5 @@
+Changed existing files (excluding line-ending-only changes): ['DMF407_FOC_HAL.ioc', 'Core/Src/main.c']
+Legacy byte hashes unchanged: 240 files
+Existing .clangd and .settings files unchanged
+IOC changed keys: ['RCC.48MHZClocksFreq_Value', 'RCC.IPParameters', 'RCC.PLLQ', 'RCC.PLLQCLKFreq_Value']
+Clock tree, startup order and stage-specific source checks: PASS

@@ -1,0 +1,14 @@
+config load DMF407_FOC_HAL.ioc
+waitclock 2
+get ip parameters RCC PLLQ
+set ip parameters RCC PLLQ 7
+waitclock 2
+get ip parameters RCC PLLQ
+get ip parameters RCC PLLQCLKFreq_Value
+get ip parameters RCC 48MHZClocksFreq_Value
+get ip parameters RCC SYSCLKFreq_VALUE
+get ip parameters RCC APB1TimFreq_Value
+get ip parameters RCC APB2TimFreq_Value
+config save
+project generate
+exit

@@ -1,0 +1,8 @@
+fix(safety): default PF10 low and add disable-only BSP
+
+Regenerate PF10 RESET through CubeMX native CLI, retaining output mode,
+pulldown and speed. Add ForceDisable before existing BSP startup calls.
+
+Record D-20 and audit actual preprocessed sources and linked write paths.
+Full GNU Arm Debug rebuild passes; Legacy byte hashes are unchanged.
+R-03/SF-02 remain open and POWER-STAGE ENABLE remains BLOCKED.

@@ -1,0 +1,10 @@
+fix(clock): restore PLLQ 7 through CubeMX native regeneration
+
+Match the active Template222_A STM32F40_41xxx clock branch.
+CubeMX 6.12.0 load/recalculate/save/generate reads back Q=7 and 48 MHz.
+Generated Core/Src/main.c:170: RCC_OscInitStruct.PLL.PLLQ = 7;
+HSE/M/N/P, SYSCLK168 and APB1/APB2 timer84/168 remain unchanged.
+D-19 records the correction; clean GNU Arm Debug build passes with
+ELF/MAP/BIN/HEX, FLASH17620 B and existing warnings documented.
+Legacy byte hashes and other BSP/generated settings are unchanged.
+L4 needs hardware measurement; power-stage enable remains blocked.

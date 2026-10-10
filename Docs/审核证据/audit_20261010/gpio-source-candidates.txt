@@ -1,0 +1,29 @@
+Core\Src\gpio.c:55:  HAL_GPIO_WritePin(PM1_CTRL_SD_GPIO_Port, PM1_CTRL_SD_Pin, GPIO_PIN_RESET);
+Core\Src\gpio.c:58:  GPIO_InitStruct.Pin = PM1_CTRL_SD_Pin;
+Core\Src\gpio.c:62:  HAL_GPIO_Init(PM1_CTRL_SD_GPIO_Port, &GPIO_InitStruct);
+BSP\bsp_motor_enable.c:17:  HAL_GPIO_WritePin(PM1_CTRL_SD_GPIO_Port, PM1_CTRL_SD_Pin, GPIO_PIN_RESET);
+BSP\bsp_motor_enable.h:4:  * @brief   PF10 / PM1_CTRL_SD 软件禁能命令（D-20 安全例外）
+Core\Inc\main.h:60:#define PM1_CTRL_SD_Pin GPIO_PIN_10
+Core\Inc\main.h:61:#define PM1_CTRL_SD_GPIO_Port GPIOF
+Core\Inc\stm32f4xx_hal_conf.h:248:#define PHY_ISOLATE                     ((uint16_t)0x0400U)  /*!< Isolate PHY from MII                 */
+Core\Src\system_stm32f4xx.c:286:  /* Enable GPIOC, GPIOD, GPIOE, GPIOF, GPIOG, GPIOH and GPIOI interface clock */
+Core\Src\system_stm32f4xx.c:317:  GPIOF->AFR[0]  = 0xCCCCCCCC;
+Core\Src\system_stm32f4xx.c:318:  GPIOF->AFR[1]  = 0xCCCCCCCC;
+Core\Src\system_stm32f4xx.c:320:  GPIOF->MODER   = 0xAA800AAA;
+Core\Src\system_stm32f4xx.c:322:  GPIOF->OSPEEDR = 0xAA800AAA;
+Core\Src\system_stm32f4xx.c:324:  GPIOF->OTYPER  = 0x00000000;
+Core\Src\system_stm32f4xx.c:326:  GPIOF->PUPDR   = 0x00000000;
+Core\Src\system_stm32f4xx.c:455:  /* Enable GPIOA, GPIOC, GPIOD, GPIOE, GPIOF, GPIOG interface
+Core\Src\system_stm32f4xx.c:459:  /* Enable GPIOC, GPIOD, GPIOE, GPIOF, GPIOG, GPIOH and GPIOI interface 
+Core\Src\system_stm32f4xx.c:517:  GPIOF->AFR[0]  = 0xCCCCCCCC;
+Core\Src\system_stm32f4xx.c:518:  GPIOF->AFR[1]  = 0xCCCCCCCC;
+Core\Src\system_stm32f4xx.c:520:  GPIOF->MODER   = 0xAA800AAA;
+Core\Src\system_stm32f4xx.c:522:  GPIOF->OSPEEDR = 0xAA800AAA;
+Core\Src\system_stm32f4xx.c:524:  GPIOF->OTYPER  = 0x00000000;
+Core\Src\system_stm32f4xx.c:526:  GPIOF->PUPDR   = 0x00000000;
+Core\Src\system_stm32f4xx.c:678:  GPIOF->AFR[0]  = 0x00CCCCCC;
+Core\Src\system_stm32f4xx.c:679:  GPIOF->AFR[1]  = 0xCCCC0000;
+Core\Src\system_stm32f4xx.c:681:  GPIOF->MODER   = 0xAA000AAA;
+Core\Src\system_stm32f4xx.c:683:  GPIOF->OSPEEDR = 0xFF000FFF;
+Core\Src\system_stm32f4xx.c:685:  GPIOF->OTYPER  = 0x00000000;
+Core\Src\system_stm32f4xx.c:687:  GPIOF->PUPDR   = 0x00000000;

@@ -1,0 +1,254 @@
+4104:
+2026-10-10 16:08:52
+Full thread dump OpenJDK 64-Bit Server VM (17.0.11+9 mixed mode):
+
+Threads class SMR info:
+_java_thread_list=0x000001f2d5787ba0, length=25, elements={
+0x000001f2a0b3df90, 0x000001f2d0c75250, 0x000001f2d0c77e20, 0x000001f2d0ca57c0,
+0x000001f2d0ca6290, 0x000001f2d0ccb820, 0x000001f2d0ccc0f0, 0x000001f2d0ccdd00,
+0x000001f2d0cd6620, 0x000001f2d0cd9340, 0x000001f2d0e8a450, 0x000001f2d0ea42e0,
+0x000001f2d5787460, 0x000001f2d62449b0, 0x000001f2d7144fb0, 0x000001f2d7145ee0,
+0x000001f2dacce6a0, 0x000001f2d0e63370, 0x000001f2d7150c20, 0x000001f2d9b47c40,
+0x000001f2daccd770, 0x000001f2daccebb0, 0x000001f2d71b0040, 0x000001f2d72e6830,
+0x000001f2da3f1d90
+}
+
+"main" #1 prio=5 os_prio=0 cpu=2406.25ms elapsed=49.91s tid=0x000001f2a0b3df90 nid=0xbd38 runnable  [0x0000007fca1fd000]
+   java.lang.Thread.State: RUNNABLE
+	at java.lang.ClassLoader.defineClass1(java.base@17.0.11/Native Method)
+	at java.lang.ClassLoader.defineClass(java.base@17.0.11/ClassLoader.java:1017)
+	at java.security.SecureClassLoader.defineClass(java.base@17.0.11/SecureClassLoader.java:150)
+	at java.net.URLClassLoader.defineClass(java.base@17.0.11/URLClassLoader.java:524)
+	at java.net.URLClassLoader$1.run(java.base@17.0.11/URLClassLoader.java:427)
+	at java.net.URLClassLoader$1.run(java.base@17.0.11/URLClassLoader.java:421)
+	at java.security.AccessController.executePrivileged(java.base@17.0.11/AccessController.java:807)
+	at java.security.AccessController.doPrivileged(java.base@17.0.11/AccessController.java:712)
+	at java.net.URLClassLoader.findClass(java.base@17.0.11/URLClassLoader.java:420)
+	at java.lang.ClassLoader.loadClass(java.base@17.0.11/ClassLoader.java:592)
+	- locked <0x0000000614f88290> (a java.lang.Object)
+	at java.lang.ClassLoader.loadClass(java.base@17.0.11/ClassLoader.java:525)
+	at com.st.microxplorer.plugins.pinoutandconfiguration.PinoutAndConfigurationView.propertyChange(PinoutAndConfigurationView.java:1003)
+	at java.beans.PropertyChangeSupport.fire(java.desktop@17.0.11/PropertyChangeSupport.java:343)
+	at java.beans.PropertyChangeSupport.firePropertyChange(java.desktop@17.0.11/PropertyChangeSupport.java:335)
+	at java.beans.PropertyChangeSupport.firePropertyChange(java.desktop@17.0.11/PropertyChangeSupport.java:268)
+	at java.awt.Component.firePropertyChange(java.desktop@17.0.11/Component.java:8722)
+	at java.awt.Component.setMinimumSize(java.desktop@17.0.11/Component.java:2762)
+	at javax.swing.JComponent.setMinimumSize(java.desktop@17.0.11/JComponent.java:1785)
+	at com.st.microxplorer.plugins.pinoutandconfiguration.PinoutAndConfigurationView.createPinoutAndSystemViews(PinoutAndConfigurationView.java:595)
+	at com.st.microxplorer.plugins.pinoutandconfiguration.PinoutAndConfigurationView.getUI(PinoutAndConfigurationView.java:303)
+	at com.st.microxplorer.plugin.PluginManage.PluginDiscovery(PluginManage.java:103)
+	at com.st.microxplorer.maingui.MainPanel.initialization(MainPanel.java:321)
+	at com.st.microxplorer.maingui.MainFrame.initialization(MainFrame.java:184)
+	at com.st.microxplorer.maingui.MicroXplorer.run(MicroXplorer.java:299)
+	at com.st.microxplorer.maingui.STM32CubeMX.run(STM32CubeMX.java:35)
+	at com.st.microxplorer.maingui.STM32CubeMX.main(STM32CubeMX.java:69)
+
+"Reference Handler" #2 daemon prio=10 os_prio=2 cpu=0.00ms elapsed=49.89s tid=0x000001f2d0c75250 nid=0xcac4 waiting on condition  [0x0000007fca8ff000]
+   java.lang.Thread.State: RUNNABLE
+	at java.lang.ref.Reference.waitForReferencePendingList(java.base@17.0.11/Native Method)
+	at java.lang.ref.Reference.processPendingReferences(java.base@17.0.11/Reference.java:253)
+	at java.lang.ref.Reference$ReferenceHandler.run(java.base@17.0.11/Reference.java:215)
+
+"Finalizer" #3 daemon prio=8 os_prio=1 cpu=0.00ms elapsed=49.89s tid=0x000001f2d0c77e20 nid=0x5720 in Object.wait()  [0x0000007fca9ff000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@17.0.11/Native Method)
+	- waiting on <0x0000000606c432d8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@17.0.11/ReferenceQueue.java:155)
+	- locked <0x0000000606c432d8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@17.0.11/ReferenceQueue.java:176)
+	at java.lang.ref.Finalizer$FinalizerThread.run(java.base@17.0.11/Finalizer.java:172)
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=2 cpu=0.00ms elapsed=49.88s tid=0x000001f2d0ca57c0 nid=0x76d4 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Attach Listener" #5 daemon prio=5 os_prio=2 cpu=0.00ms elapsed=49.88s tid=0x000001f2d0ca6290 nid=0xc83c waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Service Thread" #6 daemon prio=9 os_prio=0 cpu=0.00ms elapsed=49.88s tid=0x000001f2d0ccb820 nid=0x1658 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Monitor Deflation Thread" #7 daemon prio=9 os_prio=0 cpu=15.62ms elapsed=49.88s tid=0x000001f2d0ccc0f0 nid=0x89c0 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread0" #8 daemon prio=9 os_prio=2 cpu=687.50ms elapsed=49.88s tid=0x000001f2d0ccdd00 nid=0x7a94 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   Compiling: 4861   !   4       java.util.concurrent.ConcurrentHashMap::putVal (432 bytes)
+
+"C1 CompilerThread0" #16 daemon prio=9 os_prio=2 cpu=265.62ms elapsed=49.88s tid=0x000001f2d0cd6620 nid=0x8da8 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   Compiling: 4897   !   3       org.apache.xerces.impl.XMLScanner::scanCharReferenceValue (716 bytes)
+
+"Sweeper thread" #20 daemon prio=9 os_prio=2 cpu=0.00ms elapsed=49.88s tid=0x000001f2d0cd9340 nid=0xa6a4 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Notification Thread" #21 daemon prio=9 os_prio=0 cpu=0.00ms elapsed=49.87s tid=0x000001f2d0e8a450 nid=0x9b24 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Common-Cleaner" #22 daemon prio=8 os_prio=1 cpu=0.00ms elapsed=49.87s tid=0x000001f2d0ea42e0 nid=0xa4b0 in Object.wait()  [0x0000007fcb5fe000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@17.0.11/Native Method)
+	- waiting on <0x0000000606c44048> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@17.0.11/ReferenceQueue.java:155)
+	- locked <0x0000000606c44048> (a java.lang.ref.ReferenceQueue$Lock)
+	at jdk.internal.ref.CleanerImpl.run(java.base@17.0.11/CleanerImpl.java:140)
+	at java.lang.Thread.run(java.base@17.0.11/Thread.java:840)
+	at jdk.internal.misc.InnocuousThread.run(java.base@17.0.11/InnocuousThread.java:162)
+
+"Java2D Disposer" #25 daemon prio=10 os_prio=2 cpu=0.00ms elapsed=49.30s tid=0x000001f2d5787460 nid=0xb364 in Object.wait()  [0x0000007fccaff000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@17.0.11/Native Method)
+	- waiting on <0x000000060604d6f0> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@17.0.11/ReferenceQueue.java:155)
+	- locked <0x000000060604d6f0> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@17.0.11/ReferenceQueue.java:176)
+	at sun.java2d.Disposer.run(java.desktop@17.0.11/Disposer.java:145)
+	at java.lang.Thread.run(java.base@17.0.11/Thread.java:840)
+
+"AWT-Windows" #27 daemon prio=6 os_prio=0 cpu=0.00ms elapsed=49.30s tid=0x000001f2d62449b0 nid=0xc054 runnable  [0x0000007fcccff000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.awt.windows.WToolkit.eventLoop(java.desktop@17.0.11/Native Method)
+	at sun.awt.windows.WToolkit.run(java.desktop@17.0.11/WToolkit.java:365)
+	at java.lang.Thread.run(java.base@17.0.11/Thread.java:840)
+
+"Thread-0" #31 prio=5 os_prio=0 cpu=0.00ms elapsed=48.73s tid=0x000001f2d7144fb0 nid=0x9a0c waiting on condition  [0x0000007fcd2ff000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(java.base@17.0.11/Native Method)
+	at com.st.microxplorer.plugins.analytics.AnalyticsPlugin.getUpdaterPlugin(AnalyticsPlugin.java:906)
+	at com.st.microxplorer.plugins.analytics.AnalyticsPlugin$1.run(AnalyticsPlugin.java:790)
+	at java.lang.Thread.run(java.base@17.0.11/Thread.java:840)
+
+"TimerQueue" #34 daemon prio=5 os_prio=0 cpu=0.00ms elapsed=48.07s tid=0x000001f2d7145ee0 nid=0x610c waiting on condition  [0x0000007fcd5ff000]
+   java.lang.Thread.State: WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@17.0.11/Native Method)
+	- parking to wait for  <0x0000000624920748> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(java.base@17.0.11/LockSupport.java:341)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(java.base@17.0.11/AbstractQueuedSynchronizer.java:506)
+	at java.util.concurrent.ForkJoinPool.unmanagedBlock(java.base@17.0.11/ForkJoinPool.java:3465)
+	at java.util.concurrent.ForkJoinPool.managedBlock(java.base@17.0.11/ForkJoinPool.java:3436)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(java.base@17.0.11/AbstractQueuedSynchronizer.java:1625)
+	at java.util.concurrent.DelayQueue.take(java.base@17.0.11/DelayQueue.java:217)
+	at javax.swing.TimerQueue.run(java.desktop@17.0.11/TimerQueue.java:172)
+	at java.lang.Thread.run(java.base@17.0.11/Thread.java:840)
+
+"updater-check-server-update" #36 prio=5 os_prio=0 cpu=15.62ms elapsed=0.04s tid=0x000001f2dacce6a0 nid=0x9ee8 runnable  [0x0000007fcb1fd000]
+   java.lang.Thread.State: RUNNABLE
+	at java.lang.Character.digit(java.base@17.0.11/Character.java:10661)
+	at java.lang.Character.digit(java.base@17.0.11/Character.java:10609)
+	at java.lang.Integer.parseInt(java.base@17.0.11/Integer.java:666)
+	at org.apache.xerces.impl.XMLScanner.scanCharReferenceValue(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.scanAttributeValue(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanAttribute(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanStartElement(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at javax.xml.parsers.DocumentBuilder.parse(java.xml@17.0.11/DocumentBuilder.java:178)
+	at com.st.microxplorer.plugins.updater.util.AbstractXmlFileManage.openXml(AbstractXmlFileManage.java:138)
+	at com.st.microxplorer.plugins.updater.xml.UpdaterFile.readFile(UpdaterFile.java:121)
+	at com.st.microxplorer.plugins.updater.engine.CheckServerUpdateThread.readUpdaterFiles(CheckServerUpdateThread.java:212)
+	at com.st.microxplorer.plugins.updater.engine.CheckServerUpdateThread.reloadAndCheck(CheckServerUpdateThread.java:139)
+	at com.st.microxplorer.plugins.updater.engine.CheckServerUpdateThread.run(CheckServerUpdateThread.java:100)
+
+"C2 CompilerThread1" #9 daemon prio=9 os_prio=2 cpu=31.25ms elapsed=0.03s tid=0x000001f2d0e63370 nid=0x584c runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   Compiling: 4862       4       org.apache.xerces.parsers.AbstractDOMParser::startElement (876 bytes)
+
+"C2 CompilerThread2" #10 daemon prio=9 os_prio=2 cpu=15.62ms elapsed=0.03s tid=0x000001f2d7150c20 nid=0x8e34 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   Compiling: 4866       4       org.apache.xerces.impl.XMLDocumentFragmentScannerImpl::scanStartElement (316 bytes)
+
+"C1 CompilerThread1" #17 daemon prio=9 os_prio=2 cpu=15.62ms elapsed=0.03s tid=0x000001f2d9b47c40 nid=0xab20 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   Compiling: 4907       3       java.awt.image.DataBuffer::<init> (40 bytes)
+
+"AWT-Shutdown" #38 prio=5 os_prio=0 cpu=0.00ms elapsed=0.02s tid=0x000001f2daccd770 nid=0x9fc in Object.wait()  [0x0000007fcc3ff000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@17.0.11/Native Method)
+	- waiting on <0x000000060604d930> (a java.lang.Object)
+	at sun.awt.AWTAutoShutdown.run(java.desktop@17.0.11/AWTAutoShutdown.java:310)
+	- locked <0x000000060604d930> (a java.lang.Object)
+	at java.lang.Thread.run(java.base@17.0.11/Thread.java:840)
+
+"AWT-EventQueue-0" #37 prio=6 os_prio=0 cpu=0.00ms elapsed=0.02s tid=0x000001f2daccebb0 nid=0x3788 waiting on condition  [0x0000007fcc4ff000]
+   java.lang.Thread.State: WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@17.0.11/Native Method)
+	- parking to wait for  <0x0000000606052008> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(java.base@17.0.11/LockSupport.java:341)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(java.base@17.0.11/AbstractQueuedSynchronizer.java:506)
+	at java.util.concurrent.ForkJoinPool.unmanagedBlock(java.base@17.0.11/ForkJoinPool.java:3465)
+	at java.util.concurrent.ForkJoinPool.managedBlock(java.base@17.0.11/ForkJoinPool.java:3436)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(java.base@17.0.11/AbstractQueuedSynchronizer.java:1625)
+	at java.awt.EventQueue.getNextEvent(java.desktop@17.0.11/EventQueue.java:565)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(java.desktop@17.0.11/EventDispatchThread.java:190)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(java.desktop@17.0.11/EventDispatchThread.java:124)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(java.desktop@17.0.11/EventDispatchThread.java:113)
+	at java.awt.EventDispatchThread.pumpEvents(java.desktop@17.0.11/EventDispatchThread.java:109)
+	at java.awt.EventDispatchThread.pumpEvents(java.desktop@17.0.11/EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.run(java.desktop@17.0.11/EventDispatchThread.java:90)
+
+"C2 CompilerThread3" #11 daemon prio=9 os_prio=2 cpu=0.00ms elapsed=0.02s tid=0x000001f2d71b0040 nid=0x9da8 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   Compiling: 4893       4       org.apache.xerces.impl.io.Latin1Reader::read (67 bytes)
+
+"C2 CompilerThread4" #12 daemon prio=9 os_prio=2 cpu=0.00ms elapsed=0.02s tid=0x000001f2d72e6830 nid=0xcecc runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   Compiling: 4900       4       java.lang.Integer::parseInt (264 bytes)
+
+"C2 CompilerThread5" #13 daemon prio=9 os_prio=2 cpu=15.62ms elapsed=0.02s tid=0x000001f2da3f1d90 nid=0xa830 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   Compiling: 4904       4       org.apache.xerces.impl.XMLEntityScanner::scanLiteral (758 bytes)
+
+"VM Thread" os_prio=2 cpu=15.62ms elapsed=49.89s tid=0x000001f2d0c515d0 nid=0xbca4 runnable  
+
+"GC Thread#0" os_prio=2 cpu=0.00ms elapsed=49.90s tid=0x000001f2cd951960 nid=0xbea4 runnable  
+
+"GC Thread#1" os_prio=2 cpu=0.00ms elapsed=49.49s tid=0x000001f2d5c50050 nid=0x6854 runnable  
+
+"GC Thread#2" os_prio=2 cpu=0.00ms elapsed=49.49s tid=0x000001f2d5573c70 nid=0x12f4 runnable  
+
+"GC Thread#3" os_prio=2 cpu=0.00ms elapsed=49.49s tid=0x000001f2d5573f30 nid=0x26ac runnable  
+
+"GC Thread#4" os_prio=2 cpu=0.00ms elapsed=49.49s tid=0x000001f2d5bdc0f0 nid=0x51e4 runnable  
+
+"GC Thread#5" os_prio=2 cpu=0.00ms elapsed=49.49s tid=0x000001f2d5bdc3b0 nid=0x1388 runnable  
+
+"GC Thread#6" os_prio=2 cpu=0.00ms elapsed=49.49s tid=0x000001f2d5bdc670 nid=0x9114 runnable  
+
+"GC Thread#7" os_prio=2 cpu=0.00ms elapsed=49.49s tid=0x000001f2d5bdc930 nid=0x668c runnable  
+
+"GC Thread#8" os_prio=2 cpu=0.00ms elapsed=49.49s tid=0x000001f2d5bdcbf0 nid=0x125c runnable  
+
+"GC Thread#9" os_prio=2 cpu=0.00ms elapsed=49.49s tid=0x000001f2d5bdceb0 nid=0xbe08 runnable  
+
+"GC Thread#10" os_prio=2 cpu=0.00ms elapsed=49.49s tid=0x000001f2d5bdd170 nid=0x8a20 runnable  
+
+"GC Thread#11" os_prio=2 cpu=0.00ms elapsed=49.49s tid=0x000001f2d5bdd430 nid=0xa574 runnable  
+
+"GC Thread#12" os_prio=2 cpu=0.00ms elapsed=48.87s tid=0x000001f2d6157060 nid=0x59fc runnable  
+
+"GC Thread#13" os_prio=2 cpu=0.00ms elapsed=48.87s tid=0x000001f2d61575e0 nid=0xc344 runnable  
+
+"GC Thread#14" os_prio=2 cpu=0.00ms elapsed=48.87s tid=0x000001f2d6158be0 nid=0x7298 runnable  
+
+"G1 Main Marker" os_prio=2 cpu=15.62ms elapsed=49.90s tid=0x000001f2cd9624d0 nid=0x82bc runnable  
+
+"G1 Conc#0" os_prio=2 cpu=31.25ms elapsed=49.90s tid=0x000001f2cd962ef0 nid=0x78e0 runnable  
+
+"G1 Conc#1" os_prio=2 cpu=15.62ms elapsed=49.33s tid=0x000001f2d6abed10 nid=0x36bc runnable  
+
+"G1 Conc#2" os_prio=2 cpu=31.25ms elapsed=49.33s tid=0x000001f2d64bb450 nid=0xb50 runnable  
+
+"G1 Conc#3" os_prio=2 cpu=31.25ms elapsed=49.33s tid=0x000001f2d6158660 nid=0x6f4c runnable  
+
+"G1 Refine#0" os_prio=2 cpu=0.00ms elapsed=49.90s tid=0x000001f2cda9b150 nid=0xa124 runnable  
+
+"G1 Service" os_prio=2 cpu=15.62ms elapsed=49.90s tid=0x000001f2cda9ba20 nid=0x28ac runnable  
+
+"VM Periodic Task Thread" os_prio=2 cpu=0.00ms elapsed=49.87s tid=0x000001f2d0e9c010 nid=0xbf28 waiting on condition  
+
+JNI global refs: 116, weak refs: 449
+

@@ -1,0 +1,11 @@
+5ba7b11 docs: 新增交接记录（截至 bsp_timer 完成）
+fc320f7 docs: 裁决 TIM2/TIM4 启动 UIF 策略 —— 维持不清（等价优先）
+2040caa docs: 记录外部分支 bsp_timer 补丁审核结果（不套用）
+12b9d9e feat(bsp): 新增 bsp_timer，封装 TIM2/TIM4 并接管 Update 中断分发
+dee4048 docs: 勘误 R-01 —— 编码器竞争是 Legacy/HAL 均存在的边界风险
+6af4938 docs: 建立 V1 复现验收框架，并把七条迁移规则写入任务书
+b9731af docs: 日志补充 Git 推送代理用法
+2290461 feat(bsp): 新增 bsp_encoder，并按 Legacy 修正 TIM3 中断行为
+9e50b4c feat(bsp): 新增 bsp_adc，按 Legacy 语义封装三路 ADC 读取
+6797fe2 docs: 日志同步 GitHub 远端仓库信息
+ac7f29b 课设基线：Keil+SPL 迁移到 CubeMX+HAL+CMake

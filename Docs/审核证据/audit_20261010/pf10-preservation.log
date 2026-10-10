@@ -1,0 +1,5 @@
+Changed existing files (excluding line-ending-only changes): ['CMakeLists.txt', 'DMF407_FOC_HAL.ioc', 'Docs/DMF407_HAL_����ʱ�����ù淶.md', 'Docs/V1_Legacy_Mapping.md', 'Docs/V1_�������տ��.md', 'Docs/V2_Ӳ����ȫ�����嵥.md', 'Docs/������־_2026-10-10.md', 'Core/Src/gpio.c', 'Core/Src/main.c']
+Legacy byte hashes unchanged: 240 files
+Existing .clangd and .settings files unchanged
+IOC changed keys: ['PF10.PinState', 'RCC.48MHZClocksFreq_Value', 'RCC.IPParameters', 'RCC.PLLQ', 'RCC.PLLQCLKFreq_Value']
+Clock tree, startup order and stage-specific source checks: PASS

@@ -1,0 +1,1096 @@
+PDF page 2
+Contents UM1718
+2/522 UM1718 Rev 45
+Contents
+1 STM32Cube overview . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+2 Getting started with STM32CubeMX   . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+2.1 Principles  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+2.2 Key features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+2.3 Rules and limitations  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29
+3 Installing and running STM32Cube MX  . . . . . . . . . . . . . . . . . . . . . . . . . 30
+3.1 System requirements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30
+3.1.1 Supported operating systems and architec tures . . . . . . . . . . . . . . . . . . 30
+3.1.2 Memory prerequisites  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 31
+3.1.3 Software requirements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 31
+3.2 Installing/uninstalling STM32CubeMX standalone version  . . . . . . . . . . . 32
+3.2.1 Installing STM32Cu beMX standalone version . . . . . . . . . . . . . . . . . . . . 32
+3.2.2 Installing STM32CubeMX fr om command line  . . . . . . . . . . . . . . . . . . . 40
+3.2.3 Uninstalling STM32CubeMX standalone version  . . . . . . . . . . . . . . . . . 41
+3.3 Launching STM32CubeMX  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 43
+3.3.1 Running STM32CubeMX as a standalone application  . . . . . . . . . . . . . 43
+3.3.2 Running STM32CubeMX in command-line mode . . . . . . . . . . . . . . . . . 43
+3.4 Getting updates using STM32CubeMX  . . . . . . . . . . . . . . . . . . . . . . . . . . 47
+3.4.1 Running STM32CubeMX behind a proxy serv er . . . . . . . . . . . . . . . . . . 48
+3.4.2 Updater configuration  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 49
+3.4.3 Installing STM32 MCU packages  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 52
+3.4.4 Installing STM32 MCU package  patches . . . . . . . . . . . . . . . . . . . . . . . . 53
+3.4.5 Installing embedded software packs  . . . . . . . . . . . . . . . . . . . . . . . . . . . 53
+3.4.6 Removing already installed embedded software packages . . . . . . . . . . 58
+3.4.7 Checking for updates . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 60
+4 STM32CubeMX user interface  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 62
+4.1 Home page . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 63
+4.1.1 File menu . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 64
+4.1.2 Window menu and Outputs tabs  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 65
+4.1.3 Help menu . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 67
+4.1.4 Social links . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 67
+
+PDF page 5
+UM1718 Rev 45 5/522
+UM1718 Contents
+10
+4.16 LPBAM Scenario & Configuration view  . . . . . . . . . . . . . . . . . . . . . . . . . 202
+4.17 CAD Resources view section . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 203
+4.18 Boot path  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 207
+4.18.1 Available boot paths  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 207
+4.18.2 Creating a boot path project: an example  . . . . . . . . . . . . . . . . . . . . . . 212
+4.18.3 How to configure an OEM-iRoT boot path . . . . . . . . . . . . . . . . . . . . . . 212
+4.18.4 How to configure an ST-iRoT boot path . . . . . . . . . . . . . . . . . . . . . . . . 226
+4.18.5 How to configure an ST-iRoT wit h a secure manager NS application 
+boot path  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 232
+4.18.6 How to configure an assembled boot path  . . . . . . . . . . . . . . . . . . . . . 239
+4.18.7 How to configure OEM-uRoT (STiRot uROT) boot path  . . . . . . . . . . . 244
+4.18.8 How to configure ST-iRoT boot path with STM32H7RS devices . . . . . 249
+4.19 User authentication  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 253
+4.19.1 Login with an existing my.st.com account  . . . . . . . . . . . . . . . . . . . . . . 253
+4.19.2 Create a my.st.com account  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 256
+4.19.3 Forgot password?  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 257
+4.19.4 Authentication through command line inte rface . . . . . . . . . . . . . . . . . . 259
+4.20 About window . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 260
+5 STM32CubeMX tools . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 261
+5.1 External Tools . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 261
+5.2 Power Consumption Calculator view  . . . . . . . . . . . . . . . . . . . . . . . . . . . 262
+5.2.1 Building a power consumption sequence  . . . . . . . . . . . . . . . . . . . . . . 263
+5.2.2 Configuring a step in the power sequence  . . . . . . . . . . . . . . . . . . . . . 267
+5.2.3 Managing user-defined power sequence and reviewing results  . . . . . 270
+5.2.4 Power sequence step parameters glossary . . . . . . . . . . . . . . . . . . . . . 273
+5.2.5 Battery glossary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 275
+5.2.6 SMPS feature  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 275
+5.2.7 Bluetooth Low-Energy
+®/ZigBee® support (STM32WB series only) . . . 281
+5.2.8 Sub-GHz support (STM32WL series only) . . . . . . . . . . . . . . . . . . . . . . 283
+5.2.9 Example feature (STM32MPUs and STM32H7 dual-core only)  . . . . . 283
+5.3 DDR Suite (STM32MPUs only)  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 285
+5.3.1 DDR configuration . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 286
+5.3.2 Connection to the target and DDR regist er loading . . . . . . . . . . . . . . . 288
+5.3.3 DDR testing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 290
+5.4 STM32CubeMX Memory Management Tool  . . . . . . . . . . . . . . . . . . . . . 292
+
+PDF page 11
+UM1718 Rev 45 11/522
+UM1718 List of tables
+11
+List of tables
+Table 1. Command line summary. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  . 44
+Table 2. Home page shortcuts . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  . . . 64
+Table 3. Window menu . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 65
+Table 4. Help menu shortcuts. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 67
+Table 5. Component list, mode icons and color schemes  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 86
+Table 6. Pinout menu and shortcuts . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 89
+Table 7. Configuration states . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 96
+Table 8. Peripheral and Middleware configuration window buttons and tooltips  . . . . . . . . . . . . . . . 99
+Table 9. Clock configuration view widgets . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 170
+Table 10. Clock Configuration security settings . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 171
+Table 11. Voltage scaling versus power overdrive and HCL K frequency. . . . . . . . . . . . . . . . . . . . . 175
+Table 12. Relations between power over-drive and HCLK fr equency  . . . . . . . . . . . . . . . . . . . . . . . 175
+Table 13. Glossary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  . . . . . . . 175
+Table 14. Additional software window - Filt er icons . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19 6
+Table 15. Additional Software window – Packs panel columns . . . . . . . . . . . . . . . . . . . . . . . . . . . . 197
+Table 16. Additional Software window – Pa cks panel icons. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 197
+Table 17. Component dependencies panel contextual help. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 200
+Table 18. Boot paths without TrustZone
+® (TZEN = 0) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 207
+Table 19. Boot paths with TrustZone ® (TZEN = 1). . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 208
+Table 20. Boot paths for STM32H7RS devices  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 208
+Table 21. LL versus HAL code generation: drivers included in STM32CubeMX projects  . . . . . . . . 334
+Table 22. LL versus HAL code generation: STM32CubeMX generated header files . . . . . . . . . . . . 334
+Table 23. LL versus HAL: STM32CubeMX generated source f iles  . . . . . . . . . . . . . . . . . . . . . . . . . 335
+Table 24. LL versus HAL: STM32CubeMX generated functions and function calls . . . . . . . . . . . . . 335
+Table 25. Files generated when TrustZone
+® is enabled. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 350
+Table 26. Connection with hardware resources . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 432
+Table 27. Document revision history  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 498
+
+PDF page 24
+STM32Cube overview UM1718
+24/522 UM1718 Rev 45
+1 STM32Cube overview
+STM32Cube is an STMicroelectronics original initiative to improve designer productivity 
+significantly by reducing development effort, time, and cost. STM32Cube covers the whole 
+portfolio of STM32 devices, based on 32-bit Arm®(a) Cortex® cores.
+STM32Cube includes:
+• A set of user-friendly software development tools to cover project development from 
+conception to realization, among which are:
+– STM32CubeMX, a graphical software configuration tool that allows the automatic 
+generation of C initialization code using graphical wizards
+– STM32CubeIDE, an all-in-one development tool with peripheral configuration, 
+code generation, code compilation, and debug features
+– STM32CubeCLT, an all-in-one command-line development toolset with code 
+compilation, board programming, and debug features
+– STM32CubeProgrammer (STM32CubeProg), a programming tool available in 
+graphical and command-line versions
+– STM32CubeMonitor (STM32CubeMonitor, STM32CubeMonPwr, 
+STM32CubeMonRF, STM32CubeMonUCPD), powerful monitoring tools to  
+fine-tune the behavior and performance of STM32 applications in real time
+• STM32Cube MCU and MPU Packages, comprehensive embedded-software platforms 
+specific to each microcontroller and microprocessor series (such as STM32CubeH5 for 
+the STM32H5 series), which include:
+– STM32Cube hardware abstr action layer (HAL), ensuring maximized portability 
+across the STM32 portfolio
+– STM32Cube low-layer APIs, ensuring the best performance and footprints with a 
+high degree of user control over hardware
+– A consistent set of middleware components, such as ThreadX, FileX / LevelX, 
+NetX Duo, USBX, USB-PD, mbed-crypto, secure manager API, MCUboot, and 
+OpenBL
+– All embedded software utilities with fu ll sets of peripheral and applicative 
+examples
+• STM32Cube Expansion Packages, which contain embedded software components 
+that complement the functionalities of the STM32Cube MCU and MPU Packages with:
+– Middleware extensions and applicative layers
+– Examples running on some specific STMicroelectronics development boards
+a. Arm is a registered trademark of Arm Limited (o r its subsidiaries) in the US and/or elsewhere.
+
+PDF page 40
+Installing and running STM32CubeMX UM1718
+40/522 UM1718 Rev 45
+In case of error, try to fix it: - $sudo xattr -cr <Folder where the zip was extracted>
+3.2.2 Installing STM32CubeMX from command line
+There are two ways to launch an installation from a console window: either in console 
+interactive mode or via a script.
+Interactive mode
+To perform interactive installation, proceed as follows:
+1. Extract (unzip) to folder the auto-extra ct installation file (SetupSTM32CubeMX-
+VERSION-Win.exe)
+2. Open a standard console window to install for the current user, or the console window 
+with administrator rights to install for all users
+3. Go to the extracted folder (cd <folder path>)
+4. Run the command jre\bin\java -jar  SetupSTM32CubeMX-<VERSION>.exe -
+console
+At each installation step, an answer is requested (see Figure 15).
+Figure 15. Example of installation in interactive mode
+Note: During the in stallation, ignore the warnings.
+
+
+PDF page 41
+UM1718 Rev 45 41/522
+UM1718 Installing and running STM32CubeMX
+521
+Auto-install mode
+At end of an installation, performed either using STM32CubeMX graphical wizard or console 
+mode, it is possible to generate an auto-installation script containing user preferences (see 
+Figure 16).
+Figure 16. STM32Cube installation wizard
+You can then launch the installation by typing, from a console window (with or without 
+administrator rights, according to your needs), the command:
+SetupSTM32CubeMX-VERSION-Win.exe ABSOLUTE_PATH_TO_AUTO_INSTALL.xml
+3.2.3 Uninstalling STM32C ubeMX standalone version
+Uninstalling STM32CubeMX on macOS®
+• Move STM32CubeMX.VERSION.app to the trash
+• Use the following command line:
+– For STM32CubeMX 6.2.x and later versions:
+cd SetupSTM32CubeMX-VERSION.app/Contents/Resources/Uninstaller
+./uninstall.sh
+– For STM32CubeMX 6.1.x and older versions:
+java -jar SetupSTM32CubeMX-
+VERSION.app/Contents/Resources/Uninstaller/uninstaller.jar.
+
+
+PDF page 43
+UM1718 Rev 45 43/522
+UM1718 Installing and running STM32CubeMX
+521
+3.3 Launching STM32CubeMX
+When running STM32CubeMX behind a proxy, see Section 3.4.1.
+3.3.1 Running STM32CubeMX as  a standalone application
+To run STM32CubeMX as a standalone application on Windows, select STM32CubeMX 
+from Program Files > ST Microelectronics > STM32CubeMX,or double-click 
+STM32CubeMX icon on your desktop.
+To run STM32CubeMX as a standalone application on Linux, launch the STM32CubeMX 
+executable from STM32CubeMX installation directory.
+To run STM32CubeMX as a standalone application on macOS, launch the STM32CubeMX 
+application from the launchpad.
+Note: There is no STM32CubeMX desktop icon on macOS.
+3.3.2 Running STM32CubeMX  in command-line mode
+To facilitate its integration with other tools, STM32CubeMX provides command-line modes. 
+Thanks to the commands listed in Table 1 it is possible to:
+• load an MCU
+• load an existing configuration
+• save a current configuration
+• set project parameters and generate corresponding code
+• generate user code from templates
+• load a board identified through its part number
+• refresh the list of embedded software packages (packs and STM32Cube MCU 
+packages) and install/remove a package
+• select additional software (packs) components to add to the project.
+Three command-line modes are available:
+• To run STM32CubeMX in interactive command-line mode, use the following command 
+lines:
+– On Windows:
+cd <STM32CubeMX installation path>
+jre\bin\java -jar STM32CubeMX.exe -i
+– On Linux:
+cd <STM32CubeMX installation path>
+./STM32CubeMX –i
+–O n  m a c O S :
+cd <STM32CubeMX installation path> cd Contents/MacOs
+./STM32CubeMX –i
+The “MX>” prompt is displayed, to indicate that the application is ready to accept 
+commands.
+• To run STM32CubeMX in command-line mode, getting commands from a script, use 
+the following command lines:
+– On Windows:
+
+PDF page 44
+Installing and running STM32CubeMX UM1718
+44/522 UM1718 Rev 45
+cd <STM32CubeMX installation path>
+jre\bin\java -jar STM32CubeMX.exe –s <script filename>
+– On Linux and macOS:
+./STM32CubeMX –s <script filename>
+All the commands to be executed must be listed in the script file. An example of script 
+file content is shown below:
+load STM32F417VETx 
+project name MyFirstMXGeneratedProject 
+project toolchain "MDK-ARM v4"
+project path C:\STM32CubeProjects\STM32F417VETx
+project generate
+exit
+• To run STM32CubeMX in command-line mode getting commands from a script and 
+without UI, use the following command lines:
+– On Windows:
+cd <STM32CubeMX installation path>
+jre\bin\java -jar STM32CubeMX.exe –q <script filename>
+– On Linux and macOS:
+./STM32CubeMX –q <script filename>
+Here again, the user can enter commands when the MX prompt is displayed.
+          
+Table 1. Command line summary 
+Command line Purpose Example
+help Displays the list of available commands. help
+swmgr refresh Refreshes the list of embedded software 
+package versions available for download. swmgr refresh
+swmgr install 
+stm32cube_<series>
+_<version> ask
+Installs the specified STM32Cube MCU 
+package version.(1) swmgr install stm32cube_f1_1.8.0 ask
+swmgr remove 
+stm32cube_<series>
+_<version>
+Removes the specified STM32Cube 
+MCU package version. swmgr remove stm32cube_f1_1.8.0
+swmgr install 
+<packVendor>.<packName>.
+<packVersion> ask
+Installs the specified pack version. swmgr install STMicroelectronics. 
+X-CUBE-NFC4.1.4.1 ask
+swmgr remove 
+<packVendor>.<packName>.
+<packVersion> 
+Removes the specified pack version. swmgr remove STMicroelectronics. 
+X-CUBE-BLE1.4.2.0
+
+PDF page 45
+UM1718 Rev 45 45/522
+UM1718 Installing and running STM32CubeMX
+521
+pack enable <vendor> 
+<pack>[/bundle] <version> 
+<class> <group>[/subgroup] 
+[variant]
+Selects a software pack component to 
+add in the project.
+The presence of “/” in the second and/or 
+the fifth parameter(s) indicates, 
+respectively, the explicit mention of a 
+bundle and/or a subgroup (reference: 
+Arm CMSIS pack pdsc format).
+To find out the pack / bundle / class / 
+group / subgroup names of the 
+component to enable, select the 
+component and click “Hide/Show details” 
+from the Additional Software window.
+pack enable STMicroelectronics  
+“X-CUBE-BLE1/BlueNRG-MS” 1.0.0 
+"Wireless" "Controller"
+pack validate
+Applies in the project all pack 
+components enabled since the “pack 
+validate” command was last called.
+pack validate
+load <mcu> Loads the selected MCU. load STM32F101RCTx
+load STM32F101Z(F-G)Tx
+load <board part number> 
+<allmodes|nomode>
+Loads the selected board with all 
+peripherals configured in their default 
+mode (allmodes) or without any 
+configuration (nomode).
+loadboard NUCLEO-F030R8 allmodes
+loadboard NUCLEO-F030R8 nomode
+config load <filename> Loads a previously saved configuration. config load 
+“C:\Cube\ccmram\ccmram.ioc”
+config save <filename> Saves the current configuration. config save 
+“C:\Cube\ccmram\ccmram.ioc”
+config saveext <filename>
+Saves the current configuration with all 
+parameters, including those for which 
+values have been kept to default.
+config saveext 
+“C:\Cube\ccmram\ccmram.ioc”
+config saveas <filename> Saves the current project under a new 
+name.
+config saveas 
+“C:\Cube\ccmram2\ccmram2.ioc”
+csv pinout <filename>
+Exports the current pin configuration as a 
+csv file. This file can be (later) imported 
+into a board layout tool.
+Csv pinout mypinout.csv
+script <filename> Runs all commands in the script file. 
+There must be one command per line.
+script myscript.txt
+project couplefilesbyip <0|1>
+This option allows the user to choose 
+between 0 (to generate the peripheral 
+initializations in the main) and 1 (to 
+generate each peripheral initialization in 
+dedicated .c/.h files).
+project couplefilesbyip 1
+setDriver <Peripheral Name> 
+<HAL | LL>
+For the supported series, STM32CubeMX 
+can generate peripheral initialization code 
+based on LL or on HAL drivers. This 
+command line allows the user to choose, 
+for each peripheral, between HAL- and 
+LL-based code generation. By default 
+code generation is based on HAL drivers.
+setDriver ADC LL
+setDriver I2C HAL
+Table 1. Command line summary (continued)
+Command line Purpose Example
+
+PDF page 46
+Installing and running STM32CubeMX UM1718
+46/522 UM1718 Rev 45
+generate code <path>
+Generates only “STM32CubeMX 
+generated” code and not a complete 
+project (including STM32Cube firmware 
+libraries and toolchains project files). 
+To generate a project, use “project 
+generate”.
+generate code C:\mypath
+set tpl_path <path> 
+Sets the path to the source folder 
+containing the .ftl user template files.
+All the template files stored in this folder 
+are used for code generation.
+set tpl_path C:\myTemplates\
+set dest_path <path>
+Sets the path to the destination folder that 
+will hold the code generated according to 
+user templates.
+set dest_path C:\myMXProject\inc\
+get tpl_path Retrieves the path name of the user 
+template source folder. get tpl_path
+get dest_path Retrieves the path name of the user 
+template destination folder.
+get dest_path
+SetStructure 
+<Advanced/Basic> Selects the project structure to generate. SetStructure Basic
+SetCopyLibrary
+<copy all / copy only / 
+copy as reference>
+Selects how the reference libraries are 
+copied to the projects. SetCopyLibrary "copy all"
+project setCustomFWPath 
+<CustomFwLocation>
+Specifies a path to STM32Cube MCU 
+software libraries different from 
+STM32Cube repository path (specified 
+under Help > Updater settings).
+project SetCustomFwPath 
+"F:/SharedRepository/STM32Cube_F
+W_F0_V1.11.0"
+project toolchain <toolchain>
+Specifies the toolchain to be used for the 
+project.
+Use the “project generate” command to 
+generate the project for that toolchain.
+EWARM
+MDK-Arm
+STM32CubeIDE
+Makefile
+CMake
+project name <name> Specifies the project name. project name ccmram
+project path <path> Specifies the path where to generate the 
+project. project path C:\Cube\ccmram
+project generate Generates the full project.(1) project generate
+login < email_adress> 
+<password> <remember_me>
+Allows you to login to download software 
+packages.
+login john.smith@st.com mypassword 
+y
+exit Ends STM32CubeMX process. exit
+1. Use the login command before using this command.
+Table 1. Command line summary (continued)
+Command line Purpose Example
+
+PDF page 48
+Installing and running STM32CubeMX UM1718
+48/522 UM1718 Rev 45
+Several proxy types exist, and different network configurations are possible: 
+• Without proxy: the application directly accesses the web (Windows default 
+configuration).
+• Proxy without login/password
+• Proxy with login/password: when using an Internet browser, a dialog box opens and 
+prompts the user to enter its login/password.
+• Web proxies with login/password: when using an Internet browser, a web page opens 
+and prompts the user to enter its login/password.
+If needed, contact your IT administrator for proxy information (proxy type, http address, 
+port).
+STM32CubeMX does not support web proxies. In this case, the user cannot benefit from the 
+update mechanism and must manually copy the STM32Cube MCU packages from 
+http://www.st.com/stm32cube to the repository. To do it, follow the sequence below:
+1. Go to http://www.st.com/stm32cube and download the relevant STM32Cube MCU 
+package from the Associated Software section.
+2. Unzip the zip package to your STM32Cube repository. Find out the default repository 
+folder location in the Updater Settings tab as shown in Figure 18 (you might need to 
+update it to use a different location or name).
+3.4.1 Running STM32CubeMX  behind a proxy server
+When proxies are implementing full SSL inspection, STM32CubeMX must be configured to 
+use the proxy certificate.
+• On Windows:
+Typically, it comes down to using Windows certificate list.
+a) there is no additional configuration necessary to run STM32CubeMX executable 
+(it is already configured to use Windows certificate list)
+b) the command line must be adjusted to run STM32CubeMX from the command 
+line:
+cd <STM32CubeMX install path>
+jre\bin\java -Djavax.net.ssl.trustStoreType=WINDOWS-ROOT -jar 
+STM32CubeMX.exe
+• On Mac/Linux and on Windows systems when the proxy certificate is not in Windows 
+certificate store, the certificate must be manually imported. This is done using keytool 
+from a command prompt, as follows:
+$ cd  <CUBEMX_INSTALL_DIR>/jre
+$ bin/keytool -importcert -alias <your certificate alias name> -
+keystore lib/security/cacerts -file  <path to you proxy certificate 
+file>.crt
+When prompted, enter the password: changeit
+When prompted, accept to trust the certificate: yes
+Then (Windows only) edit file <CUBEMX_INSTALL_DIR>/STM32CubeMX.l4j.ini 
+and remove the line: -Djavax.net.ssl.trustStoreType=WINDOWS-ROOT
+
+PDF page 259
+UM1718 Rev 45 259/522
+UM1718 STM32CubeMX user interface
+521
+5. Click on the link in the email to access the password reset page.
+6. Enter a new password in the dedicated field. Make sure that the new password is 
+strong and secure.
+7. Confirm the new password by enterin g it again in the confirmation field.
+8. Click on the "Submit" button to save the new password.
+9. Log in to the application, using the new password.
+Figure 295. Log in
+If you suspect that your identity has been stolen, or that your account has been 
+compromised, it is important to change the password immediately to protect your account. 
+Follow the reset procedure described above to change it. 
+It is recommended to contact your ST referent to report any suspicious activity on your 
+account, and take necessary measures to protect it.
+If you experience difficulties resetting the password, contact your ST referent for assistance.
+4.19.4 Authentication through command line interface
+To facilitate the integration of authentication functionality with other tools, STM32CubeMX 
+provides a command-line mode to login with an existing my.st.com account.
+Use the following command lines:
+On Windows:
+cd <STM32CubeMX installation path>
+jre\bin\java -jar STM32CubeMX.exe login <email_adress> <password> 
+<remember_me>
+On Linux and macOS:
+./STM32CubeMX login < email_adress> <password> <remember_me>
+“remember me” parameter is either “Y” or “y”. If not specified, this command must be run 
+during the next sessions, to allow packages to be downloaded.the default value is no.
+
+
+PDF page 502
+Revision history UM1718
+502/522 UM1718 Rev 45
+19-Mar-2015 7 4.7
+Section 2.2: Key features: removed Pinout initialization C code 
+generation for STM32F1 Series from; updated Complete project 
+generation.
+Updated Figure 21: Embedded Software Packages Manager window, 
+Figure 43: New Project window - Board selector.
+Updated IDE list in Section 4.11: Project Manager view and modified 
+Figure 168: Project Settings window.
+Updated Section 4.10.1: Clock tree configuration functions. Updated 
+Figure 164: STM32F469NIHx clock tree configuration view.
+Section 5.2: Power Consumption Calculator view: added transition 
+checker option. Updated Figure 298: Power Consumption Calculator 
+default view, Figure 299: Battery selection and Figure 87: Building a 
+power consumption sequence. Added Figure 302: Enabling the 
+transition checker option on an already configured sequence - All 
+transitions valid, Figure 303: Enabling the transition checker option on 
+an already configured sequence - At least one transition invalid and 
+Figure 304: Transition checker option - Show log. Updated 
+Figure 308: Power Consumption Calculator view after sequence 
+building. Updated Section : Managing sequence steps, Section : 
+Managing the whole sequence (load, save and compare). Updated 
+Figure 88: PCC Edit Step window and Figure 311: Description of the 
+Results area.
+Updated Figure 492: Power Consumption Calculation example, 
+Figure 155: Sequence table, Figure 156: Power Consumption 
+Calculation results and Figure 158: Power consumption results - IP 
+consumption chart.
+Updated Appendix B.3.1: Overview and B.3.5: FreeRTOS.
+28-May-2015 8 4.8 Added Section 3.2.2: Installing STM32CubeMX from command line 
+and Section 3.3.2: Running STM32CubeMX in command-line mode.
+09-Jul-2015 9 4.9
+Added STLM32F7 and STM32L4 microcontroller Series. 
+Added Import project feature
+. Added Import function in Table 13: File 
+menu functions. Added Section 4.12: Import Project window. Updated 
+Figure 301: Power consumption sequence: New Step default view, 
+Figure 88: PCC Edit Step window, Figure 83: Power consumption 
+sequence: new step configured (STM32F4 example), Figure 307: 
+Power Consumption Calculator configuration window: ADC enabled 
+using import pinout and Figure 87: Peripheral power consumption 
+tooltip.
+Updated command line to run STM32CubeMX in
+ Section 3.3.2: 
+Running STM32CubeMX in command-line mode.
+Updated note in Section 5.16: Configuration view.
+Added new clock tree configuration functions in Section 4.10.1.
+Updated Figure 459: Middleware tooltip.
+Modified code example in Appendix B.1: STM32CubeMX generated 
+C code and user sections.
+Updated Appendix B.3.1: Overview.
+Updated generated .h files in Appendix B.3.4: FatFs.
+Table 27. Document revision history (continued)
+Date Revision STM32CubeMX 
+release number Changes
+
+PDF page 503
+UM1718 Rev 45 503/522
+UM1718 Revision history
+521
+27-Aug-2015 10 4.10
+Replace UM1742 by UM1940 in Section : Introduction.
+Updated command line to run STM32CubeMX in command-line 
+mode in Section 3.3.2: Running STM32CubeMX in command-line 
+mode. Modified Table 1: Command line summary.
+Updated board selection in Section 4.2: New Project window.
+Updated Section 5.16: Configuration view overview. Updated 
+Section 5.14.1: Peripherals and Middleware Configuration window, 
+Section 4.5.12: GPIO configuration window and Section 4.5.13: DMA 
+configuration window. Added Section 4.5.11: User Constants 
+configuration window.
+Updated Section 4.10: Clock Configuration view and added reserve 
+path. 
+Updated Section 11.1: Creating a new STM32CubeMX Project, 
+Section 11.5: Configuring the MCU clock tree, Section 11.6: 
+Configuring the MCU initialization parameters, Section 11.7.2: 
+Downloading firmware package and generating the C code, 
+Section 11.8: Building and updating the C code project. Added 
+Section 11.9: Switching to another MCU.
+Updated Section 12: Tutorial 2 - Example of FatFs on an SD card 
+using STM32429I-EVAL evaluation board and replaced STM32F429I-
+EVAL by STM32429I-EVAL.
+16-Oct-2015 11 4.11
+Updated Figure 21: Embedded Software Packages Manager window 
+and Section 3.4.7: Checking for updates.
+Character string constant supported in Section 4.5.11: User 
+Constants configuration window.
+Updated Section 4.10: Clock Configuration view. 
+Updated Section 5.2: Power Consumption Calculator view.
+Modified Figure 492: Power Consumption Calculation example.
+Updated Section 13: Tutorial 3 - Using the Power Consumption 
+Calculator to optimize the embedded application consumption and 
+more.
+Added Eclipse Mars in Section 3.1.3: Software requirements
+03-Dec-2015 12 4.12
+Code generation options now supported by the Project Settings 
+menu.
+Updated Section 3.1.3: Software requirements.
+Added Project Settings in Section 4.12: Import Project window. 
+Updated Figure 181: Automatic project import; modified Manual 
+project import step and updated Figure 182: Manual project import 
+and Figure 183: Import Project menu - Try Import with errors; 
+modified third step of the import sequence. 
+Updated Figure 83: Clock Tree configuration view with errors.
+Added mxconstants.h in Section 6.1: STM32Cube code generation 
+using only HAL drivers (default mode).
+Updated Figure 492: Power Consumption Calculation example to 
+Figure 501: Step 10 optimization.
+Updated Figure 502: Power sequence results after optimizations.
+Table 27. Document revision history (continued)
+Date Revision STM32CubeMX 
+release number Changes
+
+PDF page 505
+UM1718 Rev 45 505/522
+UM1718 Revision history
+521
+15-Mar-2016 14 4.14
+Upgraded STM32CubeMX released number to 4.14.0.
+Added import of previously saved projects and generation of user files 
+from templates in Section 2.2: Key features.
+Added MacOS in Section 3.1.1: Supported operating systems and 
+architectures, Section 3.2.1: Installing STM32CubeMX standalone 
+version, Section 3.2.3: Uninstalling STM32CubeMX standalone 
+version and Section 3.4.3: Running STM32CubeMX plug-in from 
+Eclipse IDE.
+Added command lines allowing the generation of user files from 
+templates in Section 3.3.2: Running STM32CubeMX in command-line 
+mode.
+Updated new library installation sequence in Section 3.4.2: Updater 
+configuration.
+Updated Figure 107: Pinout menus (Pinout tab selected) and 
+Figure 108: Pinout menus (Pinout tab not selected) in Section 5.7.3: 
+Pinout menu.
+Modified Table 16: Window menu. 
+Updated Section 5.7: Output windows.
+Updated Figure 168: Project Settings window and Section 4.11.1: 
+Project tab.
+Updated Figure 102: NVIC settings when using SysTick as HAL 
+timebase, no FreeRTOS and Figure 103: NVIC settings when using 
+FreeRTOS and SysTick as HAL timebase in Section 4.5.16: Setting 
+HAL timebase source.
+Updated Figure 75: User Constants tab and Figure 76: Extract of the 
+generated main.h file in Section 4.5.11: User Constants configuration 
+window.
+Section 4.5.12: GPIO configuration window: updated Figure 84: GPIO 
+configuration window - GPIO selection, Figure 85: GPIO configuration 
+grouped by peripheral and Figure 86: Multiple pins configuration.
+Updated Section 4.5.14: NVIC configuration window.
+18-May-2016 15 4.15
+Import project function is no more limited to MCUs of the same Series 
+(see Section 2.2: Key features, Section 5.7.1: File menu and 
+Section 4.12: Import Project window ).
+Updated command lines in Section 3.3.2: Running STM32CubeMX in 
+command-line mode. 
+Table 1: Command line summary: modified all examples related to 
+config comands as well as set dest_path <path> example.
+Added caution note for Load Project menu in Table 13: File menu 
+functions.
+Updated Generate Code menu description in Table 14: Project menu.
+Updated Set unused GPIOs menu in Table 15: Pinout menu.
+Added case where FreeRTOS in enabled in Section : Enabling 
+interruptions using the NVIC tab view.
+Added Section 4.5.15: FreeRTOS configuration panel.
+Updated Appendix B.3.5: FreeRTOS and B.3.6: LwIP.
+Table 27. Document revision history (continued)
+Date Revision STM32CubeMX 
+release number Changes
+
+PDF page 506
+Revision history UM1718
+506/522 UM1718 Rev 45
+23-Sep-2016 16 4.17
+Replaced mxconstants.h by main.h in the whole document.
+Updated Introduction, Section 3.1.1: Supported operating systems 
+and architectures and Section 3.1.3: Software requirements.
+Added Section 3.4.4: Installing STM32 MCU package patches.
+Updated Load project description in Table 2: Home page shortcuts.
+Updated Clear Pinouts function in Table 15: Pinout menu.
+Updated Section 4.11.3: Advanced Settings tab to add Low Layer 
+driver. 
+Added No check and Decimal and hexadecimal check options in 
+Table 17: Peripheral and Middleware Configuration window buttons 
+and tooltips. 
+Updated Section : Tasks and Queues tab and Figure 99: FreeRTOS 
+heap usage.
+Updated Figure 84: GPIO configuration window - GPIO selection.
+Replaced PCC by Power Consumption Calculator in the whole 
+document. 
+Added Section 6.2: STM32Cube code generation using Low Layer 
+drivers; updated Table 23: LL versus HAL: STM32CubeMX generated 
+source files and Table 24: LL versus HAL: STM32CubeMX generated 
+functions and function calls.
+Updated Figure 561: Pinout view - Enabling the RTC.
+Added Section 14: Tutorial 4 - Example of UART communications 
+with an STM32L053xx Nucleo board.
+Added correspondence between STM32CubeMX release number 
+and document revision. 
+21-Nov-2016 17 4.18
+Removed Windows XP and added Windows 10 in Section 3.1.3: 
+Software requirements.
+Updated Section 3.2.3: Uninstalling STM32CubeMX standalone 
+version.
+Added setDriver command line in Table 1: Command line summary.
+Added List pinout compatible MCUs feature:
+– Updated Table 15: Pinout menu.
+– Added Section 15: Tutorial 5: Exporting current project 
+configuration to a compatible MCU
+Added Firmware location selection option in Section 4.11.1: Project 
+tab and Figure 168: Project Settings window. 
+Added Restore Default feature:
+– Updated Table 8: Peripheral and Middleware configuration window 
+buttons and tooltips
+– Updated Figure 77: Using constants for peripheral parameter 
+settings.
+Table 27. Document revision history (continued)
+Date Revision STM32CubeMX 
+release number Changes
+
+PDF page 514
+Revision history UM1718
+514/522 UM1718 Rev 45
+16-Apr-2019 29
+(cont’d) 5.1
+Updated Table 3: Window menu.
+Updated figures 27 to 43, Figure 179: Advanced Settings window, 
+figures 298 to 305, 307 to 310 and 312 to 321, Figure 464: Project 
+Settings and toolchain selection and figures 492 to 502,
+Added Figure 38: New Project window shortcuts, Figure 106: 
+STM32MPUs: assignment options for GPIOs, Figure 597: Resource 
+Manager: peripheral assignment view and Figure 599: STM32Cube 
+Embedded Software package.
+01-Oct-2019 30 5.2
+Updated Introduction. Section 2.2: Key features, Section 3.3.2: 
+Running STM32CubeMX in command-line mode, Part number 
+selection, Section 4.15: Software Packs component selection 
+window, Section 4.15.1: Introduction on software components, 
+Section 4.15.2: Filter panel, Section 4.15.3: Packs panel, 
+Section 4.15.4: Component dependencies panel, Section 4.15.6: 
+Updating the tree view for additional software components, 
+Section 5.2: Power Consumption Calculator view and Section 6.2: 
+STM32Cube code generation using Low Layer drivers.
+Updated Table 1: Command line summary, Table 6: Pinout menu and 
+shortcuts, Table 16: Additional Software window – Packs panel icons 
+and Table 17: Component dependencies panel contextual help.
+Updated Figure 34: STM32CubeMX Home page, Figure 192: 
+Selection of additional software components, Figure 193: Additional 
+software components - Updated tree view, Figure 434: Selecting a 
+CMSIS-Pack software component and Figure 532: Selecting X-Cube-
+BLE1 components.
+Added Section 4.5.8: Pinout for multi-bonding packages and 
+Section 4.15.5: Details and Warnings panel.
+Added Table 15: Additional Software window – Packs panel columns
+Table 27. Document revision history (continued)
+Date Revision STM32CubeMX 
+release number Changes
+
+PDF page 515
+UM1718 Rev 45 515/522
+UM1718 Revision history
+521
+13-Dec-2019 31 5.4
+Updated Introduction, Section 1: STM32Cube overview, Section 4.2: 
+New Project window, MCU/MPU selection for a new project and 
+Section 11.7.1: Setting project options.
+Added Section 4.9: Enabling security in Pinout & Configuration view 
+(STM32L5 and STM32U5 series only) with its subsections, 
+Section 4.10.2: Securing clock resources (STM32L5 series only) and 
+Section 8: Code generation with TrustZone® enabled (STM32L5 
+series only).
+Removed former Section 4.4.16: Graphics frameworks and simulator, 
+Section 17: Tutorial 8 – Using STemWin Graphics framework, 
+Section 18: Tutorial 9: Using STM32CubeMX Graphics simulator, 
+Section 19: Tutorial 10: Using ST-TouchGFX framework and 
+Section B.3.11: Graphics.
+Minor text edits across the whole document.
+Updated Table 1: Command line summary.
+Updated Figure 69: Pinout view: MCUs with multi-bonding, Figure 70: 
+Pinout view: multi-bonding with extended mode, Figure 106: 
+STM32MPUs: assignment options for GPIOs, Figure 168: Project 
+Settings window, Figure 329: DDR Suite - Connection to target, 
+Figure 330: DDR Suite - Target connected, Figure 331: DDR activity 
+logs, Figure 332: DDR interactive logs, Figure 333: DDR register 
+loading, Figure 334: DDR test list from U-Boot SPL, Figure 335: DDR 
+test suite results, Figure 336: DDR tests history, Figure 175: DDR 
+tuning pre-requisites, Figure 176: DDR tuning process, Figure 177: 
+Bit deskew, Figure 178: Eye training (centering) panel, Figure 179: 
+DDR Tuning - saving to configuration, Figure 429: Project settings for 
+STM32CubeIDE toolchain and Figure 464: Project Settings and 
+toolchain selection.
+Added Figure 39: Enabling TrustZone.
+Table 27. Document revision history (continued)
+Date Revision STM32CubeMX 
+release number Changes
+
+PDF page 516
+Revision history UM1718
+516/522 UM1718 Rev 45
+10-Jul-2020 32 6.0
+Updated Section 2.2: Key features, Section 3.1.1: Supported 
+operating systems and architectures, Section 3.1.3: Software 
+requirements, Section 3.2.1: Installing STM32CubeMX standalone 
+version, Section 3.4: Getting updates using STM32CubeMX, 
+Section 3.4.5: Installing embedded software packs, Section 4.2: New 
+Project window, Export to Excel feature, Section 4.5: Pinout & 
+Configuration view, Section 4.11.3: Advanced Settings tab and 
+Section 18.6: Why do I get the error “Java 8 update 45” when 
+installing “Java 8 update 45” or a more recent version of the JRE?.
+Added Section 4.2.3: Example selector, Section 5.1: External Tools, 
+Section 19.2: Since I changed my login to access the Internet, some 
+software packs appear not available. and Section 19.3: On dual-
+context products, why some peripherals or middleware are not 
+available for a given context?.
+Removed former MCU selection based on graphics criteria.
+Updated Table 4: Help menu shortcuts and Table 14: Additional 
+software window - Filter icons.
+Updated Figure 34: STM32CubeMX Home page, Figure 38: New 
+Project window shortcuts, Figure 43: New Project window - Board 
+selector, Figure 46: Cross selector - Data refresh prerequisite, 
+Figure 179: Advanced Settings window, Figure 189: Additional 
+software window, Figure 200: Device tree generation for the Linux 
+kernel, Figure 201: STM32CubeMX Device tree generation for U-
+boot, Figure 202: STM32CubeMX Device tree generation for TF-A, 
+Figure 532: Selecting X-Cube-BLE1 components and Figure 306: 
+Java Control Panel.
+10-Nov-2020 33 6.1
+Updated Introduction, Section 3.1.3: Software requirements, 
+Section 3.4.7: Checking for updates, Section 4.15.3: Packs panel, 
+Section 5.1: External Tools, Section 12: Tutorial 2 - Example of FatFs 
+on an SD card using STM32429I-EVAL evaluation board and 
+Section 18.6: Why do I get the error “Java 8 update 45” when 
+installing “Java 8 update 45” or a more recent version of the JRE?.
+Added Choosing not to generate code for some peripherals or 
+middlewares.
+Updated Table 1: Command line summary.
+Updated Figure 33: Help menu: checking for updates, Figure 34: 
+STM32CubeMX Home page, Figure 179: Advanced Settings window, 
+Figure 189: Additional software window, Figure 297: ST Tools and 
+Figure 485: SDIO peripheral configuration.
+Table 27. Document revision history (continued)
+Date Revision STM32CubeMX 
+release number Changes
+
+PDF page 517
+UM1718 Rev 45 517/522
+UM1718 Revision history
+521
+12-Feb-2021 34 6.2
+Updated Section 3.1.1: Supported operating systems and 
+architectures, Section 3.1.3: Software requirements, Section 3.2.1: 
+Installing STM32CubeMX standalone version, Section 3.2.2: 
+Installing STM32CubeMX from command line, Section 3.2.3: 
+Uninstalling STM32CubeMX standalone version, Section 3.3.2: 
+Running STM32CubeMX in command-line mode, Warning: in 
+Section 3.4.7: Checking for updates, Section 4.1: Home page, 
+Section 4.15: Software Packs component selection window, 
+Section 4.15.2: Filter panel, Section 4.15.3: Packs panel, 
+Section 4.15.4: Component dependencies panel, Section 4.15.5: 
+Details and Warnings panel and Section 12: Tutorial 2 - Example of 
+FatFs on an SD card using STM32429I-EVAL evaluation board.
+Updated Table 6: Pinout menu and shortcuts.
+Added Figure 2: Full disk access for macOS and Figure 190: 
+Component dependency resolution.
+Updated Figure 34: STM32CubeMX Home page, Figure 39: Enabling 
+TrustZone, Figure 189: Additional software window.
+Removed former Figure 5: Auto-install command line and former 
+Section 18.6: Why do I get the error “Java 8 update 45” when 
+installing “Java 8 update 45” or a more recent version of the JRE?.
+22-Jun-2021 35 6.3
+Updated Section 3.1.1: Supported operating systems and 
+architectures, Section 3.1.3: Software requirements, Section 4.2: 
+New Project window, Section 4.3: Project page, Section 4.5.5: Pinout 
+view advanced actions, Section 4.9: Enabling security in Pinout & 
+Configuration view (STM32L5 and STM32U5 series only) and code in 
+Section 12: Tutorial 2 - Example of FatFs on an SD card using 
+STM32429I-EVAL evaluation board.
+Added Figure 40: Adjusting selector results and Section 19.1: I 
+encountered a network connection error during a download from 
+STM32CubeMX.
+Updated Table 1: Command line summary, Table 16: Additional 
+Software window – Packs panel icons and Table 17: Component 
+dependencies panel contextual help.
+Updated Figure 434: Selecting a CMSIS-Pack software component 
+and Figure 532: Selecting X-Cube-BLE1 components.
+05-Nov-2021 36 6.4
+Updated Section 2.2: Key features, Section 3.3.1: Running 
+STM32CubeMX as a standalone application, Section 3.4: Getting 
+updates using STM32CubeMX, Section 4.2: New Project window, 
+Enabling interruptions using the NVIC tab view, Section 4.9: Enabling 
+security in Pinout & Configuration view (STM32L5 and STM32U5 
+series only), Section 4.11.1: Project tab and Section 5.2.7: Bluetooth 
+Low-Energy®/ZigBee® support (STM32WB series only).
+Added Section 3.4.1: Running STM32CubeMX behind a proxy server 
+and Section 5.2.8: Sub-GHz support (STM32WL series only).
+Updated Figure 90: NVIC configuration tab - FreeRTOS disabled.
+Table 27. Document revision history (continued)
+Date Revision STM32CubeMX 
+release number Changes
+
+PDF page 518
+Revision history UM1718
+518/522 UM1718 Rev 45
+18-Feb-2022 37 6.5
+Updated Introduction and Section 3.1.1: Supported operating 
+systems and architectures.
+Added Section 18: Creating LPBAM projects with its subsections, and 
+Section 19.11: How to fix MX_DMA_Init call rank in STM32CubeMX 
+generated projects?.
+Minor text edits across the whole document.
+14-Jun-2022 38 6.6
+Updated Introduction, Section 2.2: Key features, Section 3.3.2: 
+Running STM32CubeMX in command-line mode, Boot loader (A7 
+FSBL) peripherals selection, Section 4.11.1: Project tab, 
+Section 4.16: LPBAM Scenario & Configuration view, Section 9.1: 
+Device tree overview, and Section 9.2: STM32CubeMX Device tree 
+generation.
+Updated Table 1: Command line summary.
+Updated Figure 296: About window.
+Added Section 4.17: CAD Resources view section and Section 18.6: 
+LPBAM application for TrustZone
+® activated projects.
+Removed former Section 9.2.1: Device tree generation for Linux 
+kernel, Section 9.2.2: Device tree generation for U-boot, and 
+Section 9.2.3: Device tree generation for TF-A.
+Minor text edits across the whole document.
+17-Nov-2022 39 6.7
+Updated Section 2.2: Key features and Section 17: Tutorial 7 – Using 
+the X-Cube-BLE1 software pack.
+Added Section 19.12: When is the PeriphCommonClock_Config() 
+function generated? and Section 19.13: How to handle thread-safe 
+solution in STM32CubeMX and STM32CubeIDE?.
+Updated Figure 41: New Project window - MCU selector, Figure 42: 
+Marking a favorite, Figure 29: New Project window - MCU list with 
+close function, Figure 30: New Project window - List showing close 
+MCUs, and Figure 296: About window.
+Minor text edits across the whole document.
+21-Feb-2023 40 6.8
+Updated Section 3.2.1: Installing STM32CubeMX standalone version, 
+Section 3.3.2: Running STM32CubeMX in command-line mode, 
+Section 3.4.1: Running STM32CubeMX behind a proxy server, and 
+Section 4.11.1: Project tab.
+Added Section 4.18: Boot path and its subsections.
+Removed former Section 5.3.4: DDR tuning and DDR tuning tab 
+(read-only).
+Updated Figure 41: New Project window - MCU selector, Figure 168: 
+Project Settings window, and Figure 560: Design check.
+Minor text edits across the whole document.
+Table 27. Document revision history (continued)
+Date Revision STM32CubeMX 
+release number Changes
+
+PDF page 519
+UM1718 Rev 45 519/522
+UM1718 Revision history
+521
+03-Jul-2023 41 6.9
+Updated Introduction, Section 3.1.1: Supported operating systems 
+and architectures, Java™ Runtime Environment, Section 4.15: 
+Software Packs component selection window, Section 4.18: Boot 
+path, Section 4.18.2: Creating a boot path project: an example, 
+Section 4.18.5: How to configure an ST-iRoT with a secure manager 
+NS application  boot path, and note in Section 18.4: Checking the 
+LPBAM design.
+Updated Table 1: Command line summary.
+Added note to Section 9.2: STM32CubeMX Device tree generation.
+Added figures 205 to 209 and Figure 257: Code generated with 
+secure manager API.
+Added Section 4.18.6: How to configure an assembled boot path, 
+Section 4.19: User authentication, Section 4.18: STM32CubeMX 
+Memory Management Tool and their subsections, and 
+Section B.3.12: CMSIS packs selection limitation.
+Updated Figure 46: Cross selector - Data refresh prerequisite, 
+Figure 201: Boot paths for STM32H57x devices, Figure 211: Select 
+the STM32H5 device, Figure 213: Boot paths for STM32H56x 
+devices, figures 216 to 229, figures 167 to 240, figures 242 to 244, 
+figures 248 to 252, Figure 256: Secure manager API configuration, 
+and Figure 296: About window.
+Minor text edits across the whole document.
+08-Sep-2023 42 6.9.2
+Updated for the replacement of “boot path settings” with “boot path 
+and debug authentication” in
+– Section 4.18.4: How to configure an ST-iRoT boot path
+– Section 4.18.5: How to configure an ST-iRoT with a secure 
+manager NS application  boot path
+– Figure 225, Figure 239, and Figure 251 titles
+Updated Figure 251: Boot path and Debug Authentication tab.
+Updated figures 201 to 209 in Section 4.18.1: Available boot paths.
+Updated Section 1: STM32Cube overview.
+Minor text edits across the whole document.
+Table 27. Document revision history (continued)
+Date Revision STM32CubeMX 
+release number Changes
+
+PDF page 520
+Revision history UM1718
+520/522 UM1718 Rev 45
+20-Nov-2023 43 6.10.0
+Updated Section 4.11: Project Manager view, Section 4.18.5: How to 
+configure an ST-iRoT with a secure manager NS application  boot 
+path, Step 3: OEMiROT (assembled) code generation, Step 6: 
+Authentication and encryption keys regeneration, option byte file 
+generation, and Section 4.18: STM32CubeMX Memory Management 
+Tool.
+Added Section 4.19.3: Forgot password?.
+Removed former MCU close selector feature.
+Updated Table 18: Boot paths without TrustZone® (TZEN = 0) and 
+Table 19: Boot paths with TrustZone® (TZEN = 1).
+Updated Figure 205: Application boot path (OEM-uRoT assembled), 
+Figure 206: Application boot path: ST-iRoT and uRoT 
+secure/nonsecure project, Figure 208: Application boot path: ST-iRoT 
+dual figure, Figure 223: Project provisioning, Figure 225: Boot path 
+and debug authentication panel, Figure 232: IDE post build 
+commands, Figure 243: IDE post build commands, Figure 255: IDE 
+post build commands, figures 327 to 330, Figure 333: DDR register 
+loading, and Figure 334: DDR test list from U-Boot SPL.
+Removed former Figure 167: Selection of the OEMiRoT_Boot project 
+and Figure 195: Generated project.
+Minor text edits across the whole document.
+13-Mar-2024 44 6.11.0
+Updated Section 3.1.1: Supported operating systems and 
+architectures, Section 3.2.1: Installing STM32CubeMX standalone 
+version, Section 3.2.2: Installing STM32CubeMX from command line, 
+Uninstalling STM32CubeMX on Windows, Feature: MMT usage, 
+Pinout, and Configuration UI, and Section 4.18.6: How to configure 
+an assembled boot path.
+Added footnote to Table 1: Command line summary.
+Updated Table 10: Clock Configuration security settings, Table 18: 
+Boot paths without TrustZone® (TZEN = 0), and Table 19: Boot paths 
+with TrustZone® (TZEN = 1).
+Added Section 4.18.7: How to configure OEM-uRoT (STiRot uROT) 
+boot path, When using H7Rx/H7Sx with MMT, When using 
+H7Rx/H7Sx, and their subsections.
+Added Figure 236: MMT view (H7Rx-H7Sx devices) and Figure 255: 
+Memory assignment for context Boot H7RS.
+Updated Figure 9: Package installation, Figure 10: Installation script, 
+Figure 11: Installation path, Figure 206: Application boot path: ST-
+iRoT and uRoT secure/nonsecure project, Figure 208: Application 
+boot path: ST-iRoT dual figure, Figure 218: Boot path selection, 
+Figure 225: Boot path and debug authentication panel, Figure 229: 
+Generate the code, Figure 239: Boot path and Debug Authentication 
+tab, Figure 251: Boot path and Debug Authentication tab, and 
+Figure 260: Boot path project.
+Minor text edits across the whole document.
+Table 27. Document revision history (continued)
+Date Revision STM32CubeMX 
+release number Changes
+
+PDF page 521
+UM1718 Rev 45 521/522
+UM1718 Revision history
+521
+26-Jun-2024 45 6.12.0
+Updated Section 2.2: Key features, Java™ Runtime Environment, 
+Section 3.4.7: Checking for updates, Step 5: Boot path selection, 
+Section 4.6: Pinout & Configuration view for STM32MPUs, 
+Section 4.18.7: How to configure OEM-uRoT (STiRot uROT) boot 
+path, Section 4.19: User authentication, Section 4.19.1: Login with an 
+existing my.st.com account, and Section 8: Code generation with 
+TrustZone® enabled (STM32L5 series only).
+Added note to Section 3.4.2: Updater configuration.
+Added Section 4.4: Boot chain (STM32MPUs), Section 4.7: RIF 
+configuration, Section 4.18.8: How to configure ST-iRoT boot path 
+with STM32H7RS devices, Section 5.4: STM32CubeMX Memory 
+Management Tool, and their subsections.
+Updated Table 1: Command line summary and Table 19: Boot paths 
+with TrustZone® (TZEN = 1).
+Added Table 20: Boot paths for STM32H7RS devices.
+Added Figure 20: Connection failure and Figure 32: Updates are 
+available.
+Updated Figure 45: Popup window - Starting a project from an 
+example, Figure 265: Boot path project, Figure 464: Project Settings 
+and toolchain selection, and Figure 546: Available IPs.
+Removed former Section 4.18: STM32CubeMX Memory 
+Management Tool, Section 19: FAQ, and their subsections.
+Minor text edits across the whole document.
+Table 27. Document revision history (continued)
+Date Revision STM32CubeMX 
+release number Changes

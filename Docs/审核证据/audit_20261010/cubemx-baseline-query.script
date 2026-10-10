@@ -1,0 +1,9 @@
+config load "C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\DMF407_FOC_HAL.ioc"
+waitclock 2
+get ip parameters RCC PLLQ
+get ip parameters RCC PLLQCLKFreq_Value
+get gpio parameters PF10 PinState
+get gpio parameters PF10 GPIO_Speed
+get gpio parameters PF10 GPIO_PuPd
+get version
+exit
