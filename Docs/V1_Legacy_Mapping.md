@@ -206,6 +206,8 @@ TIMx_IRQHandler() → HAL_TIM_IRQHandler() → HAL_TIM_PeriodElapsedCallback()
 | **D-17** | Legacy 的 TIM2/TIM4 ISR **不含任何计数器** | V1 新增两个只增 `uint32_t` 诊断计数 | `s_tim2_tick_count` / `s_tim4_tick_count`（`bsp_timer.c` static volatile） | **新增（诊断设施，非 Legacy 行为）** | 仅供 L4 无功率实测确认中断在运行；**不参与任何控制计算**，不得据此宣称角度/速度或 XY 插补链路已复现。读取函数当前无调用者被 `--gc-sections` 回收（与 `BSP_PWM_SetABC` 同理），变量本体保留在 ELF 符号表（`0x2000002c` / `0x20000030`），可由调试器直接读取 |
 | **D-18** | `encoderini.c` 启动**语句顺序**：`:64 SetCounter` → `:66 ClearFlag` → `:67 ITConfig` → `:74 TIM_Cmd` | `bsp_encoder.c` 实际顺序：`SetCounter` → `Encoder_Start`(CEN=1) → `ClearFlag` → `EnableIT`，即 CEN 被提前 | 保持现状，不再调整 | **否（净行为等价）** | `Encoder_Start` 与 `ClearFlag` 之间 CNT 恒为 0（刚清），不可能发生 16 位回绕 → 无溢出事件窗口；`ClearFlag` 仍紧邻 `EnableIT`，保留了 Legacy `:66`→`:67` 的防伪中断相对关系。登记为顺序说明项，零净差异 |
 
+| **D-19** | A 版有效 STM32F40_41xxx 分支：HSE=8 MHz、PLLM=8、PLLN=336、PLLP=2、PLLQ=7 | 原 HAL 生成值 Q=4，336/4=84 MHz，与 Legacy 48 MHz 域不一致；D-06 原先的“参数不变”尚未完全成立 | CubeMX 6.12.0 原生 CLI 设置 Q=7，重载并执行时钟重算、保存、Generate Code；`.ioc` 两个 Q 域频率均为 48000000，`main.c:170` 生成 Q=7 | **是（L1 配置 / L2 构建闭环）** | `Template222_A/USER/Template.uvprojx:337`、`system_stm32f4xx.c:314-331,617-618`；HSE/M/N/P、SYSCLK=168 MHz、APB1 TIM=84 MHz、APB2 TIM=168 MHz 保持；硬件时钟仍 NEEDS MEASURE。详见本轮验收记录 §2 |
+
 ---
 
 ## 4. 生成后核对清单
