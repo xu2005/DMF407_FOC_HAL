@@ -27,6 +27,7 @@
 /* USER CODE BEGIN Includes */
 #include "bsp_pwm.h"
 #include "bsp_adc.h"
+#include "bsp_encoder.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -105,6 +106,12 @@ int main(void)
    * ADC 外部触发为 TIM1_CC1，若 TIM1 未运行则不会产生转换。 */
   BSP_ADC_Start();
 
+  /* V1 Phase 2：启动 TIM3 编码器接口与 Update 中断
+   * —— 对应 Legacy encoderini.c 的 Encoder_Int_Init()
+   * 顺序与 Legacy main() 一致：ADC → 编码器 → TIM1。
+   * 仅开启 Update 中断，不开 CC1/CC2（见 bsp_encoder.c 说明）。 */
+  BSP_Encoder_Start();
+
   /* V1 Phase 2：启动 TIM1 三相互补 PWM 输出
    * —— Legacy TIM1 PWM 启动行为的 HAL 封装，非 TIM_CtrlPWMOutputs 的一一等价
    *    （该 HAL 调用同时使能 CCx/CCxN、MOE 与计数器 CEN；而 Legacy 的
@@ -172,7 +179,20 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+/**
+  * @brief  TIM 更新中断统一分发
+  * @note   V1 临时位置：后续 bsp_timer 迁移时接管本函数。
+  *         TIM1（FOC Tick）/ TIM2（1ms）/ TIM4（Motion）分支待各自
+  *         BSP 模块迁入后补上（任务书 §8 的推荐形态）。
+  *         业务逻辑不写入 stm32f4xx_it.c。
+  */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  if (htim->Instance == TIM3)
+  {
+    BSP_Encoder_OverflowTick();
+  }
+}
 /* USER CODE END 4 */
 
 /**

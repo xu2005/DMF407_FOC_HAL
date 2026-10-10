@@ -198,6 +198,7 @@ TIMx_IRQHandler() → HAL_TIM_IRQHandler() → HAL_TIM_PeriodElapsedCallback()
 | **D-09** | `ADC_GetValue()` 每次调用前都执行 `ADC_RegularChannelConfig(ADCx, ch, 1, 480Cycles)` 重配通道（`adc.c:73`） | HAL 侧无对应调用 | 通道只在 `MX_ADCx_Init()` 配置一次；运行时**不调用** `HAL_ADC_ConfigChannel()` | **是（有意省略）** | 通道已配成同值，运行时重配为 no-op；且该 HAL 函数对已使能 ADC 有使能状态副作用。属**代码级差异、非可观测行为差异** |
 | **D-10** | `while (ADC_GetFlagStatus(ADCx, ADC_FLAG_EOC) == RESET);`（`adc.c:79`）**无限等待，无超时** | 可能永久阻塞 | `HAL_ADC_PollForConversion(hadc, HAL_MAX_DELAY)` | **否（保持等价）** | 已核实 HAL 源码 `stm32f4xx_hal_adc.c`：`Timeout == HAL_MAX_DELAY` 时整段跳过超时判断 → 真正的无限等待，语义等价。超时/故障处理归 V2 |
 | **D-11** | `ADC_ProcessData()` 的调用点在 `main.c:67` 的**主循环**里（不在任何中断中） | V1 暂无消费者 | `BSP_ADC_ReadAll()` 已实现但**尚未接线** | **待接线** ★ | 接线时必须与 Legacy 一致放在**主循环**；**严禁放入 FOC ISR** —— 它是 6 次阻塞读，放中断内会破坏时序 |
+| **D-12** | Legacy 只开 TIM3 Update 中断（`encoderini.c:67`），且 CC1/CC2 中断在 `:68-69` 被作者**显式注释掉** | `HAL_TIM_Encoder_Start_IT()` 会**额外开启 CC1IE/CC2IE**，且**并不开启** Update 中断 | `HAL_TIM_Encoder_Start()` + `__HAL_TIM_ENABLE_IT(TIM_IT_UPDATE)` | **是（有意偏离 HAL 惯用法）** | 已核实 HAL 源码 `stm32f4xx_hal_tim.c:3214` / `:3368`：`_IT` 版本在 default 分支执行 `TIM_CCxChannelCmd(CH1/CH2)` + `__HAL_TIM_ENABLE_IT(TIM_IT_CC1)` + `TIM_IT_CC2` + `__HAL_TIM_ENABLE()`。直接套用会改变原工程中断行为，不符合 Legacy 基线 |
 
 ---
 
