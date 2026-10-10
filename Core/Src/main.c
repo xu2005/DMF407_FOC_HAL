@@ -26,6 +26,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "bsp_pwm.h"
+#include "bsp_adc.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -98,6 +99,12 @@ int main(void)
   MX_TIM4_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
+  /* V1 Phase 2：使能三个 ADC
+   * —— 对应 Legacy SYSTEM/adc.c:62-64 的 ADC_Cmd(ADC1/2/3, ENABLE)
+   * 顺序与 Legacy main() 一致：ADC 先使能，TIM1 随后启动。
+   * ADC 外部触发为 TIM1_CC1，若 TIM1 未运行则不会产生转换。 */
+  BSP_ADC_Start();
+
   /* V1 Phase 2：启动 TIM1 三相互补 PWM 输出
    * —— Legacy TIM1 PWM 启动行为的 HAL 封装，非 TIM_CtrlPWMOutputs 的一一等价
    *    （该 HAL 调用同时使能 CCx/CCxN、MOE 与计数器 CEN；而 Legacy 的

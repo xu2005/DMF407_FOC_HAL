@@ -194,7 +194,10 @@ TIMx_IRQHandler() → HAL_TIM_IRQHandler() → HAL_TIM_PeriodElapsedCallback()
 | **D-05** | `Time4_Init(speed_period_max, 10)`，唯一调用点 `main.c:57` | — | TIM4 保留：PSC=10、ARR=**10000**、IRQ 1/1 | 否 | 见 §2.2 溯源。**禁止删除 TIM4 或改成 26715** |
 | **D-06** | `SystemInit()` 的 `SetSysClock()` | — | `SystemClock_Config()` | 是 | 机制替换，参数不变 |
 | **D-07** | TIM2/3/4 均未调用 `TIM_ARRPreloadConfig`，ARPE 保持复位值 0 | CubeMX 默认 Enable | 三者 ARPE = **Disable** | 是 | 寄存器级等价。V1 中三者 ARR 不变，功能惰性 |
-| **D-08** | TIM1 TRGO 未在手写 `.ioc` 中确认 | 手写键名不可靠 | **必须 GUI 设** `TRGO = OC1REF`、`MasterSlaveMode = Disable` | **待 GUI 确认** ★ | 规范 §5.4：GUI / 生成代码是最终证据 |
+| **D-08** | TIM1 TRGO 未在手写 `.ioc` 中确认 | 手写键名不可靠 | GUI 设 `TRGO = OC1REF`、`MasterSlaveMode = Disable` | **✅ 已闭环** | 生成代码 `Core/Src/tim.c:68` 实测 `sMasterConfig.MasterOutputTrigger = TIM_TRGO_OC1REF;` |
+| **D-09** | `ADC_GetValue()` 每次调用前都执行 `ADC_RegularChannelConfig(ADCx, ch, 1, 480Cycles)` 重配通道（`adc.c:73`） | HAL 侧无对应调用 | 通道只在 `MX_ADCx_Init()` 配置一次；运行时**不调用** `HAL_ADC_ConfigChannel()` | **是（有意省略）** | 通道已配成同值，运行时重配为 no-op；且该 HAL 函数对已使能 ADC 有使能状态副作用。属**代码级差异、非可观测行为差异** |
+| **D-10** | `while (ADC_GetFlagStatus(ADCx, ADC_FLAG_EOC) == RESET);`（`adc.c:79`）**无限等待，无超时** | 可能永久阻塞 | `HAL_ADC_PollForConversion(hadc, HAL_MAX_DELAY)` | **否（保持等价）** | 已核实 HAL 源码 `stm32f4xx_hal_adc.c`：`Timeout == HAL_MAX_DELAY` 时整段跳过超时判断 → 真正的无限等待，语义等价。超时/故障处理归 V2 |
+| **D-11** | `ADC_ProcessData()` 的调用点在 `main.c:67` 的**主循环**里（不在任何中断中） | V1 暂无消费者 | `BSP_ADC_ReadAll()` 已实现但**尚未接线** | **待接线** ★ | 接线时必须与 Legacy 一致放在**主循环**；**严禁放入 FOC ISR** —— 它是 6 次阻塞读，放中断内会破坏时序 |
 
 ---
 
