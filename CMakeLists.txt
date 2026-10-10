@@ -54,6 +54,10 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/BSP/bsp_timer.c
     ${CMAKE_CURRENT_SOURCE_DIR}/BSP/bsp_motor_enable.c
     ${CMAKE_CURRENT_SOURCE_DIR}/BSP/bsp_uart.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Motor/motor_angle_speed.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Control/foc_transforms.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Control/foc_pi.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Control/foc_svpwm.c
 )
 
 # Add include paths

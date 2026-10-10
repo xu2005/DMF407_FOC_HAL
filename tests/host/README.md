@@ -32,3 +32,19 @@ ctest --test-dir build/host -R '^math_' -V
 生成器只提取原函数、替换硬件读数并观察原机械角局部值，不读取被测新模块。
 变换用独立固定输入/预期值，未用被测函数互相构造预期。
 结果与 DEFERRED 项见 `Docs/V1_Math_L3_Regression_2026-10-10.md`。
+
+## PI / SVPWM 定向回归
+
+```powershell
+cmake --build build/host --target pi_svpwm_tests
+ctest --test-dir build/host -R '^(pi_|svpwm_)' -V
+```
+
+该目标编译真实 `Control/foc_pi.c`、`foc_svpwm.c`，无需 HAL Mock。
+六组分别核对速度、电流、离线 10:1 状态序列、位置纯公式、正常 SVPWM 和零向量状态。
+冻结预期由 `freeze_pi_svpwm_vectors.py` 提取并独立执行活跃 Legacy 函数生成，
+直接沿用 `USER/globals.c` 参数及原结构头文件，不读取新 Control 源码。
+可选 `python tests/host/freeze_pi_svpwm_vectors.py` 重建参考（现有 gcc、32 bit long）。
+正常测试无需 Python。绝对容差 `1e-5`，约为最大输出 50 附近数个 binary32 ULP；不启用 fast-math。
+零向量不执行 Legacy、不读取新结果三相字段，CTest 成功只表示状态契约满足，风险仍开放。
+结果、L1 映射及接口差异见 `Docs/PI_SVPWM_L3_Regression_2026-10-10.md`。

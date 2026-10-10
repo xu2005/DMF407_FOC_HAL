@@ -42,3 +42,23 @@ endforeach()
 set_tests_properties(math_angle PROPERTIES FIXTURES_SETUP angle_validated TIMEOUT 5)
 set_tests_properties(math_angle_r01 PROPERTIES FIXTURES_REQUIRED angle_validated LABELS "KNOWN_RISK" TIMEOUT 5)
 set_tests_properties(math_transforms PROPERTIES FIXTURES_REQUIRED angle_validated TIMEOUT 5)
+
+# Compile actual PI/SVPWM modules; expectations are frozen from Legacy.
+add_executable(pi_svpwm_tests
+    test_pi_svpwm.c
+    ../../Control/foc_pi.c
+    ../../Control/foc_svpwm.c
+)
+target_include_directories(pi_svpwm_tests PRIVATE ../../Control)
+target_compile_features(pi_svpwm_tests PRIVATE c_std_11)
+if(MSVC)
+    target_compile_options(pi_svpwm_tests PRIVATE /W4)
+else()
+    target_compile_options(pi_svpwm_tests PRIVATE -Wall -Wextra -Werror)
+    target_link_libraries(pi_svpwm_tests PRIVATE m)
+endif()
+foreach(group pi_speed pi_current pi_schedule pi_position svpwm_normal svpwm_zero)
+    add_test(NAME ${group} COMMAND pi_svpwm_tests ${group})
+    set_tests_properties(${group} PROPERTIES TIMEOUT 5)
+endforeach()
+set_tests_properties(svpwm_zero PROPERTIES LABELS "KNOWN_RISK")
