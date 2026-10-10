@@ -29,6 +29,7 @@
 #include "bsp_adc.h"
 #include "bsp_encoder.h"
 #include "bsp_timer.h"
+#include "bsp_motor_enable.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -101,6 +102,11 @@ int main(void)
   MX_TIM4_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
+  /* D-20 安全例外：MX_GPIO_Init 已在切换输出模式前预置 PF10 Low，
+   * 此处通过 BSP 重复发送图纸所示目标禁止态，先于所有 BSP 启动。
+   * 实板极性/R70/保护链未验收：POWER-STAGE ENABLE BLOCKED。 */
+  BSP_MotorEnable_ForceDisable();
+
   /* V1 Phase 2 启动顺序：严格对齐 Legacy main() 的调用序列
    *   Legacy USER/main.c:55  ADC_Int_Init()
    *   Legacy USER/main.c:56  Time2_Init(999, 83)
@@ -128,7 +134,8 @@ int main(void)
    *  TIM_CtrlPWMOutputs 只对应 MOE，计数器由 TIM_Cmd 单独启动）
    * 注意：CCR 仍为 .ioc 配置的初值 0（未改初始占空比，符合任务书 §9）。
    * CCR=0 时六路实际输出电平 = NEEDS SCOPE CONFIRM（待无功率示波器实测，见 bsp_pwm.h）。
-   * 功率级直流侧未通电，本调用仅用于逻辑波形观测。 */
+   * 本调用可能已使能 PWM 输出；PF10 仍必须保持板级目标禁止态。
+   * POWER-STAGE ENABLE BLOCKED：逻辑波形观测必须物理断开功率直流侧。 */
   BSP_PWM_Start();
   /* USER CODE END 2 */
 

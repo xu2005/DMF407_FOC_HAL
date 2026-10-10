@@ -8,7 +8,7 @@
 > 迁移目标：将 `Template222-100` 的 Keil + STM32F4 SPL 工程迁移为 **STM32CubeMX + HAL + CMake**，第一阶段只建立 **V1 Legacy 等价基线**。
 >
 > 本文是硬件初始化规格书，不是安全整改清单。  
-> **V1 只复刻 Legacy 实际行为；V2 才处理保护链、ADC 同步采样、启动状态机、故障管理等整改。**
+> **V1 以 Legacy 实际行为为基线；2026-10-10 明确裁决的 D-20 为安全例外：PF10 默认 Low 已前移到 V1。保护链、ADC 同步采样、启动状态机、故障管理等仍属 V2。**
 
 ---
 
@@ -48,7 +48,7 @@
 - 改控制周期
 - 改 ADC 架构为 Injected / DMA
 - 把 PB12 直接修成有效 BKIN
-- 改 PF10 的启动安全逻辑
+- 除 D-20 默认 Low / 重复 ForceDisable 外，扩展 PF10 使能和启动安全逻辑
 - 改 RCR
 - 改故障状态机
 - 改双轴资源分配
@@ -174,20 +174,20 @@ GPIO AF     = AF1 TIM1
 
 ### PF10
 
-V1 复刻 Legacy：
+Legacy 初值 High；本轮 D-20 按用户已裁决的安全例外将可下载 HAL 固件改为：
 
 ```text
 Mode        = Output Push-Pull
 Pull        = Pull-down
 Speed       = High / 50 MHz 对应级别
-Initial     = High
+Initial     = Low（GPIO_PIN_RESET）
 ```
 
 注意：
 
-- 这是 V1 等价行为，不代表安全
-- PF10 = High 是否确实意味着“允许驱动”，V2 需要实测
-- V2 要改成“默认禁能 → 自检 → 状态机授权后使能”
+- 这是相对 Legacy 的有意安全偏离：CubeMX `.ioc` 初始 Low，生成代码在 GPIO 输出模式前预置 RESET，main 经 BSP 重复禁能；无置高使能 API
+- 依据 PD6010B_V1.0 原理图，板级 CTRL_SD=0 是目标禁止态；实板版本、R70、上电/复位窗口仍需无功率实测，软件 Low 不代表硬件安全通过
+- V2 仍需完成自检、状态机授权、故障管理与保护链；R-03 / SF-02 未关闭，POWER-STAGE ENABLE BLOCKED
 
 ### PB12
 
@@ -685,7 +685,7 @@ __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, x);
 
 - PB12 是否真正配置 TIM1_BKIN AF1
 - BKIN 极性与恢复流程
-- PF10 默认禁能
+- PF10 实板禁止态及完整使能保护链（D-20 软件默认 Low / 重复禁能已前移至 V1）
 - PD6010B R70 锁存 / 周期保护确认
 - ADC 注入组 / PWM 同步采样
 - ISR WCET 优化
@@ -805,7 +805,7 @@ ELF / MAP / BIN 正常生成
 | CMake | 0 error |
 | SWD | 可下载 / 单步 |
 | UART | 115200 正常 |
-| PF10 | Legacy 初始状态可观察 |
+| PF10 | D-20 目标初始 Low、复位窗口与实板禁止态待无功率验证 |
 | PWM | 六路互补波形 |
 | DeadTime | 可观察 |
 | PWM 基波 | 实测 |

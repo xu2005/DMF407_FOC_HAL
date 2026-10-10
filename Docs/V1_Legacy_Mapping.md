@@ -145,7 +145,7 @@
 | PA8/9/10、PB13/14/15 | AF_PP（TIM1） | **PULLDOWN** | **50 MHz** | — |
 | PC6 / PC7 | AF_PP（TIM3） | NOPULL | 50 MHz | — |
 | PA3 / PA6 / PB1 | ANALOG | NOPULL | — | — |
-| PF10 | Output PP | PULLDOWN | 50 MHz | **High** |
+| PF10 | Output PP | PULLDOWN | 50 MHz | **Low（D-20 明确安全例外；Legacy 为 High）** |
 | PB12 | Input | NOPULL | — | 不配 AF、不开 EXTI |
 | PB6 / PB7 | AF_PP（USART1） | NOPULL | Very High | — |
 
@@ -205,10 +205,19 @@ TIMx_IRQHandler() → HAL_TIM_IRQHandler() → HAL_TIM_PeriodElapsedCallback()
 | **D-16** | 启动序列 UIF 清除**不对称**：TIM1（`time1.c:129`）与 TIM3（`encoderini.c:66`）都调 `TIM_ClearFlag(x, Update)`；**TIM2（`time2.c`）与 TIM4（`time2.c`）都没有** | 初始化时 `TIM_TimeBaseInit`（SPL `stm32f4xx_tim.c:331`）与 HAL `TIM_Base_SetConfig`（`stm32f4xx_hal_tim.c:6818`）**末尾都执行 `EGR=UG`**；URS=0（复位值）下 UG 会置 UIF。不清 UIF → 使能 UIE 的瞬间立即产生一次"伪"Update 中断 | V1 原样保留不对称：`bsp_encoder` 清 TIM3 UIF；**`bsp_timer` 不清 TIM2/TIM4** | **否（保持等价）** | 已核实 Legacy 三处源码行 + 两侧库源码行。**禁止给 TIM2/TIM4 补 CLEAR_FLAG** —— 会改变 Legacy 实际行为。V1 中该伪中断落入 TIM2/TIM4 分支（诊断计数自增 + 空业务体），属预期。伪中断是否实际发生及其影响 = `NEEDS SCOPE CONFIRM`。★ **裁决（2026-10-10）**：外部分支曾提议启动前**显式清 UIF**（防御性偏离），**不予采纳** —— 等价优先（规则 4）；如后续需要，归 V2 独立提交与验证 |
 | **D-17** | Legacy 的 TIM2/TIM4 ISR **不含任何计数器** | V1 新增两个只增 `uint32_t` 诊断计数 | `s_tim2_tick_count` / `s_tim4_tick_count`（`bsp_timer.c` static volatile） | **新增（诊断设施，非 Legacy 行为）** | 仅供 L4 无功率实测确认中断在运行；**不参与任何控制计算**，不得据此宣称角度/速度或 XY 插补链路已复现。读取函数当前无调用者被 `--gc-sections` 回收（与 `BSP_PWM_SetABC` 同理），变量本体保留在 ELF 符号表（`0x2000002c` / `0x20000030`），可由调试器直接读取 |
 | **D-18** | `encoderini.c` 启动**语句顺序**：`:64 SetCounter` → `:66 ClearFlag` → `:67 ITConfig` → `:74 TIM_Cmd` | `bsp_encoder.c` 实际顺序：`SetCounter` → `Encoder_Start`(CEN=1) → `ClearFlag` → `EnableIT`，即 CEN 被提前 | 保持现状，不再调整 | **否（净行为等价）** | `Encoder_Start` 与 `ClearFlag` 之间 CNT 恒为 0（刚清），不可能发生 16 位回绕 → 无溢出事件窗口；`ClearFlag` 仍紧邻 `EnableIT`，保留了 Legacy `:66`→`:67` 的防伪中断相对关系。登记为顺序说明项，零净差异 |
-
 | **D-19** | A 版有效 STM32F40_41xxx 分支：HSE=8 MHz、PLLM=8、PLLN=336、PLLP=2、PLLQ=7 | 原 HAL 生成值 Q=4，336/4=84 MHz，与 Legacy 48 MHz 域不一致；D-06 原先的“参数不变”尚未完全成立 | CubeMX 6.12.0 原生 CLI 设置 Q=7，重载并执行时钟重算、保存、Generate Code；`.ioc` 两个 Q 域频率均为 48000000，`main.c:170` 生成 Q=7 | **是（L1 配置 / L2 构建闭环）** | `Template222_A/USER/Template.uvprojx:337`、`system_stm32f4xx.c:314-331,617-618`；HSE/M/N/P、SYSCLK=168 MHz、APB1 TIM=84 MHz、APB2 TIM=168 MHz 保持；硬件时钟仍 NEEDS MEASURE。详见本轮验收记录 §2 |
+| **D-20** | Legacy time1.c 初始化后将 GPIOF pin10 置 High | 早于自检授权，R-03 / SF-02 安全风险 | CubeMX 默认 Low；MX_GPIO_Init 先 RESET 后配置模式，新增 ForceDisable 在 BSP 启动前重复禁能 | **是（有意安全偏离，仅软件 L1/L2）** | 用户最新 B 裁决；PD6010B_V1.0 p1；两处可达写入均 RESET；无置高 API，实板极性/复位高阻/BKIN 等未验收，风险不关闭。见本轮验收 §3 |
 
 ---
+
+### D-20 本轮安全例外的函数映射（已实施）
+
+| Legacy 行为 | 本轮 HAL/BSP 对应 | 范围 |
+|---|---|---|
+| `SYSTEM/time1.c:29` 在 GPIO 初始化后 `GPIO_SetBits(GPIOF, GPIO_Pin_10)`，默认 High | CubeMX PF10 初始 Low，`MX_GPIO_Init()` 在输出模式配置前预置 RESET | 有意安全偏离，依据 PD6010B_V1.0 图纸；实板极性/R70 尚待确认 |
+| 没有单独的重复禁能接口 | `BSP_MotorEnable_ForceDisable()` 唯一写 RESET；main USER CODE 2 在 ADC/Timer/Encoder/PWM 启动前调用 | 新增重复软件禁能，无使能 API，无状态反馈冒充硬件反馈 |
+
+**D-20 已完成本轮 L1/L2 软件措施**：CubeMX 原生生成初始 Low，新增 ForceDisable 并完成消费者、CMake、全量构建与可达写入路径审计。重复原生生成后 USER CODE 与 BSP 均保留；两处实际 PF10 数据写入都是 RESET，未提供置高 API。详见 [本轮验收记录](PLLQ_PF10_迁移验收_2026-10-10.md) §3。R-03 / V2-SF-02 仅部分软件措施完成，实板极性、R70、OC_OUT、复位高阻、BKIN 等未验收，功率级 BLOCKED。
 
 ## 4. 生成后核对清单
 
@@ -220,7 +229,7 @@ TIMx_IRQHandler() → HAL_TIM_IRQHandler() → HAL_TIM_PeriodElapsedCallback()
 - [ ] `MX_TIM3_Init`：Encoder TI12、Period=65535、PSC=0、IC Filter=4、ARPE=Disable
 - [ ] `MX_TIM4_Init`：PSC=10、Period=10000、ARPE=Disable
 - [ ] `MX_ADC1/2/3_Init`：**三者参数完全一致**，仅通道不同
-- [ ] `MX_GPIO_Init`：各引脚 Mode/Pull/Speed 与本表 §2.4 一致，PF10 初值 High
+- [ ] `MX_GPIO_Init`：各引脚 Mode/Pull/Speed 与本表 §2.4 一致，PF10 初值 Low（D-20），RESET 写入先于输出模式初始化
 - [ ] `MX_USART1_UART_Init`：115200 / 8N1 / TX_RX
 - [ ] NVIC：`HAL_NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_4)` + 四个 IRQ 优先级
 - [ ] `stm32f4xx_it.c`：TIM1/TIM2/TIM3/TIM4 四个 Handler 均调用 `HAL_TIM_IRQHandler`
