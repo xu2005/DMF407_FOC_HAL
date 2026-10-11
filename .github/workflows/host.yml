@@ -1,0 +1,24 @@
+name: Host logic regression
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  host:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tool versions
+        run: |
+          gcc --version
+          cmake --version
+      - name: Configure
+        run: cmake -S tests/host -B build/host -DCMAKE_BUILD_TYPE=Release
+      - name: Build
+        run: cmake --build build/host --parallel
+      - name: Test (KNOWN_RISK means reproduction, not closure)
+        run: ctest --test-dir build/host -V --output-junit host-results.xml
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: host-regression-logs
+          path: |
+            build/host/Testing/Temporary/LastTest.log
+            build/host/host-results.xml

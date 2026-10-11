@@ -38,6 +38,7 @@ message("Build type: " ${CMAKE_BUILD_TYPE})
 add_executable(${CMAKE_PROJECT_NAME})
 
 # Add STM32CubeMX generated sources
+include("cmake/check_dependencies.cmake")
 add_subdirectory(cmake/stm32cubemx)
 
 # Link directories setup
