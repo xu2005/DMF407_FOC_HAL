@@ -50,6 +50,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/BSP/bsp_adc.c
     ${CMAKE_CURRENT_SOURCE_DIR}/BSP/bsp_encoder.c
     ${CMAKE_CURRENT_SOURCE_DIR}/BSP/bsp_timer.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/BSP/bsp_timing.c
     ${CMAKE_CURRENT_SOURCE_DIR}/BSP/bsp_motor_enable.c
     ${CMAKE_CURRENT_SOURCE_DIR}/BSP/bsp_uart.c
     ${CMAKE_CURRENT_SOURCE_DIR}/Motor/motor_angle_speed.c
@@ -75,9 +76,11 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
 
 # Add project symbols (macros)
 option(DMF407_NO_POWER_CONTROL "Run FOC replay on MCU with PF10 forced Low (L4 timing unverified)" OFF)
+option(DMF407_DWT_DIAGNOSTICS "Measure TIM1 IRQ C body cycles for no-power L4 diagnostics" OFF)
 target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined symbols
     DMF407_NO_POWER_CONTROL=$<BOOL:${DMF407_NO_POWER_CONTROL}>
+    DMF407_DWT_DIAGNOSTICS=$<BOOL:${DMF407_DWT_DIAGNOSTICS}>
 )
 
 # Add linked libraries

@@ -49,10 +49,13 @@ void BSP_Timer_SetHooks(void (*tim1_hook)(void), void (*tim2_hook)(void), void (
 
 int BSP_Timer_StartChecked(void)
 {
+  uint32_t mask = __get_PRIMASK();
+  __disable_irq();
+  if (BSP_Safety_GetFault() != BSP_FAULT_NONE) { __set_PRIMASK(mask); return 0; }
   __HAL_TIM_SET_COUNTER(BSP_TIMER_TIM2, 0);
   if (HAL_TIM_Base_Start_IT(BSP_TIMER_TIM2) == HAL_OK) {
     __HAL_TIM_SET_COUNTER(BSP_TIMER_TIM4, 0);
-    if (HAL_TIM_Base_Start_IT(BSP_TIMER_TIM4) == HAL_OK) { return 1; }
+    if (HAL_TIM_Base_Start_IT(BSP_TIMER_TIM4) == HAL_OK) { __set_PRIMASK(mask); return 1; }
   }
   BSP_Safety_Fault(BSP_FAULT_TIMER);
   (void)HAL_TIM_Base_Stop_IT(BSP_TIMER_TIM2);
@@ -61,15 +64,21 @@ int BSP_Timer_StartChecked(void)
   __HAL_TIM_DISABLE_IT(BSP_TIMER_TIM4, TIM_IT_UPDATE);
   BSP_TIMER_TIM2->Instance->CR1 &= ~TIM_CR1_CEN;
   BSP_TIMER_TIM4->Instance->CR1 &= ~TIM_CR1_CEN;
+  __set_PRIMASK(mask);
   return 0;
 }
 
-void BSP_Timer_StartTim1Diagnostic(void)
+int BSP_Timer_StartTim1Diagnostic(void)
 {
+  uint32_t mask = __get_PRIMASK();
+  __disable_irq();
+  if (BSP_Safety_GetFault() != BSP_FAULT_NONE) { __set_PRIMASK(mask); return 0; }
   /* Legacy time1.c clears UIF before UIE. Do not change PSC/ARR/RCR,
    * start another HAL base channel, or enable any additional outputs here. */
   __HAL_TIM_CLEAR_FLAG(&htim1, TIM_FLAG_UPDATE);
   __HAL_TIM_ENABLE_IT(&htim1, TIM_IT_UPDATE);
+  __set_PRIMASK(mask);
+  return 1;
 }
 
 uint32_t BSP_Timer_GetTim1TickCount(void)

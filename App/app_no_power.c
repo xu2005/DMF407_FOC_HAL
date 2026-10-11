@@ -5,6 +5,7 @@
 #include "bsp_safety.h"
 #include "bsp_timer.h"
 #include "tim.h"
+#include "bsp_timing.h"
 #include <math.h>
 
 #ifndef DMF407_NO_POWER_CONTROL
@@ -76,13 +77,17 @@ int App_NoPower_Start(void)
     BSP_MotorEnable_ForceDisable();
     /* No restart after run/fault. Only a MCU reset recreates PI/raw state. */
     if (running || BSP_Safety_GetFault()!=BSP_FAULT_NONE) { return 0; }
+    if (!BSP_TIM1_ConfigChecked()) { return 0; }
+    BSP_Timing_Init();
     FOC_PipelineInit(&pipeline);
     sample_valid=angle_valid=0;
     if (!BSP_ADC_StartChecked()) { return 0; }
     /* V2 moves encoder start before TIM2, so its init-generated update cannot
      * sample an uninitialized domain. Preserve TIM2/TIM4 UIF policy. */
     if (!BSP_EncoderSafe_Start()) { BSP_Safety_Fault(BSP_FAULT_ENCODER); return 0; }
+#if DMF407_NO_POWER_CONTROL
     if (!BSP_PWM_StartChecked()) { return 0; }
+#endif
     encoder_time=HAL_GetTick();
 #if DMF407_NO_POWER_CONTROL
     BSP_Timer_SetHooks(control_tick,angle_tick,BSP_EncoderSafe_OverflowTick);
@@ -91,7 +96,11 @@ int App_NoPower_Start(void)
 #endif
     if (!BSP_Timer_StartChecked()) { return 0; }
     if (BSP_Safety_GetFault()!=BSP_FAULT_NONE) { return 0; }
-    BSP_Timer_StartTim1Diagnostic();
+#if DMF407_NO_POWER_CONTROL
+    if (!BSP_Timer_StartTim1Diagnostic()) { return 0; }
+#else
+    if (!BSP_TIM1_StartDiagnosticChecked()) { return 0; }
+#endif
     running=1;
     return 1;
 }

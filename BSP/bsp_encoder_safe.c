@@ -1,11 +1,13 @@
 #include "bsp_encoder_safe.h"
 #include "encoder_tracker.h"
 #include "tim.h"
+#include "bsp_safety.h"
 static Encoder_Tracker tracker;
 static volatile uint32_t overflow_events;
 static int started;
 int BSP_EncoderSafe_Start(void)
 {
+    if (BSP_Safety_GetFault()!=BSP_FAULT_NONE) { return 0; }
     /* V2 restart resets the entire software/hardware domain while stopped.
      * Main calls this before scheduler startup; never restart from an ISR. */
     started = 0;

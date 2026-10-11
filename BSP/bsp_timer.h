@@ -51,7 +51,7 @@ void BSP_Timer_Start(void);
 /* TIM1 Update diagnostic, called after TIM1 counter startup.
  * Clear pending UIF, enable UIE; preserve timing, CCR and output configuration.
  * NVIC/DIER/UIF, RCR relationship and actual frequency require L4 measurement. */
-void BSP_Timer_StartTim1Diagnostic(void);
+int BSP_Timer_StartTim1Diagnostic(void);
 uint32_t BSP_Timer_GetTim1TickCount(void);
 int BSP_Timer_StartChecked(void);
 void BSP_Timer_SetHooks(void (*tim1_hook)(void), void (*tim2_hook)(void), void (*encoder_hook)(void));
