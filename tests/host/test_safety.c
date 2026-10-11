@@ -10,8 +10,10 @@
 #include "bsp_safety.h"
 #include "bsp_timer.h"
 #include "app_no_power.h"
+#include "tim1_model.h"
 #define CHECK(x) do { if (!(x)) { fprintf(stderr,"FAIL %d: %s\n",__LINE__,#x); exit(1); } } while(0)
 static TIM_TypeDef regs[4];
+static Tim1_Model tim1_model;
 TIM_HandleTypeDef htim1={&regs[0]},htim2={&regs[1]},htim3={&regs[2]},htim4={&regs[3]};
 ADC_HandleTypeDef hadc1={1},hadc2={2},hadc3={3};
 uint32_t mock_primask;
@@ -21,6 +23,11 @@ static unsigned starts,stops,adc_starts,adc_stops,polls,reads,base_starts,gate_w
 static uint32_t time_ms;
 static HAL_StatusTypeDef injected=HAL_ERROR;
 static unsigned read_ids[6];
+void mock_clear_bits(uint32_t *reg, uint32_t bits)
+{
+    if (reg == &regs[0].BDTR) { Tim1_ModelWriteBDTR(&tim1_model, *reg & ~bits); }
+    else { *reg &= ~bits; }
+}
 static int discard_bad;
 static const uint16_t values[]={17,19,23,4095,0,4095};
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *h);
@@ -40,21 +47,22 @@ uint32_t *mock_compare_register(TIM_HandleTypeDef *h,uint32_t c)
     if(c==TIM_CHANNEL_2) return &h->Instance->CCR2;
     CHECK(c==TIM_CHANNEL_3);return &h->Instance->CCR3;
 }
-static HAL_StatusTypeDef start(TIM_HandleTypeDef *h,uint32_t c)
+static HAL_StatusTypeDef start(TIM_HandleTypeDef *h,uint32_t c,unsigned complementary)
 {
-    (void)c;CHECK(h==&htim1 && gate_writes>0);
-    regs[0].BDTR|=TIM_BDTR_MOE|TIM_BDTR_AOE;
-    regs[0].CCER=0x555;regs[0].CR1|=TIM_CR1_CEN;
+    CHECK(h==&htim1 && gate_writes>0);
+    CHECK(c==4U*(starts%6/2) && complementary==starts%2);
+    Tim1_ModelWriteBDTR(&tim1_model, regs[0].BDTR | TIM_BDTR_MOE);
+    regs[0].CCER|=(complementary?4U:1U) << c;regs[0].CR1|=TIM_CR1_CEN;
     unsigned index=starts++;
     return (int)index==start_fail?injected:HAL_OK;
 }
-HAL_StatusTypeDef HAL_TIM_PWM_Start(TIM_HandleTypeDef *h,uint32_t c) { return start(h,c); }
-HAL_StatusTypeDef HAL_TIMEx_PWMN_Start(TIM_HandleTypeDef *h,uint32_t c) { return start(h,c); }
+HAL_StatusTypeDef HAL_TIM_PWM_Start(TIM_HandleTypeDef *h,uint32_t c) { return start(h,c,0); }
+HAL_StatusTypeDef HAL_TIMEx_PWMN_Start(TIM_HandleTypeDef *h,uint32_t c) { return start(h,c,1); }
 static HAL_StatusTypeDef stop(TIM_HandleTypeDef *h,uint32_t c)
 {
     (void)c;CHECK(h==&htim1 && gate_writes>0);
     /* Gate checks happen at the HAL boundary, before a stop can succeed. */
-    CHECK(!(regs[0].BDTR&(TIM_BDTR_MOE|TIM_BDTR_AOE)));
+    CHECK(!(regs[0].BDTR&TIM_BDTR_MOE)); /* AOE may be locked at 1 in rejected configuration. */
     CHECK((regs[0].CCER&0x555)==0 && !(regs[0].CR1&TIM_CR1_CEN));
     CHECK(!(regs[0].DIER&TIM_IT_UPDATE));
     unsigned index=stops++;
@@ -105,13 +113,21 @@ HAL_StatusTypeDef HAL_TIM_Base_Stop_IT(TIM_HandleTypeDef *h)
 static void fault_check(BSP_Fault reason)
 {
     CHECK(BSP_Safety_GetFault()==reason);
-    CHECK(!(regs[0].BDTR&(TIM_BDTR_MOE|TIM_BDTR_AOE)) && (regs[0].CCER&0x555)==0);
+    CHECK(!(regs[0].BDTR&TIM_BDTR_MOE) && (regs[0].CCER&0x555)==0);
     CHECK(!(regs[0].DIER&TIM_IT_UPDATE) && gate_writes>0);
     CHECK(!(mock_gpiof.ODR&PM1_CTRL_SD_Pin));
     unsigned before=starts;
     CHECK(!BSP_PWM_StartChecked() && starts==before);
+    unsigned base_before=base_starts,adc_before=adc_starts;
+    CHECK(!BSP_TIM1_StartDiagnosticChecked() && !BSP_Timer_StartTim1Diagnostic());
+    CHECK(!BSP_Timer_StartChecked() && base_starts==base_before);
+    CHECK(!BSP_ADC_StartChecked() && adc_starts==adc_before);
+    CHECK(!BSP_EncoderSafe_Start() && !App_NoPower_Start());
     BSP_Safety_Fault(BSP_FAULT_INIT);
     CHECK(BSP_Safety_GetFault()==reason); /* Preserve original fault. */
+    Tim1_ModelUpdate(&tim1_model);
+    CHECK((regs[0].CCER&0x555)==0 && !(regs[0].CR1&TIM_CR1_CEN));
+    if (!(regs[0].BDTR&TIM_BDTR_AOE)) { CHECK(!(regs[0].BDTR&TIM_BDTR_MOE)); }
 }
 static void encoder_case(void)
 {
@@ -140,6 +156,8 @@ int main(int argc,char **argv)
     CHECK(argc>=2);
     int index=argc>2?atoi(argv[2]):-1;
     if(argc>3) injected=(HAL_StatusTypeDef)atoi(argv[3]);
+    Tim1_ModelReset(&tim1_model,&regs[0]);
+    Tim1_ModelWriteBDTR(&tim1_model,0x3154U); /* DTG84, LOCK1, BKE/BKP, AOE0; matches MX_TIM1_Init. */
     regs[0].ARR=99;regs[0].CCR1=7;regs[0].CCR2=11;regs[0].CCR3=19;
     if(!strcmp(argv[1],"pwm_start")) {
         start_fail=index;
@@ -196,6 +214,10 @@ int main(int argc,char **argv)
     } else if(!strcmp(argv[1],"app_replay")) {
         CHECK(App_NoPower_Start());
         CHECK(regs[0].DIER&TIM_IT_UPDATE);
+#if !DMF407_NO_POWER_CONTROL
+        CHECK(starts==0 && (regs[0].CCER&0x555)==0 && !(regs[0].BDTR&TIM_BDTR_MOE));
+        CHECK(regs[0].CR1&TIM_CR1_CEN);
+#endif
         App_NoPower_Poll();CHECK(reads==6);
         HAL_TIM_PeriodElapsedCallback(&htim2);
         HAL_TIM_PeriodElapsedCallback(&htim3);
@@ -230,7 +252,67 @@ int main(int argc,char **argv)
         CHECK(regs[0].CCR1==13 && regs[0].CCR2==47 && regs[0].CCR3==99);
         CHECK(BSP_PWM_StopChecked());
         CHECK(BSP_Safety_GetFault()==BSP_FAULT_NONE);
+    } else if(!strcmp(argv[1],"locked_aoe")) {
+        Tim1_ModelReset(&tim1_model,&regs[0]);
+        Tim1_ModelWriteBDTR(&tim1_model,0xf154U);
+        regs[0].CCER=0x555;regs[0].CR1=TIM_CR1_CEN;
+        Tim1_ModelWriteBDTR(&tim1_model,regs[0].BDTR & ~(TIM_BDTR_AOE|TIM_BDTR_MOE));
+        CHECK((regs[0].BDTR&TIM_BDTR_AOE) && !(regs[0].BDTR&TIM_BDTR_MOE));
+        Tim1_ModelUpdate(&tim1_model);CHECK(regs[0].BDTR&TIM_BDTR_MOE); /* Reproduces old defect. */
+        CHECK(!App_NoPower_Start() && starts==0 && adc_starts==0);
+        fault_check(BSP_FAULT_TIM1_CONFIG);
+        CHECK((regs[0].BDTR&TIM_BDTR_AOE) && (regs[0].BDTR&TIM_BDTR_MOE));
+    } else if(!strcmp(argv[1],"lock_write")) {
+        uint32_t initial=regs[0].BDTR;
+        Tim1_ModelWriteBDTR(&tim1_model,0xffffU);
+        CHECK((regs[0].BDTR&0x73ffU)==(initial&0x73ffU));
+        CHECK(regs[0].BDTR&TIM_BDTR_MOE);
+        Tim1_ModelWriteBDTR(&tim1_model,0);
+        CHECK((regs[0].BDTR&0x73ffU)==(initial&0x73ffU));
+        CHECK(!(regs[0].BDTR&TIM_BDTR_MOE));
+    } else if(!strcmp(argv[1],"break_update")) {
+        CHECK(BSP_PWM_StartChecked());Tim1_ModelBreak(&tim1_model,1);
+        CHECK(!(regs[0].BDTR&TIM_BDTR_MOE));
+        Tim1_ModelBreak(&tim1_model,0);Tim1_ModelUpdate(&tim1_model);
+        CHECK(!(regs[0].BDTR&TIM_BDTR_MOE));
+        BSP_Safety_Fault(BSP_FAULT_CONTROL);fault_check(BSP_FAULT_CONTROL);
+    } else if(!strcmp(argv[1],"initial_moe")) {
+        Tim1_ModelWriteBDTR(&tim1_model,regs[0].BDTR|TIM_BDTR_MOE);
+        regs[0].CCER=0x555;
+        CHECK(BSP_TIM1_StartDiagnosticChecked() && starts==0);
+        CHECK(!(regs[0].BDTR&TIM_BDTR_MOE) && !(regs[0].CCER&0x555));
+        Tim1_ModelUpdate(&tim1_model);CHECK(!(regs[0].BDTR&TIM_BDTR_MOE));
+    } else if(!strcmp(argv[1],"wrong_lock")) {
+        Tim1_ModelReset(&tim1_model,&regs[0]);
+        Tim1_ModelWriteBDTR(&tim1_model,0x3054U);
+        CHECK(!BSP_PWM_StartChecked() && starts==0);fault_check(BSP_FAULT_TIM1_CONFIG);
+    } else if(!strcmp(argv[1],"adc_previous")) {
+        CHECK(BSP_ADC_StartChecked());FOC_RawSample out;
+        CHECK(BSP_ADC_ReadAllChecked(&out,2));poll_fail=11;injected=HAL_TIMEOUT;
+        CHECK(!BSP_ADC_ReadAllChecked(&out,2));
+        CHECK(out.bus==4095 && out.v==0 && out.w==4095);
+        fault_check(BSP_FAULT_ADC_READ);
+    } else if(!strcmp(argv[1],"off_timeout")) {
+        CHECK(App_NoPower_Start());poll_fail=0;injected=HAL_TIMEOUT;
+        App_NoPower_Poll();CHECK(starts==0);fault_check(BSP_FAULT_ADC_READ);
+    } else if(!strcmp(argv[1],"encoder_ambiguous")) {
+        CHECK(App_NoPower_Start());regs[2].CNT=32768;
+        HAL_TIM_PeriodElapsedCallback(&htim2);fault_check(BSP_FAULT_ENCODER);
+    } else if(!strcmp(argv[1],"sample_age")) {
+        CHECK(App_NoPower_Start());App_NoPower_Poll();
+        for(time_ms=0;time_ms<=20;++time_ms) { HAL_TIM_PeriodElapsedCallback(&htim2); }
+        time_ms=20;
+        HAL_TIM_PeriodElapsedCallback(&htim1);CHECK(BSP_Safety_GetFault()==BSP_FAULT_NONE);
+        time_ms=21;HAL_TIM_PeriodElapsedCallback(&htim2); /* Fresh encoder, old ADC sample. */
+        HAL_TIM_PeriodElapsedCallback(&htim1);fault_check(BSP_FAULT_STALE);
+    } else if(!strcmp(argv[1],"app_adc_transaction")) {
+        CHECK(App_NoPower_Start());App_NoPower_Poll();HAL_TIM_PeriodElapsedCallback(&htim2);
+        HAL_TIM_PeriodElapsedCallback(&htim1);FOC_Pipeline before,after;
+        App_NoPower_GetSnapshot(&before);CHECK(before.raw.bus==4095);
+        poll_fail=11;injected=HAL_TIMEOUT;App_NoPower_Poll();
+        HAL_TIM_PeriodElapsedCallback(&htim1);App_NoPower_GetSnapshot(&after);
+        CHECK(memcmp(&before,&after,sizeof(before))==0);fault_check(BSP_FAULT_ADC_READ);
     } else { CHECK(0); }
-    puts("PASS checked no-power path (HAL failures injected; not a hardware model)");
+    puts("PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE");
     return 0;
 }

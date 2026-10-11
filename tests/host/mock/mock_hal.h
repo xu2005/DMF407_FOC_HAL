@@ -24,6 +24,16 @@ typedef struct { unsigned id; } ADC_HandleTypeDef;
 #define HAL_MAX_DELAY UINT32_MAX
 #define TIM_BDTR_MOE 0x8000U
 #define TIM_BDTR_AOE 0x4000U
+#define TIM_BDTR_LOCK 0x300U
+#define TIM_LOCKLEVEL_1 0x100U
+/* Safety target overrides the standard CMSIS CLEAR_BIT at the bus-write
+ * boundary. Other historical targets remain simple HAL interaction mocks. */
+#ifdef MOCK_LOCKED_BDTR
+void mock_clear_bits(uint32_t *reg, uint32_t bits);
+#define CLEAR_BIT(reg, bits) mock_clear_bits(&(reg), (bits))
+#else
+#define CLEAR_BIT(reg, bits) ((reg) &= ~(bits))
+#endif
 #define TIM_CCER_CC1E 0x1U
 #define TIM_CCER_CC1NE 0x4U
 #define TIM_CCER_CC2E 0x10U
@@ -35,6 +45,19 @@ extern uint32_t mock_primask;
 #define __disable_irq() (mock_primask = 1U)
 #define __set_PRIMASK(v) (mock_primask = (v))
 #define __DMB() ((void)0)
+#ifdef MOCK_DWT
+typedef struct { uint32_t CTRL, CYCCNT; } MockDWT;
+typedef struct { uint32_t DEMCR; } MockCoreDebug;
+extern MockDWT mock_dwt;
+extern MockCoreDebug mock_core_debug;
+#define DWT (&mock_dwt)
+#define CoreDebug (&mock_core_debug)
+#define DWT_CTRL_NOCYCCNT_Msk (1U << 25)
+#define DWT_CTRL_CYCCNTENA_Msk 1U
+#define CoreDebug_DEMCR_TRCENA_Msk (1U << 24)
+#define __DSB() ((void)0)
+#define __ISB() ((void)0)
+#endif
 
 enum mock_event_kind {
     COUNTER_SET, ENCODER_START, FLAG_CLEAR, IT_ENABLE,

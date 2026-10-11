@@ -2,6 +2,9 @@ name: Host logic regression
 on: [push, pull_request, workflow_dispatch]
 jobs:
   host:
+    strategy:
+      matrix:
+        build_type: [Debug, Release]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -9,8 +12,9 @@ jobs:
         run: |
           gcc --version
           cmake --version
+          echo "Tested commit: ${{ github.sha }}"
       - name: Configure
-        run: cmake -S tests/host -B build/host -DCMAKE_BUILD_TYPE=Release
+        run: cmake -S tests/host -B build/host -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
       - name: Build
         run: cmake --build build/host --parallel
       - name: Test (KNOWN_RISK means reproduction, not closure)
@@ -18,7 +22,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: host-regression-logs
+          name: host-regression-logs-${{ matrix.build_type }}
           path: |
             build/host/Testing/Temporary/LastTest.log
             build/host/host-results.xml

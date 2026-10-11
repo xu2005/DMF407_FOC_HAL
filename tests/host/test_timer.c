@@ -9,6 +9,7 @@ static TIM_TypeDef regs[5];
 TIM_HandleTypeDef htim1 = { &regs[0] }, htim2 = { &regs[1] },
                   htim3 = { &regs[2] }, htim4 = { &regs[3] };
 static unsigned clear_seen, enable_seen, encoder_ticks;
+uint32_t mock_primask;
 void mock_record(enum mock_event_kind kind, const void *handle, uint32_t value)
 {
     if (handle == &htim1) {
@@ -25,6 +26,7 @@ HAL_StatusTypeDef HAL_TIM_Base_Start_IT(TIM_HandleTypeDef *h)
 }
 void BSP_Encoder_OverflowTick(void) { ++encoder_ticks; }
 void BSP_Safety_Fault(BSP_Fault fault) { (void)fault; CHECK(0); }
+BSP_Fault BSP_Safety_GetFault(void) { return BSP_FAULT_NONE; }
 HAL_StatusTypeDef HAL_TIM_Base_Stop_IT(TIM_HandleTypeDef *h)
 {
     h->Instance->DIER &= ~TIM_IT_UPDATE;

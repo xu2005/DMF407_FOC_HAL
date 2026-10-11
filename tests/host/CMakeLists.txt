@@ -100,14 +100,14 @@ add_test(NAME encoder_v2_bounded COMMAND encoder_v2_tests)
 set_tests_properties(encoder_v2_bounded PROPERTIES TIMEOUT 5)
 
 foreach(mode 0 1)
-    add_executable(safety_tests_${mode} test_safety.c ../../App/app_no_power.c
+    add_executable(safety_tests_${mode} test_safety.c mock/tim1_model.c ../../App/app_no_power.c
         ../../BSP/bsp_adc_safe.c ../../BSP/bsp_encoder_safe.c ../../BSP/bsp_safety.c
         ../../BSP/bsp_motor_enable.c
         ../../BSP/bsp_pwm.c ../../BSP/bsp_timer.c ../../Motor/encoder_tracker.c
         ../../Motor/motor_angle_speed.c ../../Control/foc_pipeline.c
         ../../Control/foc_transforms.c ../../Control/foc_pi.c ../../Control/foc_svpwm.c)
     target_include_directories(safety_tests_${mode} PRIVATE mock ../../BSP ../../App ../../Motor ../../Control)
-    target_compile_definitions(safety_tests_${mode} PRIVATE DMF407_NO_POWER_CONTROL=${mode})
+    target_compile_definitions(safety_tests_${mode} PRIVATE DMF407_NO_POWER_CONTROL=${mode} MOCK_LOCKED_BDTR=1)
     target_compile_features(safety_tests_${mode} PRIVATE c_std_11)
     if(MSVC)
         target_compile_options(safety_tests_${mode} PRIVATE /W4)
@@ -117,6 +117,29 @@ foreach(mode 0 1)
     endif()
     add_test(NAME app_mode_${mode} COMMAND safety_tests_${mode} app_replay)
     set_tests_properties(app_mode_${mode} PROPERTIES TIMEOUT 5)
+endforeach()
+
+# V2.1 additions are separately labeled. All previous 70 test names remain.
+foreach(group locked_aoe lock_write break_update initial_moe wrong_lock adc_previous encoder_ambiguous sample_age app_adc_transaction)
+    add_test(NAME v21_${group} COMMAND safety_tests_1 ${group})
+    set_tests_properties(v21_${group} PROPERTIES LABELS "V21_SAFETY" TIMEOUT 5)
+endforeach()
+foreach(mode 0 1)
+    add_executable(timing_tests_${mode} test_timing.c ../../BSP/bsp_timing.c)
+    target_include_directories(timing_tests_${mode} PRIVATE mock ../../BSP)
+    target_compile_definitions(timing_tests_${mode} PRIVATE DMF407_DWT_DIAGNOSTICS=${mode} MOCK_DWT=1)
+    target_compile_features(timing_tests_${mode} PRIVATE c_std_11)
+    if(NOT MSVC)
+        target_compile_options(timing_tests_${mode} PRIVATE -Wall -Wextra -Werror)
+    endif()
+    add_test(NAME v21_dwt_${mode} COMMAND timing_tests_${mode})
+    set_tests_properties(v21_dwt_${mode} PROPERTIES LABELS "V21_SAFETY" TIMEOUT 5)
+endforeach()
+add_test(NAME v21_dwt_unsupported COMMAND timing_tests_1 unsupported)
+set_tests_properties(v21_dwt_unsupported PROPERTIES LABELS "V21_SAFETY" TIMEOUT 5)
+foreach(group app_replay off_timeout locked_aoe initial_moe)
+    add_test(NAME v21_off_${group} COMMAND safety_tests_0 ${group})
+    set_tests_properties(v21_off_${group} PROPERTIES LABELS "V21_SAFETY" TIMEOUT 5)
 endforeach()
 foreach(group pwm_start pwm_stop adc_start adc_poll adc_bad svpwm_bad app_failure)
     if(group STREQUAL "adc_start")
