@@ -60,6 +60,8 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/Control/foc_pi.c
     ${CMAKE_CURRENT_SOURCE_DIR}/Control/foc_svpwm.c
     ${CMAKE_CURRENT_SOURCE_DIR}/Control/foc_pipeline.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Motor/encoder_tracker.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/BSP/bsp_encoder_safe.c
 )
 
 # Add include paths
