@@ -10,10 +10,15 @@ Drivers/
 # ---- IDE / 调试器本地文件 ----
 .vscode/
 .idea/
+.clangd
+.settings/
 *.uvguix.*
 JLinkLog.txt
 JLinkSettings.ini
 EventRecorderStub.scvd
+
+# ---- 本地补丁审阅副本（正本归档于 Docs/协作记录/） ----
+patches/
 
 # ---- 编译中间产物与镜像 ----
 *.o
