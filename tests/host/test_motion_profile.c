@@ -54,6 +54,15 @@ int main(int argc, char **argv)
     } else if (!strcmp(argv[1],"capacity")) {
         struct { uint32_t before; Motion_Profile p; uint32_t after; } guard;
         guard.before=0x12345678; guard.after=0x87654321;
+        config.show_speed=1627;
+        CHECK(Motion_ProfileBuild(&guard.p,&config)==MOTION_PROFILE_OK);
+        CHECK(guard.p.valid && guard.p.dec_len==MOTION_ARRAY_LENGTH);
+        CHECK(guard.p.period_min==guard.p.period[MOTION_ARRAY_LENGTH]);
+        CHECK(guard.before==0x12345678 && guard.after==0x87654321);
+        config.show_speed=1628;
+        CHECK(Motion_ProfileBuild(&guard.p,&config)==MOTION_PROFILE_CAPACITY);
+        CHECK(!guard.p.valid && guard.p.dec_len==0);
+        CHECK(guard.before==0x12345678 && guard.after==0x87654321);
         config.show_speed=100000;
         CHECK(Motion_ProfileBuild(&guard.p,&config)==MOTION_PROFILE_CAPACITY);
         CHECK(!guard.p.valid && guard.p.dec_len==0);

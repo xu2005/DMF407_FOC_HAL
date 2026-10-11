@@ -1,5 +1,6 @@
 #include "motion.h"
 #include "vectors/motion_xy_legacy.h"
+#include "vectors/motion_batch_legacy.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -58,6 +59,18 @@ int main(int argc,char **argv)
             CHECK(finish(legacy_xy[i].x==3 && legacy_xy[i].y==2)==legacy_xy[i].count);
             CHECK(digest==legacy_xy[i].digest);
             CHECK(motion.profile_index==legacy_xy[i].final_index);
+        }
+    } else if (!strcmp(argv[1],"batch_vectors")) {
+        for (size_t i=0;i<sizeof(legacy_batches)/sizeof(legacy_batches[0]);i++) {
+            init();
+            for (uint32_t j=0;j<legacy_batches[i].segments;j++) {
+                CHECK(Motion_Enqueue(&motion,legacy_batches[i].points[j][0],
+                      legacy_batches[i].points[j][1],2,2)==MOTION_OK);
+            }
+            CHECK(Motion_Start(&motion)==MOTION_OK);
+            CHECK(finish(0)==legacy_batches[i].count);
+            CHECK(digest==legacy_batches[i].digest);
+            CHECK(motion.profile_index==legacy_batches[i].final_index);
         }
     } else if (!strcmp(argv[1],"quadrants")) {
         for (int sx=-1;sx<=1;sx+=2) {

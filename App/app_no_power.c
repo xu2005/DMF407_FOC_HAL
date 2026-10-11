@@ -22,6 +22,7 @@ static volatile uint32_t sample_time;
 static volatile int sample_valid, angle_valid;
 static uint32_t encoder_time;
 static int running;
+static App_MotionSim motion_sim;
 
 static void angle_tick(void)
 {
@@ -78,6 +79,11 @@ int App_NoPower_Start(void)
     /* No restart after run/fault. Only a MCU reset recreates PI/raw state. */
     if (running || BSP_Safety_GetFault()!=BSP_FAULT_NONE) { return 0; }
     if (!BSP_TIM1_ConfigChecked()) { return 0; }
+    Motion_ProfileConfig motion_config=Motion_ProfileLegacyConfig();
+    if (App_MotionSim_Init(&motion_sim,&motion_config)!=MOTION_OK ||
+        App_MotionSim_LoadLegacyDemo(&motion_sim)!=MOTION_OK) {
+        BSP_Safety_Fault(BSP_FAULT_CONTROL); return 0;
+    }
     BSP_Timing_Init();
     FOC_PipelineInit(&pipeline);
     sample_valid=angle_valid=0;
@@ -107,9 +113,12 @@ int App_NoPower_Start(void)
 
 void App_NoPower_Poll(void)
 {
-    if (!running || BSP_Safety_GetFault()!=BSP_FAULT_NONE) { return; }
+    if (BSP_Safety_GetFault()!=BSP_FAULT_NONE) { Motion_Fault(&motion_sim.motion); return; }
+    if (!running) { return; }
     FOC_RawSample sample;
-    if (!BSP_ADC_ReadAllChecked(&sample,ADC_POLL_TIMEOUT_MS)) { return; }
+    if (!BSP_ADC_ReadAllChecked(&sample,ADC_POLL_TIMEOUT_MS)) {
+        Motion_Fault(&motion_sim.motion); return;
+    }
     uint32_t mask=__get_PRIMASK();
     __disable_irq();
     if (BSP_Safety_GetFault()==BSP_FAULT_NONE) {
@@ -119,7 +128,19 @@ void App_NoPower_Poll(void)
         sample_valid=1;
     }
     __set_PRIMASK(mask);
+    /* Pure logical sink: one accepted XY event per successful main poll.
+     * Never write TIM4 ARR/GPIO or use this as a timed/physical step claim. */
+    if (BSP_Safety_GetFault()==BSP_FAULT_NONE) { (void)App_MotionSim_Step(&motion_sim); }
+    else { Motion_Fault(&motion_sim.motion); }
 }
+
+void App_NoPower_GetMotionSnapshot(App_MotionSnapshot *out)
+{
+    if (BSP_Safety_GetFault()!=BSP_FAULT_NONE) { Motion_Fault(&motion_sim.motion); }
+    App_MotionSim_Read(&motion_sim,out);
+}
+
+void App_NoPower_CancelMotion(void) { Motion_Cancel(&motion_sim.motion); }
 
 void App_NoPower_GetSnapshot(FOC_Pipeline *out)
 {

@@ -312,6 +312,42 @@ int main(int argc,char **argv)
         poll_fail=11;injected=HAL_TIMEOUT;App_NoPower_Poll();
         HAL_TIM_PeriodElapsedCallback(&htim1);App_NoPower_GetSnapshot(&after);
         CHECK(memcmp(&before,&after,sizeof(before))==0);fault_check(BSP_FAULT_ADC_READ);
+    } else if(!strcmp(argv[1],"app_motion") || !strcmp(argv[1],"app_motion_cancel") ||
+              !strcmp(argv[1],"app_motion_fault")) {
+        CHECK(App_NoPower_Start());
+        App_MotionSnapshot snapshot;
+        App_NoPower_GetMotionSnapshot(&snapshot);
+        CHECK(snapshot.state==MOTION_RUNNING && snapshot.target_x==8192 && snapshot.target_y==0);
+        CHECK(snapshot.confirmed_events==0 && !snapshot.has_event);
+        uint32_t timer4_arr=regs[3].ARR, timer4_ccr=regs[3].CCR1;
+        unsigned pwm_starts=starts;
+        if(!strcmp(argv[1],"app_motion")) {
+            for(unsigned i=1;i<=8192;i++) {
+                App_NoPower_Poll(); App_NoPower_GetMotionSnapshot(&snapshot);
+                CHECK(snapshot.has_event && snapshot.last_event.axis==MOTION_AXIS_X);
+                CHECK(snapshot.confirmed_x==(int32_t)i && snapshot.confirmed_y==0);
+                CHECK(snapshot.planned_events==i && snapshot.confirmed_events==i);
+                CHECK(snapshot.last_event.sequence==i && snapshot.last_event.direction==1);
+                CHECK(snapshot.state==(i==8192 ? MOTION_COMPLETE : MOTION_RUNNING));
+            }
+            App_NoPower_Poll();App_NoPower_GetMotionSnapshot(&snapshot);
+            CHECK(snapshot.confirmed_events==8192);
+            CHECK(BSP_Safety_GetFault()==BSP_FAULT_NONE);
+        } else if(!strcmp(argv[1],"app_motion_cancel")) {
+            App_NoPower_Poll();App_NoPower_CancelMotion();App_NoPower_Poll();
+            App_NoPower_GetMotionSnapshot(&snapshot);
+            CHECK(snapshot.state==MOTION_CANCELLED && snapshot.confirmed_events==1);
+        } else {
+            App_NoPower_Poll();poll_fail=6;injected=HAL_TIMEOUT;
+            App_NoPower_Poll();App_NoPower_GetMotionSnapshot(&snapshot);
+            CHECK(snapshot.state==MOTION_FAULT && snapshot.confirmed_events==1);
+            fault_check(BSP_FAULT_ADC_READ);
+        }
+        CHECK(regs[3].ARR==timer4_arr && regs[3].CCR1==timer4_ccr);
+        CHECK(starts==pwm_starts && !(mock_gpiof.ODR&PM1_CTRL_SD_Pin));
+#if !DMF407_NO_POWER_CONTROL
+        CHECK(starts==0 && !(regs[0].BDTR&TIM_BDTR_MOE) && !(regs[0].CCER&0x555));
+#endif
     } else { CHECK(0); }
     puts("PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE");
     return 0;
