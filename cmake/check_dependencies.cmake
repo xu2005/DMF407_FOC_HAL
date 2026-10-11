@@ -4,7 +4,7 @@ else()
     get_filename_component(PROJECT_ROOT "${PROJECT_ROOT}" ABSOLUTE)
 endif()
 file(READ "${PROJECT_ROOT}/cmake/stm32cubemx/CMakeLists.txt" cube_sources)
-string(REGEX MATCHALL "\.\./\.\./Drivers/[A-Za-z0-9_/]+\.c" driver_sources "${cube_sources}")
+string(REGEX MATCHALL "[.][.]/[.][.]/Drivers/[A-Za-z0-9_/]+[.]c" driver_sources "${cube_sources}")
 set(required
     Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
     Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h

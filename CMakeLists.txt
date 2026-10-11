@@ -27,11 +27,8 @@ include("cmake/gcc-arm-none-eabi.cmake")
 # Enable compile command to ease indexing with e.g. clangd
 set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
 
-# Enable CMake support for ASM and C languages
-enable_language(C ASM)
-
 # Core project settings
-project(${CMAKE_PROJECT_NAME})
+project(${CMAKE_PROJECT_NAME} LANGUAGES C ASM)
 message("Build type: " ${CMAKE_BUILD_TYPE})
 
 # Create an executable object type
@@ -62,6 +59,9 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/Control/foc_pipeline.c
     ${CMAKE_CURRENT_SOURCE_DIR}/Motor/encoder_tracker.c
     ${CMAKE_CURRENT_SOURCE_DIR}/BSP/bsp_encoder_safe.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/BSP/bsp_safety.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/BSP/bsp_adc_safe.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/App/app_no_power.c
 )
 
 # Add include paths
@@ -70,11 +70,14 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/BSP
     ${CMAKE_CURRENT_SOURCE_DIR}/Motor
     ${CMAKE_CURRENT_SOURCE_DIR}/Control
+    ${CMAKE_CURRENT_SOURCE_DIR}/App
 )
 
 # Add project symbols (macros)
+option(DMF407_NO_POWER_CONTROL "Run FOC replay on MCU with PF10 forced Low (L4 timing unverified)" OFF)
 target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined symbols
+    DMF407_NO_POWER_CONTROL=$<BOOL:${DMF407_NO_POWER_CONTROL}>
 )
 
 # Add linked libraries

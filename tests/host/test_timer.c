@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "tim.h"
 #include "bsp_timer.h"
+#include "bsp_safety.h"
 
 #define CHECK(x) do { if (!(x)) { fprintf(stderr, "FAIL %d: %s\n", __LINE__, #x); exit(1); } } while (0)
 static TIM_TypeDef regs[5];
@@ -23,6 +24,13 @@ HAL_StatusTypeDef HAL_TIM_Base_Start_IT(TIM_HandleTypeDef *h)
     return HAL_OK;
 }
 void BSP_Encoder_OverflowTick(void) { ++encoder_ticks; }
+void BSP_Safety_Fault(BSP_Fault fault) { (void)fault; CHECK(0); }
+HAL_StatusTypeDef HAL_TIM_Base_Stop_IT(TIM_HandleTypeDef *h)
+{
+    h->Instance->DIER &= ~TIM_IT_UPDATE;
+    h->Instance->CR1 &= ~TIM_CR1_CEN;
+    return HAL_OK;
+}
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *h);
 int main(void)
 {

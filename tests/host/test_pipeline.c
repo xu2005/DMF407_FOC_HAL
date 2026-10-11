@@ -57,6 +57,15 @@ int main(void)
     FOC_PipelineAngleTick(&s, 65535, -1);
     NEAR(s.angle.speed_rpm,-15);
     NEAR(s.angle.electrical_angle,4.09035397f);
+    /* Exercise the actual SVPWM return-0 path without reading its duties. */
+    FOC_PipelineInit(&s);
+    CHECK(FOC_PipelineControlTick(&s,&raw,0)==FOC_TICK_DISABLED);
+    s.id_ref=s.dq_current.I_d;
+    s.iq_ref=s.dq_current.I_q;
+    s.pwm.ta=71; s.pwm.tb=73; s.pwm.tc=79;
+    CHECK(FOC_PipelineControlTick(&s,&raw,1)==FOC_TICK_INVALID);
+    CHECK(s.pwm.sector==0);
+    CHECK(s.pwm.ta==71 && s.pwm.tb==73 && s.pwm.tc==79);
     puts("PASS V1 replay: ADC/conversion/angle/transforms/PI/SVPWM, order and disabled state; no realtime claim");
     return 0;
 }

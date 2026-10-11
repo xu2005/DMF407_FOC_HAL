@@ -9,9 +9,8 @@
   *
   * 职责边界（任务书 §4.3）：
   *   本模块只做定时器外设访问与 Update 中断统一分发。
-  *   原 TIM2 的角度/转速计算（calculate_motor_parameters → theta/Speed_actual）
-  *   与原 TIM4 的 XY 插补位置计数（motorX/Y_position）**本阶段不迁入**，
-  *   归 Motor/Control 层后续阶段独立恢复。
+  *   TIM1/TIM2 可通过启动前注册的 App hook 派发无功率诊断/计算。
+  *   TIM4 XY 插补业务仍未迁入。真实周期与 WCET 必须独立实测。
   ******************************************************************************
   */
 #ifndef __BSP_TIMER_H
@@ -54,6 +53,8 @@ void BSP_Timer_Start(void);
  * NVIC/DIER/UIF, RCR relationship and actual frequency require L4 measurement. */
 void BSP_Timer_StartTim1Diagnostic(void);
 uint32_t BSP_Timer_GetTim1TickCount(void);
+int BSP_Timer_StartChecked(void);
+void BSP_Timer_SetHooks(void (*tim1_hook)(void), void (*tim2_hook)(void), void (*encoder_hook)(void));
 
 /**
   * @brief  读取 TIM2 Update 中断累计次数
