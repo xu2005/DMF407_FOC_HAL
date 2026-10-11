@@ -63,6 +63,9 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/BSP/bsp_safety.c
     ${CMAKE_CURRENT_SOURCE_DIR}/BSP/bsp_adc_safe.c
     ${CMAKE_CURRENT_SOURCE_DIR}/App/app_no_power.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/App/app_motion_sim.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Motion/motion_profile.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Motion/motion.c
 )
 
 # Add include paths
@@ -72,6 +75,7 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/Motor
     ${CMAKE_CURRENT_SOURCE_DIR}/Control
     ${CMAKE_CURRENT_SOURCE_DIR}/App
+    ${CMAKE_CURRENT_SOURCE_DIR}/Motion
 )
 
 # Add project symbols (macros)

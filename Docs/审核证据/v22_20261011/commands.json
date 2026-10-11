@@ -1,0 +1,228 @@
+[
+  {
+    "name": "host-Debug-configure",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\cmake.EXE",
+      "-S",
+      "tests/host",
+      "-B",
+      "C:\\Users\\xuhengyi\\Desktop\\item\\\u8bfe\u8bbe\\DMF407_FOC_HAL\\build\\v22-host-debug",
+      "-G",
+      "Ninja",
+      "-DCMAKE_BUILD_TYPE=Debug",
+      "-DCMAKE_C_COMPILER=C:\\mingw64\\bin\\gcc.EXE"
+    ],
+    "commit": "2f9bf2a4a7b171f6076d5e7b85e5e0c3abfc76c9",
+    "started_utc": "2026-10-11T12:48:01.192063+00:00",
+    "exit_code": 0,
+    "log": "host-Debug-configure.log"
+  },
+  {
+    "name": "host-Debug-build",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\cmake.EXE",
+      "--build",
+      "C:\\Users\\xuhengyi\\Desktop\\item\\\u8bfe\u8bbe\\DMF407_FOC_HAL\\build\\v22-host-debug",
+      "--parallel",
+      "4"
+    ],
+    "commit": "2f9bf2a4a7b171f6076d5e7b85e5e0c3abfc76c9",
+    "started_utc": "2026-10-11T12:48:03.320243+00:00",
+    "exit_code": 0,
+    "log": "host-Debug-build.log"
+  },
+  {
+    "name": "host-Debug-test",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\ctest.EXE",
+      "--test-dir",
+      "C:\\Users\\xuhengyi\\Desktop\\item\\\u8bfe\u8bbe\\DMF407_FOC_HAL\\build\\v22-host-debug",
+      "--output-on-failure",
+      "--output-junit",
+      "C:\\Users\\xuhengyi\\Desktop\\item\\\u8bfe\u8bbe\\DMF407_FOC_HAL\\build\\v22-evidence\\host-Debug-results.xml"
+    ],
+    "commit": "2f9bf2a4a7b171f6076d5e7b85e5e0c3abfc76c9",
+    "started_utc": "2026-10-11T12:48:06.754792+00:00",
+    "exit_code": 0,
+    "log": "host-Debug-test.log"
+  },
+  {
+    "name": "host-Release-configure",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\cmake.EXE",
+      "-S",
+      "tests/host",
+      "-B",
+      "C:\\Users\\xuhengyi\\Desktop\\item\\\u8bfe\u8bbe\\DMF407_FOC_HAL\\build\\v22-host-release",
+      "-G",
+      "Ninja",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCMAKE_C_COMPILER=C:\\mingw64\\bin\\gcc.EXE"
+    ],
+    "commit": "2f9bf2a4a7b171f6076d5e7b85e5e0c3abfc76c9",
+    "started_utc": "2026-10-11T12:48:08.014598+00:00",
+    "exit_code": 0,
+    "log": "host-Release-configure.log"
+  },
+  {
+    "name": "host-Release-build",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\cmake.EXE",
+      "--build",
+      "C:\\Users\\xuhengyi\\Desktop\\item\\\u8bfe\u8bbe\\DMF407_FOC_HAL\\build\\v22-host-release",
+      "--parallel",
+      "4"
+    ],
+    "commit": "2f9bf2a4a7b171f6076d5e7b85e5e0c3abfc76c9",
+    "started_utc": "2026-10-11T12:48:09.691693+00:00",
+    "exit_code": 0,
+    "log": "host-Release-build.log"
+  },
+  {
+    "name": "host-Release-test",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\ctest.EXE",
+      "--test-dir",
+      "C:\\Users\\xuhengyi\\Desktop\\item\\\u8bfe\u8bbe\\DMF407_FOC_HAL\\build\\v22-host-release",
+      "--output-on-failure",
+      "--output-junit",
+      "C:\\Users\\xuhengyi\\Desktop\\item\\\u8bfe\u8bbe\\DMF407_FOC_HAL\\build\\v22-evidence\\host-Release-results.xml"
+    ],
+    "commit": "2f9bf2a4a7b171f6076d5e7b85e5e0c3abfc76c9",
+    "started_utc": "2026-10-11T12:48:13.085314+00:00",
+    "exit_code": 0,
+    "log": "host-Release-test.log"
+  },
+  {
+    "name": "arm-Debug-OFF-configure",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\cmake.EXE",
+      "-S",
+      ".",
+      "-B",
+      "C:\\Users\\xuhengyi\\Desktop\\item\\\u8bfe\u8bbe\\DMF407_FOC_HAL\\build\\v22-arm-debug-off",
+      "-G",
+      "Ninja",
+      "-DCMAKE_BUILD_TYPE=Debug",
+      "-DDMF407_NO_POWER_CONTROL=OFF",
+      "-DDMF407_DWT_DIAGNOSTICS=OFF"
+    ],
+    "commit": "2f9bf2a4a7b171f6076d5e7b85e5e0c3abfc76c9",
+    "started_utc": "2026-10-11T12:48:14.475642+00:00",
+    "exit_code": 0,
+    "log": "arm-Debug-OFF-configure.log"
+  },
+  {
+    "name": "arm-Debug-OFF-build",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\cmake.EXE",
+      "--build",
+      "C:\\Users\\xuhengyi\\Desktop\\item\\\u8bfe\u8bbe\\DMF407_FOC_HAL\\build\\v22-arm-debug-off",
+      "--parallel",
+      "4"
+    ],
+    "commit": "2f9bf2a4a7b171f6076d5e7b85e5e0c3abfc76c9",
+    "started_utc": "2026-10-11T12:48:16.531313+00:00",
+    "exit_code": 0,
+    "log": "arm-Debug-OFF-build.log"
+  },
+  {
+    "name": "arm-Debug-ON-configure",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\cmake.EXE",
+      "-S",
+      ".",
+      "-B",
+      "C:\\Users\\xuhengyi\\Desktop\\item\\\u8bfe\u8bbe\\DMF407_FOC_HAL\\build\\v22-arm-debug-on",
+      "-G",
+      "Ninja",
+      "-DCMAKE_BUILD_TYPE=Debug",
+      "-DDMF407_NO_POWER_CONTROL=ON",
+      "-DDMF407_DWT_DIAGNOSTICS=OFF"
+    ],
+    "commit": "2f9bf2a4a7b171f6076d5e7b85e5e0c3abfc76c9",
+    "started_utc": "2026-10-11T12:48:23.643664+00:00",
+    "exit_code": 0,
+    "log": "arm-Debug-ON-configure.log"
+  },
+  {
+    "name": "arm-Debug-ON-build",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\cmake.EXE",
+      "--build",
+      "C:\\Users\\xuhengyi\\Desktop\\item\\\u8bfe\u8bbe\\DMF407_FOC_HAL\\build\\v22-arm-debug-on",
+      "--parallel",
+      "4"
+    ],
+    "commit": "2f9bf2a4a7b171f6076d5e7b85e5e0c3abfc76c9",
+    "started_utc": "2026-10-11T12:48:25.724462+00:00",
+    "exit_code": 0,
+    "log": "arm-Debug-ON-build.log"
+  },
+  {
+    "name": "arm-Release-OFF-configure",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\cmake.EXE",
+      "-S",
+      ".",
+      "-B",
+      "C:\\Users\\xuhengyi\\Desktop\\item\\\u8bfe\u8bbe\\DMF407_FOC_HAL\\build\\v22-arm-release-off",
+      "-G",
+      "Ninja",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DDMF407_NO_POWER_CONTROL=OFF",
+      "-DDMF407_DWT_DIAGNOSTICS=OFF"
+    ],
+    "commit": "2f9bf2a4a7b171f6076d5e7b85e5e0c3abfc76c9",
+    "started_utc": "2026-10-11T12:48:32.456354+00:00",
+    "exit_code": 0,
+    "log": "arm-Release-OFF-configure.log"
+  },
+  {
+    "name": "arm-Release-OFF-build",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\cmake.EXE",
+      "--build",
+      "C:\\Users\\xuhengyi\\Desktop\\item\\\u8bfe\u8bbe\\DMF407_FOC_HAL\\build\\v22-arm-release-off",
+      "--parallel",
+      "4"
+    ],
+    "commit": "2f9bf2a4a7b171f6076d5e7b85e5e0c3abfc76c9",
+    "started_utc": "2026-10-11T12:48:34.346083+00:00",
+    "exit_code": 0,
+    "log": "arm-Release-OFF-build.log"
+  },
+  {
+    "name": "arm-Release-ON-configure",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\cmake.EXE",
+      "-S",
+      ".",
+      "-B",
+      "C:\\Users\\xuhengyi\\Desktop\\item\\\u8bfe\u8bbe\\DMF407_FOC_HAL\\build\\v22-arm-release-on",
+      "-G",
+      "Ninja",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DDMF407_NO_POWER_CONTROL=ON",
+      "-DDMF407_DWT_DIAGNOSTICS=OFF"
+    ],
+    "commit": "2f9bf2a4a7b171f6076d5e7b85e5e0c3abfc76c9",
+    "started_utc": "2026-10-11T12:48:41.018014+00:00",
+    "exit_code": 0,
+    "log": "arm-Release-ON-configure.log"
+  },
+  {
+    "name": "arm-Release-ON-build",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\cmake.EXE",
+      "--build",
+      "C:\\Users\\xuhengyi\\Desktop\\item\\\u8bfe\u8bbe\\DMF407_FOC_HAL\\build\\v22-arm-release-on",
+      "--parallel",
+      "4"
+    ],
+    "commit": "2f9bf2a4a7b171f6076d5e7b85e5e0c3abfc76c9",
+    "started_utc": "2026-10-11T12:48:43.170838+00:00",
+    "exit_code": 0,
+    "log": "arm-Release-ON-build.log"
+  }
+]

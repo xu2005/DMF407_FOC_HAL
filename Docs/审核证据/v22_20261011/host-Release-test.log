@@ -1,0 +1,218 @@
+Test project C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v22-host-release
+        Start   1: motion_profile_vectors
+  1/104 Test   #1: motion_profile_vectors ...........   Passed    0.03 sec
+        Start   2: motion_profile_input
+  2/104 Test   #2: motion_profile_input .............   Passed    0.01 sec
+        Start   3: motion_profile_clamps
+  3/104 Test   #3: motion_profile_clamps ............   Passed    0.01 sec
+        Start   4: motion_profile_capacity
+  4/104 Test   #4: motion_profile_capacity ..........   Passed    0.01 sec
+        Start   5: motion_vectors
+  5/104 Test   #5: motion_vectors ...................   Passed    0.02 sec
+        Start   6: motion_batch_vectors
+  6/104 Test   #6: motion_batch_vectors .............   Passed    0.01 sec
+        Start   7: motion_quadrants
+  7/104 Test   #7: motion_quadrants .................   Passed    0.01 sec
+        Start   8: motion_queue
+  8/104 Test   #8: motion_queue .....................   Passed    0.01 sec
+        Start   9: motion_boundaries
+  9/104 Test   #9: motion_boundaries ................   Passed    0.01 sec
+        Start  10: motion_cancel_fault
+ 10/104 Test  #10: motion_cancel_fault ..............   Passed    0.01 sec
+        Start  11: motion_segments
+ 11/104 Test  #11: motion_segments ..................   Passed    0.01 sec
+        Start  12: motion_index
+ 12/104 Test  #12: motion_index .....................   Passed    0.01 sec
+        Start  13: encoder
+ 13/104 Test  #13: encoder ..........................   Passed    0.02 sec
+        Start  14: encoder_r01
+ 14/104 Test  #14: encoder_r01 ......................   Passed    0.01 sec
+        Start  15: adc
+ 15/104 Test  #15: adc ..............................   Passed    0.01 sec
+        Start  16: pwm
+ 16/104 Test  #16: pwm ..............................   Passed    0.01 sec
+        Start  17: math_angle
+ 17/104 Test  #17: math_angle .......................   Passed    0.02 sec
+        Start  18: math_angle_r01
+ 18/104 Test  #18: math_angle_r01 ...................   Passed    0.01 sec
+        Start  19: math_transforms
+ 19/104 Test  #19: math_transforms ..................   Passed    0.01 sec
+        Start  20: pi_speed
+ 20/104 Test  #20: pi_speed .........................   Passed    0.02 sec
+        Start  21: pi_current
+ 21/104 Test  #21: pi_current .......................   Passed    0.01 sec
+        Start  22: pi_schedule
+ 22/104 Test  #22: pi_schedule ......................   Passed    0.01 sec
+        Start  23: pi_position
+ 23/104 Test  #23: pi_position ......................   Passed    0.01 sec
+        Start  24: svpwm_normal
+ 24/104 Test  #24: svpwm_normal .....................   Passed    0.01 sec
+        Start  25: svpwm_zero
+ 25/104 Test  #25: svpwm_zero .......................   Passed    0.01 sec
+        Start  26: timer_diagnostic
+ 26/104 Test  #26: timer_diagnostic .................   Passed    0.01 sec
+        Start  27: pipeline_v1_replay
+ 27/104 Test  #27: pipeline_v1_replay ...............   Passed    0.02 sec
+        Start  28: encoder_v2_bounded
+ 28/104 Test  #28: encoder_v2_bounded ...............   Passed    0.02 sec
+        Start  29: app_mode_0
+ 29/104 Test  #29: app_mode_0 .......................   Passed    0.02 sec
+        Start  30: motion_app_motion_0
+ 30/104 Test  #30: motion_app_motion_0 ..............   Passed    0.01 sec
+        Start  31: motion_app_motion_cancel_0
+ 31/104 Test  #31: motion_app_motion_cancel_0 .......   Passed    0.01 sec
+        Start  32: motion_app_motion_fault_0
+ 32/104 Test  #32: motion_app_motion_fault_0 ........   Passed    0.01 sec
+        Start  33: app_mode_1
+ 33/104 Test  #33: app_mode_1 .......................   Passed    0.02 sec
+        Start  34: motion_app_motion_1
+ 34/104 Test  #34: motion_app_motion_1 ..............   Passed    0.01 sec
+        Start  35: motion_app_motion_cancel_1
+ 35/104 Test  #35: motion_app_motion_cancel_1 .......   Passed    0.01 sec
+        Start  36: motion_app_motion_fault_1
+ 36/104 Test  #36: motion_app_motion_fault_1 ........   Passed    0.01 sec
+        Start  37: v21_locked_aoe
+ 37/104 Test  #37: v21_locked_aoe ...................   Passed    0.01 sec
+        Start  38: v21_lock_write
+ 38/104 Test  #38: v21_lock_write ...................   Passed    0.01 sec
+        Start  39: v21_break_update
+ 39/104 Test  #39: v21_break_update .................   Passed    0.01 sec
+        Start  40: v21_initial_moe
+ 40/104 Test  #40: v21_initial_moe ..................   Passed    0.01 sec
+        Start  41: v21_wrong_lock
+ 41/104 Test  #41: v21_wrong_lock ...................   Passed    0.01 sec
+        Start  42: v21_adc_previous
+ 42/104 Test  #42: v21_adc_previous .................   Passed    0.01 sec
+        Start  43: v21_encoder_ambiguous
+ 43/104 Test  #43: v21_encoder_ambiguous ............   Passed    0.01 sec
+        Start  44: v21_sample_age
+ 44/104 Test  #44: v21_sample_age ...................   Passed    0.01 sec
+        Start  45: v21_app_adc_transaction
+ 45/104 Test  #45: v21_app_adc_transaction ..........   Passed    0.01 sec
+        Start  46: v21_dwt_0
+ 46/104 Test  #46: v21_dwt_0 ........................   Passed    0.03 sec
+        Start  47: v21_dwt_1
+ 47/104 Test  #47: v21_dwt_1 ........................   Passed    0.03 sec
+        Start  48: v21_dwt_unsupported
+ 48/104 Test  #48: v21_dwt_unsupported ..............   Passed    0.01 sec
+        Start  49: v21_off_app_replay
+ 49/104 Test  #49: v21_off_app_replay ...............   Passed    0.01 sec
+        Start  50: v21_off_off_timeout
+ 50/104 Test  #50: v21_off_off_timeout ..............   Passed    0.01 sec
+        Start  51: v21_off_locked_aoe
+ 51/104 Test  #51: v21_off_locked_aoe ...............   Passed    0.01 sec
+        Start  52: v21_off_initial_moe
+ 52/104 Test  #52: v21_off_initial_moe ..............   Passed    0.01 sec
+        Start  53: v2_pwm_start_0_1
+ 53/104 Test  #53: v2_pwm_start_0_1 .................   Passed    0.01 sec
+        Start  54: v2_pwm_start_1_1
+ 54/104 Test  #54: v2_pwm_start_1_1 .................   Passed    0.01 sec
+        Start  55: v2_pwm_start_2_1
+ 55/104 Test  #55: v2_pwm_start_2_1 .................   Passed    0.01 sec
+        Start  56: v2_pwm_start_3_1
+ 56/104 Test  #56: v2_pwm_start_3_1 .................   Passed    0.01 sec
+        Start  57: v2_pwm_start_4_1
+ 57/104 Test  #57: v2_pwm_start_4_1 .................   Passed    0.01 sec
+        Start  58: v2_pwm_start_5_1
+ 58/104 Test  #58: v2_pwm_start_5_1 .................   Passed    0.01 sec
+        Start  59: v2_pwm_stop_0_1
+ 59/104 Test  #59: v2_pwm_stop_0_1 ..................   Passed    0.01 sec
+        Start  60: v2_pwm_stop_1_1
+ 60/104 Test  #60: v2_pwm_stop_1_1 ..................   Passed    0.01 sec
+        Start  61: v2_pwm_stop_2_1
+ 61/104 Test  #61: v2_pwm_stop_2_1 ..................   Passed    0.01 sec
+        Start  62: v2_pwm_stop_3_1
+ 62/104 Test  #62: v2_pwm_stop_3_1 ..................   Passed    0.01 sec
+        Start  63: v2_pwm_stop_4_1
+ 63/104 Test  #63: v2_pwm_stop_4_1 ..................   Passed    0.01 sec
+        Start  64: v2_pwm_stop_5_1
+ 64/104 Test  #64: v2_pwm_stop_5_1 ..................   Passed    0.01 sec
+        Start  65: v2_adc_start_0_1
+ 65/104 Test  #65: v2_adc_start_0_1 .................   Passed    0.01 sec
+        Start  66: v2_adc_start_1_1
+ 66/104 Test  #66: v2_adc_start_1_1 .................   Passed    0.01 sec
+        Start  67: v2_adc_start_2_1
+ 67/104 Test  #67: v2_adc_start_2_1 .................   Passed    0.01 sec
+        Start  68: v2_adc_poll_0_1
+ 68/104 Test  #68: v2_adc_poll_0_1 ..................   Passed    0.01 sec
+        Start  69: v2_adc_poll_0_2
+ 69/104 Test  #69: v2_adc_poll_0_2 ..................   Passed    0.01 sec
+        Start  70: v2_adc_poll_0_3
+ 70/104 Test  #70: v2_adc_poll_0_3 ..................   Passed    0.01 sec
+        Start  71: v2_adc_poll_1_1
+ 71/104 Test  #71: v2_adc_poll_1_1 ..................   Passed    0.01 sec
+        Start  72: v2_adc_poll_1_2
+ 72/104 Test  #72: v2_adc_poll_1_2 ..................   Passed    0.01 sec
+        Start  73: v2_adc_poll_1_3
+ 73/104 Test  #73: v2_adc_poll_1_3 ..................   Passed    0.01 sec
+        Start  74: v2_adc_poll_2_1
+ 74/104 Test  #74: v2_adc_poll_2_1 ..................   Passed    0.01 sec
+        Start  75: v2_adc_poll_2_2
+ 75/104 Test  #75: v2_adc_poll_2_2 ..................   Passed    0.01 sec
+        Start  76: v2_adc_poll_2_3
+ 76/104 Test  #76: v2_adc_poll_2_3 ..................   Passed    0.01 sec
+        Start  77: v2_adc_poll_3_1
+ 77/104 Test  #77: v2_adc_poll_3_1 ..................   Passed    0.01 sec
+        Start  78: v2_adc_poll_3_2
+ 78/104 Test  #78: v2_adc_poll_3_2 ..................   Passed    0.01 sec
+        Start  79: v2_adc_poll_3_3
+ 79/104 Test  #79: v2_adc_poll_3_3 ..................   Passed    0.01 sec
+        Start  80: v2_adc_poll_4_1
+ 80/104 Test  #80: v2_adc_poll_4_1 ..................   Passed    0.01 sec
+        Start  81: v2_adc_poll_4_2
+ 81/104 Test  #81: v2_adc_poll_4_2 ..................   Passed    0.01 sec
+        Start  82: v2_adc_poll_4_3
+ 82/104 Test  #82: v2_adc_poll_4_3 ..................   Passed    0.01 sec
+        Start  83: v2_adc_poll_5_1
+ 83/104 Test  #83: v2_adc_poll_5_1 ..................   Passed    0.01 sec
+        Start  84: v2_adc_poll_5_2
+ 84/104 Test  #84: v2_adc_poll_5_2 ..................   Passed    0.01 sec
+        Start  85: v2_adc_poll_5_3
+ 85/104 Test  #85: v2_adc_poll_5_3 ..................   Passed    0.01 sec
+        Start  86: v2_adc_bad_0_1
+ 86/104 Test  #86: v2_adc_bad_0_1 ...................   Passed    0.01 sec
+        Start  87: v2_adc_bad_1_1
+ 87/104 Test  #87: v2_adc_bad_1_1 ...................   Passed    0.01 sec
+        Start  88: v2_adc_bad_2_1
+ 88/104 Test  #88: v2_adc_bad_2_1 ...................   Passed    0.01 sec
+        Start  89: v2_adc_bad_3_1
+ 89/104 Test  #89: v2_adc_bad_3_1 ...................   Passed    0.01 sec
+        Start  90: v2_svpwm_bad_0_1
+ 90/104 Test  #90: v2_svpwm_bad_0_1 .................   Passed    0.01 sec
+        Start  91: v2_svpwm_bad_1_1
+ 91/104 Test  #91: v2_svpwm_bad_1_1 .................   Passed    0.01 sec
+        Start  92: v2_svpwm_bad_2_1
+ 92/104 Test  #92: v2_svpwm_bad_2_1 .................   Passed    0.01 sec
+        Start  93: v2_svpwm_bad_3_1
+ 93/104 Test  #93: v2_svpwm_bad_3_1 .................   Passed    0.01 sec
+        Start  94: v2_svpwm_bad_4_1
+ 94/104 Test  #94: v2_svpwm_bad_4_1 .................   Passed    0.01 sec
+        Start  95: v2_svpwm_bad_5_1
+ 95/104 Test  #95: v2_svpwm_bad_5_1 .................   Passed    0.01 sec
+        Start  96: v2_svpwm_bad_6_1
+ 96/104 Test  #96: v2_svpwm_bad_6_1 .................   Passed    0.01 sec
+        Start  97: v2_svpwm_bad_7_1
+ 97/104 Test  #97: v2_svpwm_bad_7_1 .................   Passed    0.01 sec
+        Start  98: v2_app_failure_0_1
+ 98/104 Test  #98: v2_app_failure_0_1 ...............   Passed    0.01 sec
+        Start  99: v2_app_failure_1_1
+ 99/104 Test  #99: v2_app_failure_1_1 ...............   Passed    0.01 sec
+        Start 100: v2_app_failure_2_1
+100/104 Test #100: v2_app_failure_2_1 ...............   Passed    0.01 sec
+        Start 101: v2_app_failure_3_1
+101/104 Test #101: v2_app_failure_3_1 ...............   Passed    0.01 sec
+        Start 102: v2_encoder
+102/104 Test #102: v2_encoder .......................   Passed    0.01 sec
+        Start 103: v2_early_init
+103/104 Test #103: v2_early_init ....................   Passed    0.01 sec
+        Start 104: v2_valid
+104/104 Test #104: v2_valid .........................   Passed    0.01 sec
+
+100% tests passed, 0 tests failed out of 104
+
+Label Time Summary:
+KNOWN_RISK    =   0.03 sec*proc (3 tests)
+V21_SAFETY    =   0.21 sec*proc (16 tests)
+V22_MOTION    =   0.21 sec*proc (18 tests)
+
+Total Test time (real) =   1.29 sec

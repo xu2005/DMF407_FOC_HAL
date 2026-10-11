@@ -13,3 +13,4 @@ Legacy/** -text
 # Preserve the exact bytes of archived validation output and hash manifests.
 # Raw tool output retains its original line endings and whitespace.
 "Docs/审核证据/v21_20261011/**" -text -whitespace
+"Docs/审核证据/v22_20261011/**" -text -whitespace

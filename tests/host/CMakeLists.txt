@@ -2,6 +2,34 @@ cmake_minimum_required(VERSION 3.22)
 project(dmf407_host_regression C)
 enable_testing()
 
+add_executable(motion_profile_tests test_motion_profile.c ../../Motion/motion_profile.c)
+target_include_directories(motion_profile_tests PRIVATE ../../Motion)
+target_compile_features(motion_profile_tests PRIVATE c_std_11)
+if(MSVC)
+    target_compile_options(motion_profile_tests PRIVATE /W4)
+else()
+    target_compile_options(motion_profile_tests PRIVATE -Wall -Wextra -Werror)
+    target_link_libraries(motion_profile_tests PRIVATE m)
+endif()
+foreach(group vectors input clamps capacity)
+    add_test(NAME motion_profile_${group} COMMAND motion_profile_tests ${group})
+    set_tests_properties(motion_profile_${group} PROPERTIES LABELS "V22_MOTION" TIMEOUT 5)
+endforeach()
+
+add_executable(motion_tests test_motion.c ../../Motion/motion.c ../../Motion/motion_profile.c)
+target_include_directories(motion_tests PRIVATE ../../Motion)
+target_compile_features(motion_tests PRIVATE c_std_11)
+if(MSVC)
+    target_compile_options(motion_tests PRIVATE /W4)
+else()
+    target_compile_options(motion_tests PRIVATE -Wall -Wextra -Werror)
+    target_link_libraries(motion_tests PRIVATE m)
+endif()
+foreach(group vectors batch_vectors quadrants queue boundaries cancel_fault segments index)
+    add_test(NAME motion_${group} COMMAND motion_tests ${group})
+    set_tests_properties(motion_${group} PROPERTIES LABELS "V22_MOTION" TIMEOUT 5)
+endforeach()
+
 # Compile the real BSP translation units; only tim.h / adc.h are replaced.
 add_executable(bsp_host_tests
     test_bsp.c
@@ -101,12 +129,13 @@ set_tests_properties(encoder_v2_bounded PROPERTIES TIMEOUT 5)
 
 foreach(mode 0 1)
     add_executable(safety_tests_${mode} test_safety.c mock/tim1_model.c ../../App/app_no_power.c
+        ../../App/app_motion_sim.c ../../Motion/motion.c ../../Motion/motion_profile.c
         ../../BSP/bsp_adc_safe.c ../../BSP/bsp_encoder_safe.c ../../BSP/bsp_safety.c
         ../../BSP/bsp_motor_enable.c
         ../../BSP/bsp_pwm.c ../../BSP/bsp_timer.c ../../Motor/encoder_tracker.c
         ../../Motor/motor_angle_speed.c ../../Control/foc_pipeline.c
         ../../Control/foc_transforms.c ../../Control/foc_pi.c ../../Control/foc_svpwm.c)
-    target_include_directories(safety_tests_${mode} PRIVATE mock ../../BSP ../../App ../../Motor ../../Control)
+    target_include_directories(safety_tests_${mode} PRIVATE mock ../../BSP ../../App ../../Motor ../../Control ../../Motion)
     target_compile_definitions(safety_tests_${mode} PRIVATE DMF407_NO_POWER_CONTROL=${mode} MOCK_LOCKED_BDTR=1)
     target_compile_features(safety_tests_${mode} PRIVATE c_std_11)
     if(MSVC)
@@ -117,6 +146,10 @@ foreach(mode 0 1)
     endif()
     add_test(NAME app_mode_${mode} COMMAND safety_tests_${mode} app_replay)
     set_tests_properties(app_mode_${mode} PROPERTIES TIMEOUT 5)
+    foreach(group app_motion app_motion_cancel app_motion_fault)
+        add_test(NAME motion_${group}_${mode} COMMAND safety_tests_${mode} ${group})
+        set_tests_properties(motion_${group}_${mode} PROPERTIES LABELS "V22_MOTION" TIMEOUT 5)
+    endforeach()
 endforeach()
 
 # V2.1 additions are separately labeled. All previous 70 test names remain.
