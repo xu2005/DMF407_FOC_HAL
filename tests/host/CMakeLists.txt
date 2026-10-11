@@ -2,6 +2,20 @@ cmake_minimum_required(VERSION 3.22)
 project(dmf407_host_regression C)
 enable_testing()
 
+add_executable(motion_profile_tests test_motion_profile.c ../../Motion/motion_profile.c)
+target_include_directories(motion_profile_tests PRIVATE ../../Motion)
+target_compile_features(motion_profile_tests PRIVATE c_std_11)
+if(MSVC)
+    target_compile_options(motion_profile_tests PRIVATE /W4)
+else()
+    target_compile_options(motion_profile_tests PRIVATE -Wall -Wextra -Werror)
+    target_link_libraries(motion_profile_tests PRIVATE m)
+endif()
+foreach(group vectors input clamps capacity)
+    add_test(NAME motion_profile_${group} COMMAND motion_profile_tests ${group})
+    set_tests_properties(motion_profile_${group} PROPERTIES LABELS "V22_MOTION" TIMEOUT 5)
+endforeach()
+
 # Compile the real BSP translation units; only tim.h / adc.h are replaced.
 add_executable(bsp_host_tests
     test_bsp.c
