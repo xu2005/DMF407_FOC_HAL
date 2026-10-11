@@ -16,6 +16,20 @@ foreach(group vectors input clamps capacity)
     set_tests_properties(motion_profile_${group} PROPERTIES LABELS "V22_MOTION" TIMEOUT 5)
 endforeach()
 
+add_executable(motion_tests test_motion.c ../../Motion/motion.c ../../Motion/motion_profile.c)
+target_include_directories(motion_tests PRIVATE ../../Motion)
+target_compile_features(motion_tests PRIVATE c_std_11)
+if(MSVC)
+    target_compile_options(motion_tests PRIVATE /W4)
+else()
+    target_compile_options(motion_tests PRIVATE -Wall -Wextra -Werror)
+    target_link_libraries(motion_tests PRIVATE m)
+endif()
+foreach(group vectors quadrants queue boundaries cancel_fault segments index)
+    add_test(NAME motion_${group} COMMAND motion_tests ${group})
+    set_tests_properties(motion_${group} PROPERTIES LABELS "V22_MOTION" TIMEOUT 5)
+endforeach()
+
 # Compile the real BSP translation units; only tim.h / adc.h are replaced.
 add_executable(bsp_host_tests
     test_bsp.c

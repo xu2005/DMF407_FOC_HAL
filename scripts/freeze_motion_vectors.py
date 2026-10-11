@@ -67,3 +67,82 @@ parts += ["static const struct { int32_t speed; uint32_t count; const uint16_t *
 destination = root / "tests/host/vectors/motion_profile_legacy.h"
 destination.parent.mkdir(parents=True, exist_ok=True)
 destination.write_text("\n".join(parts), encoding="utf-8")
+
+def extract(name):
+    match = re.search(r"(?:void|int|u16) " + name + r"\([^;]*?\)\s*\{", source)
+    assert match, name
+    begin = match.start()
+    depth = 0
+    for stop in range(source.index("{", begin), len(source)):
+        depth += (source[stop] == "{") - (source[stop] == "}")
+        if depth == 0:
+            return re.sub(r"//[^\n]*|/\*.*?\*/", "", source[begin:stop+1], flags=re.S)
+    raise ValueError(name)
+
+oracle = """#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+typedef uint8_t u8; typedef uint16_t u16;
+#define Array_LENGTH 3000
+#define DataLen 100
+#define ACC 'A'
+#define DEC 'D'
+#define m_streditMotorStep 1.8
+#define m_ieditMotordiv 16
+#define m_ieditSlineK 4
+long adjustA[1][2]; double Xscale=2,Yscale=2;
+long Xcoor,Ycoor,pre1_Xcoor,pre1_Ycoor;
+typedef struct {long deltX,deltY; u8 accdec; long acclen;} DELT_BUF;
+DELT_BUF delt_buf[DataLen];
+int write_ptr,read_ptr,dec_ptr;
+uint16_t DEC_ACC_PERiod[3001];
+long speed_period_min=10000,speed_period_max=10000,dec_len,Position_Limit=1000;
+long acc_dec_cnt; int show_speed=200;
+long ARR=10000;
+#define motorX_period ARR
+#define motorY_period ARR
+uint64_t digest=14695981039346656037ULL;
+unsigned events; int px,py;
+void hash(uint32_t value) {
+ for(int i=0;i<4;i++){digest^=(value>>(8*i))&255;digest*=1099511628211ULL;}
+}
+void pulse(unsigned axis) {
+ if(++events>20000) exit(3);
+ if(axis==0)px++;else py++;
+ hash(axis);hash((uint32_t)ARR);hash((uint32_t)px);hash((uint32_t)py);
+ if(events<=32)printf("%u %ld %d %d\\n",axis,ARR,px,py);
+}
+void motorX_pluse_send(void){pulse(0);}
+void motorY_pluse_send(void){pulse(1);}
+"""
+oracle += function + "\n" + "\n".join(extract(name) for name in
+    ("data_save", "speed_plane", "motor_dec_process", "motor_acc_process", "line_interpola"))
+oracle += """
+int main(int argc,char**argv){
+ if(argc!=3)return 1;
+ adjustA[0][0]=atoi(argv[1]);adjustA[0][1]=atoi(argv[2]);
+ cul_Saccdec(); data_save(0); speed_plane(); line_interpola();
+ printf("END %u %llu %d %d %ld\\n",events,(unsigned long long)digest,px,py,acc_dec_cnt);
+}
+"""
+c = work / "legacy_xy.c"
+c.write_text(oracle, encoding="utf-8")
+exe = work / "legacy_xy.exe"
+subprocess.run(["gcc", "-std=c11", "-O0", str(c), "-lm", "-o", str(exe)], check=True)
+parts = ["/* Frozen from Legacy data_save/speed_plane/line_interpola and profile.",
+         " * Pulse stubs record axis, ARR and logical XY; no hardware execution.",
+         " * FNV-1a hashes four little-endian uint32 fields per event. */",
+         "#include <stdint.h>",
+         "static const struct { int32_t x,y; uint32_t count; uint64_t digest; uint32_t final_index; } legacy_xy[] = {"]
+small = []
+for x,y in ((0,0),(8,0),(0,8),(3,2),(2,3),(6,6),(4096,0),(400,300),(300,400)):
+    lines = subprocess.check_output([str(exe), str(x), str(y)], text=True).splitlines()
+    _, count, digest, px, py, index = lines[-1].split()
+    assert int(px)==2*x and int(py)==2*y
+    parts.append(f"    {{{x}, {y}, {count}, UINT64_C({digest}), {index}}},")
+    if (x,y)==(3,2):
+        small = ["    {" + ", ".join(line.split()) + "}," for line in lines[:-1]]
+    print(f"Legacy XY ({x},{y}) x2: {count} events, index={index}")
+parts += ["};", "static const struct { uint32_t axis,period; int32_t x,y; } legacy_xy_3_2[] = {", *small, "};", ""]
+(destination.parent / "motion_xy_legacy.h").write_text("\n".join(parts), encoding="utf-8")
