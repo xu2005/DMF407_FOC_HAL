@@ -6,6 +6,8 @@ STM32F407IGT6 单轴 Legacy → HAL/CMake 迁移工程。活跃参考为 `Legacy
 
 ## 依赖与构建
 
+V2.2 Motion 已加入有界S曲线、非阻塞XY插补、100槽运动队列和可取消的纯逻辑无功率App模拟。Host Debug/Release各104/104，ARM Debug/Release × OFF/ON均编译通过。默认示例 `{4096,0} × 2` 输出8192个可读回软件X事件；周期仅为轨迹数据，无物理脉冲输出。详见 [Motion实现与验证](Docs/V2.2_Motion_实现与验证.md) 和 [最新续作检查点](Docs/V2.2_Motion_续作交接.md)。
+
 当前为 **V2.1 软件安全整改**：TIM1 首次初始化锁定 AOE=0、LOCK=1；默认 OFF 固件只开 TIM1 CEN/UIE，MOE=0、六路 CCER=0，不调用 PWM/PWMN Start。Host Debug/Release 各86项通过（原70保留，其中3项 KNOWN_RISK；新增16项），ARM Debug/Release × OFF/ON 实际编译通过，DWT=ON 另有编译证据。真实电平、ADC首触发与实时性仍需L4。详见 [TIM1修正报告](Docs/V2.1_TIM1安全修正报告_2026-10-11.md) 和 [逐项测试/构建证据](Docs/V2.1_测试与构建证据_2026-10-11.md)。
 
 - `.ioc`：STM32CubeMX 6.12.0；STM32Cube FW_F4 **V1.28.3**。
