@@ -6,6 +6,8 @@ STM32F407IGT6 单轴 Legacy → HAL/CMake 迁移工程。活跃参考为 `Legacy
 
 ## 依赖与构建
 
+当前为 **V2.1 软件安全整改**：TIM1 首次初始化锁定 AOE=0、LOCK=1；默认 OFF 固件只开 TIM1 CEN/UIE，MOE=0、六路 CCER=0，不调用 PWM/PWMN Start。Host Debug/Release 各86项通过（原70保留，其中3项 KNOWN_RISK；新增16项），ARM Debug/Release × OFF/ON 实际编译通过，DWT=ON 另有编译证据。真实电平、ADC首触发与实时性仍需L4。详见 [TIM1修正报告](Docs/V2.1_TIM1安全修正报告_2026-10-11.md) 和 [逐项测试/构建证据](Docs/V2.1_测试与构建证据_2026-10-11.md)。
+
 - `.ioc`：STM32CubeMX 6.12.0；STM32Cube FW_F4 **V1.28.3**。
 - 本轮工具：CMake 4.3.1、Ninja 1.13.2、GNU Tools for STM32 14.3.1；主机 GCC 8.1.0（MinGW）。CI 使用 Linux GCC，实际版本在日志中输出。
 - `Drivers/` 不入库。新克隆需先安装固定版本的 CubeF4 固件包。可在 CubeMX 打开 `.ioc` 后 Generate Code；生成后必须检查 USER CODE、PF10 初始 Low、PLLQ=7、PB12 配置、启动顺序及 CMake 业务源表未被覆盖。优先仅复制固件包的 HAL Driver、CMSIS 到本地 `Drivers/`，避免覆盖应用源码。
@@ -29,7 +31,9 @@ cmake -S . -B build/no-power-control -G Ninja -DCMAKE_BUILD_TYPE=Debug -DDMF407_
 cmake --build build/no-power-control
 ```
 
-V2 软件故障锁存后先拉低 PF10，再关 TIM1 UIE、MOE、AOE、六路 CCER 与 CEN，随后尝试所有 HAL Stop。故障期间拒绝重启与 CCR 更新，复位 MCU 才重建状态。ADC 使用单次 2 ms 诊断超时（六次等待，受 HAL tick 与抢占影响），不是实时电流采样预算；20 ms 原始码龄期、2 ms 编码器粗时间检查亦只是无功率诊断阈值。V2 计数需要相邻样本的实际位移小于 32768，CNT 本身无法检测漏掉的整圈。
+V2.1 软件故障锁存后先拉低 PF10，再关 TIM1 UIE、MOE、六路 CCER 与 CEN，随后尝试所有 HAL Stop。AOE 在初始化时锁定为0，运行时不尝试清锁定位；发现旧 AOE=1 或 LOCK≠1 时拒绝启动并锁存配置故障。故障期间拒绝受检重启与 CCR 更新，复位 MCU 才重建状态。ADC 使用单次 2 ms 诊断超时（六次等待，受 HAL tick 与抢占影响），不是实时电流采样预算；默认 OFF 的 CC1 首触发仍需 L4，失败超时，不启动 PWM 绕过。20 ms 原始码龄期、2 ms 编码器粗时间检查亦只是诊断阈值。相邻样本实际位移必须小于32768，CNT无法检测漏整圈。
+
+`DMF407_DWT_DIAGNOSTICS=ON` 可测 TIM1 IRQ 的 HAL/Callback/控制 C 调用区间，默认 OFF；记录 last/max/count，无 ISR UART/printf/动态内存。异常入/出栈、统计开销、暂停/抢占等须另外计入 L4 WCET，不能以主机计数或离线数学耗时替代。`python scripts/v21_validate.py` 可重跑本机完整矩阵并归档命令、退出码、SHA与全部日志。
 
 ## 门禁与范围
 

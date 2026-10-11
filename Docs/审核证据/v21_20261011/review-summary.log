@@ -1,0 +1,8 @@
+Read/indexed existing evidence files: 110 Text summaries: 28
+USER CODE blocks: 166 DWT blocks: 3
+No Legacy, Control, Motor, ADC, GPIO, main or toolchain semantic diff.
+arm-debug-off   20348	     20	   2376	  22744	   58d8	build/v21-final-arm-debug-off/DMF407_FOC_HAL.elf
+arm-debug-on   35448	    100	   2688	  38236	   955c	build/v21-final-arm-debug-on/DMF407_FOC_HAL.elf
+arm-release-off   13384	     20	   2376	  15780	   3da4	build/v21-final-arm-release-off/DMF407_FOC_HAL.elf
+arm-release-on   25720	    100	   2688	  28508	   6f5c	build/v21-final-arm-release-on/DMF407_FOC_HAL.elf
+arm-debug-on-dwt   35616	    100	   2704	  38420	   9614	build/v21-final-arm-debug-on-dwt/DMF407_FOC_HAL.elf

@@ -1,0 +1,8 @@
+config load DMF407_FOC_HAL.ioc
+waitclock 2
+get ip parameters TIM1 AutomaticOutput
+set ip parameters TIM1 AutomaticOutput TIM_AUTOMATICOUTPUT_DISABLE
+get ip parameters TIM1 AutomaticOutput
+config save
+project generate
+exit

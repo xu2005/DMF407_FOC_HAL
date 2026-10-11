@@ -1,0 +1,716 @@
+UpdateCTestConfiguration  from :C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug/DartConfiguration.tcl
+Test project C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+      Start  1: encoder
+
+1: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\bsp_host_tests.exe "encoder"
+1: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+1: Test timeout computed to be: 5
+1: PASS encoder: startup/UIE only, forward/reverse, upper/lower wrap, direction reversal
+ 1/86 Test  #1: encoder ..........................   Passed    0.02 sec
+test 2
+      Start  2: encoder_r01
+
+2: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\bsp_host_tests.exe "encoder_r01"
+2: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+2: Test timeout computed to be: 5
+2: KNOWN RISK R-01 upper: CNT=0 ISR pending, expected=65536 observed=0 error=-65536
+2: KNOWN RISK R-01 lower: CNT=65535 ISR pending, expected=-1 observed=65535 error=+65536
+2: KNOWN RISK reproduced; assertions pass because the unfixed error was observed, not closed
+ 2/86 Test  #2: encoder_r01 ......................   Passed    0.01 sec
+test 3
+      Start  3: adc
+
+3: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\bsp_host_tests.exe "adc"
+3: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+3: Test timeout computed to be: 5
+3: PASS adc: start 1/2/3, W/V/BUS/W/V/BUS, poll-before-read, discard first 3, retain raw last 3
+ 3/86 Test  #3: adc ..............................   Passed    0.01 sec
+test 4
+      Start  4: pwm
+
+4: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\bsp_host_tests.exe "pwm"
+4: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+4: Test timeout computed to be: 5
+4: PASS pwm: HAL start/stop call order, U/V/W to CCR1/2/3, zero/general/ARR boundary, independent readback
+ 4/86 Test  #4: pwm ..............................   Passed    0.01 sec
+test 5
+      Start  5: math_angle
+
+5: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\math_host_tests.exe "angle"
+5: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+5: Test timeout computed to be: 5
+5: PASS angle zero                 mech=5.73654795 elec=4.09663677 rpm=0
+5: PASS angle positive             mech=0.0816813707 elec=0.326725483 rpm=5999.99951
+5: PASS angle reverse              mech=0.0801105499 elec=0.3204422 rpm=-15
+5: PASS angle sample_1             mech=5.89362764 elec=4.72495556 rpm=1499.99988
+5: PASS angle sample_2             mech=5.89519835 elec=4.73123837 rpm=15
+5: PASS angle upper_wrap           mech=1.86611319 elec=1.18126774 rpm=15
+5: PASS angle lower_wrap           mech=5.73497725 elec=4.09035397 rpm=-15
+5: PASS angle half_positive_limit  mech=0.658162534 elec=2.63265014 rpm=491504.938
+5: PASS angle half_positive_wrap   mech=0.659738004 elec=2.63895202 rpm=-491520
+5: PASS angle half_negative_limit  mech=5.73654795 elec=4.09663677 rpm=-491520
+ 5/86 Test  #5: math_angle .......................   Passed    0.02 sec
+test 6
+      Start  6: math_angle_r01
+
+6: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\math_host_tests.exe "angle_r01"
+6: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+6: Test timeout computed to be: 5
+6: KNOWN RISK R-01 total error=-65536: mech 1.86611319->5.73654795, elec 1.18126774->4.09663677; raw-based rpm stays 15
+6: KNOWN RISK R-01 total error=65536: mech 5.73497725->1.86454153, elec 4.09035397->1.17498112; raw-based rpm stays -15
+6: KNOWN RISK propagation reproduced; no encoder fix or risk closure
+ 6/86 Test  #6: math_angle_r01 ...................   Passed    0.01 sec
+test 7
+      Start  7: math_transforms
+
+7: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\math_host_tests.exe "transforms"
+7: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+7: Test timeout computed to be: 5
+7: PASS transforms: Clarke 3 / Park 4 / Inverse Park 4 fixed vectors; pure arithmetic only
+ 7/86 Test  #7: math_transforms ..................   Passed    0.01 sec
+test 8
+      Start  8: pi_speed
+
+8: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\pi_svpwm_tests.exe "pi_speed"
+8: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+8: Test timeout computed to be: 5
+8: PASS: speed 8 consecutive updates, integral/output clamps, zero reference retains state
+ 8/86 Test  #8: pi_speed .........................   Passed    0.02 sec
+test 9
+      Start  9: pi_current
+
+9: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\pi_svpwm_tests.exe "pi_current"
+9: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+9: Test timeout computed to be: 5
+9: PASS: current d/q 6 consecutive updates, separate integral/output clamps
+ 9/86 Test  #9: pi_current .......................   Passed    0.01 sec
+test 10
+      Start 10: pi_schedule
+
+10: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\pi_svpwm_tests.exe "pi_schedule"
+10: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+10: Test timeout computed to be: 5
+10: PASS: 20 offline ticks, speed before current at ticks 10/20; no realtime scheduling claim
+10/86 Test #10: pi_schedule ......................   Passed    0.01 sec
+test 11
+      Start 11: pi_position
+
+11: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\pi_svpwm_tests.exe "pi_position"
+11: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+11: Test timeout computed to be: 5
+11: PASS: position 4 defined formula cases; Legacy global writes/diagnostics DEFERRED
+11/86 Test #11: pi_position ......................   Passed    0.01 sec
+test 12
+      Start 12: svpwm_normal
+
+12: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\pi_svpwm_tests.exe "svpwm_normal"
+12: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+12: Test timeout computed to be: 5
+12: PASS: SVPWM 14 nonzero vectors, six sectors and six overmodulation branches, two axis boundaries
+12/86 Test #12: svpwm_normal .....................   Passed    0.01 sec
+test 13
+      Start 13: svpwm_zero
+
+13: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\pi_svpwm_tests.exe "svpwm_zero"
+13: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+13: Test timeout computed to be: 5
+13: KNOWN RISK: zero sector has no defined ta/tb/tc; new explicit status is an interface difference
+13/86 Test #13: svpwm_zero .......................   Passed    0.01 sec
+test 14
+      Start 14: timer_diagnostic
+
+14: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\timer_host_tests.exe
+14: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+14: Test timeout computed to be: 5
+14: PASS diagnostic UIE routing; physical frequency/WCET not measured
+14/86 Test #14: timer_diagnostic .................   Passed    0.01 sec
+test 15
+      Start 15: pipeline_v1_replay
+
+15: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\pipeline_host_tests.exe
+15: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+15: Test timeout computed to be: 5
+15: PASS V1 replay: ADC/conversion/angle/transforms/PI/SVPWM, order and disabled state; no realtime claim
+15/86 Test #15: pipeline_v1_replay ...............   Passed    0.03 sec
+test 16
+      Start 16: encoder_v2_bounded
+
+16: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\encoder_v2_tests.exe
+16: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+16: Test timeout computed to be: 5
+16: PASS V2 wraps/reversal/restart/int64 limits; movement <32768 per sample is a hardware precondition
+16/86 Test #16: encoder_v2_bounded ...............   Passed    0.01 sec
+test 17
+      Start 17: app_mode_0
+
+17: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_0.exe "app_replay"
+17: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+17: Test timeout computed to be: 5
+17: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+17/86 Test #17: app_mode_0 .......................   Passed    0.11 sec
+test 18
+      Start 18: app_mode_1
+
+18: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "app_replay"
+18: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+18: Test timeout computed to be: 5
+18: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+18/86 Test #18: app_mode_1 .......................   Passed    0.23 sec
+test 19
+      Start 19: v21_locked_aoe
+
+19: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "locked_aoe"
+19: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+19: Test timeout computed to be: 5
+19: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+19/86 Test #19: v21_locked_aoe ...................   Passed    0.01 sec
+test 20
+      Start 20: v21_lock_write
+
+20: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "lock_write"
+20: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+20: Test timeout computed to be: 5
+20: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+20/86 Test #20: v21_lock_write ...................   Passed    0.01 sec
+test 21
+      Start 21: v21_break_update
+
+21: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "break_update"
+21: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+21: Test timeout computed to be: 5
+21: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+21/86 Test #21: v21_break_update .................   Passed    0.01 sec
+test 22
+      Start 22: v21_initial_moe
+
+22: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "initial_moe"
+22: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+22: Test timeout computed to be: 5
+22: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+22/86 Test #22: v21_initial_moe ..................   Passed    0.01 sec
+test 23
+      Start 23: v21_wrong_lock
+
+23: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "wrong_lock"
+23: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+23: Test timeout computed to be: 5
+23: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+23/86 Test #23: v21_wrong_lock ...................   Passed    0.01 sec
+test 24
+      Start 24: v21_adc_previous
+
+24: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "adc_previous"
+24: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+24: Test timeout computed to be: 5
+24: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+24/86 Test #24: v21_adc_previous .................   Passed    0.01 sec
+test 25
+      Start 25: v21_encoder_ambiguous
+
+25: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "encoder_ambiguous"
+25: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+25: Test timeout computed to be: 5
+25: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+25/86 Test #25: v21_encoder_ambiguous ............   Passed    0.01 sec
+test 26
+      Start 26: v21_sample_age
+
+26: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "sample_age"
+26: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+26: Test timeout computed to be: 5
+26: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+26/86 Test #26: v21_sample_age ...................   Passed    0.01 sec
+test 27
+      Start 27: v21_app_adc_transaction
+
+27: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "app_adc_transaction"
+27: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+27: Test timeout computed to be: 5
+27: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+27/86 Test #27: v21_app_adc_transaction ..........   Passed    0.01 sec
+test 28
+      Start 28: v21_dwt_0
+
+28: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\timing_tests_0.exe
+28: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+28: Test timeout computed to be: 5
+28: PASS DWT bookkeeping only; actual cycles/WCET NEEDS HARDWARE
+28/86 Test #28: v21_dwt_0 ........................   Passed    0.02 sec
+test 29
+      Start 29: v21_dwt_1
+
+29: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\timing_tests_1.exe
+29: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+29: Test timeout computed to be: 5
+29: PASS DWT bookkeeping only; actual cycles/WCET NEEDS HARDWARE
+29/86 Test #29: v21_dwt_1 ........................   Passed    0.02 sec
+test 30
+      Start 30: v21_dwt_unsupported
+
+30: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\timing_tests_1.exe "unsupported"
+30: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+30: Test timeout computed to be: 5
+30/86 Test #30: v21_dwt_unsupported ..............   Passed    0.01 sec
+test 31
+      Start 31: v21_off_app_replay
+
+31: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_0.exe "app_replay"
+31: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+31: Test timeout computed to be: 5
+31: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+31/86 Test #31: v21_off_app_replay ...............   Passed    0.01 sec
+test 32
+      Start 32: v21_off_off_timeout
+
+32: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_0.exe "off_timeout"
+32: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+32: Test timeout computed to be: 5
+32: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+32/86 Test #32: v21_off_off_timeout ..............   Passed    0.01 sec
+test 33
+      Start 33: v21_off_locked_aoe
+
+33: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_0.exe "locked_aoe"
+33: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+33: Test timeout computed to be: 5
+33: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+33/86 Test #33: v21_off_locked_aoe ...............   Passed    0.01 sec
+test 34
+      Start 34: v21_off_initial_moe
+
+34: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_0.exe "initial_moe"
+34: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+34: Test timeout computed to be: 5
+34: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+34/86 Test #34: v21_off_initial_moe ..............   Passed    0.01 sec
+test 35
+      Start 35: v2_pwm_start_0_1
+
+35: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "pwm_start" "0" "1"
+35: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+35: Test timeout computed to be: 5
+35: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+35/86 Test #35: v2_pwm_start_0_1 .................   Passed    0.01 sec
+test 36
+      Start 36: v2_pwm_start_1_1
+
+36: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "pwm_start" "1" "1"
+36: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+36: Test timeout computed to be: 5
+36: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+36/86 Test #36: v2_pwm_start_1_1 .................   Passed    0.01 sec
+test 37
+      Start 37: v2_pwm_start_2_1
+
+37: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "pwm_start" "2" "1"
+37: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+37: Test timeout computed to be: 5
+37: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+37/86 Test #37: v2_pwm_start_2_1 .................   Passed    0.01 sec
+test 38
+      Start 38: v2_pwm_start_3_1
+
+38: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "pwm_start" "3" "1"
+38: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+38: Test timeout computed to be: 5
+38: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+38/86 Test #38: v2_pwm_start_3_1 .................   Passed    0.01 sec
+test 39
+      Start 39: v2_pwm_start_4_1
+
+39: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "pwm_start" "4" "1"
+39: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+39: Test timeout computed to be: 5
+39: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+39/86 Test #39: v2_pwm_start_4_1 .................   Passed    0.01 sec
+test 40
+      Start 40: v2_pwm_start_5_1
+
+40: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "pwm_start" "5" "1"
+40: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+40: Test timeout computed to be: 5
+40: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+40/86 Test #40: v2_pwm_start_5_1 .................   Passed    0.01 sec
+test 41
+      Start 41: v2_pwm_stop_0_1
+
+41: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "pwm_stop" "0" "1"
+41: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+41: Test timeout computed to be: 5
+41: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+41/86 Test #41: v2_pwm_stop_0_1 ..................   Passed    0.01 sec
+test 42
+      Start 42: v2_pwm_stop_1_1
+
+42: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "pwm_stop" "1" "1"
+42: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+42: Test timeout computed to be: 5
+42: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+42/86 Test #42: v2_pwm_stop_1_1 ..................   Passed    0.01 sec
+test 43
+      Start 43: v2_pwm_stop_2_1
+
+43: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "pwm_stop" "2" "1"
+43: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+43: Test timeout computed to be: 5
+43: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+43/86 Test #43: v2_pwm_stop_2_1 ..................   Passed    0.01 sec
+test 44
+      Start 44: v2_pwm_stop_3_1
+
+44: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "pwm_stop" "3" "1"
+44: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+44: Test timeout computed to be: 5
+44: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+44/86 Test #44: v2_pwm_stop_3_1 ..................   Passed    0.01 sec
+test 45
+      Start 45: v2_pwm_stop_4_1
+
+45: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "pwm_stop" "4" "1"
+45: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+45: Test timeout computed to be: 5
+45: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+45/86 Test #45: v2_pwm_stop_4_1 ..................   Passed    0.01 sec
+test 46
+      Start 46: v2_pwm_stop_5_1
+
+46: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "pwm_stop" "5" "1"
+46: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+46: Test timeout computed to be: 5
+46: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+46/86 Test #46: v2_pwm_stop_5_1 ..................   Passed    0.01 sec
+test 47
+      Start 47: v2_adc_start_0_1
+
+47: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "adc_start" "0" "1"
+47: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+47: Test timeout computed to be: 5
+47: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+47/86 Test #47: v2_adc_start_0_1 .................   Passed    0.01 sec
+test 48
+      Start 48: v2_adc_start_1_1
+
+48: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "adc_start" "1" "1"
+48: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+48: Test timeout computed to be: 5
+48: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+48/86 Test #48: v2_adc_start_1_1 .................   Passed    0.01 sec
+test 49
+      Start 49: v2_adc_start_2_1
+
+49: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "adc_start" "2" "1"
+49: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+49: Test timeout computed to be: 5
+49: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+49/86 Test #49: v2_adc_start_2_1 .................   Passed    0.01 sec
+test 50
+      Start 50: v2_adc_poll_0_1
+
+50: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "adc_poll" "0" "1"
+50: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+50: Test timeout computed to be: 5
+50: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+50/86 Test #50: v2_adc_poll_0_1 ..................   Passed    0.01 sec
+test 51
+      Start 51: v2_adc_poll_0_2
+
+51: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "adc_poll" "0" "2"
+51: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+51: Test timeout computed to be: 5
+51: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+51/86 Test #51: v2_adc_poll_0_2 ..................   Passed    0.01 sec
+test 52
+      Start 52: v2_adc_poll_0_3
+
+52: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "adc_poll" "0" "3"
+52: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+52: Test timeout computed to be: 5
+52: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+52/86 Test #52: v2_adc_poll_0_3 ..................   Passed    0.01 sec
+test 53
+      Start 53: v2_adc_poll_1_1
+
+53: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "adc_poll" "1" "1"
+53: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+53: Test timeout computed to be: 5
+53: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+53/86 Test #53: v2_adc_poll_1_1 ..................   Passed    0.01 sec
+test 54
+      Start 54: v2_adc_poll_1_2
+
+54: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "adc_poll" "1" "2"
+54: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+54: Test timeout computed to be: 5
+54: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+54/86 Test #54: v2_adc_poll_1_2 ..................   Passed    0.01 sec
+test 55
+      Start 55: v2_adc_poll_1_3
+
+55: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "adc_poll" "1" "3"
+55: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+55: Test timeout computed to be: 5
+55: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+55/86 Test #55: v2_adc_poll_1_3 ..................   Passed    0.01 sec
+test 56
+      Start 56: v2_adc_poll_2_1
+
+56: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "adc_poll" "2" "1"
+56: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+56: Test timeout computed to be: 5
+56: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+56/86 Test #56: v2_adc_poll_2_1 ..................   Passed    0.01 sec
+test 57
+      Start 57: v2_adc_poll_2_2
+
+57: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "adc_poll" "2" "2"
+57: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+57: Test timeout computed to be: 5
+57: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+57/86 Test #57: v2_adc_poll_2_2 ..................   Passed    0.01 sec
+test 58
+      Start 58: v2_adc_poll_2_3
+
+58: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "adc_poll" "2" "3"
+58: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+58: Test timeout computed to be: 5
+58: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+58/86 Test #58: v2_adc_poll_2_3 ..................   Passed    0.01 sec
+test 59
+      Start 59: v2_adc_poll_3_1
+
+59: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "adc_poll" "3" "1"
+59: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+59: Test timeout computed to be: 5
+59: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+59/86 Test #59: v2_adc_poll_3_1 ..................   Passed    0.01 sec
+test 60
+      Start 60: v2_adc_poll_3_2
+
+60: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "adc_poll" "3" "2"
+60: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+60: Test timeout computed to be: 5
+60: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+60/86 Test #60: v2_adc_poll_3_2 ..................   Passed    0.01 sec
+test 61
+      Start 61: v2_adc_poll_3_3
+
+61: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "adc_poll" "3" "3"
+61: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+61: Test timeout computed to be: 5
+61: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+61/86 Test #61: v2_adc_poll_3_3 ..................   Passed    0.01 sec
+test 62
+      Start 62: v2_adc_poll_4_1
+
+62: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "adc_poll" "4" "1"
+62: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+62: Test timeout computed to be: 5
+62: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+62/86 Test #62: v2_adc_poll_4_1 ..................   Passed    0.01 sec
+test 63
+      Start 63: v2_adc_poll_4_2
+
+63: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "adc_poll" "4" "2"
+63: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+63: Test timeout computed to be: 5
+63: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+63/86 Test #63: v2_adc_poll_4_2 ..................   Passed    0.01 sec
+test 64
+      Start 64: v2_adc_poll_4_3
+
+64: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "adc_poll" "4" "3"
+64: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+64: Test timeout computed to be: 5
+64: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+64/86 Test #64: v2_adc_poll_4_3 ..................   Passed    0.01 sec
+test 65
+      Start 65: v2_adc_poll_5_1
+
+65: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "adc_poll" "5" "1"
+65: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+65: Test timeout computed to be: 5
+65: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+65/86 Test #65: v2_adc_poll_5_1 ..................   Passed    0.01 sec
+test 66
+      Start 66: v2_adc_poll_5_2
+
+66: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "adc_poll" "5" "2"
+66: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+66: Test timeout computed to be: 5
+66: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+66/86 Test #66: v2_adc_poll_5_2 ..................   Passed    0.01 sec
+test 67
+      Start 67: v2_adc_poll_5_3
+
+67: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "adc_poll" "5" "3"
+67: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+67: Test timeout computed to be: 5
+67: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+67/86 Test #67: v2_adc_poll_5_3 ..................   Passed    0.01 sec
+test 68
+      Start 68: v2_adc_bad_0_1
+
+68: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "adc_bad" "0" "1"
+68: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+68: Test timeout computed to be: 5
+68: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+68/86 Test #68: v2_adc_bad_0_1 ...................   Passed    0.01 sec
+test 69
+      Start 69: v2_adc_bad_1_1
+
+69: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "adc_bad" "1" "1"
+69: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+69: Test timeout computed to be: 5
+69: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+69/86 Test #69: v2_adc_bad_1_1 ...................   Passed    0.01 sec
+test 70
+      Start 70: v2_adc_bad_2_1
+
+70: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "adc_bad" "2" "1"
+70: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+70: Test timeout computed to be: 5
+70: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+70/86 Test #70: v2_adc_bad_2_1 ...................   Passed    0.01 sec
+test 71
+      Start 71: v2_adc_bad_3_1
+
+71: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "adc_bad" "3" "1"
+71: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+71: Test timeout computed to be: 5
+71: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+71/86 Test #71: v2_adc_bad_3_1 ...................   Passed    0.01 sec
+test 72
+      Start 72: v2_svpwm_bad_0_1
+
+72: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "svpwm_bad" "0" "1"
+72: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+72: Test timeout computed to be: 5
+72: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+72/86 Test #72: v2_svpwm_bad_0_1 .................   Passed    0.01 sec
+test 73
+      Start 73: v2_svpwm_bad_1_1
+
+73: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "svpwm_bad" "1" "1"
+73: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+73: Test timeout computed to be: 5
+73: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+73/86 Test #73: v2_svpwm_bad_1_1 .................   Passed    0.01 sec
+test 74
+      Start 74: v2_svpwm_bad_2_1
+
+74: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "svpwm_bad" "2" "1"
+74: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+74: Test timeout computed to be: 5
+74: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+74/86 Test #74: v2_svpwm_bad_2_1 .................   Passed    0.01 sec
+test 75
+      Start 75: v2_svpwm_bad_3_1
+
+75: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "svpwm_bad" "3" "1"
+75: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+75: Test timeout computed to be: 5
+75: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+75/86 Test #75: v2_svpwm_bad_3_1 .................   Passed    0.01 sec
+test 76
+      Start 76: v2_svpwm_bad_4_1
+
+76: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "svpwm_bad" "4" "1"
+76: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+76: Test timeout computed to be: 5
+76: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+76/86 Test #76: v2_svpwm_bad_4_1 .................   Passed    0.01 sec
+test 77
+      Start 77: v2_svpwm_bad_5_1
+
+77: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "svpwm_bad" "5" "1"
+77: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+77: Test timeout computed to be: 5
+77: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+77/86 Test #77: v2_svpwm_bad_5_1 .................   Passed    0.01 sec
+test 78
+      Start 78: v2_svpwm_bad_6_1
+
+78: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "svpwm_bad" "6" "1"
+78: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+78: Test timeout computed to be: 5
+78: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+78/86 Test #78: v2_svpwm_bad_6_1 .................   Passed    0.01 sec
+test 79
+      Start 79: v2_svpwm_bad_7_1
+
+79: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "svpwm_bad" "7" "1"
+79: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+79: Test timeout computed to be: 5
+79: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+79/86 Test #79: v2_svpwm_bad_7_1 .................   Passed    0.01 sec
+test 80
+      Start 80: v2_app_failure_0_1
+
+80: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "app_failure" "0" "1"
+80: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+80: Test timeout computed to be: 5
+80: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+80/86 Test #80: v2_app_failure_0_1 ...............   Passed    0.01 sec
+test 81
+      Start 81: v2_app_failure_1_1
+
+81: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "app_failure" "1" "1"
+81: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+81: Test timeout computed to be: 5
+81: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+81/86 Test #81: v2_app_failure_1_1 ...............   Passed    0.01 sec
+test 82
+      Start 82: v2_app_failure_2_1
+
+82: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "app_failure" "2" "1"
+82: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+82: Test timeout computed to be: 5
+82: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+82/86 Test #82: v2_app_failure_2_1 ...............   Passed    0.01 sec
+test 83
+      Start 83: v2_app_failure_3_1
+
+83: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "app_failure" "3" "1"
+83: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+83: Test timeout computed to be: 5
+83: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+83/86 Test #83: v2_app_failure_3_1 ...............   Passed    0.01 sec
+test 84
+      Start 84: v2_encoder
+
+84: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "encoder"
+84: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+84: Test timeout computed to be: 5
+84: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+84/86 Test #84: v2_encoder .......................   Passed    0.01 sec
+test 85
+      Start 85: v2_early_init
+
+85: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "early_init"
+85: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+85: Test timeout computed to be: 5
+85: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+85/86 Test #85: v2_early_init ....................   Passed    0.01 sec
+test 86
+      Start 86: v2_valid
+
+86: Test command: C:\Users\xuhengyi\Desktop\item\课设\DMF407_FOC_HAL\build\v21-final-host-debug\safety_tests_1.exe "valid"
+86: Working Directory: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-host-debug
+86: Test timeout computed to be: 5
+86: PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+86/86 Test #86: v2_valid .........................   Passed    0.01 sec
+
+100% tests passed, 0 tests failed out of 86
+
+Label Time Summary:
+KNOWN_RISK    =   0.03 sec*proc (3 tests)
+V21_SAFETY    =   0.17 sec*proc (16 tests)
+
+Total Test time (real) =   1.25 sec
