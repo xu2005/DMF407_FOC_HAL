@@ -45,6 +45,7 @@ uint32_t *mock_compare_register(TIM_HandleTypeDef *handle, uint32_t channel);
 #define __HAL_TIM_GET_COMPARE(h, c) (*mock_compare_register((h), (c)))
 
 HAL_StatusTypeDef HAL_TIM_Encoder_Start(TIM_HandleTypeDef *handle, uint32_t channel);
+HAL_StatusTypeDef HAL_TIM_Base_Start_IT(TIM_HandleTypeDef *handle);
 HAL_StatusTypeDef HAL_ADC_Start(ADC_HandleTypeDef *handle);
 HAL_StatusTypeDef HAL_ADC_PollForConversion(ADC_HandleTypeDef *handle, uint32_t timeout);
 uint32_t HAL_ADC_GetValue(ADC_HandleTypeDef *handle);

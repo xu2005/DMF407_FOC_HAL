@@ -49,6 +49,12 @@ extern "C" {
   */
 void BSP_Timer_Start(void);
 
+/* TIM1 Update diagnostic, called after TIM1 counter startup.
+ * Clear pending UIF, enable UIE; preserve timing, CCR and output configuration.
+ * NVIC/DIER/UIF, RCR relationship and actual frequency require L4 measurement. */
+void BSP_Timer_StartTim1Diagnostic(void);
+uint32_t BSP_Timer_GetTim1TickCount(void);
+
 /**
   * @brief  读取 TIM2 Update 中断累计次数
   * @note   V1 新增诊断设施，Legacy **无**对应全局量（见差异登记 D-17）。

@@ -137,6 +137,7 @@ int main(void)
    * 本调用可能已使能 PWM 输出；PF10 仍必须保持板级目标禁止态。
    * POWER-STAGE ENABLE BLOCKED：逻辑波形观测必须物理断开功率直流侧。 */
   BSP_PWM_Start();
+  BSP_Timer_StartTim1Diagnostic();
   /* USER CODE END 2 */
 
   /* Infinite loop */

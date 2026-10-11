@@ -33,6 +33,20 @@
  * 用途仅限无功率实测时确认中断在运行。 */
 static volatile uint32_t s_tim2_tick_count = 0;
 static volatile uint32_t s_tim4_tick_count = 0;
+static volatile uint32_t s_tim1_tick_count = 0;
+
+void BSP_Timer_StartTim1Diagnostic(void)
+{
+  /* Legacy time1.c clears UIF before UIE. Do not change PSC/ARR/RCR,
+   * start another HAL base channel, or enable any additional outputs here. */
+  __HAL_TIM_CLEAR_FLAG(&htim1, TIM_FLAG_UPDATE);
+  __HAL_TIM_ENABLE_IT(&htim1, TIM_IT_UPDATE);
+}
+
+uint32_t BSP_Timer_GetTim1TickCount(void)
+{
+  return s_tim1_tick_count;
+}
 
 void BSP_Timer_Start(void)
 {
@@ -80,7 +94,11 @@ uint32_t BSP_Timer_GetTim4TickCount(void)
   */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-  if (htim->Instance == TIM2)
+  if (htim->Instance == TIM1)
+  {
+    s_tim1_tick_count++;
+  }
+  else if (htim->Instance == TIM2)
   {
     s_tim2_tick_count++;
 
@@ -109,5 +127,5 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
      *   注意 Legacy 中 motorX/Y_pluse 由速度规划流程置位；
      *   V1 当前两者恒为 0 → 即使迁入，该分支实际也是 no-op。 */
   }
-  /* TIM1（FOC Tick，Legacy USER/interru.c → test()）分支待 Control 层迁入后补上。 */
+  /* TIM1 is diagnostic only in this migration commit; no realtime FOC claim. */
 }
