@@ -1,0 +1,65 @@
+[1/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Control/foc_transforms.c.obj
+[2/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Control/foc_svpwm.c.obj
+[3/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/BSP/bsp_pwm.c.obj
+[4/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Control/foc_pi.c.obj
+[5/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Motor/motor_angle_speed.c.obj
+[6/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/BSP/bsp_adc.c.obj
+[7/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/BSP/bsp_encoder.c.obj
+[8/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/BSP/bsp_motor_enable.c.obj
+[9/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/BSP/bsp_timer.c.obj
+[10/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Motor/encoder_tracker.c.obj
+[11/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/BSP/bsp_uart.c.obj
+[12/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Core/Src/stm32f4xx_hal_msp.c.obj
+[13/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Control/foc_pipeline.c.obj
+[14/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c.obj
+<clone>/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c:923: warning: ISO C forbids an empty translation unit [-Wpedantic]
+[15/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/BSP/bsp_encoder_safe.c.obj
+[16/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/BSP/bsp_adc_safe.c.obj
+[17/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Core/Src/adc.c.obj
+[18/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Core/Src/gpio.c.obj
+[19/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Core/Src/usart.c.obj
+[20/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Core/Src/stm32f4xx_it.c.obj
+[21/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/BSP/bsp_safety.c.obj
+[22/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Core/Src/tim.c.obj
+[23/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Core/Src/main.c.obj
+[24/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/App/app_no_power.c.obj
+[25/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj
+[26/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
+[27/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj
+[28/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+[29/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj
+[30/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj
+<clone>/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c: In function 'FLASH_MassErase':
+<clone>/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c:948:60: warning: unused parameter 'Banks' [-Wunused-parameter]
+  948 | static void FLASH_MassErase(uint8_t VoltageRange, uint32_t Banks)
+      |                                                   ~~~~~~~~~^~~~~
+<clone>/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c: In function 'FLASH_OB_EnableWRP':
+<clone>/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c:1027:74: warning: unused parameter 'Banks' [-Wunused-parameter]
+ 1027 | static HAL_StatusTypeDef FLASH_OB_EnableWRP(uint32_t WRPSector, uint32_t Banks)
+      |                                                                 ~~~~~~~~~^~~~~
+<clone>/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c: In function 'FLASH_OB_DisableWRP':
+<clone>/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c:1063:75: warning: unused parameter 'Banks' [-Wunused-parameter]
+ 1063 | static HAL_StatusTypeDef FLASH_OB_DisableWRP(uint32_t WRPSector, uint32_t Banks)
+      |                                                                  ~~~~~~~~~^~~~~
+[31/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj
+[32/47] Building ASM object CMakeFiles/DMF407_FOC_HAL.dir/startup_stm32f407xx.s.obj
+[33/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj
+[34/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+[35/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj
+[36/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj
+[37/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+[38/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+[39/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+[40/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj
+[41/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Core/Src/sysmem.c.obj
+[42/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Core/Src/system_stm32f4xx.c.obj
+[43/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Core/Src/syscalls.c.obj
+[44/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
+[45/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+[46/47] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+[47/47] Linking C executable DMF407_FOC_HAL.elf; Generating DMF407_FOC_HAL.bin / DMF407_FOC_HAL.hex
+<toolchain>/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: DMF407_FOC_HAL.elf has a LOAD segment with RWX permissions
+Memory region         Used Size  Region Size  %age Used
+             RAM:        2392 B       128 KB      1.82%
+          CCMRAM:           0 B        64 KB      0.00%
+           FLASH:       13644 B         1 MB      1.30%
