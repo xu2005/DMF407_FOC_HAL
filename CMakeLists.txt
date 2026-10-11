@@ -59,12 +59,15 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/Control/foc_transforms.c
     ${CMAKE_CURRENT_SOURCE_DIR}/Control/foc_pi.c
     ${CMAKE_CURRENT_SOURCE_DIR}/Control/foc_svpwm.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Control/foc_pipeline.c
 )
 
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
     ${CMAKE_CURRENT_SOURCE_DIR}/BSP
+    ${CMAKE_CURRENT_SOURCE_DIR}/Motor
+    ${CMAKE_CURRENT_SOURCE_DIR}/Control
 )
 
 # Add project symbols (macros)

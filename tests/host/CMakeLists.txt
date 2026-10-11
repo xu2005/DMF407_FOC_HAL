@@ -73,3 +73,17 @@ else()
 endif()
 add_test(NAME timer_diagnostic COMMAND timer_host_tests)
 set_tests_properties(timer_diagnostic PROPERTIES TIMEOUT 5)
+
+add_executable(pipeline_host_tests test_pipeline.c
+    ../../Control/foc_pipeline.c ../../Control/foc_transforms.c
+    ../../Control/foc_pi.c ../../Control/foc_svpwm.c ../../Motor/motor_angle_speed.c)
+target_include_directories(pipeline_host_tests PRIVATE ../../Control ../../Motor)
+target_compile_features(pipeline_host_tests PRIVATE c_std_11)
+if(MSVC)
+    target_compile_options(pipeline_host_tests PRIVATE /W4)
+else()
+    target_compile_options(pipeline_host_tests PRIVATE -Wall -Wextra -Werror)
+    target_link_libraries(pipeline_host_tests PRIVATE m)
+endif()
+add_test(NAME pipeline_v1_replay COMMAND pipeline_host_tests)
+set_tests_properties(pipeline_v1_replay PROPERTIES TIMEOUT 5)
