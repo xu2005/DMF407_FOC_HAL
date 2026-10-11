@@ -1,0 +1,9 @@
+-- The C compiler identification is GNU 14.3.1
+-- The ASM compiler identification is GNU
+-- Found assembler: C:/Users/xuhengyi/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/arm-none-eabi-gcc.exe
+Build type: Debug
+-- HAL/CMSIS dependency files present (version provenance must be checked against FW_F4 V1.28.3).
+-- The CXX compiler identification is GNU 14.3.1
+-- Configuring done (1.7s)
+-- Generating done (0.1s)
+-- Build files have been written to: C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/build/v21-final-arm-debug-on

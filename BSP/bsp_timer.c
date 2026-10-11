@@ -24,6 +24,7 @@
 #include "bsp_timer.h"
 #include "bsp_encoder.h"
 #include "tim.h"
+#include "bsp_safety.h"
 
 #define BSP_TIMER_TIM2  (&htim2)
 #define BSP_TIMER_TIM4  (&htim4)
@@ -33,6 +34,57 @@
  * 用途仅限无功率实测时确认中断在运行。 */
 static volatile uint32_t s_tim2_tick_count = 0;
 static volatile uint32_t s_tim4_tick_count = 0;
+static volatile uint32_t s_tim1_tick_count = 0;
+static void (*s_tim1_hook)(void);
+static void (*s_tim2_hook)(void);
+static void (*s_encoder_hook)(void);
+
+void BSP_Timer_SetHooks(void (*tim1_hook)(void), void (*tim2_hook)(void), void (*encoder_hook)(void))
+{
+  /* Install from main before enabling timers. */
+  s_tim1_hook = tim1_hook;
+  s_tim2_hook = tim2_hook;
+  s_encoder_hook = encoder_hook;
+}
+
+int BSP_Timer_StartChecked(void)
+{
+  uint32_t mask = __get_PRIMASK();
+  __disable_irq();
+  if (BSP_Safety_GetFault() != BSP_FAULT_NONE) { __set_PRIMASK(mask); return 0; }
+  __HAL_TIM_SET_COUNTER(BSP_TIMER_TIM2, 0);
+  if (HAL_TIM_Base_Start_IT(BSP_TIMER_TIM2) == HAL_OK) {
+    __HAL_TIM_SET_COUNTER(BSP_TIMER_TIM4, 0);
+    if (HAL_TIM_Base_Start_IT(BSP_TIMER_TIM4) == HAL_OK) { __set_PRIMASK(mask); return 1; }
+  }
+  BSP_Safety_Fault(BSP_FAULT_TIMER);
+  (void)HAL_TIM_Base_Stop_IT(BSP_TIMER_TIM2);
+  (void)HAL_TIM_Base_Stop_IT(BSP_TIMER_TIM4);
+  __HAL_TIM_DISABLE_IT(BSP_TIMER_TIM2, TIM_IT_UPDATE);
+  __HAL_TIM_DISABLE_IT(BSP_TIMER_TIM4, TIM_IT_UPDATE);
+  BSP_TIMER_TIM2->Instance->CR1 &= ~TIM_CR1_CEN;
+  BSP_TIMER_TIM4->Instance->CR1 &= ~TIM_CR1_CEN;
+  __set_PRIMASK(mask);
+  return 0;
+}
+
+int BSP_Timer_StartTim1Diagnostic(void)
+{
+  uint32_t mask = __get_PRIMASK();
+  __disable_irq();
+  if (BSP_Safety_GetFault() != BSP_FAULT_NONE) { __set_PRIMASK(mask); return 0; }
+  /* Legacy time1.c clears UIF before UIE. Do not change PSC/ARR/RCR,
+   * start another HAL base channel, or enable any additional outputs here. */
+  __HAL_TIM_CLEAR_FLAG(&htim1, TIM_FLAG_UPDATE);
+  __HAL_TIM_ENABLE_IT(&htim1, TIM_IT_UPDATE);
+  __set_PRIMASK(mask);
+  return 1;
+}
+
+uint32_t BSP_Timer_GetTim1TickCount(void)
+{
+  return s_tim1_tick_count;
+}
 
 void BSP_Timer_Start(void)
 {
@@ -80,22 +132,29 @@ uint32_t BSP_Timer_GetTim4TickCount(void)
   */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-  if (htim->Instance == TIM2)
+  if (htim->Instance == TIM1)
+  {
+    s_tim1_tick_count++;
+    if (s_tim1_hook) { s_tim1_hook(); }
+  }
+  else if (htim->Instance == TIM2)
   {
     s_tim2_tick_count++;
+    if (s_tim2_hook) { s_tim2_hook(); }
 
-    /* Legacy time2.c:48  TIM2_IRQHandler 内：
+    /* Historical mapping: Legacy time2.c:48 TIM2_IRQHandler:
      *   calculate_motor_parameters(&local_theta, &motor_speed);
      *   theta = local_theta;  Speed_actual = motor_speed;
      *
-     * ★ 本阶段（定时器底层迁移）**不迁入**：依赖 angle.c 的角度/转速换算，
-     *   归 Motor/Control 层后续阶段。当前 TIM2 分支只有诊断计数，
-     *   **不代表角度/转速链路已复现**。 */
+     * Runtime hook is installed by App before timer startup. Default firmware
+     * samples the V2 encoder only; opt-in no-power replay also updates angle.
+     * Host replay does not establish a real 1 ms sampling interval. */
   }
   else if (htim->Instance == TIM3)
   {
     /* Legacy angle.c:15-32  TIM3_IRQHandler 的 Update 分支 */
-    BSP_Encoder_OverflowTick();
+    if (s_encoder_hook) { s_encoder_hook(); }
+    else { BSP_Encoder_OverflowTick(); }
   }
   else if (htim->Instance == TIM4)
   {
@@ -109,5 +168,5 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
      *   注意 Legacy 中 motorX/Y_pluse 由速度规划流程置位；
      *   V1 当前两者恒为 0 → 即使迁入，该分支实际也是 no-op。 */
   }
-  /* TIM1（FOC Tick，Legacy USER/interru.c → test()）分支待 Control 层迁入后补上。 */
+  /* TIM1 hook is optional; no physical frequency/WCET acceptance here. */
 }

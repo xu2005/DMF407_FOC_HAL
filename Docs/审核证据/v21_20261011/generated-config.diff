@@ -1,0 +1,35 @@
+diff --git a/Core/Src/tim.c b/Core/Src/tim.c
+index af66b3e..657db5a 100644
+--- a/Core/Src/tim.c
++++ b/Core/Src/tim.c
+@@ -96,7 +96,7 @@ void MX_TIM1_Init(void)
+   sBreakDeadTimeConfig.DeadTime = 84;
+   sBreakDeadTimeConfig.BreakState = TIM_BREAK_ENABLE;
+   sBreakDeadTimeConfig.BreakPolarity = TIM_BREAKPOLARITY_HIGH;
+-  sBreakDeadTimeConfig.AutomaticOutput = TIM_AUTOMATICOUTPUT_ENABLE;
++  sBreakDeadTimeConfig.AutomaticOutput = TIM_AUTOMATICOUTPUT_DISABLE;
+   if (HAL_TIMEx_ConfigBreakDeadTime(&htim1, &sBreakDeadTimeConfig) != HAL_OK)
+   {
+     Error_Handler();
+diff --git a/DMF407_FOC_HAL.ioc b/DMF407_FOC_HAL.ioc
+index 82bdf19..5d89287 100644
+--- a/DMF407_FOC_HAL.ioc
++++ b/DMF407_FOC_HAL.ioc
+@@ -251,16 +251,14 @@ SH.S_TIM3_CH1.ConfNb=1
+ SH.S_TIM3_CH2.0=TIM3_CH2,Encoder_Interface
+ SH.S_TIM3_CH2.ConfNb=1
+ TIM1.AutoReloadPreload=TIM_AUTORELOAD_PRELOAD_ENABLE
+-TIM1.AutomaticOutput=TIM_AUTOMATICOUTPUT_ENABLE
+ TIM1.BreakState=TIM_BREAK_ENABLE
+ TIM1.Channel-PWM\ Generation1\ CH1\ CH1N=TIM_CHANNEL_1
+ TIM1.Channel-PWM\ Generation2\ CH2\ CH2N=TIM_CHANNEL_2
+ TIM1.Channel-PWM\ Generation3\ CH3\ CH3N=TIM_CHANNEL_3
+ TIM1.CounterMode=TIM_COUNTERMODE_CENTERALIGNED1
+ TIM1.DeadTime=84
+-TIM1.IPParameters=Prescaler,CounterMode,Period,AutoReloadPreload,BreakState,LockLevel,OffStateRunMode,AutomaticOutput,TIM_MasterOutputTrigger,Channel-PWM Generation1 CH1 CH1N,Channel-PWM Generation2 CH2 CH2N,Channel-PWM Generation3 CH3 CH3N,DeadTime
++TIM1.IPParameters=Prescaler,CounterMode,Period,AutoReloadPreload,BreakState,LockLevel,TIM_MasterOutputTrigger,Channel-PWM Generation1 CH1 CH1N,Channel-PWM Generation2 CH2 CH2N,Channel-PWM Generation3 CH3 CH3N,DeadTime
+ TIM1.LockLevel=TIM_LOCKLEVEL_1
+-TIM1.OffStateRunMode=TIM_OSSR_DISABLE
+ TIM1.Period=99
+ TIM1.Prescaler=83
+ TIM1.TIM_MasterOutputTrigger=TIM_TRGO_OC1REF

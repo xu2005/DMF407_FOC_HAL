@@ -1,0 +1,132 @@
+Docs/审核证据/audit_20261010/baseline/Docs/DMF407_HAL_CMake_模块化重构_Agent任务书.md
+6. 默认禁止驱动功率使能，保持 **`POWER-STAGE ENABLE BLOCKED`**，直至安全验收通过。
+| **L5** | 带功率控制验收 | 安全联锁后测单轴，再考虑双轴 | **BLOCKED** |
+A5 = BLOCKED
+A6 = BLOCKED
+POWER-STAGE ENABLE = BLOCKED
+
+Docs/审核证据/audit_20261010/baseline/Docs/DMF407_HAL_引脚时钟配置规范.md
+A5 单轴功率运行 = BLOCKED
+A6 双轴运动     = BLOCKED
+
+Docs/审核证据/audit_20261010/baseline/Docs/V1_Legacy_Mapping.md
+- [`V2_硬件安全修正清单.md`](V2_硬件安全修正清单.md) —— V2 层，A0~A4 未闭环前 A5/A6 = BLOCKED
+
+Docs/审核证据/audit_20261010/baseline/Docs/V1_复现验收框架.md
+| **L5** | 带功率控制验收 | 安全联锁完成后测单轴，再考虑双轴 | **BLOCKED** |
+**因此 `POWER-STAGE ENABLE` 必须保持 `BLOCKED`** —— 软件上电即置使能的状态**不能**被当作安全验收通过。
+6. 默认禁止驱动功率使能，保持 **`POWER-STAGE ENABLE BLOCKED`**，直至安全验收通过。
+
+Docs/审核证据/audit_20261010/baseline/Docs/V2_硬件安全修正清单.md
+| A5 单轴功率运行 | 完整保护链 + 低能量测试报告 | **BLOCKED** |
+| A6 双轴运动 | 保护联锁、归零/限位、双轴反馈与轨迹 | **BLOCKED** |
+- [ ] ★ 未接任何保护链之前，A5 功率运行保持 BLOCKED
+
+Docs/审核证据/audit_20261010/baseline/Docs/交接_2026-10-10_bsp_timer完成.md
+| 验收等级 | 各模块 L1/L2 有证据；**L3 未系统开展，L4 未验收，L5 BLOCKED**（编译通过只等于 L2） |
+| 功率级 | **`POWER-STAGE ENABLE BLOCKED`** —— 禁止通功率母线，禁止带功率测试 |
+**须由用户选定后再动代码。** 无论选哪条，`POWER-STAGE ENABLE` 保持 BLOCKED。
+| L3 主机测试 / L4 无功率实测 / L5 带功率 | 未开展 / 未验收 / **BLOCKED** |
+
+Docs/审核证据/audit_20261010/baseline/Docs/工作日志_2026-10-10.md
+POWER STAGE                        = BLOCKED（禁止通功率母线）
+1. **POWER STAGE = BLOCKED** —— 驱动器功率直流侧**不通电**
+实施时必须保持 `POWER-STAGE ENABLE BLOCKED`，不得因软件使能通路打通就开展带功率测试。
+
+Docs/审核证据/audit_20261010/baseline-build.log
+C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c:923: warning: ISO C forbids an empty translation unit [-Wpedantic]
+C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c:948:60: warning: unused parameter 'Banks' [-Wunused-parameter]
+C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c:1027:74: warning: unused parameter 'Banks' [-Wunused-parameter]
+C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c:1063:75: warning: unused parameter 'Banks' [-Wunused-parameter]
+C:/Users/xuhengyi/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: DMF407_FOC_HAL.elf has a LOAD segment with RWX permissions
+
+Docs/审核证据/audit_20261010/final-delivery.md
+[L5] BLOCKED。
+[POWER-STAGE ENABLE] BLOCKED。
+
+Docs/审核证据/audit_20261010/pf10-build.log
+C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c:923: warning: ISO C forbids an empty translation unit [-Wpedantic]
+C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c:948:60: warning: unused parameter 'Banks' [-Wunused-parameter]
+C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c:1027:74: warning: unused parameter 'Banks' [-Wunused-parameter]
+C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c:1063:75: warning: unused parameter 'Banks' [-Wunused-parameter]
+C:/Users/xuhengyi/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: DMF407_FOC_HAL.elf has a LOAD segment with RWX permissions
+
+Docs/审核证据/audit_20261010/pf10-commit.txt
+R-03/SF-02 remain open and POWER-STAGE ENABLE remains BLOCKED.
+
+Docs/审核证据/audit_20261010/pllq-build.log
+C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c:923: warning: ISO C forbids an empty translation unit [-Wpedantic]
+C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c:948:60: warning: unused parameter 'Banks' [-Wunused-parameter]
+C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c:1027:74: warning: unused parameter 'Banks' [-Wunused-parameter]
+C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c:1063:75: warning: unused parameter 'Banks' [-Wunused-parameter]
+C:/Users/xuhengyi/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: DMF407_FOC_HAL.elf has a LOAD segment with RWX permissions
+
+Docs/审核证据/audit_20261011/arm-build.log
+C:/Users/xuhengyi/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: DMF407_FOC_HAL.elf has a LOAD segment with RWX permissions
+
+Docs/审核证据/audit_20261011/arm-control-build.log
+<toolchain>/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: DMF407_FOC_HAL.elf has a LOAD segment with RWX permissions
+
+Docs/审核证据/audit_20261011/baseline-ctest.log
+100% tests passed, 0 tests failed out of 13
+KNOWN_RISK    =   0.03 sec*proc (3 tests)
+
+Docs/审核证据/audit_20261011/clean-arm-build.log
+<repo>/build/audit-clean-source/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c:923: warning: ISO C forbids an empty translation unit [-Wpedantic]
+<repo>/build/audit-clean-source/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c:948:60: warning: unused parameter 'Banks' [-Wunused-parameter]
+<repo>/build/audit-clean-source/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c:1027:74: warning: unused parameter 'Banks' [-Wunused-parameter]
+<repo>/build/audit-clean-source/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c:1063:75: warning: unused parameter 'Banks' [-Wunused-parameter]
+<toolchain>/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: DMF407_FOC_HAL.elf has a LOAD segment with RWX permissions
+
+Docs/审核证据/audit_20261011/clean-dependencies.log
+Compared 266 dependency files with local fixed package; mismatches=0
+
+Docs/审核证据/audit_20261011/clean-missing-dependencies.log
+CMake Error at cmake/check_dependencies.cmake:26 (message):
+
+Docs/审核证据/audit_20261011/clone-arm-debug-build.log
+<clone>/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c:923: warning: ISO C forbids an empty translation unit [-Wpedantic]
+<clone>/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c:948:60: warning: unused parameter 'Banks' [-Wunused-parameter]
+<clone>/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c:1027:74: warning: unused parameter 'Banks' [-Wunused-parameter]
+<clone>/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c:1063:75: warning: unused parameter 'Banks' [-Wunused-parameter]
+<toolchain>/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: DMF407_FOC_HAL.elf has a LOAD segment with RWX permissions
+
+Docs/审核证据/audit_20261011/clone-arm-release-build.log
+<clone>/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c:923: warning: ISO C forbids an empty translation unit [-Wpedantic]
+<clone>/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c:948:60: warning: unused parameter 'Banks' [-Wunused-parameter]
+<clone>/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c:1027:74: warning: unused parameter 'Banks' [-Wunused-parameter]
+<clone>/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c:1063:75: warning: unused parameter 'Banks' [-Wunused-parameter]
+<toolchain>/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: DMF407_FOC_HAL.elf has a LOAD segment with RWX permissions
+
+Docs/审核证据/audit_20261011/clone-host-ctest.log
+100% tests passed, 0 tests failed out of 70
+KNOWN_RISK    =   0.02 sec*proc (3 tests)
+
+Docs/审核证据/audit_20261011/clone-provenance.log
+Compared 6939 dependency files with local fixed package; mismatches=0
+
+Docs/审核证据/audit_20261011/dependencies.log
+Compared 1442 dependency files with local fixed package; mismatches=0
+
+Docs/审核证据/audit_20261011/final-ctest-raw.log
+KNOWN_RISK =   0.03 sec*proc
+
+Docs/审核证据/audit_20261011/final-ctest.log
+100% tests passed, 0 tests failed out of 70
+KNOWN_RISK    =   0.03 sec*proc (3 tests)
+
+Docs/审核证据/audit_20261011/verify-arm-release-build.log
+<repo>/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c:923: warning: ISO C forbids an empty translation unit [-Wpedantic]
+<repo>/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c:948:60: warning: unused parameter 'Banks' [-Wunused-parameter]
+<repo>/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c:1027:74: warning: unused parameter 'Banks' [-Wunused-parameter]
+<repo>/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c:1063:75: warning: unused parameter 'Banks' [-Wunused-parameter]
+<toolchain>/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: DMF407_FOC_HAL.elf has a LOAD segment with RWX permissions
+
+Docs/审核证据/audit_20261011/verify-host-ctest.log
+100% tests passed, 0 tests failed out of 70
+KNOWN_RISK    =   0.03 sec*proc (3 tests)
+
+Docs/审核证据/audit_20261011/verify-summary-20261011.txt
+  结果: 100% tests passed, 0 failed out of 70；耗时 1.09 s
+  KNOWN_RISK 标签: 3 项（encoder_r01 / math_angle_r01 / svpwm_zero），
+  - L4 = NEEDS HARDWARE（Docs/L4_无功率验收_2026-10-11.md）；L5 / POWER-STAGE ENABLE = BLOCKED。

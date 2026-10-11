@@ -1,0 +1,167 @@
+file,block,status
+Core/Inc/adc.h,Header,preserved
+Core/Inc/adc.h,Includes,preserved
+Core/Inc/adc.h,Private defines,preserved
+Core/Inc/adc.h,Prototypes,preserved
+Core/Inc/gpio.h,Header,preserved
+Core/Inc/gpio.h,Includes,preserved
+Core/Inc/gpio.h,Private defines,preserved
+Core/Inc/gpio.h,Prototypes,preserved
+Core/Inc/main.h,Header,preserved
+Core/Inc/main.h,Includes,preserved
+Core/Inc/main.h,ET,preserved
+Core/Inc/main.h,EC,preserved
+Core/Inc/main.h,EM,preserved
+Core/Inc/main.h,EFP,preserved
+Core/Inc/main.h,Private defines,preserved
+Core/Inc/stm32f4xx_hal_conf.h,Header,preserved
+Core/Inc/stm32f4xx_it.h,Header,preserved
+Core/Inc/stm32f4xx_it.h,Includes,preserved
+Core/Inc/stm32f4xx_it.h,ET,preserved
+Core/Inc/stm32f4xx_it.h,EC,preserved
+Core/Inc/stm32f4xx_it.h,EM,preserved
+Core/Inc/stm32f4xx_it.h,EFP,preserved
+Core/Inc/tim.h,Header,preserved
+Core/Inc/tim.h,Includes,preserved
+Core/Inc/tim.h,Private defines,preserved
+Core/Inc/tim.h,Prototypes,preserved
+Core/Inc/usart.h,Header,preserved
+Core/Inc/usart.h,Includes,preserved
+Core/Inc/usart.h,Private defines,preserved
+Core/Inc/usart.h,Prototypes,preserved
+Core/Src/adc.c,Header,preserved
+Core/Src/adc.c,0,preserved
+Core/Src/adc.c,ADC1_Init 0,preserved
+Core/Src/adc.c,ADC1_Init 1,preserved
+Core/Src/adc.c,ADC1_Init 2,preserved
+Core/Src/adc.c,ADC2_Init 0,preserved
+Core/Src/adc.c,ADC2_Init 1,preserved
+Core/Src/adc.c,ADC2_Init 2,preserved
+Core/Src/adc.c,ADC3_Init 0,preserved
+Core/Src/adc.c,ADC3_Init 1,preserved
+Core/Src/adc.c,ADC3_Init 2,preserved
+Core/Src/adc.c,ADC1_MspInit 0,preserved
+Core/Src/adc.c,ADC1_MspInit 1,preserved
+Core/Src/adc.c,ADC2_MspInit 0,preserved
+Core/Src/adc.c,ADC2_MspInit 1,preserved
+Core/Src/adc.c,ADC3_MspInit 0,preserved
+Core/Src/adc.c,ADC3_MspInit 1,preserved
+Core/Src/adc.c,ADC1_MspDeInit 0,preserved
+Core/Src/adc.c,ADC1_MspDeInit 1,preserved
+Core/Src/adc.c,ADC2_MspDeInit 0,preserved
+Core/Src/adc.c,ADC2_MspDeInit 1,preserved
+Core/Src/adc.c,ADC3_MspDeInit 0,preserved
+Core/Src/adc.c,ADC3_MspDeInit 1,preserved
+Core/Src/adc.c,1,preserved
+Core/Src/gpio.c,Header,preserved
+Core/Src/gpio.c,0,preserved
+Core/Src/gpio.c,1,preserved
+Core/Src/gpio.c,2,preserved
+Core/Src/main.c,Header,preserved
+Core/Src/main.c,Includes,preserved
+Core/Src/main.c,PTD,preserved
+Core/Src/main.c,PD,preserved
+Core/Src/main.c,PM,preserved
+Core/Src/main.c,PV,preserved
+Core/Src/main.c,PFP,preserved
+Core/Src/main.c,0,preserved
+Core/Src/main.c,1,preserved
+Core/Src/main.c,Init,preserved
+Core/Src/main.c,SysInit,preserved
+Core/Src/main.c,2,preserved
+Core/Src/main.c,WHILE,preserved
+Core/Src/main.c,3,preserved
+Core/Src/main.c,4,preserved
+Core/Src/main.c,Error_Handler_Debug,preserved
+Core/Src/main.c,6,preserved
+Core/Src/stm32f4xx_hal_msp.c,Header,preserved
+Core/Src/stm32f4xx_hal_msp.c,Includes,preserved
+Core/Src/stm32f4xx_hal_msp.c,TD,preserved
+Core/Src/stm32f4xx_hal_msp.c,Define,preserved
+Core/Src/stm32f4xx_hal_msp.c,Macro,preserved
+Core/Src/stm32f4xx_hal_msp.c,PV,preserved
+Core/Src/stm32f4xx_hal_msp.c,PFP,preserved
+Core/Src/stm32f4xx_hal_msp.c,ExternalFunctions,preserved
+Core/Src/stm32f4xx_hal_msp.c,0,preserved
+Core/Src/stm32f4xx_hal_msp.c,MspInit 0,preserved
+Core/Src/stm32f4xx_hal_msp.c,MspInit 1,preserved
+Core/Src/stm32f4xx_hal_msp.c,1,preserved
+Core/Src/stm32f4xx_it.c,Header,preserved
+Core/Src/stm32f4xx_it.c,Includes,intentional DWT instrumentation
+Core/Src/stm32f4xx_it.c,TD,preserved
+Core/Src/stm32f4xx_it.c,PD,preserved
+Core/Src/stm32f4xx_it.c,PM,preserved
+Core/Src/stm32f4xx_it.c,PV,preserved
+Core/Src/stm32f4xx_it.c,PFP,preserved
+Core/Src/stm32f4xx_it.c,0,preserved
+Core/Src/stm32f4xx_it.c,EV,preserved
+Core/Src/stm32f4xx_it.c,NonMaskableInt_IRQn 0,preserved
+Core/Src/stm32f4xx_it.c,NonMaskableInt_IRQn 1,preserved
+Core/Src/stm32f4xx_it.c,HardFault_IRQn 0,preserved
+Core/Src/stm32f4xx_it.c,W1_HardFault_IRQn 0,preserved
+Core/Src/stm32f4xx_it.c,MemoryManagement_IRQn 0,preserved
+Core/Src/stm32f4xx_it.c,W1_MemoryManagement_IRQn 0,preserved
+Core/Src/stm32f4xx_it.c,BusFault_IRQn 0,preserved
+Core/Src/stm32f4xx_it.c,W1_BusFault_IRQn 0,preserved
+Core/Src/stm32f4xx_it.c,UsageFault_IRQn 0,preserved
+Core/Src/stm32f4xx_it.c,W1_UsageFault_IRQn 0,preserved
+Core/Src/stm32f4xx_it.c,SVCall_IRQn 0,preserved
+Core/Src/stm32f4xx_it.c,SVCall_IRQn 1,preserved
+Core/Src/stm32f4xx_it.c,DebugMonitor_IRQn 0,preserved
+Core/Src/stm32f4xx_it.c,DebugMonitor_IRQn 1,preserved
+Core/Src/stm32f4xx_it.c,PendSV_IRQn 0,preserved
+Core/Src/stm32f4xx_it.c,PendSV_IRQn 1,preserved
+Core/Src/stm32f4xx_it.c,SysTick_IRQn 0,preserved
+Core/Src/stm32f4xx_it.c,SysTick_IRQn 1,preserved
+Core/Src/stm32f4xx_it.c,TIM1_UP_TIM10_IRQn 0,intentional DWT instrumentation
+Core/Src/stm32f4xx_it.c,TIM1_UP_TIM10_IRQn 1,intentional DWT instrumentation
+Core/Src/stm32f4xx_it.c,TIM2_IRQn 0,preserved
+Core/Src/stm32f4xx_it.c,TIM2_IRQn 1,preserved
+Core/Src/stm32f4xx_it.c,TIM3_IRQn 0,preserved
+Core/Src/stm32f4xx_it.c,TIM3_IRQn 1,preserved
+Core/Src/stm32f4xx_it.c,TIM4_IRQn 0,preserved
+Core/Src/stm32f4xx_it.c,TIM4_IRQn 1,preserved
+Core/Src/stm32f4xx_it.c,1,preserved
+Core/Src/tim.c,Header,preserved
+Core/Src/tim.c,0,preserved
+Core/Src/tim.c,TIM1_Init 0,preserved
+Core/Src/tim.c,TIM1_Init 1,preserved
+Core/Src/tim.c,TIM1_Init 2,preserved
+Core/Src/tim.c,TIM2_Init 0,preserved
+Core/Src/tim.c,TIM2_Init 1,preserved
+Core/Src/tim.c,TIM2_Init 2,preserved
+Core/Src/tim.c,TIM3_Init 0,preserved
+Core/Src/tim.c,TIM3_Init 1,preserved
+Core/Src/tim.c,TIM3_Init 2,preserved
+Core/Src/tim.c,TIM4_Init 0,preserved
+Core/Src/tim.c,TIM4_Init 1,preserved
+Core/Src/tim.c,TIM4_Init 2,preserved
+Core/Src/tim.c,TIM1_MspInit 0,preserved
+Core/Src/tim.c,TIM1_MspInit 1,preserved
+Core/Src/tim.c,TIM2_MspInit 0,preserved
+Core/Src/tim.c,TIM2_MspInit 1,preserved
+Core/Src/tim.c,TIM4_MspInit 0,preserved
+Core/Src/tim.c,TIM4_MspInit 1,preserved
+Core/Src/tim.c,TIM3_MspInit 0,preserved
+Core/Src/tim.c,TIM3_MspInit 1,preserved
+Core/Src/tim.c,TIM1_MspPostInit 0,preserved
+Core/Src/tim.c,TIM1_MspPostInit 1,preserved
+Core/Src/tim.c,TIM1_MspDeInit 0,preserved
+Core/Src/tim.c,TIM1_MspDeInit 1,preserved
+Core/Src/tim.c,TIM2_MspDeInit 0,preserved
+Core/Src/tim.c,TIM2_MspDeInit 1,preserved
+Core/Src/tim.c,TIM4_MspDeInit 0,preserved
+Core/Src/tim.c,TIM4_MspDeInit 1,preserved
+Core/Src/tim.c,TIM3_MspDeInit 0,preserved
+Core/Src/tim.c,TIM3_MspDeInit 1,preserved
+Core/Src/tim.c,1,preserved
+Core/Src/usart.c,Header,preserved
+Core/Src/usart.c,0,preserved
+Core/Src/usart.c,USART1_Init 0,preserved
+Core/Src/usart.c,USART1_Init 1,preserved
+Core/Src/usart.c,USART1_Init 2,preserved
+Core/Src/usart.c,USART1_MspInit 0,preserved
+Core/Src/usart.c,USART1_MspInit 1,preserved
+Core/Src/usart.c,USART1_MspDeInit 0,preserved
+Core/Src/usart.c,USART1_MspDeInit 1,preserved
+Core/Src/usart.c,1,preserved

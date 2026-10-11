@@ -1,0 +1,16 @@
+08002828 t angle_tick
+08002ae0 T App_NoPower_Poll
+08002a20 T App_NoPower_Start
+0800244c T BSP_Safety_Fault
+0800249c T BSP_Safety_GetFault
+080028d4 t control_tick
+08001388 T FOC_Clarke
+080015a6 T FOC_CurrentPIUpdate
+0800143a T FOC_InversePark
+080013cc T FOC_Park
+08001e50 T FOC_PipelineControlTick
+08001e2c T FOC_PipelineInit
+080014f8 T FOC_SpeedPIUpdate
+080016e4 T FOC_SVPWMCalculate
+200001e8 b latched_fault
+080011f0 T Motor_AngleSpeedCalculate

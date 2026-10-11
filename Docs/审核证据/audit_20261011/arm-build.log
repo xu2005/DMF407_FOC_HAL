@@ -1,0 +1,10 @@
+[1/5] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Control/foc_pipeline.c.obj
+[2/5] Building C object CMakeFiles/DMF407_FOC_HAL.dir/BSP/bsp_adc_safe.c.obj
+[3/5] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Core/Src/main.c.obj
+[4/5] Building C object CMakeFiles/DMF407_FOC_HAL.dir/App/app_no_power.c.obj
+[5/5] Linking C executable DMF407_FOC_HAL.elf; Generating DMF407_FOC_HAL.bin / DMF407_FOC_HAL.hex
+C:/Users/xuhengyi/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: DMF407_FOC_HAL.elf has a LOAD segment with RWX permissions
+Memory region         Used Size  Region Size  %age Used
+             RAM:        2392 B       128 KB      1.82%
+          CCMRAM:           0 B        64 KB      0.00%
+           FLASH:       20904 B         1 MB      1.99%

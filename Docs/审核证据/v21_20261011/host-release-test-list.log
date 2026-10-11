@@ -1,0 +1,2780 @@
+{
+  "backtraceGraph" : 
+  {
+    "commands" : 
+    [
+      "add_test"
+    ],
+    "files" : 
+    [
+      "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/tests/host/CMakeLists.txt"
+    ],
+    "nodes" : 
+    [
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 20,
+        "parent" : 0
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 20,
+        "parent" : 2
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 20,
+        "parent" : 4
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 20,
+        "parent" : 6
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 40,
+        "parent" : 8
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 40,
+        "parent" : 10
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 40,
+        "parent" : 12
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 61,
+        "parent" : 14
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 61,
+        "parent" : 16
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 61,
+        "parent" : 18
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 61,
+        "parent" : 20
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 61,
+        "parent" : 22
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 61,
+        "parent" : 24
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 74,
+        "parent" : 26
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 88,
+        "parent" : 28
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 99,
+        "parent" : 30
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 118,
+        "parent" : 32
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 118,
+        "parent" : 34
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 124,
+        "parent" : 36
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 124,
+        "parent" : 38
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 124,
+        "parent" : 40
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 124,
+        "parent" : 42
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 124,
+        "parent" : 44
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 124,
+        "parent" : 46
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 124,
+        "parent" : 48
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 124,
+        "parent" : 50
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 124,
+        "parent" : 52
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 135,
+        "parent" : 54
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 135,
+        "parent" : 56
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 138,
+        "parent" : 58
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 141,
+        "parent" : 60
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 141,
+        "parent" : 62
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 141,
+        "parent" : 64
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 141,
+        "parent" : 66
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 68
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 70
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 72
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 74
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 76
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 78
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 80
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 82
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 84
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 86
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 88
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 90
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 92
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 94
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 96
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 98
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 100
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 102
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 104
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 106
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 108
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 110
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 112
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 114
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 116
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 118
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 120
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 122
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 124
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 126
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 128
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 130
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 132
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 134
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 136
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 138
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 140
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 142
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 144
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 146
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 148
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 150
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 152
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 154
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 156
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 158
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 160
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 162
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 164,
+        "parent" : 164
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 170,
+        "parent" : 166
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 170,
+        "parent" : 168
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 170,
+        "parent" : 170
+      }
+    ]
+  },
+  "kind" : "ctestInfo",
+  "tests" : 
+  [
+    {
+      "backtrace" : 1,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/bsp_host_tests.exe",
+        "encoder"
+      ],
+      "name" : "encoder",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 3,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/bsp_host_tests.exe",
+        "encoder_r01"
+      ],
+      "name" : "encoder_r01",
+      "properties" : 
+      [
+        {
+          "name" : "LABELS",
+          "value" : 
+          [
+            "KNOWN_RISK"
+          ]
+        },
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 5,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/bsp_host_tests.exe",
+        "adc"
+      ],
+      "name" : "adc",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 7,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/bsp_host_tests.exe",
+        "pwm"
+      ],
+      "name" : "pwm",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 9,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/math_host_tests.exe",
+        "angle"
+      ],
+      "name" : "math_angle",
+      "properties" : 
+      [
+        {
+          "name" : "FIXTURES_SETUP",
+          "value" : 
+          [
+            "angle_validated"
+          ]
+        },
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 11,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/math_host_tests.exe",
+        "angle_r01"
+      ],
+      "name" : "math_angle_r01",
+      "properties" : 
+      [
+        {
+          "name" : "DEPENDS",
+          "value" : 
+          [
+            "math_angle"
+          ]
+        },
+        {
+          "name" : "FIXTURES_REQUIRED",
+          "value" : 
+          [
+            "angle_validated"
+          ]
+        },
+        {
+          "name" : "LABELS",
+          "value" : 
+          [
+            "KNOWN_RISK"
+          ]
+        },
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 13,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/math_host_tests.exe",
+        "transforms"
+      ],
+      "name" : "math_transforms",
+      "properties" : 
+      [
+        {
+          "name" : "DEPENDS",
+          "value" : 
+          [
+            "math_angle"
+          ]
+        },
+        {
+          "name" : "FIXTURES_REQUIRED",
+          "value" : 
+          [
+            "angle_validated"
+          ]
+        },
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 15,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/pi_svpwm_tests.exe",
+        "pi_speed"
+      ],
+      "name" : "pi_speed",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 17,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/pi_svpwm_tests.exe",
+        "pi_current"
+      ],
+      "name" : "pi_current",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 19,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/pi_svpwm_tests.exe",
+        "pi_schedule"
+      ],
+      "name" : "pi_schedule",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 21,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/pi_svpwm_tests.exe",
+        "pi_position"
+      ],
+      "name" : "pi_position",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 23,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/pi_svpwm_tests.exe",
+        "svpwm_normal"
+      ],
+      "name" : "svpwm_normal",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 25,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/pi_svpwm_tests.exe",
+        "svpwm_zero"
+      ],
+      "name" : "svpwm_zero",
+      "properties" : 
+      [
+        {
+          "name" : "LABELS",
+          "value" : 
+          [
+            "KNOWN_RISK"
+          ]
+        },
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 27,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/timer_host_tests.exe"
+      ],
+      "name" : "timer_diagnostic",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 29,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/pipeline_host_tests.exe"
+      ],
+      "name" : "pipeline_v1_replay",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 31,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/encoder_v2_tests.exe"
+      ],
+      "name" : "encoder_v2_bounded",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 33,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_0.exe",
+        "app_replay"
+      ],
+      "name" : "app_mode_0",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 35,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "app_replay"
+      ],
+      "name" : "app_mode_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 37,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "locked_aoe"
+      ],
+      "name" : "v21_locked_aoe",
+      "properties" : 
+      [
+        {
+          "name" : "LABELS",
+          "value" : 
+          [
+            "V21_SAFETY"
+          ]
+        },
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 39,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "lock_write"
+      ],
+      "name" : "v21_lock_write",
+      "properties" : 
+      [
+        {
+          "name" : "LABELS",
+          "value" : 
+          [
+            "V21_SAFETY"
+          ]
+        },
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 41,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "break_update"
+      ],
+      "name" : "v21_break_update",
+      "properties" : 
+      [
+        {
+          "name" : "LABELS",
+          "value" : 
+          [
+            "V21_SAFETY"
+          ]
+        },
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 43,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "initial_moe"
+      ],
+      "name" : "v21_initial_moe",
+      "properties" : 
+      [
+        {
+          "name" : "LABELS",
+          "value" : 
+          [
+            "V21_SAFETY"
+          ]
+        },
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 45,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "wrong_lock"
+      ],
+      "name" : "v21_wrong_lock",
+      "properties" : 
+      [
+        {
+          "name" : "LABELS",
+          "value" : 
+          [
+            "V21_SAFETY"
+          ]
+        },
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 47,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "adc_previous"
+      ],
+      "name" : "v21_adc_previous",
+      "properties" : 
+      [
+        {
+          "name" : "LABELS",
+          "value" : 
+          [
+            "V21_SAFETY"
+          ]
+        },
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 49,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "encoder_ambiguous"
+      ],
+      "name" : "v21_encoder_ambiguous",
+      "properties" : 
+      [
+        {
+          "name" : "LABELS",
+          "value" : 
+          [
+            "V21_SAFETY"
+          ]
+        },
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 51,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "sample_age"
+      ],
+      "name" : "v21_sample_age",
+      "properties" : 
+      [
+        {
+          "name" : "LABELS",
+          "value" : 
+          [
+            "V21_SAFETY"
+          ]
+        },
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 53,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "app_adc_transaction"
+      ],
+      "name" : "v21_app_adc_transaction",
+      "properties" : 
+      [
+        {
+          "name" : "LABELS",
+          "value" : 
+          [
+            "V21_SAFETY"
+          ]
+        },
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 55,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/timing_tests_0.exe"
+      ],
+      "name" : "v21_dwt_0",
+      "properties" : 
+      [
+        {
+          "name" : "LABELS",
+          "value" : 
+          [
+            "V21_SAFETY"
+          ]
+        },
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 57,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/timing_tests_1.exe"
+      ],
+      "name" : "v21_dwt_1",
+      "properties" : 
+      [
+        {
+          "name" : "LABELS",
+          "value" : 
+          [
+            "V21_SAFETY"
+          ]
+        },
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 59,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/timing_tests_1.exe",
+        "unsupported"
+      ],
+      "name" : "v21_dwt_unsupported",
+      "properties" : 
+      [
+        {
+          "name" : "LABELS",
+          "value" : 
+          [
+            "V21_SAFETY"
+          ]
+        },
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 61,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_0.exe",
+        "app_replay"
+      ],
+      "name" : "v21_off_app_replay",
+      "properties" : 
+      [
+        {
+          "name" : "LABELS",
+          "value" : 
+          [
+            "V21_SAFETY"
+          ]
+        },
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 63,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_0.exe",
+        "off_timeout"
+      ],
+      "name" : "v21_off_off_timeout",
+      "properties" : 
+      [
+        {
+          "name" : "LABELS",
+          "value" : 
+          [
+            "V21_SAFETY"
+          ]
+        },
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 65,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_0.exe",
+        "locked_aoe"
+      ],
+      "name" : "v21_off_locked_aoe",
+      "properties" : 
+      [
+        {
+          "name" : "LABELS",
+          "value" : 
+          [
+            "V21_SAFETY"
+          ]
+        },
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 67,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_0.exe",
+        "initial_moe"
+      ],
+      "name" : "v21_off_initial_moe",
+      "properties" : 
+      [
+        {
+          "name" : "LABELS",
+          "value" : 
+          [
+            "V21_SAFETY"
+          ]
+        },
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 69,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "pwm_start",
+        "0",
+        "1"
+      ],
+      "name" : "v2_pwm_start_0_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 71,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "pwm_start",
+        "1",
+        "1"
+      ],
+      "name" : "v2_pwm_start_1_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 73,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "pwm_start",
+        "2",
+        "1"
+      ],
+      "name" : "v2_pwm_start_2_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 75,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "pwm_start",
+        "3",
+        "1"
+      ],
+      "name" : "v2_pwm_start_3_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 77,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "pwm_start",
+        "4",
+        "1"
+      ],
+      "name" : "v2_pwm_start_4_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 79,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "pwm_start",
+        "5",
+        "1"
+      ],
+      "name" : "v2_pwm_start_5_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 81,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "pwm_stop",
+        "0",
+        "1"
+      ],
+      "name" : "v2_pwm_stop_0_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 83,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "pwm_stop",
+        "1",
+        "1"
+      ],
+      "name" : "v2_pwm_stop_1_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 85,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "pwm_stop",
+        "2",
+        "1"
+      ],
+      "name" : "v2_pwm_stop_2_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 87,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "pwm_stop",
+        "3",
+        "1"
+      ],
+      "name" : "v2_pwm_stop_3_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 89,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "pwm_stop",
+        "4",
+        "1"
+      ],
+      "name" : "v2_pwm_stop_4_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 91,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "pwm_stop",
+        "5",
+        "1"
+      ],
+      "name" : "v2_pwm_stop_5_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 93,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "adc_start",
+        "0",
+        "1"
+      ],
+      "name" : "v2_adc_start_0_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 95,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "adc_start",
+        "1",
+        "1"
+      ],
+      "name" : "v2_adc_start_1_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 97,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "adc_start",
+        "2",
+        "1"
+      ],
+      "name" : "v2_adc_start_2_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 99,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "adc_poll",
+        "0",
+        "1"
+      ],
+      "name" : "v2_adc_poll_0_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 101,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "adc_poll",
+        "0",
+        "2"
+      ],
+      "name" : "v2_adc_poll_0_2",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 103,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "adc_poll",
+        "0",
+        "3"
+      ],
+      "name" : "v2_adc_poll_0_3",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 105,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "adc_poll",
+        "1",
+        "1"
+      ],
+      "name" : "v2_adc_poll_1_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 107,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "adc_poll",
+        "1",
+        "2"
+      ],
+      "name" : "v2_adc_poll_1_2",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 109,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "adc_poll",
+        "1",
+        "3"
+      ],
+      "name" : "v2_adc_poll_1_3",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 111,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "adc_poll",
+        "2",
+        "1"
+      ],
+      "name" : "v2_adc_poll_2_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 113,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "adc_poll",
+        "2",
+        "2"
+      ],
+      "name" : "v2_adc_poll_2_2",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 115,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "adc_poll",
+        "2",
+        "3"
+      ],
+      "name" : "v2_adc_poll_2_3",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 117,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "adc_poll",
+        "3",
+        "1"
+      ],
+      "name" : "v2_adc_poll_3_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 119,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "adc_poll",
+        "3",
+        "2"
+      ],
+      "name" : "v2_adc_poll_3_2",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 121,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "adc_poll",
+        "3",
+        "3"
+      ],
+      "name" : "v2_adc_poll_3_3",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 123,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "adc_poll",
+        "4",
+        "1"
+      ],
+      "name" : "v2_adc_poll_4_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 125,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "adc_poll",
+        "4",
+        "2"
+      ],
+      "name" : "v2_adc_poll_4_2",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 127,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "adc_poll",
+        "4",
+        "3"
+      ],
+      "name" : "v2_adc_poll_4_3",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 129,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "adc_poll",
+        "5",
+        "1"
+      ],
+      "name" : "v2_adc_poll_5_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 131,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "adc_poll",
+        "5",
+        "2"
+      ],
+      "name" : "v2_adc_poll_5_2",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 133,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "adc_poll",
+        "5",
+        "3"
+      ],
+      "name" : "v2_adc_poll_5_3",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 135,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "adc_bad",
+        "0",
+        "1"
+      ],
+      "name" : "v2_adc_bad_0_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 137,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "adc_bad",
+        "1",
+        "1"
+      ],
+      "name" : "v2_adc_bad_1_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 139,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "adc_bad",
+        "2",
+        "1"
+      ],
+      "name" : "v2_adc_bad_2_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 141,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "adc_bad",
+        "3",
+        "1"
+      ],
+      "name" : "v2_adc_bad_3_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 143,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "svpwm_bad",
+        "0",
+        "1"
+      ],
+      "name" : "v2_svpwm_bad_0_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 145,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "svpwm_bad",
+        "1",
+        "1"
+      ],
+      "name" : "v2_svpwm_bad_1_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 147,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "svpwm_bad",
+        "2",
+        "1"
+      ],
+      "name" : "v2_svpwm_bad_2_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 149,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "svpwm_bad",
+        "3",
+        "1"
+      ],
+      "name" : "v2_svpwm_bad_3_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 151,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "svpwm_bad",
+        "4",
+        "1"
+      ],
+      "name" : "v2_svpwm_bad_4_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 153,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "svpwm_bad",
+        "5",
+        "1"
+      ],
+      "name" : "v2_svpwm_bad_5_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 155,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "svpwm_bad",
+        "6",
+        "1"
+      ],
+      "name" : "v2_svpwm_bad_6_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 157,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "svpwm_bad",
+        "7",
+        "1"
+      ],
+      "name" : "v2_svpwm_bad_7_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 159,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "app_failure",
+        "0",
+        "1"
+      ],
+      "name" : "v2_app_failure_0_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 161,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "app_failure",
+        "1",
+        "1"
+      ],
+      "name" : "v2_app_failure_1_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 163,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "app_failure",
+        "2",
+        "1"
+      ],
+      "name" : "v2_app_failure_2_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 165,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "app_failure",
+        "3",
+        "1"
+      ],
+      "name" : "v2_app_failure_3_1",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 167,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "encoder"
+      ],
+      "name" : "v2_encoder",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 169,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "early_init"
+      ],
+      "name" : "v2_early_init",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    },
+    {
+      "backtrace" : 171,
+      "command" : 
+      [
+        "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release/safety_tests_1.exe",
+        "valid"
+      ],
+      "name" : "v2_valid",
+      "properties" : 
+      [
+        {
+          "name" : "TIMEOUT",
+          "value" : 5.0
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "C:/Users/xuhengyi/Desktop/item/\u8bfe\u8bbe/DMF407_FOC_HAL/build/v21-final-host-release"
+        }
+      ]
+    }
+  ],
+  "version" : 
+  {
+    "major" : 1,
+    "minor" : 0
+  }
+}

@@ -1,0 +1,66 @@
+[1/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/BSP/bsp_timing.c.obj
+[2/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Control/foc_transforms.c.obj
+[3/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Control/foc_svpwm.c.obj
+[4/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Control/foc_pi.c.obj
+[5/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/BSP/bsp_pwm.c.obj
+[6/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Motor/motor_angle_speed.c.obj
+[7/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Motor/encoder_tracker.c.obj
+[8/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/BSP/bsp_adc.c.obj
+[9/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/BSP/bsp_encoder.c.obj
+[10/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/BSP/bsp_motor_enable.c.obj
+[11/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/BSP/bsp_timer.c.obj
+[12/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Control/foc_pipeline.c.obj
+[13/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/BSP/bsp_uart.c.obj
+[14/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c.obj
+C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c:923: warning: ISO C forbids an empty translation unit [-Wpedantic]
+[15/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/BSP/bsp_encoder_safe.c.obj
+[16/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/BSP/bsp_adc_safe.c.obj
+[17/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Core/Src/gpio.c.obj
+[18/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Core/Src/usart.c.obj
+[19/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Core/Src/adc.c.obj
+[20/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Core/Src/stm32f4xx_hal_msp.c.obj
+[21/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Core/Src/tim.c.obj
+[22/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Core/Src/stm32f4xx_it.c.obj
+[23/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Core/Src/main.c.obj
+[24/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/BSP/bsp_safety.c.obj
+[25/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/App/app_no_power.c.obj
+[26/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj
+[27/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
+[28/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj
+[29/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj
+[30/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+[31/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj
+C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c: In function 'FLASH_MassErase':
+C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c:948:60: warning: unused parameter 'Banks' [-Wunused-parameter]
+  948 | static void FLASH_MassErase(uint8_t VoltageRange, uint32_t Banks)
+      |                                                   ~~~~~~~~~^~~~~
+C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c: In function 'FLASH_OB_EnableWRP':
+C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c:1027:74: warning: unused parameter 'Banks' [-Wunused-parameter]
+ 1027 | static HAL_StatusTypeDef FLASH_OB_EnableWRP(uint32_t WRPSector, uint32_t Banks)
+      |                                                                 ~~~~~~~~~^~~~~
+C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c: In function 'FLASH_OB_DisableWRP':
+C:/Users/xuhengyi/Desktop/item/课设/DMF407_FOC_HAL/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c:1063:75: warning: unused parameter 'Banks' [-Wunused-parameter]
+ 1063 | static HAL_StatusTypeDef FLASH_OB_DisableWRP(uint32_t WRPSector, uint32_t Banks)
+      |                                                                  ~~~~~~~~~^~~~~
+[32/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj
+[33/48] Building ASM object CMakeFiles/DMF407_FOC_HAL.dir/startup_stm32f407xx.s.obj
+[34/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj
+[35/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+[36/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj
+[37/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+[38/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj
+[39/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Core/Src/sysmem.c.obj
+[40/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+[41/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+[42/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj
+[43/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Core/Src/system_stm32f4xx.c.obj
+[44/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Core/Src/syscalls.c.obj
+[45/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
+[46/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+[47/48] Building C object CMakeFiles/DMF407_FOC_HAL.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+[48/48] Linking C executable DMF407_FOC_HAL.elf; Generating DMF407_FOC_HAL.bin / DMF407_FOC_HAL.hex
+C:/Users/xuhengyi/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: DMF407_FOC_HAL.elf has a LOAD segment with RWX permissions
+Memory region         Used Size  Region Size  %age Used
+             RAM:        2784 B       128 KB      2.12%
+          CCMRAM:           0 B        64 KB      0.00%
+           FLASH:       25820 B         1 MB      2.46%

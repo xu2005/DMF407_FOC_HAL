@@ -30,6 +30,8 @@
 #include "bsp_encoder.h"
 #include "bsp_timer.h"
 #include "bsp_motor_enable.h"
+#include "app_no_power.h"
+#include "bsp_safety.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -107,36 +109,13 @@ int main(void)
    * 实板极性/R70/保护链未验收：POWER-STAGE ENABLE BLOCKED。 */
   BSP_MotorEnable_ForceDisable();
 
-  /* V1 Phase 2 启动顺序：严格对齐 Legacy main() 的调用序列
-   *   Legacy USER/main.c:55  ADC_Int_Init()
-   *   Legacy USER/main.c:56  Time2_Init(999, 83)
-   *   Legacy USER/main.c:57  Time4_Init(speed_period_max, 10)
-   *   Legacy USER/main.c:58  Encoder_Int_Init(0xFFFF, 0)
-   *   Legacy USER/main.c:59  TIM1_Int_Init(100-1, 84-1)
-   */
-
-  /* ↔ Legacy main.c:55  ADC_Cmd(ADC1/2/3, ENABLE)（adc.c:62-64）
-   * ADC 外部触发为 TIM1_CC1，若 TIM1 未运行则不会产生转换。 */
-  BSP_ADC_Start();
-
-  /* ↔ Legacy main.c:56-57  Time2_Init() + Time4_Init()
-   * TIM2 = 标称 1 ms 时基；TIM4 = 标称 ≈1.31 ms 插补时基。
-   * 两者均只开 Update 中断；★ 与 Legacy 一致不清 UIF（D-16）。 */
-  BSP_Timer_Start();
-
-  /* ↔ Legacy main.c:58  Encoder_Int_Init()（encoderini.c）
-   * 仅开启 Update 中断，不开 CC1/CC2（见 bsp_encoder.c 说明 / D-12）。 */
-  BSP_Encoder_Start();
-
-  /* ↔ Legacy main.c:59  TIM1_Int_Init()（time1.c）
-   * Legacy TIM1 PWM 启动行为的 HAL 封装，非 TIM_CtrlPWMOutputs 的一一等价
-   *（该 HAL 调用同时使能 CCx/CCxN、MOE 与计数器 CEN；而 Legacy 的
-   *  TIM_CtrlPWMOutputs 只对应 MOE，计数器由 TIM_Cmd 单独启动）
-   * 注意：CCR 仍为 .ioc 配置的初值 0（未改初始占空比，符合任务书 §9）。
-   * CCR=0 时六路实际输出电平 = NEEDS SCOPE CONFIRM（待无功率示波器实测，见 bsp_pwm.h）。
-   * 本调用可能已使能 PWM 输出；PF10 仍必须保持板级目标禁止态。
-   * POWER-STAGE ENABLE BLOCKED：逻辑波形观测必须物理断开功率直流侧。 */
-  BSP_PWM_Start();
+  /* V2 checked no-power startup; normal timer/ADC configuration is unchanged.
+   * Default firmware runs diagnostics only. Full control replay is opt-in,
+   * keeps PF10 Low, and still requires physically disconnected power bus. */
+  if (!App_NoPower_Start())
+  {
+    Error_Handler();
+  }
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -146,6 +125,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+    App_NoPower_Poll();
   }
   /* USER CODE END 3 */
 }
@@ -197,7 +177,7 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 /* TIM 更新中断统一分发已迁至 BSP/bsp_timer.c
- * （HAL_TIM_PeriodElapsedCallback 覆盖 HAL 弱定义，TIM2/TIM3/TIM4 分支在该文件内）。
+ * （HAL_TIM_PeriodElapsedCallback 覆盖 HAL 弱定义，TIM1/TIM2/TIM3/TIM4 分支在该文件内）。
  * 本处保持为空，不得再定义同名回调，否则链接期重复定义。 */
 /* USER CODE END 4 */
 
@@ -208,7 +188,9 @@ void SystemClock_Config(void)
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
-  /* User can add his own implementation to report the HAL error return state */
+  /* Gate first, even if clock/peripheral setup failed. */
+  __HAL_RCC_GPIOF_CLK_ENABLE();
+  BSP_Safety_Fault(BSP_FAULT_INIT);
   __disable_irq();
   while (1)
   {

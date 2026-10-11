@@ -1,0 +1,132 @@
+UpdateCTestConfiguration  from :<repo>/build/audit-host-baseline/DartConfiguration.tcl
+Test project <repo>/build/audit-host-baseline
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+      Start  1: encoder
+
+1: Test command: <repo>\build\audit-host-baseline\bsp_host_tests.exe "encoder"
+1: Working Directory: <repo>/build/audit-host-baseline
+1: Test timeout computed to be: 5
+1: PASS encoder: startup/UIE only, forward/reverse, upper/lower wrap, direction reversal
+ 1/13 Test  #1: encoder ..........................   Passed    0.02 sec
+test 2
+      Start  2: encoder_r01
+
+2: Test command: <repo>\build\audit-host-baseline\bsp_host_tests.exe "encoder_r01"
+2: Working Directory: <repo>/build/audit-host-baseline
+2: Test timeout computed to be: 5
+2: KNOWN RISK R-01 upper: CNT=0 ISR pending, expected=65536 observed=0 error=-65536
+2: KNOWN RISK R-01 lower: CNT=65535 ISR pending, expected=-1 observed=65535 error=+65536
+2: KNOWN RISK reproduced; assertions pass because the unfixed error was observed, not closed
+ 2/13 Test  #2: encoder_r01 ......................   Passed    0.01 sec
+test 3
+      Start  3: adc
+
+3: Test command: <repo>\build\audit-host-baseline\bsp_host_tests.exe "adc"
+3: Working Directory: <repo>/build/audit-host-baseline
+3: Test timeout computed to be: 5
+3: PASS adc: start 1/2/3, W/V/BUS/W/V/BUS, poll-before-read, discard first 3, retain raw last 3
+ 3/13 Test  #3: adc ..............................   Passed    0.01 sec
+test 4
+      Start  4: pwm
+
+4: Test command: <repo>\build\audit-host-baseline\bsp_host_tests.exe "pwm"
+4: Working Directory: <repo>/build/audit-host-baseline
+4: Test timeout computed to be: 5
+4: PASS pwm: HAL start/stop call order, U/V/W to CCR1/2/3, zero/general/ARR boundary, independent readback
+ 4/13 Test  #4: pwm ..............................   Passed    0.01 sec
+test 5
+      Start  5: math_angle
+
+5: Test command: <repo>\build\audit-host-baseline\math_host_tests.exe "angle"
+5: Working Directory: <repo>/build/audit-host-baseline
+5: Test timeout computed to be: 5
+5: PASS angle zero                 mech=5.73654795 elec=4.09663677 rpm=0
+5: PASS angle positive             mech=0.0816813707 elec=0.326725483 rpm=5999.99951
+5: PASS angle reverse              mech=0.0801105499 elec=0.3204422 rpm=-15
+5: PASS angle sample_1             mech=5.89362764 elec=4.72495556 rpm=1499.99988
+5: PASS angle sample_2             mech=5.89519835 elec=4.73123837 rpm=15
+5: PASS angle upper_wrap           mech=1.86611319 elec=1.18126774 rpm=15
+5: PASS angle lower_wrap           mech=5.73497725 elec=4.09035397 rpm=-15
+5: PASS angle half_positive_limit  mech=0.658162534 elec=2.63265014 rpm=491504.938
+5: PASS angle half_positive_wrap   mech=0.659738004 elec=2.63895202 rpm=-491520
+5: PASS angle half_negative_limit  mech=5.73654795 elec=4.09663677 rpm=-491520
+ 5/13 Test  #5: math_angle .......................   Passed    0.01 sec
+test 6
+      Start  6: math_angle_r01
+
+6: Test command: <repo>\build\audit-host-baseline\math_host_tests.exe "angle_r01"
+6: Working Directory: <repo>/build/audit-host-baseline
+6: Test timeout computed to be: 5
+6: KNOWN RISK R-01 total error=-65536: mech 1.86611319->5.73654795, elec 1.18126774->4.09663677; raw-based rpm stays 15
+6: KNOWN RISK R-01 total error=65536: mech 5.73497725->1.86454153, elec 4.09035397->1.17498112; raw-based rpm stays -15
+6: KNOWN RISK propagation reproduced; no encoder fix or risk closure
+ 6/13 Test  #6: math_angle_r01 ...................   Passed    0.01 sec
+test 7
+      Start  7: math_transforms
+
+7: Test command: <repo>\build\audit-host-baseline\math_host_tests.exe "transforms"
+7: Working Directory: <repo>/build/audit-host-baseline
+7: Test timeout computed to be: 5
+7: PASS transforms: Clarke 3 / Park 4 / Inverse Park 4 fixed vectors; pure arithmetic only
+ 7/13 Test  #7: math_transforms ..................   Passed    0.01 sec
+test 8
+      Start  8: pi_speed
+
+8: Test command: <repo>\build\audit-host-baseline\pi_svpwm_tests.exe "pi_speed"
+8: Working Directory: <repo>/build/audit-host-baseline
+8: Test timeout computed to be: 5
+8: PASS: speed 8 consecutive updates, integral/output clamps, zero reference retains state
+ 8/13 Test  #8: pi_speed .........................   Passed    0.02 sec
+test 9
+      Start  9: pi_current
+
+9: Test command: <repo>\build\audit-host-baseline\pi_svpwm_tests.exe "pi_current"
+9: Working Directory: <repo>/build/audit-host-baseline
+9: Test timeout computed to be: 5
+9: PASS: current d/q 6 consecutive updates, separate integral/output clamps
+ 9/13 Test  #9: pi_current .......................   Passed    0.01 sec
+test 10
+      Start 10: pi_schedule
+
+10: Test command: <repo>\build\audit-host-baseline\pi_svpwm_tests.exe "pi_schedule"
+10: Working Directory: <repo>/build/audit-host-baseline
+10: Test timeout computed to be: 5
+10: PASS: 20 offline ticks, speed before current at ticks 10/20; no realtime scheduling claim
+10/13 Test #10: pi_schedule ......................   Passed    0.01 sec
+test 11
+      Start 11: pi_position
+
+11: Test command: <repo>\build\audit-host-baseline\pi_svpwm_tests.exe "pi_position"
+11: Working Directory: <repo>/build/audit-host-baseline
+11: Test timeout computed to be: 5
+11: PASS: position 4 defined formula cases; Legacy global writes/diagnostics DEFERRED
+11/13 Test #11: pi_position ......................   Passed    0.01 sec
+test 12
+      Start 12: svpwm_normal
+
+12: Test command: <repo>\build\audit-host-baseline\pi_svpwm_tests.exe "svpwm_normal"
+12: Working Directory: <repo>/build/audit-host-baseline
+12: Test timeout computed to be: 5
+12: PASS: SVPWM 14 nonzero vectors, six sectors and six overmodulation branches, two axis boundaries
+12/13 Test #12: svpwm_normal .....................   Passed    0.01 sec
+test 13
+      Start 13: svpwm_zero
+
+13: Test command: <repo>\build\audit-host-baseline\pi_svpwm_tests.exe "svpwm_zero"
+13: Working Directory: <repo>/build/audit-host-baseline
+13: Test timeout computed to be: 5
+13: KNOWN RISK: zero sector has no defined ta/tb/tc; new explicit status is an interface difference
+13/13 Test #13: svpwm_zero .......................   Passed    0.01 sec
+
+100% tests passed, 0 tests failed out of 13
+
+Label Time Summary:
+KNOWN_RISK    =   0.03 sec*proc (3 tests)
+
+Total Test time (real) =   0.15 sec

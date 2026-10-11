@@ -1,0 +1,1396 @@
+Start testing: Oct 11 15:41 中国标准时间
+----------------------------------------------------------
+1/86 Testing: encoder
+1/86 Test: encoder
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/bsp_host_tests.exe" "encoder"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"encoder" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS encoder: startup/UIE only, forward/reverse, upper/lower wrap, direction reversal
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"encoder" end time: Oct 11 15:41 中国标准时间
+"encoder" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/86 Testing: encoder_r01
+2/86 Test: encoder_r01
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/bsp_host_tests.exe" "encoder_r01"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"encoder_r01" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+KNOWN RISK R-01 upper: CNT=0 ISR pending, expected=65536 observed=0 error=-65536
+KNOWN RISK R-01 lower: CNT=65535 ISR pending, expected=-1 observed=65535 error=+65536
+KNOWN RISK reproduced; assertions pass because the unfixed error was observed, not closed
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"encoder_r01" end time: Oct 11 15:41 中国标准时间
+"encoder_r01" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/86 Testing: adc
+3/86 Test: adc
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/bsp_host_tests.exe" "adc"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"adc" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS adc: start 1/2/3, W/V/BUS/W/V/BUS, poll-before-read, discard first 3, retain raw last 3
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"adc" end time: Oct 11 15:41 中国标准时间
+"adc" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/86 Testing: pwm
+4/86 Test: pwm
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/bsp_host_tests.exe" "pwm"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"pwm" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS pwm: HAL start/stop call order, U/V/W to CCR1/2/3, zero/general/ARR boundary, independent readback
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"pwm" end time: Oct 11 15:41 中国标准时间
+"pwm" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/86 Testing: math_angle
+5/86 Test: math_angle
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/math_host_tests.exe" "angle"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"math_angle" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS angle zero                 mech=5.73654795 elec=4.09663677 rpm=0
+PASS angle positive             mech=0.0816813707 elec=0.326725483 rpm=5999.99951
+PASS angle reverse              mech=0.0801105499 elec=0.3204422 rpm=-15
+PASS angle sample_1             mech=5.89362764 elec=4.72495556 rpm=1499.99988
+PASS angle sample_2             mech=5.89519835 elec=4.73123837 rpm=15
+PASS angle upper_wrap           mech=1.86611319 elec=1.18126774 rpm=15
+PASS angle lower_wrap           mech=5.73497725 elec=4.09035397 rpm=-15
+PASS angle half_positive_limit  mech=0.658162534 elec=2.63265014 rpm=491504.938
+PASS angle half_positive_wrap   mech=0.659738004 elec=2.63895202 rpm=-491520
+PASS angle half_negative_limit  mech=5.73654795 elec=4.09663677 rpm=-491520
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"math_angle" end time: Oct 11 15:41 中国标准时间
+"math_angle" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/86 Testing: math_angle_r01
+6/86 Test: math_angle_r01
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/math_host_tests.exe" "angle_r01"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"math_angle_r01" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+KNOWN RISK R-01 total error=-65536: mech 1.86611319->5.73654795, elec 1.18126774->4.09663677; raw-based rpm stays 15
+KNOWN RISK R-01 total error=65536: mech 5.73497725->1.86454153, elec 4.09035397->1.17498112; raw-based rpm stays -15
+KNOWN RISK propagation reproduced; no encoder fix or risk closure
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"math_angle_r01" end time: Oct 11 15:41 中国标准时间
+"math_angle_r01" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/86 Testing: math_transforms
+7/86 Test: math_transforms
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/math_host_tests.exe" "transforms"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"math_transforms" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS transforms: Clarke 3 / Park 4 / Inverse Park 4 fixed vectors; pure arithmetic only
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"math_transforms" end time: Oct 11 15:41 中国标准时间
+"math_transforms" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/86 Testing: pi_speed
+8/86 Test: pi_speed
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/pi_svpwm_tests.exe" "pi_speed"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"pi_speed" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS: speed 8 consecutive updates, integral/output clamps, zero reference retains state
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"pi_speed" end time: Oct 11 15:41 中国标准时间
+"pi_speed" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/86 Testing: pi_current
+9/86 Test: pi_current
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/pi_svpwm_tests.exe" "pi_current"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"pi_current" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS: current d/q 6 consecutive updates, separate integral/output clamps
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"pi_current" end time: Oct 11 15:41 中国标准时间
+"pi_current" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/86 Testing: pi_schedule
+10/86 Test: pi_schedule
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/pi_svpwm_tests.exe" "pi_schedule"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"pi_schedule" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS: 20 offline ticks, speed before current at ticks 10/20; no realtime scheduling claim
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"pi_schedule" end time: Oct 11 15:41 中国标准时间
+"pi_schedule" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/86 Testing: pi_position
+11/86 Test: pi_position
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/pi_svpwm_tests.exe" "pi_position"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"pi_position" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS: position 4 defined formula cases; Legacy global writes/diagnostics DEFERRED
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"pi_position" end time: Oct 11 15:41 中国标准时间
+"pi_position" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/86 Testing: svpwm_normal
+12/86 Test: svpwm_normal
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/pi_svpwm_tests.exe" "svpwm_normal"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"svpwm_normal" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS: SVPWM 14 nonzero vectors, six sectors and six overmodulation branches, two axis boundaries
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"svpwm_normal" end time: Oct 11 15:41 中国标准时间
+"svpwm_normal" time elapsed: 00:00:00
+----------------------------------------------------------
+
+13/86 Testing: svpwm_zero
+13/86 Test: svpwm_zero
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/pi_svpwm_tests.exe" "svpwm_zero"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"svpwm_zero" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+KNOWN RISK: zero sector has no defined ta/tb/tc; new explicit status is an interface difference
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"svpwm_zero" end time: Oct 11 15:41 中国标准时间
+"svpwm_zero" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/86 Testing: timer_diagnostic
+14/86 Test: timer_diagnostic
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/timer_host_tests.exe"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"timer_diagnostic" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS diagnostic UIE routing; physical frequency/WCET not measured
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"timer_diagnostic" end time: Oct 11 15:41 中国标准时间
+"timer_diagnostic" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/86 Testing: pipeline_v1_replay
+15/86 Test: pipeline_v1_replay
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/pipeline_host_tests.exe"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"pipeline_v1_replay" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS V1 replay: ADC/conversion/angle/transforms/PI/SVPWM, order and disabled state; no realtime claim
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"pipeline_v1_replay" end time: Oct 11 15:41 中国标准时间
+"pipeline_v1_replay" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/86 Testing: encoder_v2_bounded
+16/86 Test: encoder_v2_bounded
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/encoder_v2_tests.exe"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"encoder_v2_bounded" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS V2 wraps/reversal/restart/int64 limits; movement <32768 per sample is a hardware precondition
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"encoder_v2_bounded" end time: Oct 11 15:41 中国标准时间
+"encoder_v2_bounded" time elapsed: 00:00:00
+----------------------------------------------------------
+
+17/86 Testing: app_mode_0
+17/86 Test: app_mode_0
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_0.exe" "app_replay"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"app_mode_0" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.11 sec
+----------------------------------------------------------
+Test Passed.
+"app_mode_0" end time: Oct 11 15:41 中国标准时间
+"app_mode_0" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/86 Testing: app_mode_1
+18/86 Test: app_mode_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "app_replay"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"app_mode_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.23 sec
+----------------------------------------------------------
+Test Passed.
+"app_mode_1" end time: Oct 11 15:41 中国标准时间
+"app_mode_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/86 Testing: v21_locked_aoe
+19/86 Test: v21_locked_aoe
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "locked_aoe"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v21_locked_aoe" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v21_locked_aoe" end time: Oct 11 15:41 中国标准时间
+"v21_locked_aoe" time elapsed: 00:00:00
+----------------------------------------------------------
+
+20/86 Testing: v21_lock_write
+20/86 Test: v21_lock_write
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "lock_write"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v21_lock_write" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v21_lock_write" end time: Oct 11 15:41 中国标准时间
+"v21_lock_write" time elapsed: 00:00:00
+----------------------------------------------------------
+
+21/86 Testing: v21_break_update
+21/86 Test: v21_break_update
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "break_update"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v21_break_update" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v21_break_update" end time: Oct 11 15:41 中国标准时间
+"v21_break_update" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/86 Testing: v21_initial_moe
+22/86 Test: v21_initial_moe
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "initial_moe"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v21_initial_moe" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v21_initial_moe" end time: Oct 11 15:41 中国标准时间
+"v21_initial_moe" time elapsed: 00:00:00
+----------------------------------------------------------
+
+23/86 Testing: v21_wrong_lock
+23/86 Test: v21_wrong_lock
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "wrong_lock"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v21_wrong_lock" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v21_wrong_lock" end time: Oct 11 15:41 中国标准时间
+"v21_wrong_lock" time elapsed: 00:00:00
+----------------------------------------------------------
+
+24/86 Testing: v21_adc_previous
+24/86 Test: v21_adc_previous
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "adc_previous"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v21_adc_previous" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v21_adc_previous" end time: Oct 11 15:41 中国标准时间
+"v21_adc_previous" time elapsed: 00:00:00
+----------------------------------------------------------
+
+25/86 Testing: v21_encoder_ambiguous
+25/86 Test: v21_encoder_ambiguous
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "encoder_ambiguous"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v21_encoder_ambiguous" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v21_encoder_ambiguous" end time: Oct 11 15:41 中国标准时间
+"v21_encoder_ambiguous" time elapsed: 00:00:00
+----------------------------------------------------------
+
+26/86 Testing: v21_sample_age
+26/86 Test: v21_sample_age
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "sample_age"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v21_sample_age" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v21_sample_age" end time: Oct 11 15:41 中国标准时间
+"v21_sample_age" time elapsed: 00:00:00
+----------------------------------------------------------
+
+27/86 Testing: v21_app_adc_transaction
+27/86 Test: v21_app_adc_transaction
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "app_adc_transaction"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v21_app_adc_transaction" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v21_app_adc_transaction" end time: Oct 11 15:41 中国标准时间
+"v21_app_adc_transaction" time elapsed: 00:00:00
+----------------------------------------------------------
+
+28/86 Testing: v21_dwt_0
+28/86 Test: v21_dwt_0
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/timing_tests_0.exe"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v21_dwt_0" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS DWT bookkeeping only; actual cycles/WCET NEEDS HARDWARE
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"v21_dwt_0" end time: Oct 11 15:41 中国标准时间
+"v21_dwt_0" time elapsed: 00:00:00
+----------------------------------------------------------
+
+29/86 Testing: v21_dwt_1
+29/86 Test: v21_dwt_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/timing_tests_1.exe"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v21_dwt_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS DWT bookkeeping only; actual cycles/WCET NEEDS HARDWARE
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"v21_dwt_1" end time: Oct 11 15:41 中国标准时间
+"v21_dwt_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+30/86 Testing: v21_dwt_unsupported
+30/86 Test: v21_dwt_unsupported
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/timing_tests_1.exe" "unsupported"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v21_dwt_unsupported" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v21_dwt_unsupported" end time: Oct 11 15:41 中国标准时间
+"v21_dwt_unsupported" time elapsed: 00:00:00
+----------------------------------------------------------
+
+31/86 Testing: v21_off_app_replay
+31/86 Test: v21_off_app_replay
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_0.exe" "app_replay"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v21_off_app_replay" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v21_off_app_replay" end time: Oct 11 15:41 中国标准时间
+"v21_off_app_replay" time elapsed: 00:00:00
+----------------------------------------------------------
+
+32/86 Testing: v21_off_off_timeout
+32/86 Test: v21_off_off_timeout
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_0.exe" "off_timeout"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v21_off_off_timeout" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v21_off_off_timeout" end time: Oct 11 15:41 中国标准时间
+"v21_off_off_timeout" time elapsed: 00:00:00
+----------------------------------------------------------
+
+33/86 Testing: v21_off_locked_aoe
+33/86 Test: v21_off_locked_aoe
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_0.exe" "locked_aoe"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v21_off_locked_aoe" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v21_off_locked_aoe" end time: Oct 11 15:41 中国标准时间
+"v21_off_locked_aoe" time elapsed: 00:00:00
+----------------------------------------------------------
+
+34/86 Testing: v21_off_initial_moe
+34/86 Test: v21_off_initial_moe
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_0.exe" "initial_moe"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v21_off_initial_moe" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v21_off_initial_moe" end time: Oct 11 15:41 中国标准时间
+"v21_off_initial_moe" time elapsed: 00:00:00
+----------------------------------------------------------
+
+35/86 Testing: v2_pwm_start_0_1
+35/86 Test: v2_pwm_start_0_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "pwm_start" "0" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_pwm_start_0_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_pwm_start_0_1" end time: Oct 11 15:41 中国标准时间
+"v2_pwm_start_0_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+36/86 Testing: v2_pwm_start_1_1
+36/86 Test: v2_pwm_start_1_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "pwm_start" "1" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_pwm_start_1_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_pwm_start_1_1" end time: Oct 11 15:41 中国标准时间
+"v2_pwm_start_1_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+37/86 Testing: v2_pwm_start_2_1
+37/86 Test: v2_pwm_start_2_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "pwm_start" "2" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_pwm_start_2_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_pwm_start_2_1" end time: Oct 11 15:41 中国标准时间
+"v2_pwm_start_2_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+38/86 Testing: v2_pwm_start_3_1
+38/86 Test: v2_pwm_start_3_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "pwm_start" "3" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_pwm_start_3_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_pwm_start_3_1" end time: Oct 11 15:41 中国标准时间
+"v2_pwm_start_3_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+39/86 Testing: v2_pwm_start_4_1
+39/86 Test: v2_pwm_start_4_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "pwm_start" "4" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_pwm_start_4_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_pwm_start_4_1" end time: Oct 11 15:41 中国标准时间
+"v2_pwm_start_4_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+40/86 Testing: v2_pwm_start_5_1
+40/86 Test: v2_pwm_start_5_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "pwm_start" "5" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_pwm_start_5_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_pwm_start_5_1" end time: Oct 11 15:41 中国标准时间
+"v2_pwm_start_5_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+41/86 Testing: v2_pwm_stop_0_1
+41/86 Test: v2_pwm_stop_0_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "pwm_stop" "0" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_pwm_stop_0_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_pwm_stop_0_1" end time: Oct 11 15:41 中国标准时间
+"v2_pwm_stop_0_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+42/86 Testing: v2_pwm_stop_1_1
+42/86 Test: v2_pwm_stop_1_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "pwm_stop" "1" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_pwm_stop_1_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_pwm_stop_1_1" end time: Oct 11 15:41 中国标准时间
+"v2_pwm_stop_1_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+43/86 Testing: v2_pwm_stop_2_1
+43/86 Test: v2_pwm_stop_2_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "pwm_stop" "2" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_pwm_stop_2_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_pwm_stop_2_1" end time: Oct 11 15:41 中国标准时间
+"v2_pwm_stop_2_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+44/86 Testing: v2_pwm_stop_3_1
+44/86 Test: v2_pwm_stop_3_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "pwm_stop" "3" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_pwm_stop_3_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_pwm_stop_3_1" end time: Oct 11 15:41 中国标准时间
+"v2_pwm_stop_3_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+45/86 Testing: v2_pwm_stop_4_1
+45/86 Test: v2_pwm_stop_4_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "pwm_stop" "4" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_pwm_stop_4_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_pwm_stop_4_1" end time: Oct 11 15:41 中国标准时间
+"v2_pwm_stop_4_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+46/86 Testing: v2_pwm_stop_5_1
+46/86 Test: v2_pwm_stop_5_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "pwm_stop" "5" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_pwm_stop_5_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_pwm_stop_5_1" end time: Oct 11 15:41 中国标准时间
+"v2_pwm_stop_5_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+47/86 Testing: v2_adc_start_0_1
+47/86 Test: v2_adc_start_0_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "adc_start" "0" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_adc_start_0_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_adc_start_0_1" end time: Oct 11 15:41 中国标准时间
+"v2_adc_start_0_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+48/86 Testing: v2_adc_start_1_1
+48/86 Test: v2_adc_start_1_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "adc_start" "1" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_adc_start_1_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_adc_start_1_1" end time: Oct 11 15:41 中国标准时间
+"v2_adc_start_1_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+49/86 Testing: v2_adc_start_2_1
+49/86 Test: v2_adc_start_2_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "adc_start" "2" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_adc_start_2_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_adc_start_2_1" end time: Oct 11 15:41 中国标准时间
+"v2_adc_start_2_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+50/86 Testing: v2_adc_poll_0_1
+50/86 Test: v2_adc_poll_0_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "adc_poll" "0" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_adc_poll_0_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_adc_poll_0_1" end time: Oct 11 15:41 中国标准时间
+"v2_adc_poll_0_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+51/86 Testing: v2_adc_poll_0_2
+51/86 Test: v2_adc_poll_0_2
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "adc_poll" "0" "2"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_adc_poll_0_2" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_adc_poll_0_2" end time: Oct 11 15:41 中国标准时间
+"v2_adc_poll_0_2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+52/86 Testing: v2_adc_poll_0_3
+52/86 Test: v2_adc_poll_0_3
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "adc_poll" "0" "3"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_adc_poll_0_3" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_adc_poll_0_3" end time: Oct 11 15:41 中国标准时间
+"v2_adc_poll_0_3" time elapsed: 00:00:00
+----------------------------------------------------------
+
+53/86 Testing: v2_adc_poll_1_1
+53/86 Test: v2_adc_poll_1_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "adc_poll" "1" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_adc_poll_1_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_adc_poll_1_1" end time: Oct 11 15:41 中国标准时间
+"v2_adc_poll_1_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+54/86 Testing: v2_adc_poll_1_2
+54/86 Test: v2_adc_poll_1_2
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "adc_poll" "1" "2"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_adc_poll_1_2" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_adc_poll_1_2" end time: Oct 11 15:41 中国标准时间
+"v2_adc_poll_1_2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+55/86 Testing: v2_adc_poll_1_3
+55/86 Test: v2_adc_poll_1_3
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "adc_poll" "1" "3"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_adc_poll_1_3" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_adc_poll_1_3" end time: Oct 11 15:41 中国标准时间
+"v2_adc_poll_1_3" time elapsed: 00:00:00
+----------------------------------------------------------
+
+56/86 Testing: v2_adc_poll_2_1
+56/86 Test: v2_adc_poll_2_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "adc_poll" "2" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_adc_poll_2_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_adc_poll_2_1" end time: Oct 11 15:41 中国标准时间
+"v2_adc_poll_2_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+57/86 Testing: v2_adc_poll_2_2
+57/86 Test: v2_adc_poll_2_2
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "adc_poll" "2" "2"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_adc_poll_2_2" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_adc_poll_2_2" end time: Oct 11 15:41 中国标准时间
+"v2_adc_poll_2_2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+58/86 Testing: v2_adc_poll_2_3
+58/86 Test: v2_adc_poll_2_3
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "adc_poll" "2" "3"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_adc_poll_2_3" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_adc_poll_2_3" end time: Oct 11 15:41 中国标准时间
+"v2_adc_poll_2_3" time elapsed: 00:00:00
+----------------------------------------------------------
+
+59/86 Testing: v2_adc_poll_3_1
+59/86 Test: v2_adc_poll_3_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "adc_poll" "3" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_adc_poll_3_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_adc_poll_3_1" end time: Oct 11 15:41 中国标准时间
+"v2_adc_poll_3_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+60/86 Testing: v2_adc_poll_3_2
+60/86 Test: v2_adc_poll_3_2
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "adc_poll" "3" "2"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_adc_poll_3_2" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_adc_poll_3_2" end time: Oct 11 15:41 中国标准时间
+"v2_adc_poll_3_2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+61/86 Testing: v2_adc_poll_3_3
+61/86 Test: v2_adc_poll_3_3
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "adc_poll" "3" "3"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_adc_poll_3_3" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_adc_poll_3_3" end time: Oct 11 15:41 中国标准时间
+"v2_adc_poll_3_3" time elapsed: 00:00:00
+----------------------------------------------------------
+
+62/86 Testing: v2_adc_poll_4_1
+62/86 Test: v2_adc_poll_4_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "adc_poll" "4" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_adc_poll_4_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_adc_poll_4_1" end time: Oct 11 15:41 中国标准时间
+"v2_adc_poll_4_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+63/86 Testing: v2_adc_poll_4_2
+63/86 Test: v2_adc_poll_4_2
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "adc_poll" "4" "2"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_adc_poll_4_2" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_adc_poll_4_2" end time: Oct 11 15:41 中国标准时间
+"v2_adc_poll_4_2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+64/86 Testing: v2_adc_poll_4_3
+64/86 Test: v2_adc_poll_4_3
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "adc_poll" "4" "3"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_adc_poll_4_3" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_adc_poll_4_3" end time: Oct 11 15:41 中国标准时间
+"v2_adc_poll_4_3" time elapsed: 00:00:00
+----------------------------------------------------------
+
+65/86 Testing: v2_adc_poll_5_1
+65/86 Test: v2_adc_poll_5_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "adc_poll" "5" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_adc_poll_5_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_adc_poll_5_1" end time: Oct 11 15:41 中国标准时间
+"v2_adc_poll_5_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+66/86 Testing: v2_adc_poll_5_2
+66/86 Test: v2_adc_poll_5_2
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "adc_poll" "5" "2"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_adc_poll_5_2" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_adc_poll_5_2" end time: Oct 11 15:41 中国标准时间
+"v2_adc_poll_5_2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+67/86 Testing: v2_adc_poll_5_3
+67/86 Test: v2_adc_poll_5_3
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "adc_poll" "5" "3"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_adc_poll_5_3" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_adc_poll_5_3" end time: Oct 11 15:41 中国标准时间
+"v2_adc_poll_5_3" time elapsed: 00:00:00
+----------------------------------------------------------
+
+68/86 Testing: v2_adc_bad_0_1
+68/86 Test: v2_adc_bad_0_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "adc_bad" "0" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_adc_bad_0_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_adc_bad_0_1" end time: Oct 11 15:41 中国标准时间
+"v2_adc_bad_0_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+69/86 Testing: v2_adc_bad_1_1
+69/86 Test: v2_adc_bad_1_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "adc_bad" "1" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_adc_bad_1_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_adc_bad_1_1" end time: Oct 11 15:41 中国标准时间
+"v2_adc_bad_1_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+70/86 Testing: v2_adc_bad_2_1
+70/86 Test: v2_adc_bad_2_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "adc_bad" "2" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_adc_bad_2_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_adc_bad_2_1" end time: Oct 11 15:41 中国标准时间
+"v2_adc_bad_2_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+71/86 Testing: v2_adc_bad_3_1
+71/86 Test: v2_adc_bad_3_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "adc_bad" "3" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_adc_bad_3_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_adc_bad_3_1" end time: Oct 11 15:41 中国标准时间
+"v2_adc_bad_3_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+72/86 Testing: v2_svpwm_bad_0_1
+72/86 Test: v2_svpwm_bad_0_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "svpwm_bad" "0" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_svpwm_bad_0_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_svpwm_bad_0_1" end time: Oct 11 15:41 中国标准时间
+"v2_svpwm_bad_0_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+73/86 Testing: v2_svpwm_bad_1_1
+73/86 Test: v2_svpwm_bad_1_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "svpwm_bad" "1" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_svpwm_bad_1_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_svpwm_bad_1_1" end time: Oct 11 15:41 中国标准时间
+"v2_svpwm_bad_1_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+74/86 Testing: v2_svpwm_bad_2_1
+74/86 Test: v2_svpwm_bad_2_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "svpwm_bad" "2" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_svpwm_bad_2_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_svpwm_bad_2_1" end time: Oct 11 15:41 中国标准时间
+"v2_svpwm_bad_2_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+75/86 Testing: v2_svpwm_bad_3_1
+75/86 Test: v2_svpwm_bad_3_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "svpwm_bad" "3" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_svpwm_bad_3_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_svpwm_bad_3_1" end time: Oct 11 15:41 中国标准时间
+"v2_svpwm_bad_3_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+76/86 Testing: v2_svpwm_bad_4_1
+76/86 Test: v2_svpwm_bad_4_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "svpwm_bad" "4" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_svpwm_bad_4_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_svpwm_bad_4_1" end time: Oct 11 15:41 中国标准时间
+"v2_svpwm_bad_4_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+77/86 Testing: v2_svpwm_bad_5_1
+77/86 Test: v2_svpwm_bad_5_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "svpwm_bad" "5" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_svpwm_bad_5_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_svpwm_bad_5_1" end time: Oct 11 15:41 中国标准时间
+"v2_svpwm_bad_5_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+78/86 Testing: v2_svpwm_bad_6_1
+78/86 Test: v2_svpwm_bad_6_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "svpwm_bad" "6" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_svpwm_bad_6_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_svpwm_bad_6_1" end time: Oct 11 15:41 中国标准时间
+"v2_svpwm_bad_6_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+79/86 Testing: v2_svpwm_bad_7_1
+79/86 Test: v2_svpwm_bad_7_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "svpwm_bad" "7" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_svpwm_bad_7_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_svpwm_bad_7_1" end time: Oct 11 15:41 中国标准时间
+"v2_svpwm_bad_7_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+80/86 Testing: v2_app_failure_0_1
+80/86 Test: v2_app_failure_0_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "app_failure" "0" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_app_failure_0_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_app_failure_0_1" end time: Oct 11 15:41 中国标准时间
+"v2_app_failure_0_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+81/86 Testing: v2_app_failure_1_1
+81/86 Test: v2_app_failure_1_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "app_failure" "1" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_app_failure_1_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_app_failure_1_1" end time: Oct 11 15:41 中国标准时间
+"v2_app_failure_1_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+82/86 Testing: v2_app_failure_2_1
+82/86 Test: v2_app_failure_2_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "app_failure" "2" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_app_failure_2_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_app_failure_2_1" end time: Oct 11 15:41 中国标准时间
+"v2_app_failure_2_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+83/86 Testing: v2_app_failure_3_1
+83/86 Test: v2_app_failure_3_1
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "app_failure" "3" "1"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_app_failure_3_1" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_app_failure_3_1" end time: Oct 11 15:41 中国标准时间
+"v2_app_failure_3_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+84/86 Testing: v2_encoder
+84/86 Test: v2_encoder
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "encoder"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_encoder" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_encoder" end time: Oct 11 15:41 中国标准时间
+"v2_encoder" time elapsed: 00:00:00
+----------------------------------------------------------
+
+85/86 Testing: v2_early_init
+85/86 Test: v2_early_init
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "early_init"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_early_init" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_early_init" end time: Oct 11 15:41 中国标准时间
+"v2_early_init" time elapsed: 00:00:00
+----------------------------------------------------------
+
+86/86 Testing: v2_valid
+86/86 Test: v2_valid
+Command: "C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug/safety_tests_1.exe" "valid"
+Directory: C:/Users/xuhengyi/Desktop/item/璇捐/DMF407_FOC_HAL/build/v21-final-host-debug
+"v2_valid" start time: Oct 11 15:41 中国标准时间
+Output:
+----------------------------------------------------------
+PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"v2_valid" end time: Oct 11 15:41 中国标准时间
+"v2_valid" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 11 15:41 中国标准时间
+
+KNOWN_RISK =   0.03 sec*proc
+
+V21_SAFETY =   0.17 sec*proc
+

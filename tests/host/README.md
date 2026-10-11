@@ -48,3 +48,8 @@ ctest --test-dir build/host -R '^(pi_|svpwm_)' -V
 正常测试无需 Python。绝对容差 `1e-5`，约为最大输出 50 附近数个 binary32 ULP；不启用 fast-math。
 零向量不执行 Legacy、不读取新结果三相字段，CTest 成功只表示状态契约满足，风险仍开放。
 结果、L1 映射及接口差异见 `Docs/PI_SVPWM_L3_Regression_2026-10-10.md`。
+## 2026-10-11 整改新增测试
+
+保留原 13 项及其 3 个 `KNOWN_RISK` 标签。当前 70 项包含 TIM1 路由、完整 V1 回放、V2 有界 Encoder、默认/可选无功率 App、六路 PWM Start/Stop 逐位置失败、三路 ADC Start 失败、六次 ADC Poll 的 ERROR/BUSY/TIMEOUT、坏参数、非法 SVPWM 结果、Timer/Encoder 初始化失败与故障锁存。
+
+这些测试编译真实业务单元，以 Mock 注入 HAL 故障、用物理位移/固定数学向量对照结果，不模拟器件时序。最新结果与限制见 `../../Docs/整改报告_2026-10-11.md`。全部测试使用显式 CHECK，Release/NDEBUG 下仍有效。

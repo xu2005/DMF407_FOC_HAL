@@ -1,0 +1,37 @@
+[
+  {
+    "argv": [
+      "gh",
+      "run",
+      "view",
+      "38122589888",
+      "--repo",
+      "xu2005/DMF407_FOC_HAL",
+      "--json",
+      "status,conclusion,jobs,headSha,url,event,startedAt,updatedAt"
+    ],
+    "exit_code": 0,
+    "log": "linux-ci-c03075d.json"
+  },
+  {
+    "argv": [
+      "gh",
+      "run",
+      "view",
+      "38122589888",
+      "--repo",
+      "xu2005/DMF407_FOC_HAL",
+      "--log"
+    ],
+    "exit_code": 0,
+    "log": "linux-ci-c03075d.log"
+  },
+  {
+    "argv": [
+      "gh",
+      "--version"
+    ],
+    "exit_code": 0,
+    "log": "version-gh.log"
+  }
+]

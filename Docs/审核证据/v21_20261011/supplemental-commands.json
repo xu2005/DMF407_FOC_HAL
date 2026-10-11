@@ -1,0 +1,83 @@
+[
+  {
+    "name": "java-version",
+    "argv": [
+      "D:\\STM32CubeMX\\jre\\bin\\java.exe",
+      "-version"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "git-history",
+    "argv": [
+      "git",
+      "merge-base",
+      "--is-ancestor",
+      "1676de288df769f62d1aafe22c4e0cff33bed054",
+      "HEAD"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "git-legacy-preserved",
+    "argv": [
+      "git",
+      "diff",
+      "--exit-code",
+      "1676de288df769f62d1aafe22c4e0cff33bed054",
+      "HEAD",
+      "--",
+      "Legacy"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "cubemx-script.txt",
+    "argv": [
+      "D:\\STM32CubeMX\\jre\\bin\\java.exe",
+      "-jar",
+      "D:\\STM32CubeMX\\STM32CubeMX.exe",
+      "-q",
+      "build/v21-evidence/cubemx-script.txt"
+    ],
+    "exit_code": 0,
+    "observed": "actual completed native CLI invocation; full log archived"
+  },
+  {
+    "name": "cubemx-align-script.txt",
+    "argv": [
+      "D:\\STM32CubeMX\\jre\\bin\\java.exe",
+      "-Dfile.encoding=UTF-8",
+      "-jar",
+      "D:\\STM32CubeMX\\STM32CubeMX.exe",
+      "-q",
+      "build/v21-evidence/cubemx-align-script.txt"
+    ],
+    "exit_code": 0,
+    "observed": "actual completed native CLI invocation; full log archived"
+  },
+  {
+    "name": "cubemx-final-script.txt",
+    "argv": [
+      "D:\\STM32CubeMX\\jre\\bin\\java.exe",
+      "-Dfile.encoding=UTF-8",
+      "-jar",
+      "D:\\STM32CubeMX\\STM32CubeMX.exe",
+      "-q",
+      "build/v21-evidence/cubemx-final-script.txt"
+    ],
+    "exit_code": 0,
+    "observed": "actual completed native CLI invocation; full log archived"
+  },
+  {
+    "name": "fixed-package-check",
+    "argv": [
+      "scripts/check_cube_package.ps1",
+      "-PackageRoot",
+      "C:\\Users\\xuhengyi\\STM32Cube\\Repository\\STM32Cube_FW_F4_V1.28.3",
+      "-ManifestPath",
+      "Docs/审核证据/v21_20261011/dependencies.csv"
+    ],
+    "exit_code": 0
+  }
+]

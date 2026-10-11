@@ -1,0 +1,478 @@
+[
+  {
+    "name": "version-cmake",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\cmake.EXE",
+      "--version"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:41:39.727584+00:00",
+    "exit_code": 0,
+    "log": "version-cmake.log"
+  },
+  {
+    "name": "version-ninja",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\ninja\\1.13.2+st.1\\bin\\ninja.EXE",
+      "--version"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:41:39.837919+00:00",
+    "exit_code": 0,
+    "log": "version-ninja.log"
+  },
+  {
+    "name": "version-gcc",
+    "argv": [
+      "C:\\mingw64\\bin\\gcc.EXE",
+      "--version"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:41:39.857386+00:00",
+    "exit_code": 0,
+    "log": "version-gcc.log"
+  },
+  {
+    "name": "version-arm-none-eabi-gcc",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\gnu-tools-for-stm32\\14.3.1+st.2\\bin\\arm-none-eabi-gcc.EXE",
+      "--version"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:41:39.882965+00:00",
+    "exit_code": 0,
+    "log": "version-arm-none-eabi-gcc.log"
+  },
+  {
+    "name": "version-arm-none-eabi-size",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\gnu-tools-for-stm32\\14.3.1+st.2\\bin\\arm-none-eabi-size.EXE",
+      "--version"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:41:39.926246+00:00",
+    "exit_code": 0,
+    "log": "version-arm-none-eabi-size.log"
+  },
+  {
+    "name": "version-arm-none-eabi-nm",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\gnu-tools-for-stm32\\14.3.1+st.2\\bin\\arm-none-eabi-nm.EXE",
+      "--version"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:41:40.179627+00:00",
+    "exit_code": 0,
+    "log": "version-arm-none-eabi-nm.log"
+  },
+  {
+    "name": "version-ctest",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\ctest.EXE",
+      "--version"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:41:40.208148+00:00",
+    "exit_code": 0,
+    "log": "version-ctest.log"
+  },
+  {
+    "name": "python-version",
+    "argv": [
+      "C:\\Users\\xuhengyi\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "--version"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:41:40.273395+00:00",
+    "exit_code": 0,
+    "log": "python-version.log"
+  },
+  {
+    "name": "host-debug-configure",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\cmake.EXE",
+      "-S",
+      "tests/host",
+      "-B",
+      "build/v21-final-host-debug",
+      "-G",
+      "Ninja",
+      "-DCMAKE_BUILD_TYPE=Debug",
+      "-DCMAKE_C_COMPILER=C:\\mingw64\\bin\\gcc.EXE"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:41:40.838699+00:00",
+    "exit_code": 0,
+    "log": "host-debug-configure.log"
+  },
+  {
+    "name": "host-debug-build",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\cmake.EXE",
+      "--build",
+      "build/v21-final-host-debug",
+      "--parallel"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:41:42.133069+00:00",
+    "exit_code": 0,
+    "log": "host-debug-build.log"
+  },
+  {
+    "name": "host-debug-test-list",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\ctest.EXE",
+      "--test-dir",
+      "build/v21-final-host-debug",
+      "--show-only=json-v1"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:41:43.546672+00:00",
+    "exit_code": 0,
+    "log": "host-debug-test-list.log"
+  },
+  {
+    "name": "host-debug-ctest",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\ctest.EXE",
+      "--test-dir",
+      "build/v21-final-host-debug",
+      "-V",
+      "--output-junit",
+      "results.xml"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:41:43.675371+00:00",
+    "exit_code": 0,
+    "log": "host-debug-ctest.log"
+  },
+  {
+    "name": "host-release-configure",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\cmake.EXE",
+      "-S",
+      "tests/host",
+      "-B",
+      "build/v21-final-host-release",
+      "-G",
+      "Ninja",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCMAKE_C_COMPILER=C:\\mingw64\\bin\\gcc.EXE"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:41:45.018629+00:00",
+    "exit_code": 0,
+    "log": "host-release-configure.log"
+  },
+  {
+    "name": "host-release-build",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\cmake.EXE",
+      "--build",
+      "build/v21-final-host-release",
+      "--parallel"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:41:46.384861+00:00",
+    "exit_code": 0,
+    "log": "host-release-build.log"
+  },
+  {
+    "name": "host-release-test-list",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\ctest.EXE",
+      "--test-dir",
+      "build/v21-final-host-release",
+      "--show-only=json-v1"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:41:47.886974+00:00",
+    "exit_code": 0,
+    "log": "host-release-test-list.log"
+  },
+  {
+    "name": "host-release-ctest",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\ctest.EXE",
+      "--test-dir",
+      "build/v21-final-host-release",
+      "-V",
+      "--output-junit",
+      "results.xml"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:41:48.014144+00:00",
+    "exit_code": 0,
+    "log": "host-release-ctest.log"
+  },
+  {
+    "name": "arm-debug-off-configure",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\cmake.EXE",
+      "-S",
+      ".",
+      "-B",
+      "build/v21-final-arm-debug-off",
+      "-G",
+      "Ninja",
+      "-DCMAKE_BUILD_TYPE=Debug",
+      "-DDMF407_NO_POWER_CONTROL=OFF",
+      "-DDMF407_DWT_DIAGNOSTICS=OFF"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:41:49.426390+00:00",
+    "exit_code": 0,
+    "log": "arm-debug-off-configure.log"
+  },
+  {
+    "name": "arm-debug-off-build",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\cmake.EXE",
+      "--build",
+      "build/v21-final-arm-debug-off",
+      "--parallel"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:41:51.339194+00:00",
+    "exit_code": 0,
+    "log": "arm-debug-off-build.log"
+  },
+  {
+    "name": "arm-debug-off-size",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\gnu-tools-for-stm32\\14.3.1+st.2\\bin\\arm-none-eabi-size.EXE",
+      "build/v21-final-arm-debug-off/DMF407_FOC_HAL.elf"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:41:54.984457+00:00",
+    "exit_code": 0,
+    "log": "arm-debug-off-size.log"
+  },
+  {
+    "name": "arm-debug-off-symbols",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\gnu-tools-for-stm32\\14.3.1+st.2\\bin\\arm-none-eabi-nm.EXE",
+      "build/v21-final-arm-debug-off/DMF407_FOC_HAL.elf"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:41:55.007279+00:00",
+    "exit_code": 0,
+    "log": "arm-debug-off-symbols.log"
+  },
+  {
+    "name": "arm-debug-on-configure",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\cmake.EXE",
+      "-S",
+      ".",
+      "-B",
+      "build/v21-final-arm-debug-on",
+      "-G",
+      "Ninja",
+      "-DCMAKE_BUILD_TYPE=Debug",
+      "-DDMF407_NO_POWER_CONTROL=ON",
+      "-DDMF407_DWT_DIAGNOSTICS=OFF"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:41:55.041223+00:00",
+    "exit_code": 0,
+    "log": "arm-debug-on-configure.log"
+  },
+  {
+    "name": "arm-debug-on-build",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\cmake.EXE",
+      "--build",
+      "build/v21-final-arm-debug-on",
+      "--parallel"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:41:56.951875+00:00",
+    "exit_code": 0,
+    "log": "arm-debug-on-build.log"
+  },
+  {
+    "name": "arm-debug-on-size",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\gnu-tools-for-stm32\\14.3.1+st.2\\bin\\arm-none-eabi-size.EXE",
+      "build/v21-final-arm-debug-on/DMF407_FOC_HAL.elf"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:42:00.529086+00:00",
+    "exit_code": 0,
+    "log": "arm-debug-on-size.log"
+  },
+  {
+    "name": "arm-debug-on-symbols",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\gnu-tools-for-stm32\\14.3.1+st.2\\bin\\arm-none-eabi-nm.EXE",
+      "build/v21-final-arm-debug-on/DMF407_FOC_HAL.elf"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:42:00.549198+00:00",
+    "exit_code": 0,
+    "log": "arm-debug-on-symbols.log"
+  },
+  {
+    "name": "arm-release-off-configure",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\cmake.EXE",
+      "-S",
+      ".",
+      "-B",
+      "build/v21-final-arm-release-off",
+      "-G",
+      "Ninja",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DDMF407_NO_POWER_CONTROL=OFF",
+      "-DDMF407_DWT_DIAGNOSTICS=OFF"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:42:00.575209+00:00",
+    "exit_code": 0,
+    "log": "arm-release-off-configure.log"
+  },
+  {
+    "name": "arm-release-off-build",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\cmake.EXE",
+      "--build",
+      "build/v21-final-arm-release-off",
+      "--parallel"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:42:02.397078+00:00",
+    "exit_code": 0,
+    "log": "arm-release-off-build.log"
+  },
+  {
+    "name": "arm-release-off-size",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\gnu-tools-for-stm32\\14.3.1+st.2\\bin\\arm-none-eabi-size.EXE",
+      "build/v21-final-arm-release-off/DMF407_FOC_HAL.elf"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:42:05.885175+00:00",
+    "exit_code": 0,
+    "log": "arm-release-off-size.log"
+  },
+  {
+    "name": "arm-release-off-symbols",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\gnu-tools-for-stm32\\14.3.1+st.2\\bin\\arm-none-eabi-nm.EXE",
+      "build/v21-final-arm-release-off/DMF407_FOC_HAL.elf"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:42:05.909432+00:00",
+    "exit_code": 0,
+    "log": "arm-release-off-symbols.log"
+  },
+  {
+    "name": "arm-release-on-configure",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\cmake.EXE",
+      "-S",
+      ".",
+      "-B",
+      "build/v21-final-arm-release-on",
+      "-G",
+      "Ninja",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DDMF407_NO_POWER_CONTROL=ON",
+      "-DDMF407_DWT_DIAGNOSTICS=OFF"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:42:05.940376+00:00",
+    "exit_code": 0,
+    "log": "arm-release-on-configure.log"
+  },
+  {
+    "name": "arm-release-on-build",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\cmake.EXE",
+      "--build",
+      "build/v21-final-arm-release-on",
+      "--parallel"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:42:07.874728+00:00",
+    "exit_code": 0,
+    "log": "arm-release-on-build.log"
+  },
+  {
+    "name": "arm-release-on-size",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\gnu-tools-for-stm32\\14.3.1+st.2\\bin\\arm-none-eabi-size.EXE",
+      "build/v21-final-arm-release-on/DMF407_FOC_HAL.elf"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:42:11.555481+00:00",
+    "exit_code": 0,
+    "log": "arm-release-on-size.log"
+  },
+  {
+    "name": "arm-release-on-symbols",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\gnu-tools-for-stm32\\14.3.1+st.2\\bin\\arm-none-eabi-nm.EXE",
+      "build/v21-final-arm-release-on/DMF407_FOC_HAL.elf"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:42:11.574592+00:00",
+    "exit_code": 0,
+    "log": "arm-release-on-symbols.log"
+  },
+  {
+    "name": "arm-debug-on-dwt-configure",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\cmake.EXE",
+      "-S",
+      ".",
+      "-B",
+      "build/v21-final-arm-debug-on-dwt",
+      "-G",
+      "Ninja",
+      "-DCMAKE_BUILD_TYPE=Debug",
+      "-DDMF407_NO_POWER_CONTROL=ON",
+      "-DDMF407_DWT_DIAGNOSTICS=ON"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:42:11.602886+00:00",
+    "exit_code": 0,
+    "log": "arm-debug-on-dwt-configure.log"
+  },
+  {
+    "name": "arm-debug-on-dwt-build",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\cmake.EXE",
+      "--build",
+      "build/v21-final-arm-debug-on-dwt",
+      "--parallel"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:42:13.522511+00:00",
+    "exit_code": 0,
+    "log": "arm-debug-on-dwt-build.log"
+  },
+  {
+    "name": "arm-debug-on-dwt-size",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\gnu-tools-for-stm32\\14.3.1+st.2\\bin\\arm-none-eabi-size.EXE",
+      "build/v21-final-arm-debug-on-dwt/DMF407_FOC_HAL.elf"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:42:16.832712+00:00",
+    "exit_code": 0,
+    "log": "arm-debug-on-dwt-size.log"
+  },
+  {
+    "name": "arm-debug-on-dwt-symbols",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\gnu-tools-for-stm32\\14.3.1+st.2\\bin\\arm-none-eabi-nm.EXE",
+      "build/v21-final-arm-debug-on-dwt/DMF407_FOC_HAL.elf"
+    ],
+    "commit": "e5dd16e257c6829e8e5629cdb3a6ecc5118762bf",
+    "started_utc": "2026-10-11T07:42:16.853510+00:00",
+    "exit_code": 0,
+    "log": "arm-debug-on-dwt-symbols.log"
+  }
+]

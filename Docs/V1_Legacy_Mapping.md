@@ -238,6 +238,21 @@ TIMx_IRQHandler() → HAL_TIM_IRQHandler() → HAL_TIM_PeriodElapsedCallback()
 
 ## 5. 相关文档
 
+### 2026-10-11 状态补充（历史表仍保留）
+
+D-11/D-14/D-17 等表述记录前一轮未接线状态；本轮新增纯软件 V1 Pipeline 与独立 V2 App，当前消费者和限制以 [整改报告](整改报告_2026-10-11.md) 为准。原 Encoder/ADC/PWM 封装与 KNOWN_RISK 测试不修改成已修复。
+
+| 项 | 当前新增实现 | 等价性/差异 |
+|---|---|---|
+| TIM1 UIE | 清 UIF → UIE；可读诊断 Tick | 恢复路径；不改周期，真实频率仍未测 |
+| 活跃控制链 | `Control/foc_pipeline.c` | V1 参数、运算顺序、积分状态、10:1 及诊断镜像离线回放 |
+| ADC 消费者 | 主循环 `App_NoPower_Poll` → `BSP_ADC_ReadAllChecked` | V2 有限超时与完整样本提交；V1 无限等待封装保持 |
+| TIM2 消费者 | App angle hook → V2 Encoder snapshot，ON 时再算角速 | V2 起动顺序、连续 CNT 展开与有界角度；标称 1 ms 未静默修改 |
+| TIM1 控制消费者 | ON 时 App control hook → Pipeline → checked CCR | V2 缺样本/过期/无效输出拒绝，PF10 始终 Low；默认 OFF 只诊断 |
+| TIM3 消费者 | App 注册 V2 诊断事件 hook | 不再在 MCU App 使用 V1 软件溢出计数拼接；V1 主机风险复现保留 |
+| TIM4 | Tick 诊断 | XY 轨迹规划仍未迁入 |
+
+
 - [`DMF407_HAL_引脚时钟配置规范.md`](DMF407_HAL_引脚时钟配置规范.md) —— 配置唯一权威入口
 - [`DMF407_HAL_CMake_模块化重构_Agent任务书.md`](DMF407_HAL_CMake_模块化重构_Agent任务书.md) —— 阶段与纪律
 - [`V2_硬件安全修正清单.md`](V2_硬件安全修正清单.md) —— V2 层，A0~A4 未闭环前 A5/A6 = BLOCKED

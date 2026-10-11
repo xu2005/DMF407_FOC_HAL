@@ -1,0 +1,44 @@
+verify-summary-2026-10-11（Trae 交付阶段重跑）
+================================================================
+核验提交: ba15727c13d62fe7198f3b3c707e5c6dbebeffa7 (fix/audit-2026-10-11)
+基线:     20be14d6358c44a7f06afa82afe76b78fc879606 (origin/main, Codex)
+时间:     2026-10-11 15:0x（北京时间）
+工具:     CMake 4.3.1 / Ninja 1.13.2 / GNU Tools for STM32 14.3.1 / MinGW GCC 8.1.0
+说明:     全部命令在仓库根目录执行；退出码为进程实际退出码。
+
+1) 主机回归（tests/host）
+  cmake -S tests/host -B build/host -G Ninja      -> exit 0
+  cmake --build build/host                       -> exit 0
+  ctest --test-dir build/host --output-on-failure -> exit 0
+  结果: 100% tests passed, 0 failed out of 70；耗时 1.09 s
+  KNOWN_RISK 标签: 3 项（encoder_r01 / math_angle_r01 / svpwm_zero），
+  含义为“风险复现成功”，不代表缺陷关闭。
+  日志: verify-host-configure.log / verify-host-build.log / verify-host-ctest.log
+
+2) ARM Debug 构建
+  cmake --preset Debug                           -> exit 0
+  cmake --build build/Debug --parallel           -> exit 0（ninja: no work to do，源码与产物一致）
+  产物: build/Debug/DMF407_FOC_HAL.elf  1,141,224 B  sha256:60BF0918847EAA06…
+        build/Debug/DMF407_FOC_HAL.bin     20,904 B  sha256:7BAE8E9469638887…
+        build/Debug/DMF407_FOC_HAL.hex     58,889 B  sha256:17AC0EF2CCA856C3…
+  Flash 20,904 B (1.99%) / RAM 2,384 B (1.82%)
+  日志: verify-arm-configure.log / verify-arm-build.log
+
+3) ARM Release 构建
+  cmake --preset Release                         -> exit 0
+  cmake --build build/Release --parallel         -> exit 0（47/47 目标）
+  产物: build/Release/DMF407_FOC_HAL.elf    35,000 B  sha256:6F8CF8B80A5A3603…
+        build/Release/DMF407_FOC_HAL.bin    13,644 B  sha256:E80939709509392B…
+        build/Release/DMF407_FOC_HAL.hex    38,467 B  sha256:828E391A91689803…
+  Flash 13,644 B (1.30%) / RAM 2,392 B (1.82%)
+  日志: verify-arm-release-build.log
+
+4) 已知构建提示（非本轮引入）
+  链接器警告: LOAD segment with RWX permissions（Debug/Release 均出现，低风险，未处理）
+
+5) 安全状态（未因软件验证改变）
+  - PF10（PM1_CTRL_SD）仅存在 RESET 写入（gpio.c 初始化 + BSP_MotorEnable_ForceDisable），
+    全仓库无 SET 使能路径；无 ForceEnable API。
+  - 故障锁存不可清除，仅 MCU 复位可解除；故障路径先关 PF10，再清 BDTR.MOE/AOE、六路 CCER 与 CEN。
+  - 默认固件 DMF407_NO_POWER_CONTROL=OFF：TIM1 仅 Tick 诊断、不运行 PI/SVPWM、不写 CCR。
+  - L4 = NEEDS HARDWARE（Docs/L4_无功率验收_2026-10-11.md）；L5 / POWER-STAGE ENABLE = BLOCKED。

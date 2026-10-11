@@ -1,0 +1,9 @@
+-- The C compiler identification is GNU 14.3.1
+-- The ASM compiler identification is GNU
+-- Found assembler: <toolchain>/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/arm-none-eabi-gcc.exe
+Build type: Debug
+-- HAL/CMSIS dependency files present (version provenance must be checked against FW_F4 V1.28.3).
+-- The CXX compiler identification is GNU 14.3.1
+-- Configuring done (1.5s)
+-- Generating done (0.1s)
+-- Build files have been written to: <clone>/build/Debug
