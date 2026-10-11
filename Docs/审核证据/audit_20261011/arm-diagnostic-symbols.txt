@@ -1,0 +1,8 @@
+08000cd4 t angle_tick
+08000dec T App_NoPower_Poll
+08000d30 T App_NoPower_Start
+08000a6c T BSP_Safety_Fault
+08000abc T BSP_Safety_GetFault
+0800074c T FOC_PipelineInit
+20000060 b latched_fault
+20000038 b s_tim1_tick_count

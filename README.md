@@ -10,6 +10,7 @@ STM32F407IGT6 单轴 Legacy → HAL/CMake 迁移工程。活跃参考为 `Legacy
 - 本轮工具：CMake 4.3.1、Ninja 1.13.2、GNU Tools for STM32 14.3.1；主机 GCC 8.1.0（MinGW）。CI 使用 Linux GCC，实际版本在日志中输出。
 - `Drivers/` 不入库。新克隆需先安装固定版本的 CubeF4 固件包。可在 CubeMX 打开 `.ioc` 后 Generate Code；生成后必须检查 USER CODE、PF10 初始 Low、PLLQ=7、PB12 配置、启动顺序及 CMake 业务源表未被覆盖。优先仅复制固件包的 HAL Driver、CMSIS 到本地 `Drivers/`，避免覆盖应用源码。
 - 执行 `cmake -DPROJECT_ROOT=. -P cmake/check_dependencies.cmake` 预检；缺依赖时给出具体路径。仓库不自动下载或选择其他版本。预检是完整性检查，版本来源须由固定包和记录的 SHA256 核对。
+- 可用 `scripts/check_cube_package.ps1 -PackageRoot <本地 STM32Cube_FW_F4_V1.28.3 目录> -ManifestPath <CSV 路径>` 将本地依赖逐文件与固定固件包核对。该操作验证本地包一致性，不提供厂商签名认证。
 
 ```powershell
 cmake --preset Debug
@@ -20,6 +21,15 @@ ctest --test-dir build/host --output-on-failure
 ```
 
 主机测试独立于 HAL/CMSIS。`KNOWN_RISK` 标签代表成功复现 V1 风险，不代表关闭问题；新增 V2 修复测试单独登记。MCU 编译、主机计算和实板实时性能分别验收。
+
+默认 `DMF407_NO_POWER_CONTROL=OFF`：主循环有限等待采集 ADC，TIM2 采集 V2 编码器，TIM1 只做 Tick 诊断；不运行 PI/SVPWM、不动态写 CCR。可选 ON 版本把 TIM2 角速计算、TIM1 控制计算与经过验证的 CCR 写入接通，仍只供断开母线后的无功率验证。ON 版本尚未通过 L4，不作为可直接运行电机的固件。
+
+```powershell
+cmake -S . -B build/no-power-control -G Ninja -DCMAKE_BUILD_TYPE=Debug -DDMF407_NO_POWER_CONTROL=ON
+cmake --build build/no-power-control
+```
+
+V2 软件故障锁存后先拉低 PF10，再关 TIM1 UIE、MOE、AOE、六路 CCER 与 CEN，随后尝试所有 HAL Stop。故障期间拒绝重启与 CCR 更新，复位 MCU 才重建状态。ADC 使用单次 2 ms 诊断超时（六次等待，受 HAL tick 与抢占影响），不是实时电流采样预算；20 ms 原始码龄期、2 ms 编码器粗时间检查亦只是无功率诊断阈值。V2 计数需要相邻样本的实际位移小于 32768，CNT 本身无法检测漏掉的整圈。
 
 ## 门禁与范围
 
