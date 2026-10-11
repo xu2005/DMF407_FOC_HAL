@@ -46,6 +46,8 @@ FOC_TickResult FOC_PipelineControlTick(FOC_Pipeline *s, const FOC_RawSample *raw
         s->current_cycle_counter = 0;
         ++s->speed_updates;
     }
+    s->id_show = (int32_t)s->dq_current.I_d;
+    s->iq_show = (int32_t)s->dq_current.I_q;
     FOC_CurrentPIUpdate(&s->current_pi, &current_parameters, s->id_ref, s->iq_ref,
                         &s->dq_current, &s->dq_voltage);
     FOC_InversePark(&s->dq_voltage, &s->ab_voltage, sin_angle, cos_angle);

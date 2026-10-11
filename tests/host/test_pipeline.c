@@ -29,6 +29,7 @@ int main(void)
     NEAR(s.ab_current.I_beta, -15.8771315f);
     NEAR(s.dq_current.I_d, -6.66666555f);
     NEAR(s.dq_current.I_q, -15.8771315f);
+    CHECK(s.id_show==-6 && s.iq_show==-15);
     NEAR(s.current_pi.sum_d, 6.66666555f);
     NEAR(s.current_pi.sum_q, 15.8771315f);
     NEAR(s.dq_voltage.d, 3.66666603f);

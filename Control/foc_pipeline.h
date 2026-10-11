@@ -25,6 +25,7 @@ typedef struct {
     float speed_ref, id_ref, iq_ref, q_current;
     uint32_t current_cycle_counter, speed_updates;
     int32_t motor_x_position, motor_y_position;
+    int32_t id_show, iq_show; /* Legacy ARM long diagnostic mirrors. */
 } FOC_Pipeline;
 typedef enum { FOC_TICK_INVALID = -1, FOC_TICK_DISABLED = 0, FOC_TICK_VALID = 1 } FOC_TickResult;
 void FOC_PipelineInit(FOC_Pipeline *s);
