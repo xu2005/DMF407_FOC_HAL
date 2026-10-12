@@ -1,0 +1,128 @@
+[
+  {
+    "name": "Debug-configure",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\cmake.EXE",
+      "-S",
+      "tests/host",
+      "-B",
+      "C:\\Users\\xuhengyi\\Desktop\\item\\\u8bfe\u8bbe\\DMF407_FOC_HAL_v23\\build\\v23-host-debug",
+      "-G",
+      "Ninja",
+      "-DCMAKE_BUILD_TYPE=Debug",
+      "-DCMAKE_C_COMPILER=C:\\mingw64\\bin\\gcc.EXE"
+    ],
+    "commit": "9e02b8645f7b6580fc999ff3dddbcef77a9f54b9",
+    "started_utc": "2026-10-12T01:48:12.102333+00:00",
+    "exit_code": 0,
+    "log": "Debug-configure.log"
+  },
+  {
+    "name": "Debug-build",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\cmake.EXE",
+      "--build",
+      "C:\\Users\\xuhengyi\\Desktop\\item\\\u8bfe\u8bbe\\DMF407_FOC_HAL_v23\\build\\v23-host-debug",
+      "--parallel",
+      "4"
+    ],
+    "commit": "9e02b8645f7b6580fc999ff3dddbcef77a9f54b9",
+    "started_utc": "2026-10-12T01:48:13.718886+00:00",
+    "exit_code": 0,
+    "log": "Debug-build.log"
+  },
+  {
+    "name": "Debug-test",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\ctest.EXE",
+      "--test-dir",
+      "C:\\Users\\xuhengyi\\Desktop\\item\\\u8bfe\u8bbe\\DMF407_FOC_HAL_v23\\build\\v23-host-debug",
+      "--output-on-failure",
+      "--output-junit",
+      "C:\\Users\\xuhengyi\\Desktop\\item\\\u8bfe\u8bbe\\DMF407_FOC_HAL_v23\\build\\v23-evidence\\Debug-results.xml"
+    ],
+    "commit": "9e02b8645f7b6580fc999ff3dddbcef77a9f54b9",
+    "started_utc": "2026-10-12T01:48:16.918409+00:00",
+    "exit_code": 0,
+    "log": "Debug-test.log"
+  },
+  {
+    "name": "Debug-trajectory",
+    "argv": [
+      "C:\\Users\\xuhengyi\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "scripts/v23_export_trajectory.py",
+      "--exe",
+      "C:\\Users\\xuhengyi\\Desktop\\item\\\u8bfe\u8bbe\\DMF407_FOC_HAL_v23\\build\\v23-host-debug\\motion_v23_demo.exe",
+      "--out",
+      "C:\\Users\\xuhengyi\\Desktop\\item\\\u8bfe\u8bbe\\DMF407_FOC_HAL_v23\\build\\v23-trajectory-debug",
+      "--plot"
+    ],
+    "commit": "9e02b8645f7b6580fc999ff3dddbcef77a9f54b9",
+    "started_utc": "2026-10-12T01:48:18.196350+00:00",
+    "exit_code": 0,
+    "log": "Debug-trajectory.log"
+  },
+  {
+    "name": "Release-configure",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\cmake.EXE",
+      "-S",
+      "tests/host",
+      "-B",
+      "C:\\Users\\xuhengyi\\Desktop\\item\\\u8bfe\u8bbe\\DMF407_FOC_HAL_v23\\build\\v23-host-release",
+      "-G",
+      "Ninja",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCMAKE_C_COMPILER=C:\\mingw64\\bin\\gcc.EXE"
+    ],
+    "commit": "9e02b8645f7b6580fc999ff3dddbcef77a9f54b9",
+    "started_utc": "2026-10-12T01:48:23.805303+00:00",
+    "exit_code": 0,
+    "log": "Release-configure.log"
+  },
+  {
+    "name": "Release-build",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\cmake.EXE",
+      "--build",
+      "C:\\Users\\xuhengyi\\Desktop\\item\\\u8bfe\u8bbe\\DMF407_FOC_HAL_v23\\build\\v23-host-release",
+      "--parallel",
+      "4"
+    ],
+    "commit": "9e02b8645f7b6580fc999ff3dddbcef77a9f54b9",
+    "started_utc": "2026-10-12T01:48:25.093982+00:00",
+    "exit_code": 0,
+    "log": "Release-build.log"
+  },
+  {
+    "name": "Release-test",
+    "argv": [
+      "C:\\Users\\xuhengyi\\AppData\\Local\\stm32cube\\bundles\\cmake\\4.3.1+st.1\\bin\\ctest.EXE",
+      "--test-dir",
+      "C:\\Users\\xuhengyi\\Desktop\\item\\\u8bfe\u8bbe\\DMF407_FOC_HAL_v23\\build\\v23-host-release",
+      "--output-on-failure",
+      "--output-junit",
+      "C:\\Users\\xuhengyi\\Desktop\\item\\\u8bfe\u8bbe\\DMF407_FOC_HAL_v23\\build\\v23-evidence\\Release-results.xml"
+    ],
+    "commit": "9e02b8645f7b6580fc999ff3dddbcef77a9f54b9",
+    "started_utc": "2026-10-12T01:48:28.486105+00:00",
+    "exit_code": 0,
+    "log": "Release-test.log"
+  },
+  {
+    "name": "Release-trajectory",
+    "argv": [
+      "C:\\Users\\xuhengyi\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "scripts/v23_export_trajectory.py",
+      "--exe",
+      "C:\\Users\\xuhengyi\\Desktop\\item\\\u8bfe\u8bbe\\DMF407_FOC_HAL_v23\\build\\v23-host-release\\motion_v23_demo.exe",
+      "--out",
+      "C:\\Users\\xuhengyi\\Desktop\\item\\\u8bfe\u8bbe\\DMF407_FOC_HAL_v23\\build\\v23-trajectory-release",
+      "--plot"
+    ],
+    "commit": "9e02b8645f7b6580fc999ff3dddbcef77a9f54b9",
+    "started_utc": "2026-10-12T01:48:29.848314+00:00",
+    "exit_code": 0,
+    "log": "Release-trajectory.log"
+  }
+]

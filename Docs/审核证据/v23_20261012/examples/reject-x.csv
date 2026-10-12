@@ -1,0 +1,4 @@
+event_id,virtual_ticks,axis,direction,period,target_x,target_y,planned_x,planned_y,confirmed_x,confirmed_y,plant_x,plant_y,encoder_x,encoder_y,feedback_x,feedback_y,error_x,error_y,confirmed_error_x,confirmed_error_y,accepted,state
+1,26715,X,1,26715,40,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,1,ACTIVE
+2,53430,X,1,26715,40,0,2,0,2,0,2,0,2,0,2,0,0,0,0,0,1,ACTIVE
+3,80145,X,1,26715,40,0,3,0,2,0,2,0,2,0,2,0,1,0,0,0,0,FAULT

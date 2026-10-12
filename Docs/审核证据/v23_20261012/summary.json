@@ -1,0 +1,352 @@
+{
+  "tested_source_commit": "9e02b8645f7b6580fc999ff3dddbcef77a9f54b9",
+  "host_tests_per_mode": 118,
+  "new_v23_tests": 14,
+  "known_risks": 3,
+  "simulations": [
+    {
+      "scenario": "demo",
+      "events": 8192,
+      "accepted": 8192,
+      "virtual_ticks": 25095835,
+      "time_unit": "virtual_ticks",
+      "final_state": "COMPLETE",
+      "final_plant": [
+        8192,
+        0
+      ],
+      "final_feedback": [
+        8192.0,
+        0.0
+      ],
+      "final_confirmed_error_steps": [
+        0.0,
+        0.0
+      ],
+      "final_target_error_steps": [
+        0.0,
+        0.0
+      ],
+      "endpoint_error_steps": 0.0,
+      "max_abs_planned_error_steps": [
+        0.0,
+        0.0
+      ],
+      "max_abs_confirmed_error_steps": [
+        0.0,
+        0.0
+      ],
+      "simulator_stdout": "scenario=demo events=8192 accepted=8192 ticks=25095835 state=COMPLETE error=0 dropped=0"
+    },
+    {
+      "scenario": "mixed",
+      "events": 260,
+      "accepted": 260,
+      "virtual_ticks": 2886718,
+      "time_unit": "virtual_ticks",
+      "final_state": "COMPLETE",
+      "final_plant": [
+        0,
+        0
+      ],
+      "final_feedback": [
+        0.0,
+        0.0
+      ],
+      "final_confirmed_error_steps": [
+        0.0,
+        0.0
+      ],
+      "final_target_error_steps": [
+        0.0,
+        0.0
+      ],
+      "endpoint_error_steps": 0.0,
+      "max_abs_planned_error_steps": [
+        0.0,
+        0.0
+      ],
+      "max_abs_confirmed_error_steps": [
+        0.0,
+        0.0
+      ],
+      "simulator_stdout": "scenario=mixed events=260 accepted=260 ticks=2886718 state=COMPLETE error=0 dropped=0"
+    },
+    {
+      "scenario": "drop",
+      "events": 55,
+      "accepted": 55,
+      "virtual_ticks": 1298763,
+      "time_unit": "virtual_ticks",
+      "final_state": "COMPLETE",
+      "final_plant": [
+        39,
+        15
+      ],
+      "final_feedback": [
+        39.0,
+        15.0
+      ],
+      "final_confirmed_error_steps": [
+        1.0,
+        0.0
+      ],
+      "final_target_error_steps": [
+        1.0,
+        0.0
+      ],
+      "endpoint_error_steps": 1.0,
+      "max_abs_planned_error_steps": [
+        1.0,
+        0.0
+      ],
+      "max_abs_confirmed_error_steps": [
+        1.0,
+        0.0
+      ],
+      "simulator_stdout": "scenario=drop events=55 accepted=55 ticks=1298763 state=COMPLETE error=0 dropped=1"
+    },
+    {
+      "scenario": "reject-x",
+      "events": 3,
+      "accepted": 2,
+      "virtual_ticks": 80145,
+      "time_unit": "virtual_ticks",
+      "final_state": "FAULT",
+      "final_plant": [
+        2,
+        0
+      ],
+      "final_feedback": [
+        2.0,
+        0.0
+      ],
+      "final_confirmed_error_steps": [
+        0.0,
+        0.0
+      ],
+      "final_target_error_steps": [
+        38.0,
+        0.0
+      ],
+      "endpoint_error_steps": 38.0,
+      "max_abs_planned_error_steps": [
+        1.0,
+        0.0
+      ],
+      "max_abs_confirmed_error_steps": [
+        0.0,
+        0.0
+      ],
+      "simulator_stdout": "scenario=reject-x events=3 accepted=2 ticks=80145 state=FAULT error=4 dropped=0"
+    },
+    {
+      "scenario": "reject-y",
+      "events": 3,
+      "accepted": 2,
+      "virtual_ticks": 80145,
+      "time_unit": "virtual_ticks",
+      "final_state": "FAULT",
+      "final_plant": [
+        0,
+        2
+      ],
+      "final_feedback": [
+        0.0,
+        2.0
+      ],
+      "final_confirmed_error_steps": [
+        0.0,
+        0.0
+      ],
+      "final_target_error_steps": [
+        0.0,
+        38.0
+      ],
+      "endpoint_error_steps": 38.0,
+      "max_abs_planned_error_steps": [
+        0.0,
+        1.0
+      ],
+      "max_abs_confirmed_error_steps": [
+        0.0,
+        0.0
+      ],
+      "simulator_stdout": "scenario=reject-y events=3 accepted=2 ticks=80145 state=FAULT error=4 dropped=0"
+    },
+    {
+      "scenario": "lag",
+      "events": 55,
+      "accepted": 55,
+      "virtual_ticks": 1298763,
+      "time_unit": "virtual_ticks",
+      "final_state": "COMPLETE",
+      "final_plant": [
+        40,
+        15
+      ],
+      "final_feedback": [
+        37.0,
+        14.0
+      ],
+      "final_confirmed_error_steps": [
+        3.0,
+        1.0
+      ],
+      "final_target_error_steps": [
+        3.0,
+        1.0
+      ],
+      "endpoint_error_steps": 3.1622776601683795,
+      "max_abs_planned_error_steps": [
+        3.0,
+        2.0
+      ],
+      "max_abs_confirmed_error_steps": [
+        3.0,
+        2.0
+      ],
+      "simulator_stdout": "scenario=lag events=55 accepted=55 ticks=1298763 state=COMPLETE error=0 dropped=0"
+    },
+    {
+      "scenario": "encoder",
+      "events": 55,
+      "accepted": 55,
+      "virtual_ticks": 1298763,
+      "time_unit": "virtual_ticks",
+      "final_state": "COMPLETE",
+      "final_plant": [
+        -40,
+        15
+      ],
+      "final_feedback": [
+        -39.0,
+        14.375
+      ],
+      "final_confirmed_error_steps": [
+        -1.0,
+        0.625
+      ],
+      "final_target_error_steps": [
+        -1.0,
+        0.625
+      ],
+      "endpoint_error_steps": 1.1792476415070754,
+      "max_abs_planned_error_steps": [
+        1.0,
+        0.875
+      ],
+      "max_abs_confirmed_error_steps": [
+        1.0,
+        0.875
+      ],
+      "simulator_stdout": "scenario=encoder events=55 accepted=55 ticks=1298763 state=COMPLETE error=0 dropped=0"
+    },
+    {
+      "scenario": "long",
+      "events": 12000,
+      "accepted": 12000,
+      "virtual_ticks": 35986715,
+      "time_unit": "virtual_ticks",
+      "final_state": "COMPLETE",
+      "final_plant": [
+        12000,
+        0
+      ],
+      "final_feedback": [
+        12000.0,
+        0.0
+      ],
+      "final_confirmed_error_steps": [
+        0.0,
+        0.0
+      ],
+      "final_target_error_steps": [
+        0.0,
+        0.0
+      ],
+      "endpoint_error_steps": 0.0,
+      "max_abs_planned_error_steps": [
+        0.0,
+        0.0
+      ],
+      "max_abs_confirmed_error_steps": [
+        0.0,
+        0.0
+      ],
+      "simulator_stdout": "scenario=long events=12000 accepted=12000 ticks=35986715 state=COMPLETE error=0 dropped=0"
+    },
+    {
+      "scenario": "zero",
+      "events": 0,
+      "accepted": 0,
+      "virtual_ticks": 0,
+      "time_unit": "virtual_ticks",
+      "final_state": "COMPLETE",
+      "final_plant": [
+        0,
+        0
+      ],
+      "final_feedback": [
+        0.0,
+        0.0
+      ],
+      "final_confirmed_error_steps": [
+        0.0,
+        0.0
+      ],
+      "final_target_error_steps": [
+        0.0,
+        0.0
+      ],
+      "endpoint_error_steps": 0.0,
+      "max_abs_planned_error_steps": [
+        0,
+        0
+      ],
+      "max_abs_confirmed_error_steps": [
+        0,
+        0
+      ],
+      "simulator_stdout": "scenario=zero events=0 accepted=0 ticks=0 state=COMPLETE error=0 dropped=0"
+    },
+    {
+      "scenario": "cancel",
+      "events": 8,
+      "accepted": 8,
+      "virtual_ticks": 213720,
+      "time_unit": "virtual_ticks",
+      "final_state": "CANCELLED",
+      "final_plant": [
+        8,
+        0
+      ],
+      "final_feedback": [
+        8.0,
+        0.0
+      ],
+      "final_confirmed_error_steps": [
+        0.0,
+        0.0
+      ],
+      "final_target_error_steps": [
+        8184.0,
+        0.0
+      ],
+      "endpoint_error_steps": 8184.0,
+      "max_abs_planned_error_steps": [
+        0.0,
+        0.0
+      ],
+      "max_abs_confirmed_error_steps": [
+        0.0,
+        0.0
+      ],
+      "simulator_stdout": "scenario=cancel events=8 accepted=8 ticks=213720 state=CANCELLED error=0 dropped=0"
+    }
+  ],
+  "debug_release_csv_identical": true,
+  "arm": "NOT RUN: no firmware source/link/configuration changes",
+  "L4": "NEEDS HARDWARE",
+  "L5": "POWER-STAGE ENABLE BLOCKED"
+}
