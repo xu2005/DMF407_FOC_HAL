@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="(empty)"
+	tests="118"
+	failures="0"
+	disabled="0"
+	skipped="0"
+	hostname=""
+	time="1"
+	timestamp="2026-10-12T09:48:28"
+	>
+	<testcase name="v23_scheduler_determinism" classname="v23_scheduler_determinism" time="0.0174327" status="run">
+		<properties>
+			<property name="cmake_labels" value="V23_SIM"/>
+		</properties>
+		<system-out>PASS scheduler
+</system-out>
+	</testcase>
+	<testcase name="v23_scheduler_budget" classname="v23_scheduler_budget" time="0.0099561" status="run">
+		<properties>
+			<property name="cmake_labels" value="V23_SIM"/>
+		</properties>
+		<system-out>PASS scheduler
+</system-out>
+	</testcase>
+	<testcase name="v23_scheduler_stop" classname="v23_scheduler_stop" time="0.0078404" status="run">
+		<properties>
+			<property name="cmake_labels" value="V23_SIM"/>
+		</properties>
+		<system-out>PASS scheduler
+</system-out>
+	</testcase>
+	<testcase name="v23_scheduler_invalid" classname="v23_scheduler_invalid" time="0.0091856" status="run">
+		<properties>
+			<property name="cmake_labels" value="V23_SIM"/>
+		</properties>
+		<system-out>PASS scheduler
+</system-out>
+	</testcase>
+	<testcase name="v23_scheduler_reentry" classname="v23_scheduler_reentry" time="0.0082402" status="run">
+		<properties>
+			<property name="cmake_labels" value="V23_SIM"/>
+		</properties>
+		<system-out>PASS scheduler
+</system-out>
+	</testcase>
+	<testcase name="v23_axes_ideal" classname="v23_axes_ideal" time="0.0132357" status="run">
+		<properties>
+			<property name="cmake_labels" value="V23_SIM"/>
+		</properties>
+		<system-out>PASS virtual axes
+</system-out>
+	</testcase>
+	<testcase name="v23_axes_reject" classname="v23_axes_reject" time="0.0081877" status="run">
+		<properties>
+			<property name="cmake_labels" value="V23_SIM"/>
+		</properties>
+		<system-out>PASS virtual axes
+</system-out>
+	</testcase>
+	<testcase name="v23_axes_drop" classname="v23_axes_drop" time="0.0088645" status="run">
+		<properties>
+			<property name="cmake_labels" value="V23_SIM"/>
+		</properties>
+		<system-out>PASS virtual axes
+</system-out>
+	</testcase>
+	<testcase name="v23_axes_lag" classname="v23_axes_lag" time="0.0107189" status="run">
+		<properties>
+			<property name="cmake_labels" value="V23_SIM"/>
+		</properties>
+		<system-out>PASS virtual axes
+</system-out>
+	</testcase>
+	<testcase name="v23_axes_encoder" classname="v23_axes_encoder" time="0.0096665" status="run">
+		<properties>
+			<property name="cmake_labels" value="V23_SIM"/>
+		</properties>
+		<system-out>PASS virtual axes
+</system-out>
+	</testcase>
+	<testcase name="v23_motion_geometry" classname="v23_motion_geometry" time="0.01851" status="run">
+		<properties>
+			<property name="cmake_labels" value="V23_SIM"/>
+		</properties>
+		<system-out>PASS V2.3 integration
+</system-out>
+	</testcase>
+	<testcase name="v23_motion_segments" classname="v23_motion_segments" time="0.0096543" status="run">
+		<properties>
+			<property name="cmake_labels" value="V23_SIM"/>
+		</properties>
+		<system-out>PASS V2.3 integration
+</system-out>
+	</testcase>
+	<testcase name="v23_motion_queue" classname="v23_motion_queue" time="0.0087499" status="run">
+		<properties>
+			<property name="cmake_labels" value="V23_SIM"/>
+		</properties>
+		<system-out>PASS V2.3 integration
+</system-out>
+	</testcase>
+	<testcase name="v23_motion_demo" classname="v23_motion_demo" time="0.0102698" status="run">
+		<properties>
+			<property name="cmake_labels" value="V23_SIM"/>
+		</properties>
+		<system-out>demo: events=8192 ticks=25095835 final=(8192,0) error=(0,0)
+PASS V2.3 integration
+</system-out>
+	</testcase>
+	<testcase name="motion_profile_vectors" classname="motion_profile_vectors" time="0.0191531" status="run">
+		<properties>
+			<property name="cmake_labels" value="V22_MOTION"/>
+		</properties>
+		<system-out>PASS motion profile
+</system-out>
+	</testcase>
+	<testcase name="motion_profile_input" classname="motion_profile_input" time="0.0108219" status="run">
+		<properties>
+			<property name="cmake_labels" value="V22_MOTION"/>
+		</properties>
+		<system-out>PASS motion profile
+</system-out>
+	</testcase>
+	<testcase name="motion_profile_clamps" classname="motion_profile_clamps" time="0.0095617" status="run">
+		<properties>
+			<property name="cmake_labels" value="V22_MOTION"/>
+		</properties>
+		<system-out>PASS motion profile
+</system-out>
+	</testcase>
+	<testcase name="motion_profile_capacity" classname="motion_profile_capacity" time="0.0101668" status="run">
+		<properties>
+			<property name="cmake_labels" value="V22_MOTION"/>
+		</properties>
+		<system-out>PASS motion profile
+</system-out>
+	</testcase>
+	<testcase name="motion_vectors" classname="motion_vectors" time="0.0157313" status="run">
+		<properties>
+			<property name="cmake_labels" value="V22_MOTION"/>
+		</properties>
+		<system-out>PASS motion events
+</system-out>
+	</testcase>
+	<testcase name="motion_batch_vectors" classname="motion_batch_vectors" time="0.0091976" status="run">
+		<properties>
+			<property name="cmake_labels" value="V22_MOTION"/>
+		</properties>
+		<system-out>PASS motion events
+</system-out>
+	</testcase>
+	<testcase name="motion_quadrants" classname="motion_quadrants" time="0.0084952" status="run">
+		<properties>
+			<property name="cmake_labels" value="V22_MOTION"/>
+		</properties>
+		<system-out>PASS motion events
+</system-out>
+	</testcase>
+	<testcase name="motion_queue" classname="motion_queue" time="0.0083637" status="run">
+		<properties>
+			<property name="cmake_labels" value="V22_MOTION"/>
+		</properties>
+		<system-out>PASS motion events
+</system-out>
+	</testcase>
+	<testcase name="motion_boundaries" classname="motion_boundaries" time="0.0101636" status="run">
+		<properties>
+			<property name="cmake_labels" value="V22_MOTION"/>
+		</properties>
+		<system-out>PASS motion events
+</system-out>
+	</testcase>
+	<testcase name="motion_cancel_fault" classname="motion_cancel_fault" time="0.0103134" status="run">
+		<properties>
+			<property name="cmake_labels" value="V22_MOTION"/>
+		</properties>
+		<system-out>PASS motion events
+</system-out>
+	</testcase>
+	<testcase name="motion_segments" classname="motion_segments" time="0.0082146" status="run">
+		<properties>
+			<property name="cmake_labels" value="V22_MOTION"/>
+		</properties>
+		<system-out>PASS motion events
+</system-out>
+	</testcase>
+	<testcase name="motion_index" classname="motion_index" time="0.0083438" status="run">
+		<properties>
+			<property name="cmake_labels" value="V22_MOTION"/>
+		</properties>
+		<system-out>PASS motion events
+</system-out>
+	</testcase>
+	<testcase name="encoder" classname="encoder" time="0.016617" status="run">
+		<properties/>
+		<system-out>PASS encoder: startup/UIE only, forward/reverse, upper/lower wrap, direction reversal
+</system-out>
+	</testcase>
+	<testcase name="encoder_r01" classname="encoder_r01" time="0.0082879" status="run">
+		<properties>
+			<property name="cmake_labels" value="KNOWN_RISK"/>
+		</properties>
+		<system-out>KNOWN RISK R-01 upper: CNT=0 ISR pending, expected=65536 observed=0 error=-65536
+KNOWN RISK R-01 lower: CNT=65535 ISR pending, expected=-1 observed=65535 error=+65536
+KNOWN RISK reproduced; assertions pass because the unfixed error was observed, not closed
+</system-out>
+	</testcase>
+	<testcase name="adc" classname="adc" time="0.0098714" status="run">
+		<properties/>
+		<system-out>PASS adc: start 1/2/3, W/V/BUS/W/V/BUS, poll-before-read, discard first 3, retain raw last 3
+</system-out>
+	</testcase>
+	<testcase name="pwm" classname="pwm" time="0.0090093" status="run">
+		<properties/>
+		<system-out>PASS pwm: HAL start/stop call order, U/V/W to CCR1/2/3, zero/general/ARR boundary, independent readback
+</system-out>
+	</testcase>
+	<testcase name="math_angle" classname="math_angle" time="0.0149003" status="run">
+		<properties/>
+		<system-out>PASS angle zero                 mech=5.73654795 elec=4.09663677 rpm=0
+PASS angle positive             mech=0.0816813707 elec=0.326725483 rpm=5999.99951
+PASS angle reverse              mech=0.0801105499 elec=0.3204422 rpm=-15
+PASS angle sample_1             mech=5.89362764 elec=4.72495556 rpm=1499.99988
+PASS angle sample_2             mech=5.89519835 elec=4.73123837 rpm=15
+PASS angle upper_wrap           mech=1.86611319 elec=1.18126774 rpm=15
+PASS angle lower_wrap           mech=5.73497725 elec=4.09035397 rpm=-15
+PASS angle half_positive_limit  mech=0.658162534 elec=2.63265014 rpm=491504.938
+PASS angle half_positive_wrap   mech=0.659738004 elec=2.63895202 rpm=-491520
+PASS angle half_negative_limit  mech=5.73654795 elec=4.09663677 rpm=-491520
+</system-out>
+	</testcase>
+	<testcase name="math_angle_r01" classname="math_angle_r01" time="0.0074227" status="run">
+		<properties>
+			<property name="cmake_labels" value="KNOWN_RISK"/>
+		</properties>
+		<system-out>KNOWN RISK R-01 total error=-65536: mech 1.86611319-&gt;5.73654795, elec 1.18126774-&gt;4.09663677; raw-based rpm stays 15
+KNOWN RISK R-01 total error=65536: mech 5.73497725-&gt;1.86454153, elec 4.09035397-&gt;1.17498112; raw-based rpm stays -15
+KNOWN RISK propagation reproduced; no encoder fix or risk closure
+</system-out>
+	</testcase>
+	<testcase name="math_transforms" classname="math_transforms" time="0.0080291" status="run">
+		<properties/>
+		<system-out>PASS transforms: Clarke 3 / Park 4 / Inverse Park 4 fixed vectors; pure arithmetic only
+</system-out>
+	</testcase>
+	<testcase name="pi_speed" classname="pi_speed" time="0.0143899" status="run">
+		<properties/>
+		<system-out>PASS: speed 8 consecutive updates, integral/output clamps, zero reference retains state
+</system-out>
+	</testcase>
+	<testcase name="pi_current" classname="pi_current" time="0.007948" status="run">
+		<properties/>
+		<system-out>PASS: current d/q 6 consecutive updates, separate integral/output clamps
+</system-out>
+	</testcase>
+	<testcase name="pi_schedule" classname="pi_schedule" time="0.0085388" status="run">
+		<properties/>
+		<system-out>PASS: 20 offline ticks, speed before current at ticks 10/20; no realtime scheduling claim
+</system-out>
+	</testcase>
+	<testcase name="pi_position" classname="pi_position" time="0.0098311" status="run">
+		<properties/>
+		<system-out>PASS: position 4 defined formula cases; Legacy global writes/diagnostics DEFERRED
+</system-out>
+	</testcase>
+	<testcase name="svpwm_normal" classname="svpwm_normal" time="0.0083847" status="run">
+		<properties/>
+		<system-out>PASS: SVPWM 14 nonzero vectors, six sectors and six overmodulation branches, two axis boundaries
+</system-out>
+	</testcase>
+	<testcase name="svpwm_zero" classname="svpwm_zero" time="0.0085329" status="run">
+		<properties>
+			<property name="cmake_labels" value="KNOWN_RISK"/>
+		</properties>
+		<system-out>KNOWN RISK: zero sector has no defined ta/tb/tc; new explicit status is an interface difference
+</system-out>
+	</testcase>
+	<testcase name="timer_diagnostic" classname="timer_diagnostic" time="0.0165682" status="run">
+		<properties/>
+		<system-out>PASS diagnostic UIE routing; physical frequency/WCET not measured
+</system-out>
+	</testcase>
+	<testcase name="pipeline_v1_replay" classname="pipeline_v1_replay" time="0.0173088" status="run">
+		<properties/>
+		<system-out>PASS V1 replay: ADC/conversion/angle/transforms/PI/SVPWM, order and disabled state; no realtime claim
+</system-out>
+	</testcase>
+	<testcase name="encoder_v2_bounded" classname="encoder_v2_bounded" time="0.0177104" status="run">
+		<properties/>
+		<system-out>PASS V2 wraps/reversal/restart/int64 limits; movement &lt;32768 per sample is a hardware precondition
+</system-out>
+	</testcase>
+	<testcase name="app_mode_0" classname="app_mode_0" time="0.0176213" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="motion_app_motion_0" classname="motion_app_motion_0" time="0.0099839" status="run">
+		<properties>
+			<property name="cmake_labels" value="V22_MOTION"/>
+		</properties>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="motion_app_motion_cancel_0" classname="motion_app_motion_cancel_0" time="0.0082512" status="run">
+		<properties>
+			<property name="cmake_labels" value="V22_MOTION"/>
+		</properties>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="motion_app_motion_fault_0" classname="motion_app_motion_fault_0" time="0.0092361" status="run">
+		<properties>
+			<property name="cmake_labels" value="V22_MOTION"/>
+		</properties>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="app_mode_1" classname="app_mode_1" time="0.0168198" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="motion_app_motion_1" classname="motion_app_motion_1" time="0.0087794" status="run">
+		<properties>
+			<property name="cmake_labels" value="V22_MOTION"/>
+		</properties>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="motion_app_motion_cancel_1" classname="motion_app_motion_cancel_1" time="0.0091384" status="run">
+		<properties>
+			<property name="cmake_labels" value="V22_MOTION"/>
+		</properties>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="motion_app_motion_fault_1" classname="motion_app_motion_fault_1" time="0.010697" status="run">
+		<properties>
+			<property name="cmake_labels" value="V22_MOTION"/>
+		</properties>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v21_locked_aoe" classname="v21_locked_aoe" time="0.0096468" status="run">
+		<properties>
+			<property name="cmake_labels" value="V21_SAFETY"/>
+		</properties>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v21_lock_write" classname="v21_lock_write" time="0.0093521" status="run">
+		<properties>
+			<property name="cmake_labels" value="V21_SAFETY"/>
+		</properties>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v21_break_update" classname="v21_break_update" time="0.0089748" status="run">
+		<properties>
+			<property name="cmake_labels" value="V21_SAFETY"/>
+		</properties>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v21_initial_moe" classname="v21_initial_moe" time="0.0087508" status="run">
+		<properties>
+			<property name="cmake_labels" value="V21_SAFETY"/>
+		</properties>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v21_wrong_lock" classname="v21_wrong_lock" time="0.0093065" status="run">
+		<properties>
+			<property name="cmake_labels" value="V21_SAFETY"/>
+		</properties>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v21_adc_previous" classname="v21_adc_previous" time="0.0110475" status="run">
+		<properties>
+			<property name="cmake_labels" value="V21_SAFETY"/>
+		</properties>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v21_encoder_ambiguous" classname="v21_encoder_ambiguous" time="0.0109805" status="run">
+		<properties>
+			<property name="cmake_labels" value="V21_SAFETY"/>
+		</properties>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v21_sample_age" classname="v21_sample_age" time="0.0105638" status="run">
+		<properties>
+			<property name="cmake_labels" value="V21_SAFETY"/>
+		</properties>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v21_app_adc_transaction" classname="v21_app_adc_transaction" time="0.0097647" status="run">
+		<properties>
+			<property name="cmake_labels" value="V21_SAFETY"/>
+		</properties>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v21_dwt_0" classname="v21_dwt_0" time="0.0191524" status="run">
+		<properties>
+			<property name="cmake_labels" value="V21_SAFETY"/>
+		</properties>
+		<system-out>PASS DWT bookkeeping only; actual cycles/WCET NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v21_dwt_1" classname="v21_dwt_1" time="0.0153467" status="run">
+		<properties>
+			<property name="cmake_labels" value="V21_SAFETY"/>
+		</properties>
+		<system-out>PASS DWT bookkeeping only; actual cycles/WCET NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v21_dwt_unsupported" classname="v21_dwt_unsupported" time="0.0084359" status="run">
+		<properties>
+			<property name="cmake_labels" value="V21_SAFETY"/>
+		</properties>
+		<system-out></system-out>
+	</testcase>
+	<testcase name="v21_off_app_replay" classname="v21_off_app_replay" time="0.0081919" status="run">
+		<properties>
+			<property name="cmake_labels" value="V21_SAFETY"/>
+		</properties>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v21_off_off_timeout" classname="v21_off_off_timeout" time="0.0084765" status="run">
+		<properties>
+			<property name="cmake_labels" value="V21_SAFETY"/>
+		</properties>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v21_off_locked_aoe" classname="v21_off_locked_aoe" time="0.0093831" status="run">
+		<properties>
+			<property name="cmake_labels" value="V21_SAFETY"/>
+		</properties>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v21_off_initial_moe" classname="v21_off_initial_moe" time="0.0090762" status="run">
+		<properties>
+			<property name="cmake_labels" value="V21_SAFETY"/>
+		</properties>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_pwm_start_0_1" classname="v2_pwm_start_0_1" time="0.0092628" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_pwm_start_1_1" classname="v2_pwm_start_1_1" time="0.0089347" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_pwm_start_2_1" classname="v2_pwm_start_2_1" time="0.008978" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_pwm_start_3_1" classname="v2_pwm_start_3_1" time="0.0093266" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_pwm_start_4_1" classname="v2_pwm_start_4_1" time="0.0085094" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_pwm_start_5_1" classname="v2_pwm_start_5_1" time="0.0092284" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_pwm_stop_0_1" classname="v2_pwm_stop_0_1" time="0.0101785" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_pwm_stop_1_1" classname="v2_pwm_stop_1_1" time="0.009196" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_pwm_stop_2_1" classname="v2_pwm_stop_2_1" time="0.0089973" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_pwm_stop_3_1" classname="v2_pwm_stop_3_1" time="0.0079129" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_pwm_stop_4_1" classname="v2_pwm_stop_4_1" time="0.0083223" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_pwm_stop_5_1" classname="v2_pwm_stop_5_1" time="0.0078928" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_adc_start_0_1" classname="v2_adc_start_0_1" time="0.0077043" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_adc_start_1_1" classname="v2_adc_start_1_1" time="0.0079063" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_adc_start_2_1" classname="v2_adc_start_2_1" time="0.0078441" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_adc_poll_0_1" classname="v2_adc_poll_0_1" time="0.007943" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_adc_poll_0_2" classname="v2_adc_poll_0_2" time="0.0079669" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_adc_poll_0_3" classname="v2_adc_poll_0_3" time="0.0079749" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_adc_poll_1_1" classname="v2_adc_poll_1_1" time="0.0073841" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_adc_poll_1_2" classname="v2_adc_poll_1_2" time="0.0077497" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_adc_poll_1_3" classname="v2_adc_poll_1_3" time="0.0075425" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_adc_poll_2_1" classname="v2_adc_poll_2_1" time="0.0074881" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_adc_poll_2_2" classname="v2_adc_poll_2_2" time="0.0070302" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_adc_poll_2_3" classname="v2_adc_poll_2_3" time="0.0073795" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_adc_poll_3_1" classname="v2_adc_poll_3_1" time="0.0075482" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_adc_poll_3_2" classname="v2_adc_poll_3_2" time="0.0073891" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_adc_poll_3_3" classname="v2_adc_poll_3_3" time="0.0071987" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_adc_poll_4_1" classname="v2_adc_poll_4_1" time="0.0074537" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_adc_poll_4_2" classname="v2_adc_poll_4_2" time="0.0070867" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_adc_poll_4_3" classname="v2_adc_poll_4_3" time="0.0070626" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_adc_poll_5_1" classname="v2_adc_poll_5_1" time="0.0070474" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_adc_poll_5_2" classname="v2_adc_poll_5_2" time="0.0068707" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_adc_poll_5_3" classname="v2_adc_poll_5_3" time="0.0070941" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_adc_bad_0_1" classname="v2_adc_bad_0_1" time="0.0071942" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_adc_bad_1_1" classname="v2_adc_bad_1_1" time="0.0087869" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_adc_bad_2_1" classname="v2_adc_bad_2_1" time="0.0073591" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_adc_bad_3_1" classname="v2_adc_bad_3_1" time="0.0073048" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_svpwm_bad_0_1" classname="v2_svpwm_bad_0_1" time="0.0070227" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_svpwm_bad_1_1" classname="v2_svpwm_bad_1_1" time="0.0072613" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_svpwm_bad_2_1" classname="v2_svpwm_bad_2_1" time="0.0069259" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_svpwm_bad_3_1" classname="v2_svpwm_bad_3_1" time="0.0071361" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_svpwm_bad_4_1" classname="v2_svpwm_bad_4_1" time="0.0079529" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_svpwm_bad_5_1" classname="v2_svpwm_bad_5_1" time="0.0070455" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_svpwm_bad_6_1" classname="v2_svpwm_bad_6_1" time="0.0084862" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_svpwm_bad_7_1" classname="v2_svpwm_bad_7_1" time="0.0093807" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_app_failure_0_1" classname="v2_app_failure_0_1" time="0.0087386" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_app_failure_1_1" classname="v2_app_failure_1_1" time="0.0077615" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_app_failure_2_1" classname="v2_app_failure_2_1" time="0.006962" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_app_failure_3_1" classname="v2_app_failure_3_1" time="0.0068255" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_encoder" classname="v2_encoder" time="0.0077612" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_early_init" classname="v2_early_init" time="0.0078539" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+	<testcase name="v2_valid" classname="v2_valid" time="0.0078074" status="run">
+		<properties/>
+		<system-out>PASS checked path with bounded BDTR LOCK/Break/Update model; NEEDS HARDWARE
+</system-out>
+	</testcase>
+</testsuite>
