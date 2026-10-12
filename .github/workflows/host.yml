@@ -19,6 +19,8 @@ jobs:
         run: cmake --build build/host --parallel
       - name: Test (KNOWN_RISK means reproduction, not closure)
         run: ctest --test-dir build/host -V --output-junit host-results.xml
+      - name: Export and assert V2.3 virtual trajectories (no hardware)
+        run: python3 scripts/v23_export_trajectory.py --exe build/host/motion_v23_demo --out build/v23-trajectory
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -26,3 +28,4 @@ jobs:
           path: |
             build/host/Testing/Temporary/LastTest.log
             build/host/host-results.xml
+            build/v23-trajectory/
